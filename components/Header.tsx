@@ -30,7 +30,7 @@ export function Header() {
     <>
       {/* Announcement Bar */}
       <div className="bg-sp-hot-pink text-white text-center py-2 px-4 text-sm font-medium">
-        <span className="hidden sm:inline">Now booking for Spring 2026 </span>
+        <span className="hidden sm:inline">Where your vision becomes something unforgettable </span>
         <span className="sm:hidden">Booking Spring 2026 </span>
         <span className="opacity-80">|</span>
         <Link href="#contact" className="ml-2 underline underline-offset-2 hover:opacity-80 transition-opacity">
@@ -40,11 +40,10 @@ export function Header() {
 
       {/* Main Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-sp-cream/95 backdrop-blur-md shadow-sm"
             : "bg-sp-cream"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 sm:h-28">
