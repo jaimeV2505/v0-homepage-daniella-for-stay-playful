@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { ArrowRight, Check, Mail, Clock3, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -12,7 +14,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { FieldGroup, Field, FieldLabel } from "@/components/ui/field"
-import { ArrowRight, Check, Mail, Calendar } from "lucide-react"
 
 const interestOptions = [
   { value: "1-1-coaching", label: "1:1 Coaching" },
@@ -22,26 +23,37 @@ const interestOptions = [
   { value: "workshop", label: "Workshop / Event" },
 ]
 
+type FormState = {
+  name: string
+  email: string
+  interest: string
+  message: string
+}
+
+const initialState: FormState = {
+  name: "",
+  email: "",
+  interest: "",
+  message: "",
+}
+
 export function ContactForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    interest: "",
-    message: "",
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!formData.name || !formData.email || !formData.message) return
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -38])
+  const leftY = useTransform(scrollYProgress, [0, 1], [24, -14])
+  const stickerRotate = useTransform(scrollYProgress, [0, 1], [-8, -3])
+  const paperY = useTransform(scrollYProgress, [0, 1], [0, -24])
 
-    setIsLoading(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitted(true)
-    setIsLoading(false)
-  }
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
+  const [formData, setFormData] = useState<FormState>(initialState)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -49,165 +61,356 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const resetForm = () => {
+    setFormData(initialState)
+    setErrorMessage("")
+    setIsSubmitted(false)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setErrorMessage("")
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setErrorMessage("Please complete the required fields.")
+      return
+    }
+
+    try {
+      setIsLoading(true)
+
+      // Simulado por ahora
+      await new Promise((resolve) => setTimeout(resolve, 1400))
+
+      setIsSubmitted(true)
+      setFormData(initialState)
+    } catch {
+      setErrorMessage("Unable to send your message right now.")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
-    <section id="contact" className="bg-sp-lilac py-16 sm:py-24 lg:py-32 relative overflow-hidden">
-      {/* Top Wave */}
-      <div className="absolute top-0 left-0 right-0 h-12 overflow-hidden">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="absolute top-0 w-full h-full rotate-180"
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#F7EFE9]"
+    >
+      {/* TOP TRANSITION */}
+      <div className="h-8 bg-[#F4E7F7]" />
+      <div className="h-[3px] bg-[#2B1A16]" />
+
+      <div className="relative overflow-hidden">
+        {/* BACKGROUND IMAGE LAYER */}
+        <motion.div
+          style={{ y: bgY }}
+          className="absolute inset-0"
+          aria-hidden="true"
         >
-          <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            fill="#F5EBE0"
-            opacity="1"
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.pexels.com/photos/6899549/pexels-photo-6899549.jpeg?auto=compress&cs=tinysrgb&w=1800')",
+            }}
           />
-        </svg>
-      </div>
+          <div className="absolute inset-0 bg-[#120B0A]/58" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,11,10,0.22),rgba(18,11,10,0.72))]" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-sp-hot-pink font-semibold text-xs tracking-widest uppercase mb-3 font-sans">
-            Let's Connect
-          </p>
-          <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-sp-deep-brown leading-[1.1] text-balance mb-6">
-            Ready to start your{" "}
-            <span className="italic">journey?</span>
-          </h2>
-          <p className="text-lg text-sp-deep-brown/70 text-pretty max-w-2xl mx-auto">
-            Send a message and let's explore how we can work together to build a healthier, more playful life.
-          </p>
-        </div>
+          {/* Editorial glows with brand palette */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,0,142,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(255,171,255,0.14),transparent_28%),radial-gradient(circle_at_64%_82%,rgba(255,127,0,0.10),transparent_22%),radial-gradient(circle_at_34%_78%,rgba(0,226,255,0.10),transparent_24%)]" />
+        </motion.div>
 
-        {/* Form */}
-        {isSubmitted ? (
-          <div className="bg-white rounded-3xl p-8 sm:p-12 text-center shadow-sm">
-            <div className="w-20 h-20 bg-sp-soft-green rounded-full flex items-center justify-center mx-auto mb-6">
-              <Check className="h-10 w-10 text-sp-hot-pink" />
-            </div>
-            <h3 className="font-serif text-2xl sm:text-3xl text-sp-deep-brown mb-3">
-              Message received!
-            </h3>
-            <p className="text-sp-deep-brown/70 text-lg mb-6">
-              Thank you for reaching out. I'll be in touch within 24-48 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div className="flex items-center gap-2 text-sp-deep-brown/60">
-                <Mail className="h-5 w-5" />
-                <span>Check your inbox</span>
+        {/* Editorial vertical lines */}
+        <div className="pointer-events-none absolute inset-y-0 left-[5%] hidden w-px bg-white/10 xl:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-[5%] hidden w-px bg-white/10 xl:block" />
+
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
+            {/* LEFT CONTENT */}
+            <motion.div
+              style={{ y: leftY }}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative flex flex-col justify-between"
+            >
+              <div>
+                <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-white/82">
+                  Contact Me
+                </p>
+
+                <h2 className="max-w-[900px] font-sans text-[2.9rem] font-black uppercase leading-[0.87] tracking-[-0.06em] text-white sm:text-[4.3rem] lg:text-[5.2rem] xl:text-[5.8rem]">
+                  Let’s build something
+                  <br />
+                  worth talking about.
+                </h2>
+
+                <div className="mt-8 max-w-xl space-y-6 text-[1.02rem] leading-[1.44] text-white/92 sm:text-[1.14rem]">
+                  <p>
+                    Curious about coaching? Interested in one of the programs?
+                    Or simply wondering if this space is right for you? Send a
+                    message and let’s start there.
+                  </p>
+
+                  <p>
+                    Stay Playful is about support that feels grounded,
+                    thoughtful, sustainable, and genuinely human — not rigid,
+                    performative, or overwhelming.
+                  </p>
+
+                  <p className="font-semibold text-white">
+                    If it feels honest, warm, and aligned with real life,
+                    there’s a good chance we’ll work well together.
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-sp-deep-brown/60">
-                <Calendar className="h-5 w-5" />
-                <span>Response within 48h</span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white rounded-2xl p-8 sm:p-12 shadow-lg border-2 border-sp-deep-brown/10"
-          >
-            <FieldGroup className="space-y-6">
-              {/* Name */}
-              <Field>
-                <FieldLabel htmlFor="name" className="text-sp-deep-brown font-medium mb-2">
-                  Your name
-                </FieldLabel>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Enter your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="h-14 rounded-lg bg-sp-cream border-sp-deep-brown/10 focus-visible:ring-sp-hot-pink text-sp-deep-brown placeholder:text-sp-deep-brown/40 text-base"
-                />
-              </Field>
 
-              {/* Email */}
-              <Field>
-                <FieldLabel htmlFor="email" className="text-sp-deep-brown font-medium mb-2">
-                  Email address
-                </FieldLabel>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="h-14 rounded-lg bg-sp-cream border-sp-deep-brown/10 focus-visible:ring-sp-hot-pink text-sp-deep-brown placeholder:text-sp-deep-brown/40 text-base"
-                />
-              </Field>
-
-              {/* Interest */}
-              <Field>
-                <FieldLabel className="text-sp-deep-brown font-medium mb-2">
-                  I'm interested in...
-                </FieldLabel>
-                <Select
-                  value={formData.interest}
-                  onValueChange={(value) =>
-                    setFormData((prev) => ({ ...prev, interest: value }))
-                  }
-                >
-                  <SelectTrigger className="h-14 rounded-lg bg-sp-cream border-sp-deep-brown/10 focus:ring-sp-hot-pink text-sp-deep-brown text-base">
-                    <SelectValue placeholder="Select an option" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {interestOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </Field>
-
-              {/* Message */}
-              <Field>
-                <FieldLabel htmlFor="message" className="text-sp-deep-brown font-medium mb-2">
-                  Your message
-                </FieldLabel>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell me a bit about yourself and what you're looking for..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="rounded-lg bg-sp-cream border-sp-deep-brown/10 focus-visible:ring-sp-hot-pink text-sp-deep-brown placeholder:text-sp-deep-brown/40 resize-none text-base"
-                />
-              </Field>
-
-              {/* Submit */}
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="w-full h-14 bg-sp-hot-pink hover:bg-sp-hot-pink/90 text-white rounded-lg font-bold text-base border-2 border-sp-hot-pink shadow-md hover:shadow-lg transition-all"
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.18, duration: 0.65 }}
+                className="mt-10"
               >
-                {isLoading ? (
-                  "Sending..."
+                <div className="max-w-[720px]">
+                  <p className="font-sans text-[2.2rem] font-black uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-[3rem] lg:text-[3.5rem]">
+                    You’ll get a reply within
+                    <br />
+                    48 hours —
+                  </p>
+                  <p className="mt-1 font-serif text-[1.9rem] italic leading-none text-[#FFF2E8] sm:text-[2.25rem] lg:text-[2.55rem]">
+                    unless I’m mid-latte ☕
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
+                    <Mail className="h-4 w-4" />
+                    hello@stayplayful.com
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
+                    <MapPin className="h-4 w-4" />
+                    Stockholm, Sweden
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Sticker */}
+              <motion.div
+                style={{ rotate: stickerRotate }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.35, duration: 0.65 }}
+                className="absolute -top-3 left-0 hidden xl:block"
+              >
+                <div className="rounded-full border-[3px] border-[#2B1A16] bg-[#FFBD17] px-8 py-3 text-sm font-black uppercase tracking-[0.14em] text-[#2B1A16] shadow-[8px_8px_0_0_rgba(0,0,0,0.18)]">
+                  Stockholm based
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT FORM */}
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.75, ease: "easeOut", delay: 0.08 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#FF008E]/16 blur-[1px]" />
+
+              <div className="relative rounded-[2rem] border-[3px] border-[#2B1A16] bg-[#FDF7F0] p-6 shadow-[10px_10px_0_0_rgba(0,0,0,0.16)] sm:p-8 lg:p-9">
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex min-h-[560px] flex-col items-center justify-center text-center"
+                  >
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border-[3px] border-[#2B1A16] bg-[#DDF0D5] shadow-[6px_6px_0_0_rgba(0,0,0,0.12)]">
+                      <Check className="h-10 w-10 text-[#FF008E]" />
+                    </div>
+
+                    <h3 className="mt-8 font-serif text-3xl text-[#2B1A16] sm:text-4xl">
+                      Message received
+                    </h3>
+
+                    <p className="mt-4 max-w-md text-lg leading-8 text-[#2B1A16]/72">
+                      Thank you for reaching out. I’ll come back to you within
+                      24–48 hours with the next step.
+                    </p>
+
+                    <div className="mt-8 flex flex-col gap-3 text-sm font-medium text-[#2B1A16]/70 sm:flex-row sm:gap-6">
+                      <div className="flex items-center justify-center gap-2">
+                        <Mail className="h-4 w-4" />
+                        Check your inbox
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <Clock3 className="h-4 w-4" />
+                        Reply within 48h
+                      </div>
+                    </div>
+
+                    <Button
+                      onClick={resetForm}
+                      className="mt-8 rounded-full border-[3px] border-[#2B1A16] bg-[#FF008E] px-8 py-6 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[6px_6px_0_0_rgba(0,0,0,0.14)] hover:bg-[#E30081]"
+                    >
+                      Send another message
+                    </Button>
+                  </motion.div>
                 ) : (
                   <>
-                    Send Message
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <div className="mb-6 flex items-start justify-between gap-4">
+                      <div>
+                        <p className="text-xs font-black uppercase tracking-[0.22em] text-[#FF008E]">
+                          Let’s get into it
+                        </p>
+                        <h3 className="mt-2 font-serif text-2xl leading-tight text-[#2B1A16] sm:text-3xl">
+                          Tell me what brings you here
+                        </h3>
+                      </div>
+
+                      <div className="hidden rounded-full border-[3px] border-[#2B1A16] bg-[#FFABFF] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16] sm:block">
+                        Stay Playful
+                      </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit} noValidate>
+                      <FieldGroup className="space-y-5">
+                        <Field>
+                          <FieldLabel
+                            htmlFor="name"
+                            className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16]/72"
+                          >
+                            Your name*
+                          </FieldLabel>
+                          <Input
+                            id="name"
+                            name="name"
+                            type="text"
+                            autoComplete="name"
+                            placeholder="What should I call you?"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            className="h-14 rounded-[1rem] border-[2px] border-[#2B1A16]/18 bg-[#FFFDF9] px-5 text-base text-[#2B1A16] placeholder:text-[#2B1A16]/40 focus-visible:ring-2 focus-visible:ring-[#FF008E]"
+                          />
+                        </Field>
+
+                        <Field>
+                          <FieldLabel
+                            htmlFor="email"
+                            className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16]/72"
+                          >
+                            Email*
+                          </FieldLabel>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autoComplete="email"
+                            placeholder="your@email.com"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            className="h-14 rounded-[1rem] border-[2px] border-[#2B1A16]/18 bg-[#FFFDF9] px-5 text-base text-[#2B1A16] placeholder:text-[#2B1A16]/40 focus-visible:ring-2 focus-visible:ring-[#FF008E]"
+                          />
+                        </Field>
+
+                        <Field>
+                          <FieldLabel className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16]/72">
+                            What’s this about?
+                          </FieldLabel>
+                          <Select
+                            value={formData.interest}
+                            onValueChange={(value) =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                interest: value,
+                              }))
+                            }
+                          >
+                            <SelectTrigger className="h-14 rounded-[1rem] border-[2px] border-[#2B1A16]/18 bg-[#FFFDF9] px-5 text-left text-base text-[#2B1A16] focus:ring-2 focus:ring-[#FF008E]">
+                              <SelectValue placeholder="Choose an option" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {interestOptions.map((option) => (
+                                <SelectItem key={option.value} value={option.value}>
+                                  {option.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        </Field>
+
+                        <Field>
+                          <FieldLabel
+                            htmlFor="message"
+                            className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16]/72"
+                          >
+                            Message*
+                          </FieldLabel>
+                          <Textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell me a little about what you’re looking for..."
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows={6}
+                            className="min-h-[170px] rounded-[1.2rem] border-[2px] border-[#2B1A16]/18 bg-[#FFFDF9] px-5 py-4 text-base text-[#2B1A16] placeholder:text-[#2B1A16]/40 focus-visible:ring-2 focus-visible:ring-[#FF008E] resize-none"
+                          />
+                        </Field>
+
+                        {errorMessage ? (
+                          <p className="text-sm font-medium text-[#B42318]">
+                            {errorMessage}
+                          </p>
+                        ) : null}
+
+                        <div className="pt-2">
+                          <Button
+                            type="submit"
+                            disabled={isLoading}
+                            className="h-14 w-full rounded-[1rem] border-[3px] border-[#2B1A16] bg-[#bfd9f2] text-sm font-black uppercase tracking-[0.08em] text-white shadow-[6px_6px_0_0_rgba(0,0,0,0.14)] transition-all duration-200 hover:bg-[#84151D] hover:-translate-y-0.5"
+                          >
+                            {isLoading ? (
+                              "Sending..."
+                            ) : (
+                              <>
+                                Let’s get into it
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </FieldGroup>
+                    </form>
+
+                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-[#2B1A16]/12 pt-5">
+                      <p className="text-sm leading-6 text-[#2B1A16]/58">
+                        Your information stays private and is only used to reply
+                        to your message.
+                      </p>
+
+                      <div className="hidden rounded-full bg-[#DDF0D5] px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#2B1A16] sm:block">
+                        Reply within 48h
+                      </div>
+                    </div>
                   </>
                 )}
-              </Button>
-            </FieldGroup>
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
-            <p className="text-center text-sm text-sp-deep-brown/50 mt-6">
-              Your information is safe and will never be shared.
-            </p>
-          </form>
-        )}
+        <div className="relative z-10 h-[3px] bg-[#2B1A16]" />
       </div>
     </section>
   )
 }
+
