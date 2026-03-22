@@ -385,7 +385,7 @@ export function ContactForm() {
                           <Button
                             type="submit"
                             disabled={isLoading}
-                            className="h-14 w-full rounded-[1rem] border-[3px] border-[#2B1A16] bg-[#9C1B24] text-sm font-black uppercase tracking-[0.08em] text-white shadow-[6px_6px_0_0_rgba(0,0,0,0.14)] transition-all duration-200 hover:bg-[#84151D] hover:-translate-y-0.5"
+                            className="h-14 w-full rounded-[1rem] border-[3px] border-[#2B1A16] bg-[#00E2FF] text-sm font-black uppercase tracking-[0.08em] text-white shadow-[6px_6px_0_0_rgba(0,0,0,0.14)] transition-all duration-200 hover:bg-[#84151D] hover:-translate-y-0.5"
                           >
                             {isLoading ? (
                               "Sending..."
