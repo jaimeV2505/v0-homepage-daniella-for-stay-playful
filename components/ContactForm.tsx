@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
 import { ArrowRight, Check, Mail, Clock3, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -46,9 +45,10 @@ export function ContactForm() {
     offset: ["start end", "end start"],
   })
 
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -45])
-  const leftY = useTransform(scrollYProgress, [0, 1], [24, -18])
-  const stickerRotate = useTransform(scrollYProgress, [0, 1], [-7, -2])
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -38])
+  const leftY = useTransform(scrollYProgress, [0, 1], [24, -14])
+  const stickerRotate = useTransform(scrollYProgress, [0, 1], [-8, -3])
+  const paperY = useTransform(scrollYProgress, [0, 1], [0, -24])
 
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -79,7 +79,7 @@ export function ContactForm() {
     try {
       setIsLoading(true)
 
-      // Dejamos simulado por ahora
+      // Simulado por ahora
       await new Promise((resolve) => setTimeout(resolve, 1400))
 
       setIsSubmitted(true)
@@ -97,12 +97,12 @@ export function ContactForm() {
       ref={sectionRef}
       className="relative overflow-hidden bg-[#F7EFE9]"
     >
-      {/* Divider superior */}
-      <div className="h-10 bg-[#F4E7F7]" />
-      <div className="border-t-[3px] border-b-[3px] border-[#2B1A16]" />
+      {/* TOP TRANSITION */}
+      <div className="h-8 bg-[#F4E7F7]" />
+      <div className="h-[3px] bg-[#2B1A16]" />
 
       <div className="relative overflow-hidden">
-        {/* Background editorial */}
+        {/* BACKGROUND IMAGE LAYER */}
         <motion.div
           style={{ y: bgY }}
           className="absolute inset-0"
@@ -115,19 +115,26 @@ export function ContactForm() {
                 "url('https://images.pexels.com/photos/6899549/pexels-photo-6899549.jpeg?auto=compress&cs=tinysrgb&w=1800')",
             }}
           />
-          <div className="absolute inset-0 bg-[#0F0908]/62" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,9,8,0.36),rgba(15,9,8,0.68))]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,0,142,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(255,171,255,0.10),transparent_26%),radial-gradient(circle_at_60%_80%,rgba(255,189,23,0.10),transparent_22%)]" />
+          <div className="absolute inset-0 bg-[#120B0A]/58" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,11,10,0.22),rgba(18,11,10,0.72))]" />
+
+          {/* Editorial glows with brand palette */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,0,142,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(255,171,255,0.14),transparent_28%),radial-gradient(circle_at_64%_82%,rgba(255,127,0,0.10),transparent_22%),radial-gradient(circle_at_34%_78%,rgba(0,226,255,0.10),transparent_24%)]" />
         </motion.div>
 
-        {/* Lineas sutiles editoriales */}
+        {/* Editorial vertical lines */}
         <div className="pointer-events-none absolute inset-y-0 left-[5%] hidden w-px bg-white/10 xl:block" />
         <div className="pointer-events-none absolute inset-y-0 right-[5%] hidden w-px bg-white/10 xl:block" />
 
-        {/* Glow */}
-        <div className="pointer-events-none absolute -left-20 top-16 h-72 w-72 rounded-full bg-[#FF008E]/12 blur-3xl" />
-        <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-[#FFABFF]/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#FF7F00]/10 blur-3xl" />
+        {/* Floating paper accents */}
+        <motion.div
+          style={{ y: paperY, rotate: -7 }}
+          className="pointer-events-none absolute left-[10%] top-0 hidden h-24 w-64 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] xl:block"
+        />
+        <motion.div
+          style={{ y: paperY, rotate: 5 }}
+          className="pointer-events-none absolute right-[18%] top-8 hidden h-20 w-48 bg-[#FFF7EF] shadow-[0_10px_30px_rgba(0,0,0,0.18)] xl:block"
+        />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
@@ -145,7 +152,7 @@ export function ContactForm() {
                   Contact Me
                 </p>
 
-                <h2 className="max-w-[880px] font-sans text-[2.9rem] font-black uppercase leading-[0.87] tracking-[-0.06em] text-white sm:text-[4.3rem] lg:text-[5.2rem] xl:text-[5.8rem]">
+                <h2 className="max-w-[900px] font-sans text-[2.9rem] font-black uppercase leading-[0.87] tracking-[-0.06em] text-white sm:text-[4.3rem] lg:text-[5.2rem] xl:text-[5.8rem]">
                   Let’s build something
                   <br />
                   worth talking about.
@@ -160,12 +167,12 @@ export function ContactForm() {
 
                   <p>
                     Stay Playful is about support that feels grounded,
-                    thoughtful, and sustainable — not rigid, performative, or
-                    overwhelming.
+                    thoughtful, sustainable, and genuinely human — not rigid,
+                    performative, or overwhelming.
                   </p>
 
                   <p className="font-semibold text-white">
-                    If it feels honest, human, and aligned with real life,
+                    If it feels honest, warm, and aligned with real life,
                     there’s a good chance we’ll work well together.
                   </p>
                 </div>
@@ -210,7 +217,7 @@ export function ContactForm() {
                 transition={{ delay: 0.35, duration: 0.65 }}
                 className="absolute -top-3 left-0 hidden xl:block"
               >
-                <div className="rounded-full border-[3px] border-[#2B1A16] bg-[#FFF7EF] px-8 py-3 text-sm font-black uppercase tracking-[0.14em] text-[#2B1A16] shadow-[8px_8px_0_0_rgba(0,0,0,0.18)]">
+                <div className="rounded-full border-[3px] border-[#2B1A16] bg-[#FFBD17] px-8 py-3 text-sm font-black uppercase tracking-[0.14em] text-[#2B1A16] shadow-[8px_8px_0_0_rgba(0,0,0,0.18)]">
                   Stockholm based
                 </div>
               </motion.div>
@@ -224,7 +231,7 @@ export function ContactForm() {
               transition={{ duration: 0.75, ease: "easeOut", delay: 0.08 }}
               className="relative"
             >
-              <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#FF008E]/18 blur-[1px]" />
+              <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#FF008E]/16 blur-[1px]" />
 
               <div className="relative rounded-[2rem] border-[3px] border-[#2B1A16] bg-[#FDF7F0] p-6 shadow-[10px_10px_0_0_rgba(0,0,0,0.16)] sm:p-8 lg:p-9">
                 {isSubmitted ? (
@@ -276,7 +283,7 @@ export function ContactForm() {
                         </h3>
                       </div>
 
-                      <div className="hidden rounded-full border-[3px] border-[#2B1A16] bg-[#FFBD17] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16] sm:block">
+                      <div className="hidden rounded-full border-[3px] border-[#2B1A16] bg-[#FFABFF] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16] sm:block">
                         Stay Playful
                       </div>
                     </div>
@@ -410,8 +417,9 @@ export function ContactForm() {
           </div>
         </div>
 
-        <div className="relative z-10 border-t border-white/10" />
+        <div className="relative z-10 h-[3px] bg-[#2B1A16]" />
       </div>
     </section>
   )
 }
+
