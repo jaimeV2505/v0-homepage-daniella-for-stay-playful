@@ -45,7 +45,7 @@ export function Hero() {
           className="absolute inset-0"
         >
           <Image
-            src="https://images.pexels.com/photos/6899549/pexels-photo-6899549.jpeg?auto=compress&cs=tinysrgb&w=1800"
+            src="https://pexels-rb-audiovisual-1819938.jpg"
             alt="Editorial background for Stay Playful"
             fill
             priority
