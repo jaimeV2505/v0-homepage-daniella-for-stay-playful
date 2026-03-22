@@ -126,15 +126,6 @@ export function ContactForm() {
         <div className="pointer-events-none absolute inset-y-0 left-[5%] hidden w-px bg-white/10 xl:block" />
         <div className="pointer-events-none absolute inset-y-0 right-[5%] hidden w-px bg-white/10 xl:block" />
 
-        {/* Floating paper accents */}
-        <motion.div
-          style={{ y: paperY, rotate: -7 }}
-          className="pointer-events-none absolute left-[10%] top-0 hidden h-24 w-64 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] xl:block"
-        />
-        <motion.div
-          style={{ y: paperY, rotate: 5 }}
-          className="pointer-events-none absolute right-[18%] top-8 hidden h-20 w-48 bg-[#FFF7EF] shadow-[0_10px_30px_rgba(0,0,0,0.18)] xl:block"
-        />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
