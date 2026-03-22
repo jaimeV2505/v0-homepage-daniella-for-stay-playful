@@ -11,9 +11,9 @@ const tickerItems = [
   "HEALTH SHOULD FEEL PLAYFUL",
   "BALANCE OVER RESTRICTION",
   "CURIOSITY OVER CONTROL",
+  "SOFTER WELLBEING",
   "STOCKHOLM BASED",
-  "1:1 COACHING • 8-WEEK • 12-WEEK",
-  "A SOFTER RELATIONSHIP WITH FOOD",
+  "PERSONAL • PLAYFUL • SUSTAINABLE",
 ]
 
 export function Hero() {
@@ -24,193 +24,178 @@ export function Hero() {
     offset: ["start start", "end start"],
   })
 
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 60])
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -30])
-  const logoY = useTransform(scrollYProgress, [0, 1], [0, 24])
-  const bgGlow = useTransform(scrollYProgress, [0, 1], [0.22, 0.4])
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 40])
+  const logoY = useTransform(scrollYProgress, [0, 1], [0, 26])
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -24])
 
   return (
     <section
       ref={sectionRef}
       className="relative overflow-hidden bg-[#F7EFE9]"
     >
-      {/* Top soft band */}
+      {/* top soft bar */}
       <div className="h-6 bg-[#F4E7F7]" />
       <div className="border-t-[3px] border-[#2B1A16]" />
 
-      <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <div className="absolute left-0 top-0 h-full w-full bg-[linear-gradient(120deg,#F7EFE9_0%,#F7EFE9_48%,#DDF0D5_48%,#DDF0D5_100%)] lg:bg-[linear-gradient(90deg,#F7EFE9_0%,#F7EFE9_52%,#DDF0D5_52%,#DDF0D5_100%)]" />
-          <motion.div
-            style={{ opacity: bgGlow }}
-            className="pointer-events-none absolute -left-16 top-20 h-72 w-72 rounded-full bg-[#FFABFF] blur-3xl"
+      <div className="relative min-h-[92vh] overflow-hidden border-b-[3px] border-[#2B1A16]">
+        {/* BACKGROUND IMAGE */}
+        <motion.div
+          style={{ scale: bgScale, y: bgY }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="https://images.pexels.com/photos/6899549/pexels-photo-6899549.jpeg?auto=compress&cs=tinysrgb&w=1800"
+            alt="Editorial background for Stay Playful"
+            fill
+            priority
+            className="object-cover"
           />
-          <motion.div
-            style={{ opacity: bgGlow }}
-            className="pointer-events-none absolute right-10 top-14 h-80 w-80 rounded-full bg-[#00E2FF] blur-3xl"
-          />
-          <motion.div
-            style={{ opacity: bgGlow }}
-            className="pointer-events-none absolute bottom-10 left-[38%] h-64 w-64 rounded-full bg-[#FFBD17] blur-3xl"
-          />
-        </div>
+        </motion.div>
 
-        {/* Editorial guide lines */}
-        <div className="pointer-events-none absolute inset-y-0 left-[4%] hidden w-px bg-[#2B1A16]/10 xl:block" />
-        <div className="pointer-events-none absolute inset-y-0 right-[4%] hidden w-px bg-[#2B1A16]/10 xl:block" />
+        {/* overlays */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,11,8,0.28)_0%,rgba(20,11,8,0.22)_26%,rgba(20,11,8,0.40)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,171,255,0.14),transparent_22%),radial-gradient(circle_at_82%_15%,rgba(0,226,255,0.12),transparent_20%),radial-gradient(circle_at_50%_85%,rgba(255,127,0,0.10),transparent_22%)]" />
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-4rem)] max-w-[1700px] grid-cols-1 lg:grid-cols-[1.02fr_0.98fr]">
-          {/* LEFT SIDE — IMAGE / LOGO */}
-          <div className="relative order-2 flex min-h-[46vh] items-end overflow-hidden border-t-[3px] border-[#2B1A16] lg:order-1 lg:min-h-[calc(100vh-4rem)] lg:border-r-[3px] lg:border-t-0">
-            {/* Main image */}
-            <motion.div
-              style={{ y: imageY }}
-              className="absolute inset-0"
-            >
-              <Image
-                src="https://images.pexels.com/photos/7081150/pexels-photo-7081150.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt="Editorial lifestyle portrait for Stay Playful"
-                fill
-                priority
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(43,26,22,0.12),rgba(43,26,22,0.18))]" />
-            </motion.div>
+        {/* editorial frame */}
+        <div className="pointer-events-none absolute inset-4 border border-[#FFF7EF]/55 sm:inset-6 lg:inset-8" />
 
-            {/* Soft frame */}
-            <div className="pointer-events-none absolute inset-6 border border-[#FFF7EF]/60" />
-
-            {/* Floating logo block */}
+        {/* CONTENT LAYER */}
+        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-[1700px] items-center px-4 py-10 sm:px-6 lg:px-8">
+          <div className="grid w-full items-end gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            {/* LEFT VISUAL / LOGO */}
             <motion.div
               style={{ y: logoY }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative z-20 m-6 w-[220px] rounded-[28px] border-[3px] border-[#2B1A16] bg-[#FFF7EF]/90 p-4 shadow-[10px_10px_0_0_rgba(0,0,0,0.16)] backdrop-blur-md sm:m-8 sm:w-[250px] lg:m-10 lg:w-[300px]"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              className="relative flex min-h-[420px] items-center justify-center lg:min-h-[640px]"
             >
-              <Image
-                src="/logo1.png"
-                alt="Stay Playful logo"
-                width={520}
-                height={520}
-                className="h-auto w-full"
-                priority
+              {/* soft spotlight */}
+              <div className="absolute h-[300px] w-[300px] rounded-full bg-[#FFF7EF]/14 blur-3xl sm:h-[380px] sm:w-[380px] lg:h-[460px] lg:w-[460px]" />
+
+              {/* BIG LOGO */}
+              <div className="relative z-10 w-[270px] sm:w-[360px] lg:w-[470px] xl:w-[560px]">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo1-JcaoSTEJKw2rySZFIaOZpeEs1Hjq3O.png"
+                  alt="Stay Playful logo"
+                  width={1200}
+                  height={1200}
+                  priority
+                  className="h-auto w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.28)]"
+                />
+              </div>
+
+              {/* subtle floating orb */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 3, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-[12%] right-[10%] hidden h-16 w-16 rounded-[40%_60%_55%_45%/50%_45%_55%_50%] bg-[radial-gradient(circle_at_30%_30%,#FFFFFF_0%,#FFABFF_38%,#FF7F00_100%)] opacity-95 blur-[0.2px] lg:block"
               />
             </motion.div>
 
-            {/* Small flower/blob detail */}
-            <div className="pointer-events-none absolute bottom-5 right-5 z-20 hidden h-24 w-24 rounded-[40%_60%_55%_45%/50%_40%_60%_50%] bg-[radial-gradient(circle_at_30%_30%,#FFFFFF_0%,#FFABFF_40%,#FF7F00_100%)] opacity-90 blur-[0.2px] sm:block" />
-          </div>
-
-          {/* RIGHT SIDE — CONTENT */}
-          <div className="order-1 flex items-center border-b-[3px] border-[#2B1A16] px-5 py-12 sm:px-8 sm:py-14 lg:order-2 lg:min-h-[calc(100vh-4rem)] lg:border-b-0 lg:px-14 xl:px-20">
+            {/* RIGHT TEXT BLOCK */}
             <motion.div
               style={{ y: contentY }}
-              initial={{ opacity: 0, y: 34 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
-              className="w-full max-w-[760px]"
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.12 }}
+              className="flex justify-center lg:justify-end"
             >
-              {/* Eyebrow */}
-              <div className="mb-5 flex flex-wrap items-center gap-3">
-                <span className="inline-flex rounded-full border-[2px] border-[#2B1A16] bg-[#FFF7EF] px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-[#FF008E] shadow-[4px_4px_0_0_rgba(0,0,0,0.1)]">
-                  Health Coaching
-                </span>
-                <span className="inline-flex rounded-full border border-[#2B1A16]/20 bg-white/55 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2B1A16]/65">
-                  Playful • Personal • Sustainable
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="max-w-[12ch] font-serif text-[3.6rem] leading-[0.9] tracking-[-0.06em] text-[#2B1A16] sm:text-[5rem] lg:text-[6.2rem] xl:text-[7rem]">
-                A softer way
-                <br />
-                to feel{" "}
-                <span className="bg-[#FFABFF]/45 px-2 italic text-[#FF008E]">
-                  well
-                </span>
-              </h1>
-
-              {/* Supporting text */}
-              <p className="mt-7 max-w-[640px] text-lg leading-8 text-[#2B1A16]/76 sm:text-[1.22rem] sm:leading-9">
-                Not another diet. Not another rigid system. Stay Playful offers
-                a more thoughtful and human approach to wellbeing — helping you
-                build balance through life, not pressure.
-              </p>
-
-              {/* CTA row */}
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button
-                  asChild
-                  className="h-14 rounded-full border-[3px] border-[#2B1A16] bg-[#FF008E] px-8 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E10080]"
-                >
-                  <Link href="#contact">
-                    Book a Free Call
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-
-                <Button
-                  asChild
-                  variant="outline"
-                  className="h-14 rounded-full border-[3px] border-[#2B1A16] bg-[#FFF7EF]/70 px-8 text-sm font-black uppercase tracking-[0.08em] text-[#2B1A16] shadow-[8px_8px_0_0_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FFF7EF]"
-                >
-                  <Link href="#programs">Explore Programs</Link>
-                </Button>
-              </div>
-
-              {/* Trust row */}
-              <div className="mt-9 grid max-w-[620px] grid-cols-1 gap-3 sm:grid-cols-3">
-                <div className="rounded-[20px] border-[2px] border-[#2B1A16] bg-[#FFF7EF]/85 px-4 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.08)]">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#FF008E]">
-                    Focus
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
-                    Relationship with food
-                  </p>
+              <div className="w-full max-w-[650px] rounded-[28px] border-[3px] border-[#2B1A16] bg-[#FFF7EF]/86 p-6 shadow-[10px_10px_0_0_rgba(0,0,0,0.14)] backdrop-blur-md sm:p-8 lg:p-10">
+                <div className="mb-4 flex flex-wrap items-center gap-3">
+                  <span className="inline-flex rounded-full border-[2px] border-[#2B1A16] bg-[#FDF3EA] px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-[#FF008E]">
+                    Stay Playful
+                  </span>
+                  <span className="inline-flex rounded-full border border-[#2B1A16]/16 bg-white/60 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2B1A16]/68">
+                    Health Coaching
+                  </span>
                 </div>
 
-                <div className="rounded-[20px] border-[2px] border-[#2B1A16] bg-[#FFF7EF]/85 px-4 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.08)]">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#FF7F00]">
-                    Approach
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
-                    Curiosity over control
-                  </p>
+                <h1 className="font-serif text-[3.2rem] leading-[0.92] tracking-[-0.06em] text-[#2B1A16] sm:text-[4.4rem] lg:text-[5.3rem]">
+                  Feel well
+                  <br />
+                  in a more{" "}
+                  <span className="bg-[#DDF0D5] px-2 italic text-[#FF008E]">
+                    playful
+                  </span>{" "}
+                  way
+                </h1>
+
+                <p className="mt-6 max-w-[42ch] text-lg leading-8 text-[#2B1A16]/76 sm:text-[1.12rem]">
+                  A softer, more personal approach to wellbeing — centered on
+                  balance, curiosity, and a sustainable relationship with food,
+                  movement, and yourself.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <Button
+                    asChild
+                    className="h-14 rounded-full border-[3px] border-[#2B1A16] bg-[#FF008E] px-8 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E10080]"
+                  >
+                    <Link href="#contact">
+                      Book a Free Call
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="h-14 rounded-full border-[3px] border-[#2B1A16] bg-[#FFF7EF]/80 px-8 text-sm font-black uppercase tracking-[0.08em] text-[#2B1A16] shadow-[8px_8px_0_0_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#FFF7EF]"
+                  >
+                    <Link href="#programs">Explore Programs</Link>
+                  </Button>
                 </div>
 
-                <div className="rounded-[20px] border-[2px] border-[#2B1A16] bg-[#FFF7EF]/85 px-4 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.08)]">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#00E2FF]">
-                    Based in
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
-                    Stockholm, Sweden
-                  </p>
+                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <div className="rounded-[18px] border-[2px] border-[#2B1A16] bg-white/72 px-4 py-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#FF008E]">
+                      Focus
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
+                      Balance over restriction
+                    </p>
+                  </div>
+
+                  <div className="rounded-[18px] border-[2px] border-[#2B1A16] bg-white/72 px-4 py-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#FF7F00]">
+                      Style
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
+                      Gentle and sustainable
+                    </p>
+                  </div>
+
+                  <div className="rounded-[18px] border-[2px] border-[#2B1A16] bg-white/72 px-4 py-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00E2FF]">
+                      Based in
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-[#2B1A16]">
+                      Stockholm, Sweden
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Moving editorial tape */}
-        <div className="relative z-20 border-y-[3px] border-[#2B1A16] bg-[#F8E7EE]">
+        {/* MOVING TAPE */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 border-t-[3px] border-[#2B1A16] bg-[#F8E7EE]">
           <div className="overflow-hidden py-3">
             <motion.div
               initial={{ x: "0%" }}
               animate={{ x: "-50%" }}
               transition={{
-                duration: 28,
-                repeat: Number.POSITIVE_INFINITY,
+                duration: 26,
+                repeat: Infinity,
                 ease: "linear",
               }}
               className="flex min-w-max items-center gap-6 whitespace-nowrap"
             >
               {[...tickerItems, ...tickerItems, ...tickerItems].map((item, index) => (
-                <div
-                  key={`${item}-${index}`}
-                  className="flex items-center gap-6"
-                >
+                <div key={`${item}-${index}`} className="flex items-center gap-6">
                   <span className="text-sm font-black uppercase tracking-[0.18em] text-[#B985D6]">
                     {item}
                   </span>
