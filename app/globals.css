@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Stay Playful Brand Colors */
+  --sp-cream: #F5F3F0;
+  --sp-off-white: #FEFDFB;
+  --sp-warm-beige: #F5EBE0;
+  
+  /* Section Block Colors */
+  --sp-lilac: #E8E0F7;
+  --sp-soft-green: #E3F0E5;
+  --sp-sky-blue: #E0F0F7;
+  --sp-pastel-pink: #F7E8F0;
+  --sp-warm-block: #F5EBE0;
+  
+  /* Accent Colors */
+  --sp-hot-pink: #E74C89;
+  --sp-orange: #F97316;
+  --sp-yellow: #FCD34D;
+  --sp-cyan: #00D9FF;
+  --sp-deep-brown: #2D2420;
+  
+  /* Base Theme Variables */
+  --background: var(--sp-cream);
+  --foreground: var(--sp-deep-brown);
+  --card: var(--sp-off-white);
+  --card-foreground: var(--sp-deep-brown);
+  --popover: var(--sp-off-white);
+  --popover-foreground: var(--sp-deep-brown);
+  --primary: var(--sp-hot-pink);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--sp-soft-green);
+  --secondary-foreground: var(--sp-deep-brown);
+  --muted: var(--sp-warm-beige);
+  --muted-foreground: #5C5450;
+  --accent: var(--sp-lilac);
+  --accent-foreground: var(--sp-deep-brown);
+  --destructive: #E53E3E;
+  --destructive-foreground: #FFFFFF;
+  --border: #E8E4E0;
+  --input: #E8E4E0;
+  --ring: var(--sp-hot-pink);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  
+  /* Brand Colors */
+  --color-sp-cream: var(--sp-cream);
+  --color-sp-off-white: var(--sp-off-white);
+  --color-sp-warm-beige: var(--sp-warm-beige);
+  --color-sp-lilac: var(--sp-lilac);
+  --color-sp-soft-green: var(--sp-soft-green);
+  --color-sp-sky-blue: var(--sp-sky-blue);
+  --color-sp-pastel-pink: var(--sp-pastel-pink);
+  --color-sp-warm-block: var(--sp-warm-block);
+  --color-sp-hot-pink: var(--sp-hot-pink);
+  --color-sp-orange: var(--sp-orange);
+  --color-sp-yellow: var(--sp-yellow);
+  --color-sp-cyan: var(--sp-cyan);
+  --color-sp-deep-brown: var(--sp-deep-brown);
+  
+  /* Theme Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom scrollbar for brand feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--sp-cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--sp-warm-beige);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E0D6CC;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headlines */
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Vertical text for widget */
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  
+  /* Wave divider backgrounds */
+  .wave-divider-top {
+    position: relative;
+  }
+  .wave-divider-top::before {
+    content: '';
+    position: absolute;
+    top: -48px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: inherit;
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+  
+  .wave-divider-bottom {
+    position: relative;
+  }
+  .wave-divider-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: -48px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: inherit;
+    clip-path: ellipse(60% 100% at 50% 0%);
+    z-index: 1;
+  }
+}
