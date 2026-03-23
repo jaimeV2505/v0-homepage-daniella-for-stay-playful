@@ -30,38 +30,26 @@ export function Hero() {
           />
         </motion.div>
 
-        {/* SOFT OVERLAY */}
+        {/* VERY SOFT OVERLAY */}
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02)_0%,rgba(255,255,255,0.03)_35%,rgba(0,0,0,0.08)_100%)]" />
 
         {/* SUBTLE FRAME */}
         <div className="pointer-events-none absolute inset-4 border border-white/35 sm:inset-6 lg:inset-8" />
 
-        {/* FLOATING MICRO TEXT */}
-        <div className="pointer-events-none absolute left-8 top-10 hidden lg:block">
-          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
-            Stockholm, Sweden
-          </p>
-        </div>
-
-        <div className="pointer-events-none absolute right-10 top-10 hidden lg:block">
-          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
-            Health Coaching
-          </p>
-        </div>
-
-        <div className="pointer-events-none absolute bottom-10 left-10 hidden lg:block">
-          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
-            Balance • Curiosity • Support
-          </p>
-        </div>
-
-        {/* SMALL FLOATING BADGE */}
-        <div className="absolute right-[12%] top-[24%] hidden lg:block">
-          <div className="rounded-full border-[3px] border-black bg-[#FFBD17] px-5 py-2 shadow-[4px_4px_0_0_rgba(0,0,0,0.12)]">
-            <span className="text-[11px] font-black uppercase tracking-[0.18em] text-black">
-              Feel Well
-            </span>
+        {/* LARGE EDITORIAL WORD LEFT */}
+        <div className="pointer-events-none absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
+          <div className="hero-side-title text-[#FF2B6A]">
+            <span className="block">FEEL</span>
+            <span className="block">WELL</span>
           </div>
+        </div>
+
+        {/* SMALL COPY RIGHT */}
+        <div className="pointer-events-none absolute bottom-[10%] right-6 z-10 hidden max-w-[360px] lg:block xl:right-10">
+          <p className="text-[15px] leading-[1.45] text-black/78">
+            A softer, more personal approach to wellbeing — centered on balance,
+            curiosity, and a sustainable relationship with food, movement, and yourself.
+          </p>
         </div>
 
         {/* HERO CONTENT */}
@@ -70,7 +58,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative z-10 flex min-h-[88vh] items-center justify-center px-4 py-12 sm:min-h-[92vh] sm:px-6 lg:px-8"
+          className="relative z-20 flex min-h-[88vh] items-center justify-center px-4 py-12 sm:min-h-[92vh] sm:px-6 lg:px-8"
         >
           <div className="flex flex-col items-center justify-center gap-4 sm:gap-5 lg:flex-row lg:items-end lg:gap-0">
             {/* SYMBOL = THE REAL S */}
@@ -85,7 +73,7 @@ export function Hero() {
               />
             </div>
 
-            {/* WORDMARK */}
+            {/* WORDMARK CONNECTED TO SYMBOL */}
             <div className="-mt-1 text-center lg:-ml-4 lg:mt-0 lg:mb-[18px] lg:text-left xl:-ml-5 xl:mb-[20px]">
               <div className="hero-wordmark text-[#1B1B1B]">
                 <span className="block">tay</span>
@@ -94,6 +82,14 @@ export function Hero() {
             </div>
           </div>
         </motion.div>
+
+        {/* MOBILE SUPPORT TEXT */}
+        <div className="absolute bottom-8 left-1/2 z-20 w-full max-w-[340px] -translate-x-1/2 px-4 text-center lg:hidden">
+          <p className="text-base leading-7 text-black/78">
+            A softer, more personal approach to wellbeing — centered on balance,
+            curiosity, and a sustainable relationship with food, movement, and yourself.
+          </p>
+        </div>
       </div>
 
       <style jsx>{`
@@ -106,6 +102,15 @@ export function Hero() {
           font-size: clamp(4.5rem, 10vw, 9.2rem);
           color: #1f1f1f;
           text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-side-title {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          line-height: 0.82;
+          letter-spacing: -0.08em;
+          font-size: clamp(4rem, 7vw, 8rem);
         }
 
         @media (max-width: 1024px) {
