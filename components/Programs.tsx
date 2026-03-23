@@ -3,47 +3,53 @@
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
+import { CalendarDays, MessageCircle, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-const programs = [
+const services = [
   {
-    id: "coaching",
-    step: "01",
-    eyebrow: "Personal Guidance",
+    id: "01",
+    eyebrow: "Personal Support",
     title: "1:1 Coaching",
     description:
-      "Tailored support designed around your unique needs, lifestyle, and goals. Direct access to personalized nutrition and wellness coaching.",
+      "Private guidance tailored to your lifestyle, goals, and relationship with food, body, and everyday wellbeing.",
     image:
       "https://images.pexels.com/photos/30773022/pexels-photo-30773022.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    accent: "bg-[#E7DDF6]",
+    accent: "bg-[#FFABFF]",
     chip: "Tailored support",
-    bgWord: "GUIDE",
   },
   {
-    id: "program-8",
-    step: "02",
-    eyebrow: "Foundation Builder",
-    title: "8-Week Program",
+    id: "02",
+    eyebrow: "Focused Reset",
+    title: "Single Session",
     description:
-      "A structured journey to establish healthy habits and transform your relationship with food. Perfect for those ready to commit to change.",
+      "A focused starting point to bring clarity, direction, and immediate support around one specific challenge or question.",
     image:
       "https://images.pexels.com/photos/7561675/pexels-photo-7561675.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    accent: "bg-[#D8EDF6]",
-    chip: "Build momentum",
-    bgWord: "BUILD",
+    accent: "bg-[#00E2FF]",
+    chip: "Quick clarity",
   },
   {
-    id: "program-12",
-    step: "03",
-    eyebrow: "Deep Transformation",
-    title: "12-Week Program",
+    id: "03",
+    eyebrow: "Momentum Builder",
+    title: "8-Week Program",
     description:
-      "The comprehensive experience for lasting change. Extended support, deeper work, and the time needed for true transformation.",
+      "A structured experience designed to help you build supportive habits and create progress that feels realistic and steady.",
     image:
       "https://images.pexels.com/photos/5311550/pexels-photo-5311550.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    accent: "bg-[#F7E1EA]",
-    chip: "Lasting change",
-    bgWord: "TRANSFORM",
+    accent: "bg-[#FFBD17]",
+    chip: "Build momentum",
+  },
+  {
+    id: "04",
+    eyebrow: "Deep Support",
+    title: "12-Week Program",
+    description:
+      "Longer-term guidance for deeper shifts, more accountability, and the space to build lasting change with real support.",
+    image:
+      "https://images.pexels.com/photos/4498151/pexels-photo-4498151.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    accent: "bg-[#FFD6F4]",
+    chip: "Long-term growth",
   },
 ]
 
@@ -55,32 +61,14 @@ export function Programs() {
     offset: ["start start", "end end"],
   })
 
-  // Scenes
-  const scene1Opacity = useTransform(scrollYProgress, [0, 0.16, 0.28], [1, 1, 0])
-  const scene1Y = useTransform(scrollYProgress, [0, 0.28], [0, -36])
-  const scene1Scale = useTransform(scrollYProgress, [0, 0.28], [1, 0.975])
-
-  const scene2Opacity = useTransform(
+  const desktopCardsY = useTransform(scrollYProgress, [0, 1], [0, -960])
+  const leftY = useTransform(scrollYProgress, [0, 1], [0, -28])
+  const bgWordY = useTransform(scrollYProgress, [0, 1], [0, -90])
+  const bgWordOpacity = useTransform(
     scrollYProgress,
-    [0.22, 0.38, 0.56, 0.7],
-    [0, 1, 1, 0]
+    [0, 0.2, 1],
+    [0.14, 0.18, 0.24]
   )
-  const scene2Y = useTransform(scrollYProgress, [0.22, 0.7], [36, -34])
-  const scene2Scale = useTransform(scrollYProgress, [0.22, 0.7], [0.975, 1])
-
-  const scene3Opacity = useTransform(scrollYProgress, [0.64, 0.8, 1], [0, 1, 1])
-  const scene3Y = useTransform(scrollYProgress, [0.64, 1], [42, 0])
-  const scene3Scale = useTransform(scrollYProgress, [0.64, 1], [0.97, 1])
-
-  // Left-side motion
-  const leftBlockY = useTransform(scrollYProgress, [0, 1], [0, -18])
-  const badgeY = useTransform(scrollYProgress, [0, 1], [0, -12])
-  const badgeRotate = useTransform(scrollYProgress, [0, 1], [0, 8])
-
-  // Background words
-  const word1Opacity = useTransform(scrollYProgress, [0, 0.18, 0.28], [0.11, 0.11, 0])
-  const word2Opacity = useTransform(scrollYProgress, [0.22, 0.42, 0.58, 0.7], [0, 0.11, 0.11, 0])
-  const word3Opacity = useTransform(scrollYProgress, [0.64, 0.82, 1], [0, 0.11, 0.11])
 
   return (
     <>
@@ -88,264 +76,342 @@ export function Programs() {
       <section
         id="programs"
         ref={ref}
-        className="relative hidden h-[260vh] bg-sp-cream xl:block"
+        className="relative hidden h-[320vh] overflow-hidden bg-[#F6F1E7] xl:block"
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background */}
-          <div className="absolute inset-0 bg-sp-cream" />
-
-          {/* Soft editorial glow */}
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[-6%] top-[20%] h-64 w-64 rounded-full bg-[#FFABFF]/18 blur-3xl" />
-            <div className="absolute left-[20%] bottom-[12%] h-72 w-72 rounded-full bg-[#DDF0D5]/24 blur-3xl" />
-            <div className="absolute right-[10%] top-[16%] h-64 w-64 rounded-full bg-[#D8EDF6]/20 blur-3xl" />
-            <div className="absolute right-[16%] bottom-[18%] h-56 w-56 rounded-full bg-[#F7E1EA]/22 blur-3xl" />
-          </div>
-
-          {/* Huge changing words */}
-          <motion.div
-            style={{ opacity: word1Opacity }}
-            className="pointer-events-none absolute left-[4%] top-[8%] font-sans text-[10rem] font-black uppercase tracking-[-0.08em] text-sp-deep-brown"
-          >
-            GUIDE
-          </motion.div>
+          <div className="absolute inset-0 bg-[#F6F1E7]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF9F0_0%,#F6F1E7_48%,#EFE7D8_100%)]" />
 
           <motion.div
-            style={{ opacity: word2Opacity }}
-            className="pointer-events-none absolute left-[4%] top-[8%] font-sans text-[9.5rem] font-black uppercase tracking-[-0.08em] text-sp-deep-brown"
+            style={{ y: bgWordY, opacity: bgWordOpacity }}
+            className="pointer-events-none absolute inset-0 overflow-hidden"
           >
-            BUILD
+            <div className="absolute left-[2%] top-[2%] font-sans text-[9rem] font-black uppercase leading-[0.84] tracking-[-0.08em] text-[#E8E0CF]">
+              <div>STAY PLAYFUL STAY PLAYFUL</div>
+              <div>STAY PLAYFUL STAY PLAYFUL</div>
+              <div>STAY PLAYFUL STAY PLAYFUL</div>
+              <div>STAY PLAYFUL STAY PLAYFUL</div>
+            </div>
           </motion.div>
 
-          <motion.div
-            style={{ opacity: word3Opacity }}
-            className="pointer-events-none absolute left-[3%] top-[8%] font-sans text-[8.6rem] font-black uppercase tracking-[-0.08em] text-sp-deep-brown"
-          >
-            TRANSFORM
-          </motion.div>
+          <div className="absolute left-[5%] top-[13%] h-72 w-72 rounded-full bg-[#FFABFF]/18 blur-3xl" />
+          <div className="absolute left-[28%] bottom-[9%] h-72 w-72 rounded-full bg-[#00E2FF]/10 blur-3xl" />
+          <div className="absolute right-[10%] top-[14%] h-80 w-80 rounded-full bg-[#FFBD17]/12 blur-3xl" />
 
-          {/* Header offset space so fixed nav doesn't visually crush it */}
-          <div className="mx-auto grid h-full max-w-7xl grid-cols-[0.88fr_1.12fr] gap-10 px-8 pb-10 pt-28">
-            {/* LEFT SIDE */}
+          <div className="mx-auto grid h-full max-w-[1700px] grid-cols-[0.9fr_1.1fr] gap-10 px-8 pb-10 pt-28">
+            {/* LEFT */}
             <motion.div
-              style={{ y: leftBlockY }}
+              style={{ y: leftY }}
               className="relative z-10 flex min-h-full flex-col justify-between"
             >
-              <div>
-                <p className="mb-4 text-sm font-black uppercase tracking-[0.28em] text-sp-hot-pink">
-                  Programs
+              <div className="max-w-[700px]">
+                <p className="text-sm font-black uppercase tracking-[0.28em] text-[#FF008E]">
+                  Services
                 </p>
 
-                <h2 className="max-w-[650px] font-serif text-[5.5rem] leading-[0.92] tracking-[-0.06em] text-sp-deep-brown">
-                  Your path to
-                  <span className="mt-3 block w-fit bg-[#DDF0D5] px-4 py-1 italic text-sp-hot-pink">
-                    wellbeing
-                  </span>
+                <h2 className="mt-5 font-sans text-[5.4rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-black">
+                  REWRITE
+                  <br />
+                  YOUR
+                  <br />
+                  SITUATION.
+                  <br />
+                  CREATE
+                  <br />
+                  A NEW ONE.
                 </h2>
 
-                <p className="mt-6 max-w-[600px] text-[1.55rem] leading-[1.65] text-sp-deep-brown/72">
-                  Every journey is unique. Choose the level of support that fits
-                  your life. Scroll to explore each pathway.
+                <p className="mt-8 max-w-[620px] text-[1.45rem] leading-[1.7] text-black/72">
+                  Four different ways to start — designed as strong foundations,
+                  and then shaped around you. This is not one-size-fits-all
+                  support. It is flexible, personal, and built to meet real life.
                 </p>
               </div>
 
-              {/* FILL THE WHITE SPACE */}
-              <div className="space-y-6 pb-2">
-                <div className="flex items-center gap-4">
-                  <div className="inline-flex items-center gap-3 rounded-full border-2 border-sp-deep-brown/15 bg-white/75 px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-sp-deep-brown">
-                    <span>Scroll</span>
-                    <span className="h-2.5 w-2.5 rounded-full bg-sp-hot-pink" />
-                    <span>Reveal</span>
-                  </div>
+              <div className="max-w-[680px] space-y-6 pb-3">
+                <div className="inline-flex items-center gap-3 border-[3px] border-black bg-[#FFBD17] px-5 py-3 shadow-[6px_6px_0_0_rgba(0,0,0,1)]">
+                  <span className="text-sm font-black uppercase tracking-[0.16em] text-black">
+                    It’s simple:
+                  </span>
+                  <span className="text-sm font-black uppercase tracking-[0.12em] text-black/80">
+                    4 core services • customized for you
+                  </span>
+                </div>
 
-                  <motion.div
-                    style={{ y: badgeY, rotate: badgeRotate }}
-                    className="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFBD17] font-serif text-xl italic text-sp-deep-brown shadow-[6px_6px_0_0_rgba(0,0,0,0.10)]"
+                <p className="max-w-[620px] text-[1.08rem] leading-8 text-black/68">
+                  Start with the offer that fits best right now. We’ll adapt the
+                  experience, pace, and level of support so it actually works for
+                  your needs.
+                </p>
+
+                <div className="flex items-center gap-5">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center justify-center border-[3px] border-black bg-[#FF008E] px-7 py-4 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-transform duration-200 hover:-translate-y-1"
                   >
-                    3
-                  </motion.div>
+                    Book your service
+                  </a>
+
+                  <PlayfulCTACluster />
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
-                  {programs.map((program) => (
-                    <div
-                      key={program.id}
-                      className={cn(
-                        "rounded-[1.4rem] border-2 border-sp-deep-brown/10 p-4 shadow-[0_6px_20px_rgba(0,0,0,0.03)]",
-                        program.accent
-                      )}
-                    >
-                      <p className="text-[10px] font-black uppercase tracking-[0.18em] text-sp-hot-pink">
-                        {program.step}
-                      </p>
-                      <p className="mt-2 font-serif text-[1.2rem] leading-tight text-sp-deep-brown">
-                        {program.title}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-sm font-black uppercase tracking-[0.14em] text-black/55">
+                  Details are coming.
+                </p>
               </div>
             </motion.div>
 
-            {/* RIGHT SIDE SCENE */}
+            {/* RIGHT */}
             <div className="relative flex min-h-full items-center justify-center">
-              {/* faint stack behind active card */}
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                <div className="absolute h-[75%] w-[84%] rounded-[2.2rem] border-2 border-sp-deep-brown/7 bg-white/20 backdrop-blur-[1px]" />
-                <div className="absolute translate-x-5 translate-y-5 h-[74%] w-[83%] rounded-[2.2rem] border-2 border-sp-deep-brown/5 bg-white/12" />
+              <div className="relative h-[78vh] w-full max-w-[820px] overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[14px_14px_0_0_rgba(0,0,0,1)]">
+                {/* Window bar */}
+                <div className="flex items-center justify-between border-b-[4px] border-black bg-[#FFABFF] px-6 py-4">
+                  <div className="flex items-center gap-2">
+                    <span className="h-4 w-4 rounded-full border-[2px] border-black bg-white" />
+                    <span className="h-4 w-4 rounded-full border-[2px] border-black bg-[#FFBD17]" />
+                    <span className="h-4 w-4 rounded-full border-[2px] border-black bg-[#00E2FF]" />
+                  </div>
+
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-black">
+                    Rolling offers
+                  </p>
+                </div>
+
+                {/* Rolling list */}
+                <motion.div
+                  style={{ y: desktopCardsY }}
+                  className="flex flex-col gap-0"
+                >
+                  {services.map((service) => (
+                    <DesktopServiceCard key={service.id} service={service} />
+                  ))}
+                </motion.div>
               </div>
-
-              {/* scene 1 */}
-              <motion.div
-                style={{ opacity: scene1Opacity, y: scene1Y, scale: scene1Scale }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <ProgramCard program={programs[0]} />
-              </motion.div>
-
-              {/* scene 2 */}
-              <motion.div
-                style={{ opacity: scene2Opacity, y: scene2Y, scale: scene2Scale }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <ProgramCard program={programs[1]} />
-              </motion.div>
-
-              {/* scene 3 */}
-              <motion.div
-                style={{ opacity: scene3Opacity, y: scene3Y, scale: scene3Scale }}
-                className="absolute inset-0 flex items-center justify-center"
-              >
-                <ProgramCard program={programs[2]} />
-              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* MOBILE / TABLET */}
-      <section className="bg-sp-cream px-4 py-16 xl:hidden">
+      <section className="bg-[#F6F1E7] px-4 py-16 xl:hidden">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.28em] text-sp-hot-pink">
-            Programs
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#FF008E]">
+            Services
           </p>
 
-          <h2 className="font-serif text-5xl leading-[0.95] tracking-[-0.05em] text-sp-deep-brown sm:text-6xl">
-            Your path to
-            <span className="mt-3 block w-fit bg-[#DDF0D5] px-3 py-1 italic text-sp-hot-pink">
-              wellbeing
-            </span>
+          <h2 className="mt-5 font-sans text-[3.1rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-black sm:text-[4.6rem]">
+            REWRITE
+            <br />
+            YOUR
+            <br />
+            SITUATION.
+            <br />
+            CREATE
+            <br />
+            A NEW ONE.
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-sp-deep-brown/72">
-            Every journey is unique. Choose the level of support that fits your
-            life.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-black/72">
+            Four different ways to start — built as strong foundations, then
+            customized around you, your pace, and the kind of support you need.
           </p>
 
+          <div className="mt-6 inline-flex border-[3px] border-black bg-[#FFBD17] px-4 py-3 shadow-[6px_6px_0_0_rgba(0,0,0,1)]">
+            <span className="text-sm font-black uppercase tracking-[0.12em] text-black">
+              It’s simple: 4 core services, customized for you.
+            </span>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center border-[3px] border-black bg-[#FF008E] px-6 py-4 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
+            >
+              Book your service
+            </a>
+
+            <div className="flex gap-3">
+              <a
+                href="#programs"
+                className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-[#FFBD17] shadow-[6px_6px_0_0_rgba(0,0,0,1)]"
+                aria-label="View offers"
+              >
+                <Sparkles className="h-5 w-5 text-black" />
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-[#FF7F00] shadow-[6px_6px_0_0_rgba(0,0,0,1)]"
+                aria-label="Book now"
+              >
+                <CalendarDays className="h-5 w-5 text-white" />
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-[#00E2FF] shadow-[6px_6px_0_0_rgba(0,0,0,1)]"
+                aria-label="Ask a question"
+              >
+                <MessageCircle className="h-5 w-5 text-black" />
+              </a>
+            </div>
+          </div>
+
           <div className="mt-10 space-y-6">
-            {programs.map((program) => (
-              <div
-                key={program.id}
-                className="overflow-hidden rounded-[2rem] border-[3px] border-sp-deep-brown bg-white shadow-[8px_8px_0_0_rgba(0,0,0,0.1)]"
+            {services.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="overflow-hidden rounded-[28px] border-[4px] border-black bg-white shadow-[10px_10px_0_0_rgba(0,0,0,1)]"
               >
                 <div className="relative h-[260px]">
                   <Image
-                    src={program.image}
-                    alt={program.title}
+                    src={service.image}
+                    alt={service.title}
                     fill
-                    className="object-cover"
                     sizes="100vw"
+                    className="object-cover"
                   />
                 </div>
 
-                <div className={cn("p-6", program.accent)}>
-                  <div className="mb-3 flex items-center justify-between">
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-sp-hot-pink">
-                      {program.eyebrow}
+                <div className={cn("p-6", service.accent)}>
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FF008E]">
+                      {service.eyebrow}
                     </p>
-                    <span className="font-serif text-xl text-sp-deep-brown/40">
-                      {program.step}
+                    <span className="text-lg font-black uppercase tracking-[0.08em] text-black/45">
+                      {service.id}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-3xl text-sp-deep-brown">
-                    {program.title}
+                  <h3 className="mt-4 font-sans text-[2.1rem] font-black uppercase leading-[0.92] tracking-[-0.06em] text-black">
+                    {service.title}
                   </h3>
 
-                  <p className="mt-4 text-base leading-7 text-sp-deep-brown/75">
-                    {program.description}
+                  <p className="mt-4 text-base leading-7 text-black/76">
+                    {service.description}
                   </p>
 
                   <div className="mt-6 flex items-center justify-between gap-3">
-                    <span className="rounded-full border-2 border-sp-deep-brown bg-white/75 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-sp-deep-brown">
-                      {program.chip}
+                    <span className="border-[3px] border-black bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[0.15em] text-black shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+                      {service.chip}
                     </span>
 
                     <a
                       href="#contact"
-                      className="rounded-full bg-sp-hot-pink px-5 py-3 text-sm font-black uppercase tracking-[0.08em] text-white"
+                      className="border-[3px] border-black bg-[#FF008E] px-5 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[6px_6px_0_0_rgba(0,0,0,1)]"
                     >
-                      Learn more
+                      Book now
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+
+          <p className="mt-10 text-sm font-black uppercase tracking-[0.14em] text-black/55">
+            Details are coming.
+          </p>
         </div>
       </section>
     </>
   )
 }
 
-function ProgramCard({ program }: { program: (typeof programs)[number] }) {
+function DesktopServiceCard({
+  service,
+}: {
+  service: (typeof services)[number]
+}) {
   return (
-    <div className="grid w-full max-w-[980px] overflow-hidden rounded-[2.2rem] border-[3px] border-sp-deep-brown bg-white shadow-[12px_12px_0_0_rgba(0,0,0,0.12)] xl:grid-cols-[1fr_0.92fr]">
-      <div className="relative min-h-[420px] xl:min-h-[620px]">
+    <article className="grid min-h-[78vh] grid-cols-[0.95fr_1.05fr] border-b-[4px] border-black last:border-b-0">
+      <div className="relative min-h-full">
         <Image
-          src={program.image}
-          alt={program.title}
+          src={service.image}
+          alt={service.title}
           fill
-          sizes="(max-width: 1280px) 100vw, 50vw"
+          sizes="(max-width: 1280px) 100vw, 40vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/8 via-transparent to-transparent" />
+        <div className="absolute left-5 top-5 border-[3px] border-black bg-white px-4 py-2 shadow-[5px_5px_0_0_rgba(0,0,0,1)]">
+          <span className="text-[11px] font-black uppercase tracking-[0.14em] text-black">
+            {service.id}
+          </span>
+        </div>
       </div>
 
-      <div className={cn("flex flex-col justify-between p-8 xl:p-10", program.accent)}>
+      <div
+        className={cn("flex flex-col justify-between p-8 xl:p-10", service.accent)}
+      >
         <div>
-          <div className="mb-5 flex items-center justify-between">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-sp-hot-pink">
-              {program.eyebrow}
-            </p>
+          <p className="text-sm font-black uppercase tracking-[0.2em] text-[#FF008E]">
+            {service.eyebrow}
+          </p>
 
-            <span className="font-serif text-2xl text-sp-deep-brown/40">
-              {program.step}
-            </span>
-          </div>
-
-          <h3 className="font-serif text-5xl leading-[0.96] tracking-[-0.05em] text-sp-deep-brown">
-            {program.title}
+          <h3 className="mt-5 font-sans text-[4rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-black xl:text-[4.5rem]">
+            {service.title}
           </h3>
 
-          <p className="mt-6 text-xl leading-9 text-sp-deep-brown/78">
-            {program.description}
+          <p className="mt-6 max-w-[500px] text-[1.18rem] leading-9 text-black/78">
+            {service.description}
           </p>
         </div>
 
-        <div className="mt-10 flex items-center justify-between gap-4">
-          <span className="inline-flex rounded-full border-2 border-sp-deep-brown bg-white/75 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-sp-deep-brown">
-            {program.chip}
-          </span>
+        <div className="mt-10 flex items-end justify-between gap-6">
+          <div className="space-y-4">
+            <span className="inline-flex border-[3px] border-black bg-white px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[5px_5px_0_0_rgba(0,0,0,1)]">
+              {service.chip}
+            </span>
+
+            <p className="max-w-[360px] text-sm leading-7 text-black/65">
+              A flexible starting point that can be shaped around your needs.
+            </p>
+          </div>
 
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-sp-hot-pink px-7 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[0_8px_24px_rgba(255,0,142,0.22)] transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center border-[3px] border-black bg-[#FF008E] px-7 py-4 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-transform duration-200 hover:-translate-y-1"
           >
-            Learn more
+            Book now
           </a>
         </div>
       </div>
+    </article>
+  )
+}
+
+function PlayfulCTACluster() {
+  return (
+    <div className="group relative hidden h-20 w-[13rem] items-center xl:flex">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[4.8rem] w-[4.8rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/5 blur-xl" />
+
+      <a
+        href="#programs"
+        aria-label="View offers"
+        className="absolute left-1/2 top-1/2 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 -rotate-[8deg] items-center justify-center border-[3px] border-black bg-[#FFBD17] shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-all duration-300 group-hover:-translate-x-[175%] group-hover:-translate-y-1/2 group-hover:-rotate-[85deg] hover:scale-105"
+      >
+        <Sparkles className="h-6 w-6 text-black transition-transform duration-300 group-hover:rotate-12" />
+      </a>
+
+      <a
+        href="#contact"
+        aria-label="Book now"
+        className="absolute left-1/2 top-1/2 z-30 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 rotate-[10deg] items-center justify-center border-[3px] border-black bg-[#FF7F00] shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-all duration-300 group-hover:-translate-y-[58%] group-hover:rotate-0 hover:scale-105"
+      >
+        <CalendarDays className="h-6 w-6 text-white transition-transform duration-300 group-hover:scale-110" />
+      </a>
+
+      <a
+        href="#contact"
+        aria-label="Ask a question"
+        className="absolute left-1/2 top-1/2 z-20 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 rotate-[8deg] items-center justify-center border-[3px] border-black bg-[#00E2FF] shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-all duration-300 group-hover:translate-x-[75%] group-hover:-translate-y-1/2 group-hover:rotate-[85deg] hover:scale-105"
+      >
+        <MessageCircle className="h-6 w-6 text-black transition-transform duration-300 group-hover:scale-110" />
+      </a>
     </div>
   )
 }
