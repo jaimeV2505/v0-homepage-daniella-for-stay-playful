@@ -37,8 +37,8 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-4 border border-white/35 sm:inset-6 lg:inset-8" />
 
         {/* LARGE EDITORIAL WORD LEFT */}
-        <div className="pointer-events-none absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
-          <div className="hero-side-title text-[#FF2B6A]">
+        <div className="absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
+          <div className="hero-side-title hero-hover">
             <span className="block">FEEL</span>
             <span className="block">WELL</span>
           </div>
@@ -93,33 +93,68 @@ export function Hero() {
       </div>
 
       <style jsx>{`
-  .hero-side-title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 0.82;
-    letter-spacing: -0.08em;
-    font-size: clamp(4rem, 7vw, 8rem);
-    color: #FF2B6A;
-    transition: all 0.4s ease;
-  }
+        .hero-wordmark {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 900;
+          text-transform: lowercase;
+          line-height: 0.8;
+          letter-spacing: -0.09em;
+          font-size: clamp(4.5rem, 10vw, 9.2rem);
+          color: #1f1f1f;
+          text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.12);
+        }
 
-  .hero-hover {
-    background: linear-gradient(
-      90deg,
-      #FF008E,
-      #FF7F00,
-      #00E2FF,
-      #FF008E
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
+        .hero-side-title {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          line-height: 0.82;
+          letter-spacing: -0.08em;
+          font-size: clamp(4rem, 7vw, 8rem);
+          color: #ff2b6a;
+          transition:
+            transform 0.35s ease,
+            background-position 0.45s ease,
+            color 0.35s ease;
+          cursor: default;
+        }
 
-  .hero-hover:hover {
-    color: transparent;
-    background-position: right center;
-    transform: translateY(-2px);
-  }
-`}</style>
+        .hero-hover {
+          background: linear-gradient(
+            90deg,
+            #ff008e 0%,
+            #ff7f00 35%,
+            #00e2ff 68%,
+            #ff008e 100%
+          );
+          background-size: 220% auto;
+          background-position: left center;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+
+        .hero-hover:hover {
+          color: transparent;
+          background-position: right center;
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+          .hero-wordmark {
+            text-align: center;
+            font-size: clamp(4rem, 14vw, 6.8rem);
+            line-height: 0.82;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-wordmark {
+            font-size: clamp(3.6rem, 16vw, 5.5rem);
+            letter-spacing: -0.1em;
+            line-height: 0.84;
+          }
+        }
+      `}</style>
+    </section>
+  )
+}
