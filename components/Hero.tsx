@@ -93,42 +93,33 @@ export function Hero() {
       </div>
 
       <style jsx>{`
-        .hero-wordmark {
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: 900;
-          text-transform: lowercase;
-          line-height: 0.8;
-          letter-spacing: -0.09em;
-          font-size: clamp(4.5rem, 10vw, 9.2rem);
-          color: #1f1f1f;
-          text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.12);
-        }
+  .hero-side-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.82;
+    letter-spacing: -0.08em;
+    font-size: clamp(4rem, 7vw, 8rem);
+    color: #FF2B6A;
+    transition: all 0.4s ease;
+  }
 
-        .hero-side-title {
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: 900;
-          text-transform: uppercase;
-          line-height: 0.82;
-          letter-spacing: -0.08em;
-          font-size: clamp(4rem, 7vw, 8rem);
-        }
+  .hero-hover {
+    background: linear-gradient(
+      90deg,
+      #FF008E,
+      #FF7F00,
+      #00E2FF,
+      #FF008E
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 
-        @media (max-width: 1024px) {
-          .hero-wordmark {
-            text-align: center;
-            font-size: clamp(4rem, 14vw, 6.8rem);
-            line-height: 0.82;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .hero-wordmark {
-            font-size: clamp(3.6rem, 16vw, 5.5rem);
-            letter-spacing: -0.1em;
-            line-height: 0.84;
-          }
-        }
-      `}</style>
-    </section>
-  )
-}
+  .hero-hover:hover {
+    color: transparent;
+    background-position: right center;
+    transform: translateY(-2px);
+  }
+`}</style>
