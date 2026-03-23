@@ -44,7 +44,6 @@ export function BrandStatement() {
                 </div>
               </div>
 
-              {/* MINI EDITORIAL CARD */}
               <div className="mt-10 w-[200px] border-[4px] border-black bg-[#FFABFF] p-3 shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:w-[230px] lg:w-[248px] xl:w-[270px]">
                 <div className="mb-2 text-[10px] font-black uppercase tracking-[0.16em] text-black sm:text-[11px]">
                   Playful note
@@ -69,47 +68,27 @@ export function BrandStatement() {
             </div>
 
             {/* RIGHT PANEL */}
-            <div className="relative min-h-[460px] bg-[#FFABFF] lg:min-h-full">
-              {/* integrated shape area */}
-              <div className="absolute inset-0 overflow-hidden bg-[#FFABFF]">
-                {/* FULL SHAPE CONTAINER */}
-                <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{
-                    clipPath:
-                      "polygon(27% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 69%, 6% 63%, 12% 58%, 17% 52%, 22% 45%, 27% 37%, 31% 29%, 34% 21%, 34% 0%)",
-                  }}
-                >
-                  <Image
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80"
-                    alt="Editorial portrait for Stay Playful"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 52vw"
-                    className="object-cover"
-                    priority={false}
-                  />
-                </div>
-
-                {/* INNER LILAC CUT, PART OF THE SAME COMPOSITION */}
-                <div
-                  className="absolute inset-y-0 left-0 w-[38%] bg-[#D993E2]"
-                  style={{
-                    clipPath:
-                      "polygon(0 0, 100% 0, 100% 26%, 89% 39%, 76% 52%, 62% 65%, 44% 78%, 22% 90%, 0 100%)",
-                  }}
-                />
-              </div>
-
+            <div className="relative min-h-[520px] bg-[#FFABFF] px-5 py-5 sm:px-6 sm:py-6 lg:min-h-full lg:px-8 lg:py-8 xl:px-10 xl:py-10">
               {/* sticker */}
-              <div className="absolute right-4 top-4 hidden rotate-[4deg] border-[4px] border-black bg-[#00E2FF] px-4 py-2 shadow-[6px_6px_0_0_rgba(0,0,0,1)] xl:block">
+              <div className="absolute right-5 top-5 z-20 hidden rotate-[4deg] border-[4px] border-black bg-[#00E2FF] px-4 py-2 shadow-[6px_6px_0_0_rgba(0,0,0,1)] xl:block">
                 <span className="text-[11px] font-black uppercase tracking-[0.14em] text-black">
                   Joy is part of wellbeing
                 </span>
               </div>
 
-              {/* caption box */}
-              <div className="absolute bottom-[58px] left-4 right-4 sm:left-6 sm:right-auto lg:left-6">
-                <div className="max-w-[360px] border-[4px] border-black bg-white/95 px-4 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
+              {/* scallop/cloud frame */}
+              <div className="relative mx-auto flex h-full max-w-[760px] flex-col justify-end">
+                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[10px_10px_0_0_rgba(0,0,0,1)] scallop-shape">
+                  <Image
+                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
+                    alt="Editorial group portrait for Stay Playful"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="relative -mt-2 z-10 mx-auto w-[92%] border-[4px] border-black bg-white px-4 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:mx-0 sm:w-[360px]">
                   <p className="text-[12px] font-black uppercase tracking-[0.16em] text-black">
                     Stay Playful
                   </p>
@@ -120,7 +99,6 @@ export function BrandStatement() {
                 </div>
               </div>
 
-              {/* footer label */}
               <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-3 sm:px-6 lg:px-8">
                 <p className="text-center text-sm font-black uppercase tracking-[0.24em] text-black sm:text-base lg:text-lg">
                   STAY PLAYFUL
@@ -130,6 +108,79 @@ export function BrandStatement() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scallop-shape {
+          clip-path: polygon(
+            12% 0%,
+            26% 0%,
+            32% 6%,
+            40% 0%,
+            56% 0%,
+            62% 6%,
+            70% 0%,
+            86% 0%,
+            100% 12%,
+            100% 28%,
+            94% 34%,
+            100% 42%,
+            100% 58%,
+            94% 64%,
+            100% 72%,
+            100% 88%,
+            88% 100%,
+            72% 100%,
+            66% 94%,
+            58% 100%,
+            42% 100%,
+            34% 94%,
+            26% 100%,
+            12% 100%,
+            0% 88%,
+            0% 72%,
+            6% 64%,
+            0% 58%,
+            0% 42%,
+            6% 34%,
+            0% 28%,
+            0% 12%
+          );
+        }
+
+        @media (max-width: 768px) {
+          .scallop-shape {
+            clip-path: polygon(
+              10% 0%,
+              28% 0%,
+              35% 7%,
+              50% 0%,
+              72% 0%,
+              90% 0%,
+              100% 10%,
+              100% 30%,
+              93% 38%,
+              100% 50%,
+              100% 70%,
+              93% 78%,
+              100% 90%,
+              90% 100%,
+              70% 100%,
+              62% 93%,
+              50% 100%,
+              30% 100%,
+              22% 93%,
+              10% 100%,
+              0% 90%,
+              0% 70%,
+              7% 62%,
+              0% 50%,
+              0% 30%,
+              7% 22%,
+              0% 10%
+            );
+          }
+        }
+      `}</style>
     </section>
   )
 }
