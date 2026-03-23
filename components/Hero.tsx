@@ -52,7 +52,7 @@ export function Hero() {
           {/* LOGO */}
           <div className="w-[300px] sm:w-[380px] lg:w-[520px] xl:w-[620px]">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo1-JcaoSTEJKw2rySZFIaOZpeEs1Hjq3O.png"
+              src="/logo1.png"
               alt="Stay Playful logo"
               width={1400}
               height={1400}
