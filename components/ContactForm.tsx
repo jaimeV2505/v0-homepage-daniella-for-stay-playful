@@ -144,9 +144,9 @@ export function ContactForm() {
                 </p>
 
                 <h2 className="max-w-[900px] font-sans text-[2.9rem] font-black uppercase leading-[0.87] tracking-[-0.06em] text-white sm:text-[4.3rem] lg:text-[5.2rem] xl:text-[5.8rem]">
-                  Let’s build something
+                  Are you ready to
                   <br />
-                  worth talking about.
+                  Create your Playground.
                 </h2>
 
                 <div className="mt-8 max-w-xl space-y-6 text-[1.02rem] leading-[1.44] text-white/92 sm:text-[1.14rem]">
