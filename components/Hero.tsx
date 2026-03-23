@@ -1,11 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
-import { ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -16,79 +13,122 @@ export function Hero() {
   })
 
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.04])
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, 25])
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, 12])
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 24])
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 12])
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-[#F7EFE9]">
-      <div className="relative min-h-[92vh] overflow-hidden border-b-[3px] border-[#2B1A16]">
-
-        {/* BACKGROUND IMAGE */}
+      <div className="relative min-h-[88vh] overflow-hidden border-b-[3px] border-[#2B1A16] sm:min-h-[92vh]">
+        {/* BACKGROUND */}
         <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0">
           <Image
             src="/hero.jpg"
-            alt="Abstract minimal background"
+            alt="Stay Playful hero background"
             fill
             priority
             className="object-cover object-center"
           />
         </motion.div>
 
-        {/* SUPER SOFT OVERLAY */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.12)_100%)]" />
+        {/* VERY SOFT OVERLAY */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02)_0%,rgba(255,255,255,0.03)_35%,rgba(0,0,0,0.08)_100%)]" />
 
-        {/* FRAME */}
-        <div className="pointer-events-none absolute inset-4 border border-white/30 sm:inset-6 lg:inset-8" />
+        {/* SUBTLE FRAME */}
+        <div className="pointer-events-none absolute inset-4 border border-white/35 sm:inset-6 lg:inset-8" />
 
-        {/* CENTER CONTENT */}
-        <motion.div
-          style={{ y: contentY }}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="relative z-10 flex min-h-[92vh] flex-col items-center justify-center px-4 text-center"
-        >
-
-          {/* LOGO */}
-          <div className="w-[300px] sm:w-[380px] lg:w-[520px] xl:w-[620px]">
-            <Image
-              src="/logo1.png"
-              alt="Stay Playful logo"
-              width={1400}
-              height={1400}
-              priority
-              className="h-auto w-full drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
-            />
+        {/* LARGE EDITORIAL WORD LEFT */}
+        <div className="pointer-events-none absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
+          <div className="hero-side-title text-[#FF2B6A]">
+            <span className="block">FEEL</span>
+            <span className="block">WELL</span>
           </div>
+        </div>
 
-          {/* TEXT */}
-          <p className="mt-8 max-w-[640px] text-lg leading-8 text-black/80 sm:text-[1.15rem]">
+        {/* SMALL COPY RIGHT */}
+        <div className="pointer-events-none absolute bottom-[10%] right-6 z-10 hidden max-w-[360px] lg:block xl:right-10">
+          <p className="text-[15px] leading-[1.45] text-black/78">
             A softer, more personal approach to wellbeing — centered on balance,
             curiosity, and a sustainable relationship with food, movement, and yourself.
           </p>
+        </div>
 
-          {/* CTA */}
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Button
-              asChild
-              className="h-14 rounded-full border-[3px] border-black bg-[#FF008E] px-8 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[8px_8px_0_0_rgba(0,0,0,0.15)] transition hover:-translate-y-1"
-            >
-              <Link href="#contact">
-                Book a Free Call
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+        {/* HERO CONTENT */}
+        <motion.div
+          style={{ y: heroY }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="relative z-20 flex min-h-[88vh] items-center justify-center px-4 py-12 sm:min-h-[92vh] sm:px-6 lg:px-8"
+        >
+          <div className="flex flex-col items-center justify-center gap-4 sm:gap-5 lg:flex-row lg:items-end lg:gap-0">
+            {/* SYMBOL = THE REAL S */}
+            <div className="relative z-10 w-[118px] shrink-0 sm:w-[150px] md:w-[175px] lg:w-[205px] xl:w-[225px]">
+              <Image
+                src="/logo2.png"
+                alt="Stay Playful symbol"
+                width={1200}
+                height={1200}
+                priority
+                className="h-auto w-full"
+              />
+            </div>
 
-            <Button
-              asChild
-              variant="outline"
-              className="h-14 rounded-full border-[3px] border-black bg-white/80 px-8 text-sm font-black uppercase tracking-[0.08em] text-black shadow-[8px_8px_0_0_rgba(0,0,0,0.08)] transition hover:-translate-y-1"
-            >
-              <Link href="#programs">Explore Programs</Link>
-            </Button>
+            {/* WORDMARK CONNECTED TO SYMBOL */}
+            <div className="-mt-1 text-center lg:-ml-4 lg:mt-0 lg:mb-[18px] lg:text-left xl:-ml-5 xl:mb-[20px]">
+              <div className="hero-wordmark text-[#1B1B1B]">
+                <span className="block">tay</span>
+                <span className="block">playful</span>
+              </div>
+            </div>
           </div>
         </motion.div>
+
+        {/* MOBILE SUPPORT TEXT */}
+        <div className="absolute bottom-8 left-1/2 z-20 w-full max-w-[340px] -translate-x-1/2 px-4 text-center lg:hidden">
+          <p className="text-base leading-7 text-black/78">
+            A softer, more personal approach to wellbeing — centered on balance,
+            curiosity, and a sustainable relationship with food, movement, and yourself.
+          </p>
+        </div>
       </div>
+
+      <style jsx>{`
+        .hero-wordmark {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 900;
+          text-transform: lowercase;
+          line-height: 0.8;
+          letter-spacing: -0.09em;
+          font-size: clamp(4.5rem, 10vw, 9.2rem);
+          color: #1f1f1f;
+          text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-side-title {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          line-height: 0.82;
+          letter-spacing: -0.08em;
+          font-size: clamp(4rem, 7vw, 8rem);
+        }
+
+        @media (max-width: 1024px) {
+          .hero-wordmark {
+            text-align: center;
+            font-size: clamp(4rem, 14vw, 6.8rem);
+            line-height: 0.82;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-wordmark {
+            font-size: clamp(3.6rem, 16vw, 5.5rem);
+            letter-spacing: -0.1em;
+            line-height: 0.84;
+          }
+        }
+      `}</style>
     </section>
   )
 }
