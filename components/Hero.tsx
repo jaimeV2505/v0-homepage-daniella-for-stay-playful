@@ -117,6 +117,7 @@ export function Hero() {
             background-position 0.45s ease,
             color 0.35s ease;
           cursor: default;
+          user-select: none;
         }
 
         .hero-hover {
