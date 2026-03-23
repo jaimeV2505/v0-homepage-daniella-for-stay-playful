@@ -26,7 +26,7 @@ export function Hero() {
         {/* BACKGROUND IMAGE */}
         <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1629196914168-5fbc4e7e3c9f?auto=format&fit=crop&w=1800&q=80"
+            src="/hero.jpg"
             alt="Abstract minimal background"
             fill
             priority
