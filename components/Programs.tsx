@@ -61,13 +61,13 @@ export function Programs() {
     offset: ["start start", "end end"],
   })
 
-  const desktopCardsY = useTransform(scrollYProgress, [0, 1], [0, -960])
-  const leftY = useTransform(scrollYProgress, [0, 1], [0, -28])
-  const bgWordY = useTransform(scrollYProgress, [0, 1], [0, -90])
+  const desktopCardsY = useTransform(scrollYProgress, [0, 1], [0, -520])
+  const leftY = useTransform(scrollYProgress, [0, 1], [0, -18])
+  const bgWordY = useTransform(scrollYProgress, [0, 1], [0, -50])
   const bgWordOpacity = useTransform(
     scrollYProgress,
     [0, 0.2, 1],
-    [0.14, 0.18, 0.24]
+    [0.1, 0.14, 0.2]
   )
 
   return (
@@ -76,7 +76,7 @@ export function Programs() {
       <section
         id="programs"
         ref={ref}
-        className="relative hidden h-[320vh] overflow-hidden bg-[#F6F1E7] xl:block"
+        className="relative hidden h-[220vh] overflow-hidden bg-[#F6F1E7] xl:block"
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background */}
@@ -87,30 +87,29 @@ export function Programs() {
             style={{ y: bgWordY, opacity: bgWordOpacity }}
             className="pointer-events-none absolute inset-0 overflow-hidden"
           >
-            <div className="absolute left-[2%] top-[2%] font-sans text-[9rem] font-black uppercase leading-[0.84] tracking-[-0.08em] text-[#E8E0CF]">
-              <div>STAY PLAYFUL STAY PLAYFUL</div>
+            <div className="absolute left-[2%] top-[4%] font-sans text-[7rem] font-black uppercase leading-[0.84] tracking-[-0.08em] text-[#E8E0CF]">
               <div>STAY PLAYFUL STAY PLAYFUL</div>
               <div>STAY PLAYFUL STAY PLAYFUL</div>
               <div>STAY PLAYFUL STAY PLAYFUL</div>
             </div>
           </motion.div>
 
-          <div className="absolute left-[5%] top-[13%] h-72 w-72 rounded-full bg-[#FFABFF]/18 blur-3xl" />
-          <div className="absolute left-[28%] bottom-[9%] h-72 w-72 rounded-full bg-[#00E2FF]/10 blur-3xl" />
-          <div className="absolute right-[10%] top-[14%] h-80 w-80 rounded-full bg-[#FFBD17]/12 blur-3xl" />
+          <div className="absolute left-[4%] top-[14%] h-64 w-64 rounded-full bg-[#FFABFF]/16 blur-3xl" />
+          <div className="absolute left-[22%] bottom-[10%] h-64 w-64 rounded-full bg-[#00E2FF]/10 blur-3xl" />
+          <div className="absolute right-[10%] top-[18%] h-72 w-72 rounded-full bg-[#FFBD17]/12 blur-3xl" />
 
-          <div className="mx-auto grid h-full max-w-[1700px] grid-cols-[0.9fr_1.1fr] gap-10 px-8 pb-10 pt-28">
+          <div className="mx-auto grid h-full max-w-[1580px] grid-cols-[0.9fr_1.05fr] items-center gap-12 px-8 py-20">
             {/* LEFT */}
             <motion.div
               style={{ y: leftY }}
-              className="relative z-10 flex min-h-full flex-col justify-between"
+              className="relative z-10 flex h-full flex-col justify-center"
             >
-              <div className="max-w-[700px]">
+              <div className="max-w-[660px]">
                 <p className="text-sm font-black uppercase tracking-[0.28em] text-[#FF008E]">
                   Services
                 </p>
 
-                <h2 className="mt-5 font-sans text-[5.4rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-black">
+                <h2 className="mt-5 font-sans text-[4.6rem] font-black uppercase leading-[0.9] tracking-[-0.09em] text-black 2xl:text-[5rem]">
                   REWRITE
                   <br />
                   YOUR
@@ -122,14 +121,14 @@ export function Programs() {
                   A NEW ONE.
                 </h2>
 
-                <p className="mt-8 max-w-[620px] text-[1.45rem] leading-[1.7] text-black/72">
+                <p className="mt-7 max-w-[580px] text-[1.22rem] leading-[1.7] text-black/72">
                   Four different ways to start — designed as strong foundations,
-                  and then shaped around you. This is not one-size-fits-all
-                  support. It is flexible, personal, and built to meet real life.
+                  then shaped around you. Flexible, personal, and built to work
+                  with real life.
                 </p>
               </div>
 
-              <div className="max-w-[680px] space-y-6 pb-3">
+              <div className="mt-10 max-w-[640px] space-y-5">
                 <div className="inline-flex items-center gap-3 border-[3px] border-black bg-[#FFBD17] px-5 py-3 shadow-[6px_6px_0_0_rgba(0,0,0,1)]">
                   <span className="text-sm font-black uppercase tracking-[0.16em] text-black">
                     It’s simple:
@@ -139,10 +138,10 @@ export function Programs() {
                   </span>
                 </div>
 
-                <p className="max-w-[620px] text-[1.08rem] leading-8 text-black/68">
+                <p className="max-w-[560px] text-[1rem] leading-8 text-black/68">
                   Start with the offer that fits best right now. We’ll adapt the
-                  experience, pace, and level of support so it actually works for
-                  your needs.
+                  pace, structure, and support level so it actually fits your
+                  needs.
                 </p>
 
                 <div className="flex items-center gap-5">
@@ -163,9 +162,8 @@ export function Programs() {
             </motion.div>
 
             {/* RIGHT */}
-            <div className="relative flex min-h-full items-center justify-center">
-              <div className="relative h-[78vh] w-full max-w-[820px] overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[14px_14px_0_0_rgba(0,0,0,1)]">
-                {/* Window bar */}
+            <div className="relative flex h-full items-center justify-center">
+              <div className="relative h-[72vh] w-full max-w-[760px] overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[14px_14px_0_0_rgba(0,0,0,1)]">
                 <div className="flex items-center justify-between border-b-[4px] border-black bg-[#FFABFF] px-6 py-4">
                   <div className="flex items-center gap-2">
                     <span className="h-4 w-4 rounded-full border-[2px] border-black bg-white" />
@@ -178,10 +176,9 @@ export function Programs() {
                   </p>
                 </div>
 
-                {/* Rolling list */}
                 <motion.div
                   style={{ y: desktopCardsY }}
-                  className="flex flex-col gap-0"
+                  className="flex flex-col"
                 >
                   {services.map((service) => (
                     <DesktopServiceCard key={service.id} service={service} />
@@ -328,7 +325,7 @@ function DesktopServiceCard({
   service: (typeof services)[number]
 }) {
   return (
-    <article className="grid min-h-[78vh] grid-cols-[0.95fr_1.05fr] border-b-[4px] border-black last:border-b-0">
+    <article className="grid min-h-[72vh] grid-cols-[0.95fr_1.05fr] border-b-[4px] border-black last:border-b-0">
       <div className="relative min-h-full">
         <Image
           src={service.image}
@@ -344,30 +341,28 @@ function DesktopServiceCard({
         </div>
       </div>
 
-      <div
-        className={cn("flex flex-col justify-between p-8 xl:p-10", service.accent)}
-      >
+      <div className={cn("flex flex-col justify-between p-8 xl:p-9", service.accent)}>
         <div>
           <p className="text-sm font-black uppercase tracking-[0.2em] text-[#FF008E]">
             {service.eyebrow}
           </p>
 
-          <h3 className="mt-5 font-sans text-[4rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-black xl:text-[4.5rem]">
+          <h3 className="mt-5 font-sans text-[3.4rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-black xl:text-[3.8rem]">
             {service.title}
           </h3>
 
-          <p className="mt-6 max-w-[500px] text-[1.18rem] leading-9 text-black/78">
+          <p className="mt-6 max-w-[460px] text-[1.06rem] leading-8 text-black/78">
             {service.description}
           </p>
         </div>
 
-        <div className="mt-10 flex items-end justify-between gap-6">
+        <div className="mt-8 flex items-end justify-between gap-6">
           <div className="space-y-4">
             <span className="inline-flex border-[3px] border-black bg-white px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-black shadow-[5px_5px_0_0_rgba(0,0,0,1)]">
               {service.chip}
             </span>
 
-            <p className="max-w-[360px] text-sm leading-7 text-black/65">
+            <p className="max-w-[320px] text-sm leading-7 text-black/65">
               A flexible starting point that can be shaped around your needs.
             </p>
           </div>
