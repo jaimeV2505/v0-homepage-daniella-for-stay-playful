@@ -2,9 +2,16 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Instagram, Sparkles, Menu } from "lucide-react"
+import { Instagram, Sparkles, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const navItems = [
   { label: "Programs", href: "#programs" },
@@ -28,13 +35,8 @@ export function Header() {
       {/* TOP ANNOUNCEMENT BAR */}
       <div className="relative z-[60] border-b-[3px] border-black bg-[#E3488B] px-4 py-3 text-white">
         <div className="mx-auto flex max-w-[1720px] items-center justify-center text-center text-sm font-semibold sm:text-[15px]">
-          <span className="hidden sm:inline">
-            Where your vision becomes something unforgettable
-          </span>
-          <span className="sm:hidden">Booking Spring 2026</span>
-
+          <span>Where your vision becomes something unforgettable</span>
           <span className="mx-3 opacity-90">|</span>
-
           <Link
             href="#contact"
             className="underline underline-offset-4 transition-opacity hover:opacity-80"
@@ -50,8 +52,8 @@ export function Header() {
           }`}
       >
         <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
-          <div className="grid h-[88px] grid-cols-[1fr_auto_1fr] items-center gap-4 lg:h-[110px]">
-            {/* LEFT NAV */}
+          <div className="grid h-[86px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[110px] lg:grid-cols-[1fr_auto_1fr]">
+            {/* LEFT NAV DESKTOP */}
             <nav className="hidden items-center gap-8 lg:flex xl:gap-10">
               {navItems.map((item) => (
                 <Link
@@ -65,16 +67,18 @@ export function Header() {
             </nav>
 
             {/* CENTER BRAND */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-start lg:justify-center">
               <Link
                 href="/"
-                className="text-center font-serif text-[2.5rem] font-black uppercase leading-none tracking-[-0.06em] text-black transition-transform duration-200 hover:scale-[1.01] sm:text-[3rem] lg:text-[4.2rem]"
+                className="text-left font-serif text-[2.6rem] font-black uppercase leading-[0.86] tracking-[-0.06em] text-black transition-transform duration-200 hover:scale-[1.01] sm:text-[3rem] lg:text-center lg:text-[4.2rem]"
               >
-                Stay Playful
+                Stay
+                <br className="lg:hidden" />
+                <span className="lg:ml-2">Playful</span>
               </Link>
             </div>
 
-            {/* RIGHT ACTIONS */}
+            {/* RIGHT ACTIONS DESKTOP */}
             <div className="hidden items-center justify-end gap-4 lg:flex xl:gap-5">
               <Link
                 href="https://my.practicebetter.io/#/signin"
@@ -118,7 +122,7 @@ export function Header() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-12 w-12 rounded-none border-[3px] border-black bg-[#F6F1E7] shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-[#F6F1E7]"
+                    className="h-12 w-12 rounded-none border-[3px] border-black bg-[#F6F1E7] shadow-[4px_4px_0_0_rgba(227,72,139,1)] transition-transform duration-200 hover:bg-[#F6F1E7] hover:-translate-y-0.5"
                   >
                     <Menu className="h-5 w-5 text-black" />
                     <span className="sr-only">Open menu</span>
@@ -129,30 +133,46 @@ export function Header() {
                   side="right"
                   className="w-full max-w-sm border-l-[4px] border-black bg-[#DDBAF0] p-0"
                 >
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Mobile navigation</SheetTitle>
+                  </SheetHeader>
+
                   <div className="flex h-full flex-col">
                     {/* MOBILE TOP */}
-                    <div className="border-b-[3px] border-black bg-[#F6F1E7] px-6 py-6">
-                      <p className="text-xs font-black uppercase tracking-[0.18em] text-black/70">
-                        Stay Playful
-                      </p>
-                      <h2 className="mt-3 font-serif text-[2.5rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-black">
-                        Menu
-                      </h2>
+                    <div className="flex items-start justify-between border-b-[3px] border-black bg-[#F6F1E7] px-6 py-6">
+                      <div>
+                        <p className="text-xs font-black uppercase tracking-[0.18em] text-black/70">
+                          Stay Playful
+                        </p>
+                        <h2 className="mt-3 font-serif text-[2.5rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-black">
+                          Menu
+                        </h2>
+                      </div>
+
+                      <SheetClose asChild>
+                        <button
+                          type="button"
+                          className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-white shadow-[4px_4px_0_0_rgba(227,72,139,1)] transition-transform duration-200 hover:-translate-y-0.5"
+                          aria-label="Close menu"
+                        >
+                          <X className="h-5 w-5 text-black" />
+                        </button>
+                      </SheetClose>
                     </div>
 
                     {/* MOBILE LINKS */}
                     <div className="flex flex-1 flex-col justify-between px-6 py-8">
                       <nav className="flex flex-col gap-4">
                         {navItems.map((item, index) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`border-[3px] border-black bg-white px-5 py-4 text-[1.3rem] font-black uppercase leading-none tracking-[-0.03em] text-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-transform duration-200 hover:-translate-y-0.5 ${index % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"
-                              }`}
-                          >
-                            {item.label}
-                          </Link>
+                          <SheetClose asChild key={item.href}>
+                            <Link
+                              href={item.href}
+                              className={`border-[3px] border-black bg-white px-5 py-4 text-[1.3rem] font-black uppercase leading-none tracking-[-0.03em] text-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-transform duration-200 hover:-translate-y-0.5 ${index % 2 === 0 ? "rotate-[-1deg]" : "rotate-[1deg]"
+                                }`}
+                            >
+                              {item.label}
+                            </Link>
+                          </SheetClose>
                         ))}
                       </nav>
 
@@ -177,23 +197,25 @@ export function Header() {
                             <Instagram className="h-5 w-5 text-black" />
                           </Link>
 
-                          <Link
-                            href="#method"
-                            onClick={() => setIsOpen(false)}
-                            className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
-                            aria-label="Explore"
-                          >
-                            <Sparkles className="h-5 w-5 text-black" />
-                          </Link>
+                          <SheetClose asChild>
+                            <Link
+                              href="#method"
+                              className="inline-flex h-12 w-12 items-center justify-center border-[3px] border-black bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+                              aria-label="Explore"
+                            >
+                              <Sparkles className="h-5 w-5 text-black" />
+                            </Link>
+                          </SheetClose>
                         </div>
 
-                        <Link
-                          href="#contact"
-                          onClick={() => setIsOpen(false)}
-                          className="inline-flex w-full items-center justify-center rounded-full border-[3px] border-black bg-[#E3488B] px-5 py-4 text-sm font-black uppercase tracking-[0.12em] text-white shadow-[8px_8px_0_0_rgba(0,128,80,1)]"
-                        >
-                          Book a Call
-                        </Link>
+                        <SheetClose asChild>
+                          <Link
+                            href="#contact"
+                            className="inline-flex w-full items-center justify-center rounded-full border-[3px] border-black bg-[#E3488B] px-5 py-4 text-sm font-black uppercase tracking-[0.12em] text-white shadow-[8px_8px_0_0_rgba(0,128,80,1)]"
+                          >
+                            Book a Call
+                          </Link>
+                        </SheetClose>
                       </div>
                     </div>
                   </div>
