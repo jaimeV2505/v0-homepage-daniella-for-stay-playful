@@ -16,8 +16,8 @@ export default function HomePage() {
       <Header />
       <Hero />
       <BrandStatement />
-      <Programs />
       <Method />
+      <Programs />
       <VisualStories />
       <Testimonials />
       <Community />
