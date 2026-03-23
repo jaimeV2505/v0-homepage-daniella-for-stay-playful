@@ -268,8 +268,8 @@ function BlobText({
     >
       <div
         className={`absolute inset-0 select-none font-sans font-black uppercase leading-[0.82] tracking-[-0.08em] ${variant === "large"
-            ? "p-5 text-[3.4rem] xl:p-7 xl:text-[4.7rem]"
-            : "p-4 text-[2rem] xl:text-[2.6rem]"
+          ? "p-5 text-[3.4rem] xl:p-7 xl:text-[4.7rem]"
+          : "p-4 text-[2rem] xl:text-[2.6rem]"
           }`}
         style={{ color: textColor }}
       >
