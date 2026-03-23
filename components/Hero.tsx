@@ -44,7 +44,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative z-10 flex min-h-[88vh] items-center justify-center px-4 py-12 sm:min-h-[92vh] sm:px-6 lg:px-8"
         >
-          <div className="flex flex-col items-center justify-center gap-5 sm:gap-6 lg:flex-row lg:items-center lg:gap-8 xl:gap-10">
+          <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 lg:flex-row lg:items-center lg:gap-6 xl:gap-8">
             {/* SYMBOL */}
             <div className="w-[150px] shrink-0 sm:w-[190px] md:w-[220px] lg:w-[250px] xl:w-[280px]">
               <Image
@@ -59,7 +59,7 @@ export function Hero() {
 
             {/* WORDMARK */}
             <div className="text-center lg:text-left">
-              <div className="hero-wordmark text-[#1B1B1B]">
+              <div className="hero-wordmark text-[#1E1E1E]">
                 <span className="block">stay</span>
                 <span className="block">playful</span>
               </div>
@@ -73,79 +73,38 @@ export function Hero() {
           font-family: Arial, Helvetica, sans-serif;
           font-weight: 900;
           text-transform: lowercase;
-          line-height: 0.8;
-          letter-spacing: -0.09em;
-          font-size: clamp(4.5rem, 10vw, 10rem);
-          position: relative;
-          transform: translateZ(0);
+          line-height: 0.82;
+          letter-spacing: -0.08em;
+          font-size: clamp(4.4rem, 10vw, 10rem);
           text-shadow:
-            1px 1px 0 #3a3a3a,
-            2px 2px 0 #383838,
-            3px 3px 0 #353535,
-            4px 4px 0 #333333,
-            5px 5px 0 #313131,
-            6px 6px 0 #2f2f2f,
-            7px 7px 0 #2d2d2d,
-            8px 8px 0 #2b2b2b,
-            9px 9px 0 #292929,
-            10px 10px 0 #272727,
-            11px 11px 0 rgba(20, 20, 20, 0.9),
-            12px 12px 0 rgba(18, 18, 18, 0.85),
-            13px 13px 18px rgba(0, 0, 0, 0.18),
-            18px 22px 36px rgba(0, 0, 0, 0.18);
-          filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.12));
-        }
-
-        .hero-wordmark span {
-          position: relative;
-          display: block;
-        }
-
-        .hero-wordmark::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.34) 0%,
-            rgba(255, 255, 255, 0.12) 18%,
-            rgba(255, 255, 255, 0) 38%
-          );
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          pointer-events: none;
-          mix-blend-mode: screen;
+            0 1px 0 rgba(255,255,255,0.35),
+            1px 1px 0 rgba(255,255,255,0.14),
+            2px 2px 0 rgba(0,0,0,0.04),
+            3px 3px 0 rgba(0,0,0,0.04),
+            4px 4px 0 rgba(0,0,0,0.035),
+            5px 5px 0 rgba(0,0,0,0.03),
+            8px 8px 20px rgba(0,0,0,0.14);
+          filter: drop-shadow(0 10px 18px rgba(0,0,0,0.10));
+          transform: translateZ(0);
         }
 
         @media (max-width: 1024px) {
           .hero-wordmark {
             text-align: center;
             font-size: clamp(4rem, 14vw, 7rem);
-            line-height: 0.82;
-            text-shadow:
-              1px 1px 0 #3a3a3a,
-              2px 2px 0 #373737,
-              3px 3px 0 #343434,
-              4px 4px 0 #313131,
-              5px 5px 0 #2e2e2e,
-              6px 6px 0 #2b2b2b,
-              7px 7px 14px rgba(0, 0, 0, 0.16),
-              12px 14px 26px rgba(0, 0, 0, 0.16);
+            line-height: 0.84;
           }
         }
 
         @media (max-width: 640px) {
           .hero-wordmark {
-            font-size: clamp(3.6rem, 16vw, 5.8rem);
-            letter-spacing: -0.1em;
+            font-size: clamp(3.6rem, 16vw, 5.6rem);
+            letter-spacing: -0.09em;
             text-shadow:
-              1px 1px 0 #3a3a3a,
-              2px 2px 0 #363636,
-              3px 3px 0 #323232,
-              4px 4px 0 #2e2e2e,
-              5px 5px 10px rgba(0, 0, 0, 0.16),
-              9px 10px 18px rgba(0, 0, 0, 0.14);
+              0 1px 0 rgba(255,255,255,0.32),
+              1px 1px 0 rgba(255,255,255,0.10),
+              2px 2px 0 rgba(0,0,0,0.04),
+              3px 3px 10px rgba(0,0,0,0.12);
           }
         }
       `}</style>
