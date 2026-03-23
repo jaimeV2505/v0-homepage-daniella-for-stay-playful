@@ -13,8 +13,7 @@ const programs = [
     title: "1:1 Coaching",
     description:
       "Tailored support designed around your unique needs, lifestyle, and goals. Direct access to personalized nutrition and wellness coaching.",
-    image:
-      "https://images.pexels.com/photos/30773022/pexels-photo-30773022.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/vercel/share/v0-project/public/1pro.jpg",
     accent: "bg-[#E7DDF6]",
     chip: "Tailored support",
     bgWord: "GUIDE",
