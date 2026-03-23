@@ -37,8 +37,8 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-4 border border-white/35 sm:inset-6 lg:inset-8" />
 
         {/* LARGE EDITORIAL WORD LEFT */}
-        <div className="pointer-events-none absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
-          <div className="hero-side-title text-[#FF2B6A]">
+        <div className="absolute left-4 top-[18%] z-10 hidden lg:block xl:left-8">
+          <div className="hero-side-title hero-hover">
             <span className="block">FEEL</span>
             <span className="block">WELL</span>
           </div>
@@ -111,6 +111,33 @@ export function Hero() {
           line-height: 0.82;
           letter-spacing: -0.08em;
           font-size: clamp(4rem, 7vw, 8rem);
+          color: #ff2b6a;
+          transition:
+            transform 0.35s ease,
+            background-position 0.45s ease,
+            color 0.35s ease;
+          cursor: default;
+          user-select: none;
+        }
+
+        .hero-hover {
+          background: linear-gradient(
+            90deg,
+            #ff008e 0%,
+            #ff7f00 35%,
+            #00e2ff 68%,
+            #ff008e 100%
+          );
+          background-size: 220% auto;
+          background-position: left center;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+
+        .hero-hover:hover {
+          color: transparent;
+          background-position: right center;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 1024px) {
