@@ -47,7 +47,7 @@ export function BrandStatement() {
               {/* MINI EDITORIAL CARD */}
               <div className="mt-10 w-[200px] border-[4px] border-black bg-[#FFABFF] p-3 shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:w-[230px] lg:w-[248px] xl:w-[270px]">
                 <div className="mb-2 text-[10px] font-black uppercase tracking-[0.16em] text-black sm:text-[11px]">
-                  playful note
+                  Playful note
                 </div>
 
                 <div className="border-[4px] border-black bg-[#FFD3F7] p-2">
@@ -69,48 +69,47 @@ export function BrandStatement() {
             </div>
 
             {/* RIGHT PANEL */}
-            <div className="relative min-h-[420px] bg-[#FFABFF] lg:min-h-full">
-              {/* base background */}
-              <div className="absolute inset-0 bg-[#FFABFF]" />
-
-              {/* full editorial image area */}
-              <div className="absolute inset-0">
+            <div className="relative min-h-[460px] bg-[#FFABFF] lg:min-h-full">
+              {/* integrated shape area */}
+              <div className="absolute inset-0 overflow-hidden bg-[#FFABFF]">
+                {/* FULL SHAPE CONTAINER */}
                 <div
-                  className="absolute inset-0 overflow-hidden bg-[#F7A16B]"
+                  className="absolute inset-0 overflow-hidden"
                   style={{
                     clipPath:
-                      "polygon(37% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 63%, 7% 56%, 14% 50%, 20% 43%, 25% 36%, 30% 28%, 34% 18%)",
+                      "polygon(27% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 69%, 6% 63%, 12% 58%, 17% 52%, 22% 45%, 27% 37%, 31% 29%, 34% 21%, 34% 0%)",
                   }}
                 >
                   <Image
-                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80"
-                    alt="Editorial fashion inspired portrait for Stay Playful"
+                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1600&q=80"
+                    alt="Editorial portrait for Stay Playful"
                     fill
                     sizes="(max-width: 1024px) 100vw, 52vw"
                     className="object-cover"
+                    priority={false}
                   />
                 </div>
+
+                {/* INNER LILAC CUT, PART OF THE SAME COMPOSITION */}
+                <div
+                  className="absolute inset-y-0 left-0 w-[38%] bg-[#D993E2]"
+                  style={{
+                    clipPath:
+                      "polygon(0 0, 100% 0, 100% 26%, 89% 39%, 76% 52%, 62% 65%, 44% 78%, 22% 90%, 0 100%)",
+                  }}
+                />
               </div>
 
-              {/* complete top shape */}
-              <div
-                className="absolute left-0 top-0 hidden h-[58%] w-[39%] bg-[#D993E2] lg:block"
-                style={{
-                  clipPath:
-                    "polygon(0 0, 100% 0, 100% 24%, 89% 36%, 77% 48%, 63% 60%, 47% 72%, 27% 84%, 0 100%)",
-                }}
-              />
-
-              {/* subtle accent sticker */}
-              <div className="absolute right-6 top-6 hidden rotate-[4deg] border-[4px] border-black bg-[#00E2FF] px-4 py-2 shadow-[6px_6px_0_0_rgba(0,0,0,1)] xl:block">
+              {/* sticker */}
+              <div className="absolute right-4 top-4 hidden rotate-[4deg] border-[4px] border-black bg-[#00E2FF] px-4 py-2 shadow-[6px_6px_0_0_rgba(0,0,0,1)] xl:block">
                 <span className="text-[11px] font-black uppercase tracking-[0.14em] text-black">
-                  joy is part of wellbeing
+                  Joy is part of wellbeing
                 </span>
               </div>
 
-              {/* lower caption area */}
-              <div className="absolute bottom-[58px] left-0 right-0 px-5 sm:px-6 lg:px-8">
-                <div className="max-w-[360px] border-[4px] border-black bg-white/92 px-4 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,1)] backdrop-blur-[1px]">
+              {/* caption box */}
+              <div className="absolute bottom-[58px] left-4 right-4 sm:left-6 sm:right-auto lg:left-6">
+                <div className="max-w-[360px] border-[4px] border-black bg-white/95 px-4 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                   <p className="text-[12px] font-black uppercase tracking-[0.16em] text-black">
                     Stay Playful
                   </p>
@@ -121,7 +120,7 @@ export function BrandStatement() {
                 </div>
               </div>
 
-              {/* magazine footer */}
+              {/* footer label */}
               <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-3 sm:px-6 lg:px-8">
                 <p className="text-center text-sm font-black uppercase tracking-[0.24em] text-black sm:text-base lg:text-lg">
                   STAY PLAYFUL
