@@ -263,20 +263,24 @@ function BlobText({
 
   return (
     <div
-      className={`relative overflow-hidden ${className ?? ""}`}
-      style={{ backgroundColor: bg, clipPath }}
+      className={`relative overflow-hidden flex items-center justify-center ${className ?? ""}`}
+      style={{
+        backgroundColor: bg,
+        clipPath,
+      }}
     >
+      {/* CONTENT WRAPPER centrado REAL */}
       <div
-        className={`absolute inset-0 select-none font-sans font-black uppercase leading-[0.82] tracking-[-0.08em] ${variant === "large"
-          ? "p-5 text-[3.4rem] xl:p-7 xl:text-[4.7rem]"
-          : "p-4 text-[2rem] xl:text-[2.6rem]"
+        className={`text-center font-sans font-black uppercase leading-[0.85] tracking-[-0.06em] ${variant === "large"
+            ? "max-w-[70%] text-[3.2rem] xl:text-[4.2rem]"
+            : "max-w-[65%] text-[1.8rem] xl:text-[2.4rem]"
           }`}
         style={{ color: textColor }}
       >
-        <div>stay playful</div>
-        <div>stay playful</div>
-        <div>stay playful</div>
-        {variant === "large" && <div>stay playful</div>}
+        <div>stay</div>
+        <div>playful</div>
+        <div>stay</div>
+        <div>playful</div>
       </div>
     </div>
   )
