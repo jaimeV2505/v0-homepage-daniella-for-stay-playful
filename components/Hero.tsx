@@ -36,6 +36,34 @@ export function Hero() {
         {/* SUBTLE FRAME */}
         <div className="pointer-events-none absolute inset-4 border border-white/35 sm:inset-6 lg:inset-8" />
 
+        {/* FLOATING MICRO TEXT */}
+        <div className="pointer-events-none absolute left-8 top-10 hidden lg:block">
+          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
+            Stockholm, Sweden
+          </p>
+        </div>
+
+        <div className="pointer-events-none absolute right-10 top-10 hidden lg:block">
+          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
+            Health Coaching
+          </p>
+        </div>
+
+        <div className="pointer-events-none absolute bottom-10 left-10 hidden lg:block">
+          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/60">
+            Balance • Curiosity • Support
+          </p>
+        </div>
+
+        {/* SMALL FLOATING BADGE */}
+        <div className="absolute right-[12%] top-[24%] hidden lg:block">
+          <div className="rounded-full border-[3px] border-black bg-[#FFBD17] px-5 py-2 shadow-[4px_4px_0_0_rgba(0,0,0,0.12)]">
+            <span className="text-[11px] font-black uppercase tracking-[0.18em] text-black">
+              Feel Well
+            </span>
+          </div>
+        </div>
+
         {/* HERO CONTENT */}
         <motion.div
           style={{ y: heroY }}
@@ -57,7 +85,7 @@ export function Hero() {
               />
             </div>
 
-            {/* WORDMARK CONNECTED TO SYMBOL */}
+            {/* WORDMARK */}
             <div className="-mt-1 text-center lg:-ml-4 lg:mt-0 lg:mb-[18px] lg:text-left xl:-ml-5 xl:mb-[20px]">
               <div className="hero-wordmark text-[#1B1B1B]">
                 <span className="block">tay</span>
