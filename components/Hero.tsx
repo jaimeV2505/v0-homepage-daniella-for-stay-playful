@@ -155,7 +155,7 @@ export function Hero() {
             line-height: 0.84;
           }
         }
-      }</style>
+      `}</style>
     </section>
   )
 }
