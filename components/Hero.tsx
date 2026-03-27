@@ -72,7 +72,7 @@ export function Hero() {
           {/* DESKTOP */}
           <div className="hidden lg:block">
             <div className="relative mx-auto min-h-[860px] max-w-[1450px] xl:min-h-[930px]">
-              <div className="pointer-events-none absolute left-1/2 top-[2%] z-10 -translate-x-1/2">
+              <div className="pointer-events-none absolute left-1/2 top-[-2%] z-10 -translate-x-1/2">
                 <div className="hero-top-desktop text-[#FFF4EA]/78">STAY</div>
               </div>
 
