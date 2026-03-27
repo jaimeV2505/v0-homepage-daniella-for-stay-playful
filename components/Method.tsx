@@ -77,9 +77,9 @@ export function Method() {
   })
 
   const progress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 24,
-    mass: 0.5,
+    stiffness: 120,
+    damping: 30,
+    mass: 0.55,
   })
 
   return (
@@ -88,7 +88,7 @@ export function Method() {
       id="method"
       aria-labelledby="method-title"
       className="relative bg-[#F5F0E6]"
-      style={{ height: "340vh" }}
+      style={{ height: "320vh" }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_48%,#EEE6D8_100%)]" />
 
@@ -141,24 +141,21 @@ function MethodParallaxCard({
   const start = index * segment
   const center = start + segment / 2
   const end = start + segment
-  const pad = segment * 0.55
 
-  const input = [
-    Math.max(0, start - pad),
-    start,
-    center,
-    end,
-    Math.min(1, end + pad),
-  ]
+  // transición más compacta y usable
+  const enter = Math.max(0, start - segment * 0.28)
+  const exit = Math.min(1, end + segment * 0.28)
 
-  const y = useTransform(progress, input, [180, 80, 0, -80, -180])
-  const scale = useTransform(progress, input, [0.9, 0.96, 1, 0.96, 0.9])
-  const opacity = useTransform(progress, input, [0.78, 0.92, 1, 0.92, 0.78])
-  const rotate = useTransform(progress, input, [2.5, 1, 0, -1, -2.5])
-  const blur = useTransform(progress, input, [6, 2, 0, 2, 6])
+  const input = [enter, start, center, end, exit]
 
-  const contentY = useTransform(progress, input, [34, 14, 0, -14, -34])
-  const mediaY = useTransform(progress, input, [48, 20, 0, -20, -48])
+  const y = useTransform(progress, input, [48, 20, 0, -20, -48])
+  const scale = useTransform(progress, input, [0.975, 0.992, 1, 0.992, 0.975])
+  const opacity = useTransform(progress, input, [0.92, 0.98, 1, 0.98, 0.92])
+  const rotate = useTransform(progress, input, [0.6, 0.25, 0, -0.25, -0.6])
+  const blur = useTransform(progress, input, [0.8, 0.2, 0, 0.2, 0.8])
+
+  const contentY = useTransform(progress, input, [12, 6, 0, -6, -12])
+  const mediaY = useTransform(progress, input, [16, 8, 0, -8, -16])
 
   return (
     <motion.article
