@@ -38,28 +38,6 @@ const testimonials: Testimonial[] = [
     initial: "M",
     highlight: "real life",
   },
-  {
-    id: "sofia",
-    quote:
-      "I've tried every diet out there. This is the first time something has actually stuck because it's not a diet — it's a whole new mindset.",
-    shortQuote: "This is the first time something has actually stuck.",
-    author: "Sofia R.",
-    role: "8-Week Program Graduate",
-    badge: "Game-changer",
-    initial: "S",
-    highlight: "stuck",
-  },
-  {
-    id: "nora",
-    quote:
-      "I finally feel like I can trust myself again. The support felt personal, calm, and realistic — never overwhelming.",
-    shortQuote: "I finally feel like I can trust myself again.",
-    author: "Nora B.",
-    role: "Private Coaching Client",
-    badge: "So supportive",
-    initial: "N",
-    highlight: "trust",
-  },
 ]
 
 const tapeItems = [
@@ -106,9 +84,9 @@ export function Testimonials() {
       </div>
 
       {/* Decorative tape */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 lg:block">
-        <div className="absolute left-[-8%] right-[-8%] top-5 rotate-[-4deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-3">
-          <div className="flex overflow-hidden whitespace-nowrap">
+      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[190px] overflow-visible lg:block">
+        <div className="absolute left-1/2 top-2 w-[130vw] -translate-x-1/2 rotate-[-4deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
+          <div className="overflow-hidden whitespace-nowrap">
             <motion.div
               initial={{ x: "0%" }}
               animate={{ x: "-50%" }}
@@ -118,7 +96,7 @@ export function Testimonials() {
               {[...tapeItems, ...tapeItems, ...tapeItems].map((item, index) => (
                 <span
                   key={`${item}-${index}-top`}
-                  className="mx-5 font-serif text-[2.5rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                  className="mx-6 font-serif text-[2.5rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
                 >
                   {item}
                 </span>
@@ -127,8 +105,8 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="absolute left-[-10%] right-[-10%] top-16 rotate-[3deg] border-y-2 border-[#2B1A16] bg-[#F4DCE9] py-3 opacity-90">
-          <div className="flex overflow-hidden whitespace-nowrap">
+        <div className="absolute left-1/2 top-16 w-[135vw] -translate-x-1/2 rotate-[3deg] border-y-2 border-[#2B1A16] bg-[#F4DCE9] py-4 opacity-95">
+          <div className="overflow-hidden whitespace-nowrap">
             <motion.div
               initial={{ x: "-50%" }}
               animate={{ x: "0%" }}
@@ -138,7 +116,7 @@ export function Testimonials() {
               {[...tapeItems, ...tapeItems, ...tapeItems].map((item, index) => (
                 <span
                   key={`${item}-${index}-bottom`}
-                  className="mx-5 font-serif text-[2.15rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                  className="mx-6 font-serif text-[2.15rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
                 >
                   {item}
                 </span>
@@ -155,7 +133,7 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mx-auto max-w-4xl pt-8 text-center lg:pt-28"
+          className="mx-auto max-w-4xl pt-8 text-center lg:pt-36"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#FF008E]">
             Testimonials
@@ -248,9 +226,9 @@ export function Testimonials() {
           <div className="h-px w-full max-w-5xl bg-[#2B1A16]/12" />
         </div>
 
-        {/* Secondary cards */}
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {secondaryTestimonials.map((testimonial, index) => (
+        {/* Secondary card - only one when using 2 testimonials */}
+        <div className="mx-auto max-w-3xl">
+          {secondaryTestimonials.map((testimonial) => (
             <motion.article
               key={`${testimonial.id}-${activeIndex}`}
               initial={{ opacity: 0, y: 22 }}
@@ -259,7 +237,6 @@ export function Testimonials() {
               transition={{
                 duration: 0.55,
                 ease: "easeOut",
-                delay: index * 0.06,
               }}
               className="group relative"
             >
