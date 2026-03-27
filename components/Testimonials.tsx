@@ -132,7 +132,7 @@ export function Testimonials() {
       </div>
 
       {/* Decorative moving tapes */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[180px] overflow-visible lg:block">
+      <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-[180px] overflow-visible lg:block">
         <div className="absolute left-1/2 top-4 w-[150vw] -translate-x-1/2 rotate-[-2.6deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
           <div className="overflow-hidden whitespace-nowrap">
             <motion.div
