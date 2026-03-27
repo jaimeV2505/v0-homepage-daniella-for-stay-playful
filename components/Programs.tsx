@@ -203,7 +203,7 @@ export function Programs() {
                   activeProgram.panelAccent
                 )}
               >
-                <div className="relative flex flex-col justify-between border-r-[3px] border-sp-deep-brown p-10">
+                <div className="relative flex flex-col justify-between border-r-[3px] border-sp-deep-brown pl-20 pr-10 py-10">
                   <div>
                     <p className="text-sm font-black uppercase tracking-[0.22em] text-sp-hot-pink">
                       {activeProgram.eyebrow}
