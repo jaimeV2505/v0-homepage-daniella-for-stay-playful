@@ -60,7 +60,7 @@ export function Header() {
                 className="flex shrink-0 items-center gap-3 transition-transform duration-200 hover:scale-[1.01]"
                 aria-label="Stay Playful Home"
               >
-                <div className="relative h-[72px] w-[72px] shrink-0 xl:h-[82px] xl:w-[82px]">
+                <div className="relative h-[72px] w-[72px] shrink-0 xl:h-[90px] xl:w-[90px]">
                   <Image
                     src="/logo1.png"
                     alt="Stay Playful logo"
