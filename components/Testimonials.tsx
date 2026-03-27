@@ -57,6 +57,13 @@ const bottomTapeItems = [
   "SOFTER WELLBEING",
 ]
 
+const topTapeSequence = [...topTapeItems, ...topTapeItems, ...topTapeItems]
+const bottomTapeSequence = [
+  ...bottomTapeItems,
+  ...bottomTapeItems,
+  ...bottomTapeItems,
+]
+
 const AUTO_ROTATE_MS = 4500
 
 const headingMotion = {
@@ -72,6 +79,9 @@ const cardSwapMotion = {
   exit: { opacity: 0, y: -16, scale: 0.985 },
   transition: { duration: 0.45, ease: "easeOut" as const },
 }
+
+const tapeTextClass =
+  "mx-6 inline-block shrink-0 font-serif leading-none tracking-[-0.04em] text-[#2B1A16]"
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -116,40 +126,64 @@ export function Testimonials() {
           wellbeing
         </div>
 
-        <div className="absolute left-1/2 top-[9.5rem] -translate-x-1/2 select-none font-serif text-[3.8rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.035] sm:text-[5rem] lg:hidden">
+        <div className="absolute left-[8%] top-[10rem] select-none font-serif text-[3.8rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.035] sm:text-[5rem] lg:hidden">
           StayPlayful
         </div>
       </div>
 
-      {/* Decorative tapes */}
+      {/* Decorative moving tapes */}
       <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[180px] overflow-visible lg:block">
         <div className="absolute left-1/2 top-4 w-[150vw] -translate-x-1/2 rotate-[-2.6deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
-          <div className="flex items-center justify-center whitespace-nowrap">
-            {[...topTapeItems, ...topTapeItems, ...topTapeItems].map(
-              (item, index) => (
-                <span
-                  key={`top-${item}-${index}`}
-                  className="mx-6 inline-block shrink-0 font-serif text-[2.25rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+          <div className="overflow-hidden whitespace-nowrap">
+            <motion.div
+              initial={{ x: "0%" }}
+              animate={{ x: "-50%" }}
+              transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
+              className="flex w-max items-center"
+            >
+              {[0, 1].map((group) => (
+                <div
+                  key={`top-group-${group}`}
+                  className="flex shrink-0 items-center whitespace-nowrap"
                 >
-                  {item}
-                </span>
-              )
-            )}
+                  {topTapeSequence.map((item, index) => (
+                    <span
+                      key={`top-${group}-${item}-${index}`}
+                      className={`${tapeTextClass} text-[2.25rem]`}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
 
         <div className="absolute left-1/2 top-16 w-[152vw] -translate-x-1/2 rotate-[3.1deg] border-y-2 border-[#2B1A16] bg-[#F4DCE9] py-4 opacity-95">
-          <div className="flex items-center justify-center whitespace-nowrap">
-            {[...bottomTapeItems, ...bottomTapeItems, ...bottomTapeItems].map(
-              (item, index) => (
-                <span
-                  key={`bottom-${item}-${index}`}
-                  className="mx-6 inline-block shrink-0 font-serif text-[2.05rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+          <div className="overflow-hidden whitespace-nowrap">
+            <motion.div
+              initial={{ x: "-50%" }}
+              animate={{ x: "0%" }}
+              transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+              className="flex w-max items-center"
+            >
+              {[0, 1].map((group) => (
+                <div
+                  key={`bottom-group-${group}`}
+                  className="flex shrink-0 items-center whitespace-nowrap"
                 >
-                  {item}
-                </span>
-              )
-            )}
+                  {bottomTapeSequence.map((item, index) => (
+                    <span
+                      key={`bottom-${group}-${item}-${index}`}
+                      className={`${tapeTextClass} text-[2.05rem]`}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
@@ -189,7 +223,6 @@ export function Testimonials() {
                 transition={cardSwapMotion.transition}
                 className="grid lg:grid-cols-[0.95fr_1.05fr]"
               >
-                {/* Left block */}
                 <div className="flex flex-col items-center justify-center border-b-[2.5px] border-[#2B1A16] px-5 py-10 text-center sm:px-8 sm:py-12 lg:border-b-0 lg:border-r-[2.5px] lg:px-12 lg:py-16">
                   <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border-[2px] border-[#2B1A16] bg-[#F4E7F7] text-xl font-bold text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.06)] sm:mb-6 sm:h-20 sm:w-20 sm:text-2xl">
                     {active.initial}
@@ -205,7 +238,6 @@ export function Testimonials() {
                   </span>
                 </div>
 
-                {/* Right block */}
                 <div className="flex flex-col justify-center px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
                   <Quote className="mb-5 h-8 w-8 text-[#FF008E]/25 sm:mb-6 sm:h-10 sm:w-10" />
 
