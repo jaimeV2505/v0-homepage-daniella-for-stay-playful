@@ -31,7 +31,8 @@ const testimonials: Testimonial[] = [
     id: "marcus",
     quote:
       "The approach is so refreshing — no calorie counting, no restrictions. Just genuine support and practical guidance that fits my busy life.",
-    shortQuote: "Refreshing, practical, and finally something that fits real life.",
+    shortQuote:
+      "Refreshing, practical, and finally something that fits real life.",
     author: "Marcus K.",
     role: "1:1 Coaching Client",
     badge: "Highly recommend",
@@ -51,7 +52,12 @@ const tapeItems = [
   "CLIENT LOVE",
 ]
 
+const repeatedTapeItems = Array.from({ length: 6 }, () => tapeItems).flat()
+
 const AUTO_ROTATE_MS = 4500
+
+const tapeTextBaseClass =
+  "mx-6 inline-block shrink-0 font-serif leading-none tracking-[-0.04em] text-[#2B1A16]"
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -88,15 +94,15 @@ export function Testimonials() {
         <div className="absolute left-1/2 top-2 w-[130vw] -translate-x-1/2 rotate-[-4deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
           <div className="overflow-hidden whitespace-nowrap">
             <motion.div
-              initial={{ x: "0%" }}
+              initial={{ x: 0 }}
               animate={{ x: "-50%" }}
               transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-              className="flex min-w-max items-center"
+              className="flex w-max items-center"
             >
-              {[...tapeItems, ...tapeItems, ...tapeItems].map((item, index) => (
+              {repeatedTapeItems.map((item, index) => (
                 <span
                   key={`${item}-${index}-top`}
-                  className="mx-6 font-serif text-[2.5rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                  className={`${tapeTextBaseClass} text-[2.5rem]`}
                 >
                   {item}
                 </span>
@@ -111,12 +117,12 @@ export function Testimonials() {
               initial={{ x: "-50%" }}
               animate={{ x: "0%" }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="flex min-w-max items-center"
+              className="flex w-max items-center"
             >
-              {[...tapeItems, ...tapeItems, ...tapeItems].map((item, index) => (
+              {repeatedTapeItems.map((item, index) => (
                 <span
                   key={`${item}-${index}-bottom`}
-                  className="mx-6 font-serif text-[2.15rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                  className={`${tapeTextBaseClass} text-[2.15rem]`}
                 >
                   {item}
                 </span>
@@ -171,7 +177,8 @@ export function Testimonials() {
                   </div>
 
                   <blockquote className="max-w-[18ch] font-serif text-[2rem] leading-[1.02] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem] lg:text-[3.1rem]">
-                    “{renderHighlightedQuote(active.shortQuote, active.highlight)}”
+                    “{renderHighlightedQuote(active.shortQuote, active.highlight)}
+                    ”
                   </blockquote>
 
                   <span className="mt-5 inline-flex rounded-full border-[2px] border-[#2B1A16] bg-[#FFBD17] px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.06)]">
@@ -213,8 +220,8 @@ export function Testimonials() {
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Show testimonial from ${item.author}`}
                 className={`h-3 rounded-full border border-[#2B1A16]/25 transition-all duration-300 ${isActive
-                  ? "w-10 bg-[#FF008E]"
-                  : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
+                    ? "w-10 bg-[#FF008E]"
+                    : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
                   }`}
               />
             )
