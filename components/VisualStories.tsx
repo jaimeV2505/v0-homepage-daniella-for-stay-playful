@@ -28,17 +28,6 @@ const pillars: Pillar[] = [
     note: "Gentle structure, not rigid rules.",
   },
   {
-    id: "lifestyle-support",
-    title: "Lifestyle Support",
-    color: "bg-[#1FA35A]",
-    buttonLabel: "See Lifestyle Support",
-    description:
-      "Support goes beyond food. This pillar focuses on routines, rest, stress, self-awareness, and the other parts of life that deeply affect wellbeing. It is a more holistic approach to feeling better.",
-    accent: "bg-[#1FA35A]",
-    eyebrow: "Support for real life",
-    note: "Wellbeing is bigger than nutrition alone.",
-  },
-  {
     id: "creativity-and-curiosity",
     title: "Creativity and Curiosity",
     color: "bg-[#F0DD8A]",
