@@ -17,7 +17,6 @@ import {
 const navItems = [
   { label: "Programs", href: "#programs" },
   { label: "Method", href: "#method" },
-  { label: "Stories", href: "#stories" },
   { label: "Contact", href: "#contact" },
 ]
 
@@ -53,15 +52,15 @@ export function Header() {
           }`}
       >
         <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
-          <div className="grid h-[86px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[110px] lg:grid-cols-[1.2fr_auto_1fr]">
+          <div className="grid h-[86px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[110px] lg:grid-cols-[1.15fr_auto_1fr]">
             {/* LEFT SIDE DESKTOP */}
-            <div className="hidden items-center gap-8 lg:flex xl:gap-10">
+            <div className="hidden items-center gap-10 lg:flex xl:gap-12">
               <Link
                 href="/"
                 className="flex shrink-0 items-center gap-3 transition-transform duration-200 hover:scale-[1.01]"
                 aria-label="Stay Playful Home"
               >
-                <div className="relative h-[52px] w-[52px] shrink-0 xl:h-[58px] xl:w-[58px]">
+                <div className="relative h-[72px] w-[72px] shrink-0 xl:h-[82px] xl:w-[82px]">
                   <Image
                     src="/logo1.png"
                     alt="Stay Playful logo"
@@ -72,7 +71,7 @@ export function Header() {
                 </div>
               </Link>
 
-              <nav className="flex items-center gap-8 xl:gap-10">
+              <nav className="flex items-center gap-10 xl:gap-12">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
@@ -92,7 +91,7 @@ export function Header() {
                 className="flex items-center gap-3 lg:hidden"
                 aria-label="Stay Playful Home"
               >
-                <div className="relative h-[42px] w-[42px] shrink-0">
+                <div className="relative h-[50px] w-[50px] shrink-0">
                   <Image
                     src="/logo1.png"
                     alt="Stay Playful logo"
@@ -173,10 +172,9 @@ export function Header() {
                   </SheetHeader>
 
                   <div className="flex h-full flex-col">
-                    {/* MOBILE TOP */}
                     <div className="flex items-start justify-between border-b-[3px] border-black bg-[#F6F1E7] px-6 py-6">
                       <div className="flex items-start gap-3">
-                        <div className="relative mt-1 h-[42px] w-[42px] shrink-0">
+                        <div className="relative mt-1 h-[48px] w-[48px] shrink-0">
                           <Image
                             src="/logo1.png"
                             alt="Stay Playful logo"
@@ -207,7 +205,6 @@ export function Header() {
                       </SheetClose>
                     </div>
 
-                    {/* MOBILE LINKS */}
                     <div className="flex flex-1 flex-col justify-between px-6 py-8">
                       <nav className="flex flex-col gap-4">
                         {navItems.map((item, index) => (
