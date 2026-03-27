@@ -41,7 +41,15 @@ const testimonials: Testimonial[] = [
   },
 ]
 
-const tapeItems = [
+const topTapeItems = [
+  "STAY PLAYFUL",
+  "SOFTER WELLBEING",
+  "TESTIMONIALS",
+  "REAL STORIES",
+  "CLIENT LOVE",
+]
+
+const bottomTapeItems = [
   "TESTIMONIALS",
   "REAL STORIES",
   "CLIENT LOVE",
@@ -98,31 +106,50 @@ export function Testimonials() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/10 to-transparent" />
       </div>
 
-      {/* Decorative editorial background word */}
+      {/* Editorial background words */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[10.5rem] hidden -translate-x-1/2 select-none font-serif text-[9rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.045] lg:block xl:text-[11rem]">
+        <div className="absolute left-[6%] top-[14.5rem] hidden select-none font-serif text-[9rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.038] lg:block xl:text-[11rem]">
           StayPlayful
         </div>
-        <div className="absolute left-1/2 top-[15.5rem] hidden -translate-x-1/2 select-none font-serif text-[7rem] italic leading-none tracking-[-0.08em] text-[#FF008E]/[0.035] lg:block xl:text-[8.5rem]">
-          StayPlayful
+
+        <div className="absolute right-[6%] top-[18rem] hidden select-none font-serif text-[7rem] italic leading-none tracking-[-0.08em] text-[#FF008E]/[0.03] lg:block xl:text-[8.25rem]">
+          wellbeing
         </div>
-        <div className="absolute left-1/2 top-[8.75rem] -translate-x-1/2 select-none font-serif text-[3.8rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.04] sm:text-[5rem] lg:hidden">
+
+        <div className="absolute left-1/2 top-[9.5rem] -translate-x-1/2 select-none font-serif text-[3.8rem] italic leading-none tracking-[-0.08em] text-[#2B1A16]/[0.035] sm:text-[5rem] lg:hidden">
           StayPlayful
         </div>
       </div>
 
-      {/* Single decorative tape */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[120px] overflow-visible lg:block">
-        <div className="absolute left-1/2 top-8 w-[145vw] -translate-x-1/2 rotate-[-3deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
+      {/* Decorative tapes */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[180px] overflow-visible lg:block">
+        <div className="absolute left-1/2 top-4 w-[150vw] -translate-x-1/2 rotate-[-2.6deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
           <div className="flex items-center justify-center whitespace-nowrap">
-            {[...tapeItems, ...tapeItems].map((item, index) => (
-              <span
-                key={`${item}-${index}`}
-                className="mx-6 inline-block shrink-0 font-serif text-[2.35rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
-              >
-                {item}
-              </span>
-            ))}
+            {[...topTapeItems, ...topTapeItems, ...topTapeItems].map(
+              (item, index) => (
+                <span
+                  key={`top-${item}-${index}`}
+                  className="mx-6 inline-block shrink-0 font-serif text-[2.25rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                >
+                  {item}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="absolute left-1/2 top-16 w-[152vw] -translate-x-1/2 rotate-[3.1deg] border-y-2 border-[#2B1A16] bg-[#F4DCE9] py-4 opacity-95">
+          <div className="flex items-center justify-center whitespace-nowrap">
+            {[...bottomTapeItems, ...bottomTapeItems, ...bottomTapeItems].map(
+              (item, index) => (
+                <span
+                  key={`bottom-${item}-${index}`}
+                  className="mx-6 inline-block shrink-0 font-serif text-[2.05rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                >
+                  {item}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>
@@ -131,7 +158,7 @@ export function Testimonials() {
         {/* Heading */}
         <motion.div
           {...headingMotion}
-          className="mx-auto max-w-4xl pt-4 text-center lg:pt-24"
+          className="mx-auto max-w-4xl pt-4 text-center lg:pt-28"
         >
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#FF008E] sm:text-sm">
             Testimonials
