@@ -1,12 +1,6 @@
 "use client"
 
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 type MethodCard = {
@@ -27,7 +21,7 @@ const methodCards: MethodCard[] = [
     title: "The Person Behind Stay Playful.",
     subtitle: "A softer, more human approach to wellbeing.",
     description:
-      "I’m Daniella, and Stay Playful was created to offer a more grounded and compassionate approach to wellbeing — one rooted in balance, self-trust, and a healthier relationship with food, body, and everyday life.",
+      "I'm Daniella, and Stay Playful was created to offer a more grounded and compassionate approach to wellbeing — one rooted in balance, self-trust, and a healthier relationship with food, body, and everyday life.",
     points: [
       "Gentle support without extremes",
       "A more sustainable relationship with wellbeing",
@@ -42,7 +36,7 @@ const methodCards: MethodCard[] = [
     title: "Support That Feels Sustainable.",
     subtitle: "Less pressure. More clarity. More joy.",
     description:
-      "The goal is not perfection, pressure, or constant self-monitoring. It’s helping you build something that feels personal, sustainable, and joyful — support that actually fits your life.",
+      "The goal is not perfection, pressure, or constant self-monitoring. It's helping you build something that feels personal, sustainable, and joyful — support that actually fits your life.",
     points: [
       "A realistic path you can actually maintain",
       "More trust in yourself and your process",
@@ -76,95 +70,65 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 110,
-    damping: 26,
-    mass: 0.4,
-  })
-
-  const blobY = useTransform(smoothProgress, [0, 1], [-20, 36])
-  const blobScale = useTransform(smoothProgress, [0, 0.5, 1], [0.94, 1, 1.04])
-  const blobOpacity = useTransform(
-    smoothProgress,
-    [0, 0.15, 0.85, 1],
-    [0.55, 0.82, 0.8, 0.7]
-  )
-
   return (
     <section
       ref={sectionRef}
       id="method"
       aria-labelledby="method-title"
-      className="relative bg-[#F5F0E6] py-20 sm:py-24 lg:py-28"
+      className="relative bg-[#F5F0E6]"
       style={{ height: "300vh" }}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_45%,#EEE6D8_100%)]" />
-
-        <motion.div
-          style={{
-            y: blobY,
-            scale: blobScale,
-            opacity: blobOpacity,
-          }}
-          className="absolute top-10 left-1/2 z-0 h-[280px] w-[90%] -translate-x-1/2"
-        >
-          <div
-            className="h-full w-full blur-[40px]"
-            style={{
-              backgroundColor: "#FFABFF",
-              clipPath:
-                "polygon(5% 20%, 15% 5%, 40% 0%, 70% 8%, 90% 20%, 100% 40%, 95% 65%, 85% 85%, 60% 100%, 30% 95%, 10% 80%, 0% 55%)",
-            }}
-          />
-        </motion.div>
-      </div>
-
-      <div className="sticky top-0 flex h-screen items-center">
-        <div className="relative mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl text-center">
-            <p className="text-sm font-black uppercase tracking-[0.26em] text-black/55">
+      <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_48%,#EEE6D8_100%)]" />
+        
+        <div className="relative mx-auto flex h-full max-w-[1400px] flex-col px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          {/* Header */}
+          <header className="relative z-30 mb-6 text-center sm:mb-8">
+            <span className="mb-2 inline-block text-xs font-bold uppercase tracking-[0.2em] text-black/60 sm:text-sm">
               Stay Playful
-            </p>
-
+            </span>
             <h2
               id="method-title"
-              className="mt-5 font-sans text-[3rem] font-black uppercase leading-[0.84] tracking-[-0.09em] text-[#14532D] sm:text-[4.6rem] lg:text-[6.4rem]"
+              className="mx-auto font-sans text-[2.2rem] font-black uppercase leading-[0.88] tracking-[-0.06em] text-black sm:text-[3rem] lg:text-[4rem]"
             >
-              THREE LAYERS
-              <br />
-              <span className="inline-block">OF THE WORK</span>
+              <span className="block">Three Layers</span>
+              <span className="block">Of The Work</span>
             </h2>
-
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
-              The heart of Stay Playful comes down to three simple things — who I am,
-              what this work is here to support, and the way we create change with more
-              curiosity, more care, and far less pressure.
+            <p className="mx-auto mt-3 max-w-[600px] text-sm leading-relaxed text-black/70 sm:mt-4 sm:text-base">
+              The heart of Stay Playful comes down to three simple things — who I am, what this work is here to support, and the way we create change with more curiosity, more care, and far less pressure.
             </p>
-          </div>
+          </header>
 
-          <div className="mt-12 sm:mt-14 lg:mt-16">
-            <div className="relative z-40 mb-4 sm:mb-5 lg:mb-6">
-              <div className="rounded-full border-[4px] border-black bg-[#14532D] px-6 py-4 shadow-[0_6px_0_0_rgba(0,0,0,1)]">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-sm font-black uppercase tracking-[0.14em] text-white sm:text-base">
-                    Stay Playful Method
-                  </span>
-                  <span className="text-sm font-black uppercase tracking-[0.14em] text-white sm:text-base">
-                    Three Layers
-                  </span>
+          {/* Pill Bar */}
+          <div className="relative z-20 mb-4 sm:mb-6">
+            <div className="mx-auto max-w-[800px] rounded-full border-[3px] border-black bg-[#14532D] px-4 py-2.5 shadow-[0_4px_0_0_rgba(0,0,0,1)] sm:px-6 sm:py-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white sm:text-xs">
+                  Stay Playful Method
+                </span>
+                {/* Progress Dots */}
+                <div className="flex items-center gap-2">
+                  {methodCards.map((card, i) => (
+                    <ProgressDot key={card.id} index={i} progress={scrollYProgress} />
+                  ))}
                 </div>
+                <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white sm:text-xs">
+                  Three Layers
+                </span>
               </div>
             </div>
+          </div>
 
-            <div className="relative h-[620px] sm:h-[680px] lg:h-[720px]">
+          {/* Card Stage */}
+          <div className="relative z-10 flex flex-1 items-center justify-center">
+            <div className="relative h-[420px] w-full max-w-[1000px] sm:h-[460px] lg:h-[500px]">
               {methodCards.map((card, index) => (
-                <ParallaxMethodCard
+                <MethodCard
                   key={card.id}
                   card={card}
                   index={index}
-                  progress={smoothProgress}
                   total={methodCards.length}
+                  progress={scrollYProgress}
                 />
               ))}
             </div>
@@ -175,125 +139,123 @@ export function Method() {
   )
 }
 
-function ParallaxMethodCard({
+function ProgressDot({ index, progress }: { index: number; progress: ReturnType<typeof useScroll>["scrollYProgress"] }) {
+  const segment = 1 / 3
+  const start = index * segment
+  const end = (index + 1) * segment
+  
+  const opacity = useTransform(progress, [start, start + 0.05, end - 0.05, end], [0.4, 1, 1, 0.4])
+  const scale = useTransform(progress, [start, start + 0.05, end - 0.05, end], [1, 1.3, 1.3, 1])
+  
+  return (
+    <motion.span
+      className="h-2 w-2 rounded-full bg-white sm:h-2.5 sm:w-2.5"
+      style={{ opacity, scale }}
+    />
+  )
+}
+
+function MethodCard({
   card,
   index,
-  progress,
   total,
+  progress,
 }: {
   card: MethodCard
   index: number
-  progress: MotionValue<number>
   total: number
+  progress: ReturnType<typeof useScroll>["scrollYProgress"]
 }) {
-  const step = 1 / total
-  const start = index * step
-  const mid = start + step / 2
-  const end = start + step
+  const segment = 1 / total
+  const start = index * segment
+  const end = (index + 1) * segment
+  const mid = start + segment / 2
 
-  const prev = Math.max(0, start - step * 0.5)
-  const next = Math.min(1, end + step * 0.5)
-
-  const y = useTransform(
-    progress,
-    [prev, start, mid, end, next],
-    [90, 36, 0, -36, -90]
-  )
-
-  const scale = useTransform(
-    progress,
-    [prev, start, mid, end, next],
-    [0.965, 0.985, 1, 0.985, 0.965]
-  )
-
+  // Card visibility: fully visible during its segment
   const opacity = useTransform(
     progress,
-    [prev, start, mid, end, next],
-    [0.96, 0.985, 1, 0.985, 0.96]
+    [
+      Math.max(0, start - 0.05),
+      start + 0.02,
+      end - 0.02,
+      Math.min(1, end + 0.05),
+    ],
+    [0, 1, 1, 0]
   )
 
-  const rotate = useTransform(
+  // Subtle Y movement
+  const y = useTransform(
     progress,
-    [prev, start, mid, end, next],
-    [1.2, 0.5, 0, -0.5, -1.2]
+    [start - 0.05, start + 0.02, mid, end - 0.02, end + 0.05],
+    [60, 0, 0, 0, -60]
   )
 
-  const blur = useTransform(
+  // Subtle scale
+  const scale = useTransform(
     progress,
-    [prev, start, mid, end, next],
-    [1.2, 0.4, 0, 0.4, 1.2]
+    [start - 0.05, start + 0.02, end - 0.02, end + 0.05],
+    [0.95, 1, 1, 0.95]
   )
 
-  const contentY = useTransform(
+  // Z-index based on visibility
+  const zIndex = useTransform(
     progress,
-    [prev, start, mid, end, next],
-    [18, 8, 0, -8, -18]
+    [start - 0.01, start, end, end + 0.01],
+    [0, 10, 10, 0]
   )
-
-  const panelY = useTransform(
-    progress,
-    [prev, start, mid, end, next],
-    [24, 10, 0, -10, -24]
-  )
-
-  const zIndex = total - index
 
   return (
     <motion.article
+      className="absolute inset-0"
       style={{
+        opacity,
         y,
         scale,
-        opacity,
-        rotate,
         zIndex,
-        filter: useTransform(blur, (v) => `blur(${v}px)`),
       }}
-      className="absolute inset-0 will-change-transform"
     >
-      <div className="overflow-hidden rounded-[28px] border-[4px] border-black bg-[#F7F1E6] shadow-[0_10px_0_0_rgba(0,0,0,1)] sm:rounded-[32px]">
+      <div className="h-full overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)] sm:rounded-[24px]">
+        {/* Card Header */}
         <div
-          className="flex items-center justify-between gap-3 border-b-[4px] border-black px-4 py-3 sm:px-6"
+          className="flex items-center justify-between border-b-[3px] border-black px-4 py-2.5 sm:px-5 sm:py-3"
           style={{ backgroundColor: card.accent }}
         >
-          <span className="text-sm font-black uppercase tracking-[0.08em] text-black sm:text-[1.05rem]">
+          <span className="text-xs font-black uppercase tracking-[-0.01em] text-black sm:text-sm">
             {card.eyebrow}
           </span>
-
-          <span className="text-sm font-black uppercase tracking-[0.08em] text-black sm:text-[1.05rem]">
+          <span className="text-xs font-black uppercase tracking-[-0.01em] text-black sm:text-sm">
             [{card.id}]
           </span>
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-          <motion.div
-            style={{ y: contentY }}
-            className="p-6 sm:p-8 lg:p-10 will-change-transform"
-          >
-            <h3 className="max-w-[12ch] font-sans text-[2.15rem] font-black uppercase leading-[0.88] tracking-[-0.08em] text-[#14532D] sm:text-[3rem] lg:text-[4.2rem]">
+        {/* Card Content */}
+        <div className="grid h-[calc(100%-44px)] sm:h-[calc(100%-48px)] lg:grid-cols-[1.15fr_0.85fr]">
+          {/* Left: Text Content */}
+          <div className="flex flex-col justify-center overflow-y-auto p-4 sm:p-6 lg:p-8">
+            <h3 className="max-w-[16ch] font-sans text-[1.5rem] font-black leading-[0.92] tracking-[-0.04em] text-black sm:text-[2rem] lg:text-[2.4rem]">
               {card.title}
             </h3>
 
-            <p className="mt-6 max-w-[34rem] text-lg font-semibold leading-8 text-black/90 sm:text-[1.45rem]">
+            <p className="mt-3 max-w-[32rem] text-sm font-semibold leading-snug text-black/90 sm:mt-4 sm:text-base lg:text-lg">
               {card.subtitle}
             </p>
 
-            <p className="mt-6 max-w-[42rem] text-base leading-8 text-black/78 sm:text-[1.04rem]">
+            <p className="mt-3 max-w-[36rem] text-xs leading-relaxed text-black/70 sm:mt-4 sm:text-sm lg:text-base">
               {card.description}
             </p>
 
-            <div className="mt-8">
-              <p className="text-[1rem] font-black uppercase tracking-[0.05em] text-black">
+            <div className="mt-4 sm:mt-5">
+              <p className="text-[10px] font-black uppercase tracking-wide text-black sm:text-xs">
                 What this means:
               </p>
-
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-2 space-y-1.5 sm:mt-3 sm:space-y-2">
                 {card.points.map((point) => (
                   <li
                     key={point}
-                    className="flex items-start gap-3 text-[1rem] leading-7 text-black/82"
+                    className="flex items-start gap-2 text-xs leading-snug text-black/80 sm:text-sm"
                   >
                     <span
-                      className="mt-[0.45rem] inline-block h-3.5 w-3.5 shrink-0 rounded-full border-[2px] border-black"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full border-[2px] border-black sm:h-2.5 sm:w-2.5"
                       style={{ backgroundColor: card.accent }}
                     />
                     <span>{point}</span>
@@ -301,54 +263,51 @@ function ParallaxMethodCard({
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            style={{ y: panelY }}
-            className="border-t-[4px] border-black lg:border-l-[4px] lg:border-t-0 will-change-transform"
+          {/* Right: Visual Panel (desktop only) */}
+          <div
+            className="hidden border-l-[3px] border-black lg:flex lg:items-center lg:justify-center lg:p-5"
+            style={{ backgroundColor: card.panel }}
           >
-            <div
-              className="flex h-full min-h-[320px] items-center justify-center p-6 sm:min-h-[360px] sm:p-8 lg:min-h-[100%] lg:p-10"
-              style={{ backgroundColor: card.panel }}
-            >
-              <div className="w-full rounded-[24px] border-[4px] border-black bg-[#F5F0E6] p-5 shadow-[0_6px_0_0_rgba(0,0,0,1)] sm:p-6">
-                <div className="flex items-center justify-between border-b-[3px] border-black pb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="h-3.5 w-3.5 rounded-full border-[2px] border-black bg-white" />
-                    <span className="h-3.5 w-3.5 rounded-full border-[2px] border-black bg-[#FFF4D6]" />
-                    <span className="h-3.5 w-3.5 rounded-full border-[2px] border-black bg-[#D9FFF4]" />
-                  </div>
-
-                  <span className="text-[11px] font-black uppercase tracking-[0.16em] text-black/60">
-                    Stay Playful
-                  </span>
-                </div>
-
-                <div className="py-8 sm:py-10">
-                  <div
-                    className="mx-auto flex aspect-[5/4] max-w-[430px] items-center justify-center rounded-[26px] border-[4px] border-black text-center"
-                    style={{ backgroundColor: card.accent }}
-                  >
-                    <div className="px-6 font-sans text-[2rem] font-black uppercase leading-[0.84] tracking-[-0.06em] text-[#14532D] sm:text-[2.5rem] lg:text-[3rem]">
-                      <div>Stay</div>
-                      <div>Playful</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between border-t-[3px] border-black pt-4">
-                  <span className="text-xs font-black uppercase tracking-[0.16em] text-black/60">
-                    Layer {card.id}
-                  </span>
-
-                  <span
-                    className="inline-flex h-4 w-4 rounded-full border-[3px] border-black"
-                    style={{ backgroundColor: card.accent }}
-                  />
+            <div className="w-full max-w-[240px] rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_4px_0_0_rgba(0,0,0,1)]">
+              <div
+                className="flex items-center justify-between border-b-[2px] border-black px-3 py-2"
+                style={{ backgroundColor: card.accent }}
+              >
+                <span className="text-[9px] font-black uppercase tracking-[0.1em] text-black/70">
+                  Stay Playful
+                </span>
+                <div className="flex items-center gap-1">
+                  <span className="h-2 w-2 rounded-full border-[2px] border-black bg-white" />
+                  <span className="h-2 w-2 rounded-full border-[2px] border-black bg-[#FFF4D6]" />
+                  <span className="h-2 w-2 rounded-full border-[2px] border-black bg-[#D9FFF4]" />
                 </div>
               </div>
+
+              <div className="p-3">
+                <div
+                  className="flex aspect-[4/5] items-center justify-center rounded-[12px] border-[3px] border-black"
+                  style={{ backgroundColor: card.accent }}
+                >
+                  <div className="px-3 text-center font-sans text-[1.3rem] font-black uppercase leading-[0.88] tracking-[-0.04em] text-[#14532D]">
+                    <div>Stay</div>
+                    <div>Playful</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between border-t-[2px] border-black px-3 py-2">
+                <span className="text-[9px] font-black uppercase tracking-[0.12em] text-black/50">
+                  Layer {card.id}
+                </span>
+                <span
+                  className="inline-flex h-2.5 w-2.5 rounded-full border-[2px] border-black"
+                  style={{ backgroundColor: card.accent }}
+                />
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </motion.article>
