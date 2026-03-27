@@ -12,7 +12,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   })
 
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 16])
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 18])
 
   return (
     <section
@@ -21,64 +21,81 @@ export function Hero() {
       aria-label="Stay Playful hero"
     >
       <div className="relative overflow-visible border-b-[3px] border-[#2B1A16] bg-[#FFFFED]">
-        {/* outer frame */}
-        <div className="pointer-events-none absolute inset-x-4 top-6 bottom-6 border border-black/10 sm:inset-x-6 lg:inset-x-8 lg:top-8 lg:bottom-8" />
-
         <motion.div
           style={{ y: heroY }}
-          initial={{ opacity: 0, y: 22 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: "easeOut" }}
-          className="relative z-10 mx-auto max-w-[1600px] px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20"
+          className="relative z-10 mx-auto max-w-[1600px] px-4 pb-20 pt-12 sm:px-6 sm:pb-24 sm:pt-16 lg:px-8 lg:pb-28 lg:pt-20"
         >
           {/* MOBILE */}
           <div className="lg:hidden">
-            <div className="mx-auto flex max-w-[760px] flex-col items-center">
-              <div className="relative w-full max-w-[430px]">
-                {/* image first on mobile */}
-                <div className="relative mx-auto w-[78vw] max-w-[340px] translate-y-4 sm:translate-y-6">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-white">
-                    <Image
-                      src="/1pro.jpg"
-                      alt="Editorial portrait for Stay Playful"
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 78vw, 340px"
-                      className="object-cover object-center"
-                    />
-                  </div>
-                </div>
+            <div className="relative mx-auto max-w-[430px]">
+              {/* top word */}
+              <div className="pointer-events-none absolute left-1/2 top-0 z-10 w-full -translate-x-1/2 text-center">
+                <div className="hero-top-mobile text-black/18">STAY</div>
+              </div>
 
-                {/* lockup */}
-                <div className="relative z-20 mx-auto mt-[-34px] flex items-end justify-center">
-                  <div className="relative z-30 mr-[-10px] w-[105px] shrink-0 sm:w-[125px]">
-                    <Image
-                      src="/logo2.png"
-                      alt="Stay Playful symbol"
-                      width={900}
-                      height={900}
-                      priority
-                      className="h-auto w-full"
-                    />
-                  </div>
-
-                  <div className="relative z-20 text-left">
-                    <div className="hero-wordmark-mobile text-[#111111]">
-                      <span className="block">Tay</span>
-                      <span className="block">PLAYFUL</span>
-                    </div>
-                  </div>
+              {/* image */}
+              <div className="relative z-20 mx-auto w-[72vw] max-w-[280px] pt-20">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#F05B4F]">
+                  <Image
+                    src="/1pro.jpg"
+                    alt="Editorial portrait for Stay Playful"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 72vw, 280px"
+                    className="object-cover object-center"
+                  />
                 </div>
+              </div>
+
+              {/* symbol */}
+              <div className="relative z-30 mt-[-46px] ml-[2%] w-[92px]">
+                <Image
+                  src="/logo2.png"
+                  alt="Stay Playful symbol"
+                  width={900}
+                  height={900}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
+
+              {/* front word */}
+              <div className="relative z-40 mt-[-18px] text-center">
+                <div className="hero-front-mobile text-[#111111]">PLAYFUL</div>
               </div>
             </div>
           </div>
 
           {/* DESKTOP */}
           <div className="hidden lg:block">
-            <div className="relative mx-auto min-h-[760px] max-w-[1500px] xl:min-h-[820px]">
-              {/* left lockup */}
-              <div className="absolute left-[5%] top-[44%] z-20 flex items-end xl:left-[6%]">
-                <div className="relative z-30 mr-[-18px] w-[180px] xl:w-[210px]">
+            <div className="relative mx-auto min-h-[820px] max-w-[1450px] xl:min-h-[880px]">
+              {/* STAY behind */}
+              <div className="pointer-events-none absolute left-1/2 top-[7%] z-10 -translate-x-1/2">
+                <div className="hero-top-desktop text-black/16">STAY</div>
+              </div>
+
+              {/* image in the middle */}
+              <div className="absolute left-1/2 top-[15%] z-20 -translate-x-1/2 translate-y-[34px]">
+                <div className="relative w-[420px] xl:w-[470px]">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#F05B4F]">
+                    <Image
+                      src="/1pro.jpg"
+                      alt="Editorial portrait for Stay Playful"
+                      fill
+                      priority
+                      sizes="(max-width: 1536px) 420px, 470px"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* logo symbol */}
+              <div className="absolute left-[10%] top-[44%] z-30 xl:left-[11%]">
+                <div className="w-[170px] xl:w-[195px]">
                   <Image
                     src="/logo2.png"
                     alt="Stay Playful symbol"
@@ -88,27 +105,35 @@ export function Hero() {
                     className="h-auto w-full"
                   />
                 </div>
-
-                <div className="relative z-20">
-                  <div className="hero-wordmark-desktop text-[#111111]">
-                    <span className="block">Tay</span>
-                    <span className="block">PLAYFUL</span>
-                  </div>
-                </div>
               </div>
 
-              {/* portrait */}
-              <div className="absolute left-[46%] top-[12%] z-30 w-[31vw] max-w-[500px] min-w-[330px] translate-y-[86px] xl:left-[47%] xl:max-w-[540px] xl:translate-y-[104px]">
-                <div className="relative aspect-[4/5] overflow-hidden bg-white">
-                  <Image
-                    src="/1pro.jpg"
-                    alt="Editorial portrait for Stay Playful"
-                    fill
-                    priority
-                    sizes="(max-width: 1279px) 31vw, 540px"
-                    className="object-cover object-center"
-                  />
-                </div>
+              {/* PLAYFUL front */}
+              <div className="pointer-events-none absolute left-1/2 top-[51%] z-40 -translate-x-1/2">
+                <div className="hero-front-desktop text-[#D7AA22]">PLAYFUL</div>
+              </div>
+
+              {/* tiny editorial notes */}
+              <div className="absolute left-[8%] top-[66%] z-40">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/70">
+                  Real life
+                  <br />
+                  support
+                </p>
+              </div>
+
+              <div className="absolute right-[9%] top-[66%] z-40 text-right">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/70">
+                  Softer
+                  <br />
+                  wellbeing
+                </p>
+              </div>
+
+              {/* mini brand statement */}
+              <div className="absolute bottom-[5%] left-1/2 z-40 max-w-[700px] -translate-x-1/2 text-center">
+                <p className="text-[2rem] leading-[1.12] tracking-[-0.04em] text-black/78 xl:text-[2.2rem]">
+                  A softer, more personal approach to wellbeing.
+                </p>
               </div>
             </div>
           </div>
@@ -116,29 +141,41 @@ export function Hero() {
       </div>
 
       <style jsx>{`
-        .hero-wordmark-desktop {
+        .hero-top-desktop {
           font-family: Georgia, "Times New Roman", serif;
-          font-weight: 500;
-          line-height: 0.82;
-          letter-spacing: -0.055em;
-          font-size: clamp(6.4rem, 8.6vw, 10.2rem);
-          text-transform: none;
-          color: #111111;
+          font-weight: 600;
+          line-height: 0.88;
+          letter-spacing: -0.05em;
+          font-size: clamp(9rem, 14vw, 15rem);
+          text-transform: uppercase;
         }
 
-        .hero-wordmark-mobile {
+        .hero-front-desktop {
           font-family: Georgia, "Times New Roman", serif;
-          font-weight: 500;
-          line-height: 0.84;
-          letter-spacing: -0.055em;
-          font-size: clamp(3.8rem, 12vw, 5.4rem);
-          text-transform: none;
-          color: #111111;
+          font-weight: 600;
+          line-height: 0.88;
+          letter-spacing: -0.05em;
+          font-size: clamp(8rem, 13vw, 13rem);
+          text-transform: uppercase;
         }
 
-        .hero-wordmark-desktop span:last-child,
-        .hero-wordmark-mobile span:last-child {
-          letter-spacing: -0.045em;
+        .hero-top-mobile {
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 600;
+          line-height: 0.9;
+          letter-spacing: -0.05em;
+          font-size: clamp(4.6rem, 18vw, 6.8rem);
+          text-transform: uppercase;
+        }
+
+        .hero-front-mobile {
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 600;
+          line-height: 0.9;
+          letter-spacing: -0.05em;
+          font-size: clamp(3.8rem, 14vw, 5.4rem);
+          text-transform: uppercase;
+          color: #d7aa22;
         }
       `}</style>
     </section>
