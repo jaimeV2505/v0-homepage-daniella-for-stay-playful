@@ -28,13 +28,6 @@ const faqItems: FaqItem[] = [
     accent: "bg-[#FFABFF]",
   },
   {
-    id: "results",
-    question: "How long does it typically take to see results?",
-    answer:
-      "That depends on your starting point and your goals, but most people begin noticing shifts early — more clarity, less pressure around food, and a stronger sense of trust in themselves. The deeper results come from consistency and support, not speed.",
-    accent: "bg-[#FFBD17]",
-  },
-  {
     id: "diet",
     question: "Do I need to follow a specific diet or meal plan?",
     answer:
@@ -52,15 +45,6 @@ const topRibbon = [
   "SOFTER WELLBEING",
 ]
 
-const bottomRibbon = [
-  "QUESTIONS ANSWERED",
-  "STAY PLAYFUL",
-  "CALM SUPPORT",
-  "REAL LIFE WELLNESS",
-  "QUESTIONS ANSWERED",
-  "STAY PLAYFUL",
-]
-
 export function Community() {
   const [openId, setOpenId] = useState<string>(faqItems[0].id)
 
@@ -70,7 +54,6 @@ export function Community() {
 
   return (
     <section className="relative overflow-hidden bg-[#F7EFE9] py-20 sm:py-24 lg:py-28">
-      {/* Atmosphere */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[8%] top-[14%] h-48 w-48 rounded-full bg-[#FFABFF]/10 blur-3xl" />
         <div className="absolute right-[10%] top-[20%] h-56 w-56 rounded-full bg-[#FF008E]/8 blur-3xl" />
@@ -80,7 +63,7 @@ export function Community() {
       </div>
 
       {/* Top divider / ribbon */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-24 lg:block">
+      <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-24 lg:block">
         <div className="absolute left-[-6%] right-[-6%] top-4 rotate-[-2.5deg] border-y-2 border-[#2B1A16] bg-[#FFF8F2] py-3 shadow-[0_8px_18px_rgba(0,0,0,0.06)]">
           <div className="flex overflow-hidden whitespace-nowrap">
             <motion.div
@@ -103,7 +86,6 @@ export function Community() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-10">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,8 +98,7 @@ export function Community() {
           </p>
 
           <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#2B1A16] sm:text-[4rem] lg:text-[5rem]">
-            A few things people{" "}
-            <span className="italic">always ask</span>
+            A few things people <span className="italic">always ask</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#2B1A16]/68">
@@ -126,7 +107,6 @@ export function Community() {
           </p>
         </motion.div>
 
-        {/* Main layout */}
         <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
           {/* Left editorial block */}
           <motion.div
@@ -223,7 +203,9 @@ export function Community() {
                       className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left sm:px-8 sm:py-7"
                     >
                       <div className="flex items-start gap-4">
-                        <span className={cn("mt-1 h-3 w-3 rounded-full", item.accent)} />
+                        <span
+                          className={cn("mt-1 h-3 w-3 rounded-full", item.accent)}
+                        />
                         <h3 className="font-serif text-[1.5rem] leading-[1.1] text-[#2B1A16] sm:text-[1.9rem]">
                           {item.question}
                         </h3>
@@ -288,27 +270,13 @@ export function Community() {
         </div>
 
         {/* Bottom divider */}
-        <div className="pointer-events-none relative mt-16 hidden h-24 lg:block">
-          <div className="absolute left-[-6%] right-[-6%] top-6 rotate-[2deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-3 shadow-[0_8px_18px_rgba(0,0,0,0.04)]">
-            <div className="flex overflow-hidden whitespace-nowrap">
-              <motion.div
-                initial={{ x: "-50%" }}
-                animate={{ x: "0%" }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="flex min-w-max items-center"
-              >
-                {[...bottomRibbon, ...bottomRibbon, ...bottomRibbon].map(
-                  (item, index) => (
-                    <span
-                      key={`${item}-${index}-bottom`}
-                      className="mx-6 font-serif text-[2rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
-                    >
-                      {item}
-                    </span>
-                  )
-                )}
-              </motion.div>
+        <div className="mt-16 flex justify-center">
+          <div className="flex w-full max-w-5xl items-center gap-4">
+            <div className="h-px flex-1 bg-[#2B1A16]/12" />
+            <div className="rounded-full border border-[#2B1A16]/12 bg-white/70 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#FF008E]">
+              Stay Playful
             </div>
+            <div className="h-px flex-1 bg-[#2B1A16]/12" />
           </div>
         </div>
       </div>

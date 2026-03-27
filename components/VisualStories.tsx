@@ -13,6 +13,7 @@ type Pillar = {
   accent: string
   eyebrow: string
   note: string
+  sideNote: string
 }
 
 const pillars: Pillar[] = [
@@ -26,17 +27,8 @@ const pillars: Pillar[] = [
     accent: "bg-[#BFD9F2]",
     eyebrow: "Balance without pressure",
     note: "Gentle structure, not rigid rules.",
-  },
-  {
-    id: "lifestyle-support",
-    title: "Lifestyle Support",
-    color: "bg-[#1FA35A]",
-    buttonLabel: "See Lifestyle Support",
-    description:
-      "Support goes beyond food. This pillar focuses on routines, rest, stress, self-awareness, and the other parts of life that deeply affect wellbeing. It is a more holistic approach to feeling better.",
-    accent: "bg-[#1FA35A]",
-    eyebrow: "Support for real life",
-    note: "Wellbeing is bigger than nutrition alone.",
+    sideNote:
+      "A softer path to health that gives space to curiosity, expression, flexibility, and sustainable support.",
   },
   {
     id: "creativity-and-curiosity",
@@ -48,6 +40,8 @@ const pillars: Pillar[] = [
     accent: "bg-[#F0DD8A]",
     eyebrow: "More joy, more aliveness",
     note: "Creativity is part of feeling well.",
+    sideNote:
+      "Making room for creativity can restore energy, meaning, and a deeper sense of connection with yourself.",
   },
   {
     id: "relationship-with-food",
@@ -59,32 +53,70 @@ const pillars: Pillar[] = [
     accent: "bg-[#E7A9D3]",
     eyebrow: "A softer relationship with food",
     note: "Less fixation. More freedom.",
+    sideNote:
+      "This work creates more ease, more trust, and a more sustainable way of nourishing yourself.",
   },
 ]
 
 export function VisualStories() {
-  const [activeId, setActiveId] = useState<string>(pillars[0].id)
+  const [activeId, setActiveId] = useState<string | null>(null)
+
+  const togglePillar = (pillarId: string) => {
+    setActiveId((prev) => (prev === pillarId ? null : pillarId))
+  }
 
   return (
-    <section id="stories" className="bg-sp-cream py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="stories" className="relative overflow-hidden bg-[#F8F4EF] py-16 sm:py-20">
+      {/* top separator / editorial divider */}
+      <div className="pointer-events-none absolute inset-x-0 top-0">
+        <div className="h-px bg-sp-deep-brown/10" />
+        <div className="relative mx-auto mt-5 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4">
+            <div className="h-[2px] flex-1 bg-sp-deep-brown/12" />
+            <div className="rounded-full border border-sp-deep-brown/12 bg-white/70 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-sp-hot-pink sm:text-[11px]">
+              Stay Playful Philosophy
+            </div>
+            <div className="h-[2px] flex-1 bg-sp-deep-brown/12" />
+          </div>
+        </div>
+      </div>
+
+      {/* soft atmosphere */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[8%] top-[18%] h-32 w-32 rounded-full bg-[#E7A9D3]/10 blur-3xl sm:h-40 sm:w-40" />
+        <div className="absolute right-[10%] top-[28%] h-40 w-40 rounded-full bg-[#BFD9F2]/14 blur-3xl sm:h-52 sm:w-52" />
+        <div className="absolute bottom-[12%] left-[22%] h-44 w-44 rounded-full bg-[#F0DD8A]/10 blur-3xl sm:h-56 sm:w-56" />
+      </div>
+
+      {/* background editorial word */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[4%] top-[10.5rem] hidden select-none font-serif text-[8rem] italic leading-none tracking-[-0.08em] text-sp-deep-brown/[0.035] lg:block xl:text-[10rem]">
+          Stay Playful
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Intro */}
-        <div className="mb-10 max-w-3xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-sp-hot-pink">
-            Core Pillars
-          </p>
-          <h2 className="font-serif text-3xl text-sp-deep-brown sm:text-4xl lg:text-5xl">
-            The foundations of <span className="italic">Stay Playful</span>
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-sp-deep-brown/75 sm:text-lg">
-            A more human, playful, and sustainable approach to wellbeing —
-            built around balance, support, curiosity, and a gentler relationship
-            with food.
-          </p>
+        <div className="mb-10 pt-10 sm:mb-12 sm:pt-12">
+          <div className="max-w-4xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-sp-hot-pink">
+              Core Pillars
+            </p>
+
+            <h2 className="font-serif text-[2.5rem] leading-[0.96] tracking-[-0.04em] text-sp-deep-brown sm:text-4xl lg:text-[4.5rem]">
+              The foundations of <span className="italic">Stay Playful</span>
+            </h2>
+
+            <p className="mt-4 max-w-3xl text-base leading-7 text-sp-deep-brown/75 sm:text-lg sm:leading-8">
+              A more human, playful, and sustainable approach to wellbeing —
+              built around balance, support, curiosity, and a gentler
+              relationship with food.
+            </p>
+          </div>
         </div>
 
         {/* Main block */}
-        <div className="overflow-hidden border-[3px] border-sp-deep-brown bg-sp-cream">
+        <div className="overflow-hidden rounded-[1.75rem] border-[3px] border-sp-deep-brown bg-[#F6E9E5] shadow-[10px_10px_0_0_rgba(0,0,0,0.08)] sm:rounded-[2rem]">
           <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
             {/* LEFT SIDE */}
             <div className="flex flex-col">
@@ -101,13 +133,16 @@ export function VisualStories() {
                   >
                     <button
                       type="button"
-                      onClick={() => setActiveId(pillar.id)}
-                      className="flex w-full items-center justify-between px-6 py-6 text-left transition-all duration-200 sm:px-8 sm:py-7"
+                      onClick={() => togglePillar(pillar.id)}
+                      aria-expanded={isActive}
+                      aria-controls={`pillar-panel-${pillar.id}`}
+                      className="flex w-full items-center justify-between px-5 py-5 text-left transition-all duration-200 hover:bg-white/10 sm:px-8 sm:py-7"
                     >
                       <div className="pr-6">
-                        <span className="block font-serif text-[1.9rem] leading-none text-black sm:text-[2.15rem] lg:text-[2.35rem]">
+                        <span className="block font-serif text-[1.8rem] leading-none text-black sm:text-[2.15rem] lg:text-[2.35rem]">
                           {pillar.title}
                         </span>
+
                         {!isActive && (
                           <span className="mt-3 block text-[11px] font-semibold uppercase tracking-[0.22em] text-black/55 sm:text-xs">
                             {pillar.eyebrow}
@@ -120,8 +155,8 @@ export function VisualStories() {
                       </span>
                     </button>
 
-                    {/* EXPANDED CONTENT INSIDE SAME PANEL */}
                     <div
+                      id={`pillar-panel-${pillar.id}`}
                       className={cn(
                         "grid transition-all duration-500 ease-in-out",
                         isActive
@@ -130,8 +165,8 @@ export function VisualStories() {
                       )}
                     >
                       <div className="overflow-hidden">
-                        <div className="border-t-[3px] border-sp-deep-brown bg-[#F6E4E1] p-5 sm:p-6 lg:p-7">
-                          <div className="border-[3px] border-sp-deep-brown bg-[#F7EAEA] p-6 shadow-[8px_8px_0_0_rgba(0,0,0,0.10)] sm:p-7 lg:p-8">
+                        <div className="border-t-[3px] border-sp-deep-brown bg-[#F1E2DE] p-4 sm:p-6 lg:p-7">
+                          <div className="border-[3px] border-sp-deep-brown bg-[#F7EAEA] p-5 shadow-[8px_8px_0_0_rgba(0,0,0,0.10)] sm:p-7 lg:p-8">
                             <div className="flex flex-col gap-6">
                               <div>
                                 <div className="mb-4 flex items-center gap-3">
@@ -163,7 +198,10 @@ export function VisualStories() {
                                 <div className="flex flex-col gap-4">
                                   <a
                                     href="#contact"
-                                    className="inline-flex w-fit items-center justify-center border-[3px] border-sp-deep-brown bg-[#BFD9F2] px-5 py-3 text-sm font-bold uppercase tracking-wide text-black shadow-[6px_6px_0_0_rgba(0,0,0,0.12)] transition-transform duration-200 hover:-translate-y-0.5"
+                                    className={cn(
+                                      "inline-flex w-fit items-center justify-center border-[3px] border-sp-deep-brown px-5 py-3 text-sm font-bold uppercase tracking-wide text-black shadow-[6px_6px_0_0_rgba(0,0,0,0.12)] transition-transform duration-200 hover:-translate-y-0.5",
+                                      pillar.accent
+                                    )}
                                   >
                                     {pillar.buttonLabel}
                                   </a>
@@ -174,8 +212,7 @@ export function VisualStories() {
                                 </div>
 
                                 <p className="max-w-md text-sm leading-6 text-sp-deep-brown/75">
-                                  A softer path to health that gives space to curiosity,
-                                  expression, flexibility, and sustainable support.
+                                  {pillar.sideNote}
                                 </p>
                               </div>
                             </div>
@@ -189,13 +226,14 @@ export function VisualStories() {
             </div>
 
             {/* RIGHT SIDE IMAGE */}
-            <div className="relative min-h-[420px] border-t-[3px] border-sp-deep-brown lg:min-h-full lg:border-l-[3px] lg:border-t-0">
+            <div className="relative min-h-[380px] border-t-[3px] border-sp-deep-brown lg:min-h-full lg:border-l-[3px] lg:border-t-0">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-vazhnik-7561675-yh4DRq7k07uswUhZC1ZwjnB0O01zmE.jpg"
                 alt="Expressive editorial visual for Stay Playful"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
+                priority={false}
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
