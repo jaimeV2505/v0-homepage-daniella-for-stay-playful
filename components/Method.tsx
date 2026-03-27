@@ -222,7 +222,7 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-x-4 bottom-6 top-6 will-change-transform sm:inset-x-8 sm:bottom-10 sm:top-10 lg:inset-x-12 lg:bottom-12 lg:top-12"
+      className="absolute inset-x-6 bottom-8 top-8 will-change-transform sm:inset-x-12 sm:bottom-12 sm:top-12 lg:inset-x-20 lg:bottom-16 lg:top-16"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
