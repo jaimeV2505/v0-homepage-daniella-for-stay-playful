@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram, Sparkles, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,7 +17,6 @@ import {
 const navItems = [
   { label: "Programs", href: "#programs" },
   { label: "Method", href: "#method" },
-  { label: "Stories", href: "#stories" },
   { label: "Contact", href: "#contact" },
 ]
 
@@ -52,22 +52,56 @@ export function Header() {
           }`}
       >
         <div className="mx-auto max-w-[1720px] px-4 sm:px-6 lg:px-8">
-          <div className="grid h-[86px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[110px] lg:grid-cols-[1fr_auto_1fr]">
-            {/* LEFT NAV DESKTOP */}
-            <nav className="hidden items-center gap-8 lg:flex xl:gap-10">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-black uppercase tracking-[0.06em] text-black transition-colors hover:text-[#FF008E]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+          <div className="grid h-[86px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[110px] lg:grid-cols-[1.15fr_auto_1fr]">
+            {/* LEFT SIDE DESKTOP */}
+            <div className="hidden items-center gap-10 lg:flex xl:gap-12">
+              <Link
+                href="/"
+                className="flex shrink-0 items-center gap-3 transition-transform duration-200 hover:scale-[1.01]"
+                aria-label="Stay Playful Home"
+              >
+                <div className="relative h-[72px] w-[72px] shrink-0 xl:h-[90px] xl:w-[90px]">
+                  <Image
+                    src="/logo1.png"
+                    alt="Stay Playful logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
 
-            {/* CENTER BRAND */}
-            <div className="flex items-center justify-start lg:justify-center">
+              <nav className="flex items-center gap-10 xl:gap-12">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm font-black uppercase tracking-[0.06em] text-black transition-colors hover:text-[#FF008E]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* BRAND / MOBILE LEFT */}
+            <div className="flex items-center justify-start gap-3 lg:justify-center">
+              <Link
+                href="/"
+                className="flex items-center gap-3 lg:hidden"
+                aria-label="Stay Playful Home"
+              >
+                <div className="relative h-[50px] w-[50px] shrink-0">
+                  <Image
+                    src="/logo1.png"
+                    alt="Stay Playful logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
+
               <Link
                 href="/"
                 className="text-left font-serif text-[2.6rem] font-black uppercase leading-[0.86] tracking-[-0.06em] text-black transition-transform duration-200 hover:scale-[1.01] sm:text-[3rem] lg:text-center lg:text-[4.2rem]"
@@ -138,15 +172,26 @@ export function Header() {
                   </SheetHeader>
 
                   <div className="flex h-full flex-col">
-                    {/* MOBILE TOP */}
                     <div className="flex items-start justify-between border-b-[3px] border-black bg-[#F6F1E7] px-6 py-6">
-                      <div>
-                        <p className="text-xs font-black uppercase tracking-[0.18em] text-black/70">
-                          Stay Playful
-                        </p>
-                        <h2 className="mt-3 font-serif text-[2.5rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-black">
-                          Menu
-                        </h2>
+                      <div className="flex items-start gap-3">
+                        <div className="relative mt-1 h-[48px] w-[48px] shrink-0">
+                          <Image
+                            src="/logo1.png"
+                            alt="Stay Playful logo"
+                            fill
+                            className="object-contain"
+                            priority
+                          />
+                        </div>
+
+                        <div>
+                          <p className="text-xs font-black uppercase tracking-[0.18em] text-black/70">
+                            Stay Playful
+                          </p>
+                          <h2 className="mt-3 font-serif text-[2.5rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-black">
+                            Menu
+                          </h2>
+                        </div>
                       </div>
 
                       <SheetClose asChild>
@@ -160,7 +205,6 @@ export function Header() {
                       </SheetClose>
                     </div>
 
-                    {/* MOBILE LINKS */}
                     <div className="flex flex-1 flex-col justify-between px-6 py-8">
                       <nav className="flex flex-col gap-4">
                         {navItems.map((item, index) => (

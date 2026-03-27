@@ -86,13 +86,8 @@ export function Method() {
       style={{ height: "280vh" }}
     >
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {/* Header Bar - Sticky like the reference */}
-        <motion.div
-          className="relative z-50 border-b-[3px] border-black bg-[#14532D]"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
+        {/* Header Bar - always visible, no entrance animation */}
+        <div className="relative z-50 shrink-0 border-b-[3px] border-black bg-[#14532D]">
           <div className="flex items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
             <h2
               id="method-title"
@@ -112,13 +107,13 @@ export function Method() {
               Stay Playful Method
             </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Cards Area - Takes remaining space */}
         <div className="relative flex-1 bg-[#F5F0E6]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
           
-          <div className="relative mx-auto flex h-full max-w-[1100px] items-center justify-center px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+          <div className="relative mx-auto h-full max-w-[1100px] px-0">
             {methodCards.map((card, index) => (
               <MethodCardComponent
                 key={card.id}
@@ -248,7 +243,7 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-4 will-change-transform sm:inset-6 lg:inset-8"
+      className="absolute inset-x-4 bottom-4 top-2 will-change-transform sm:inset-x-6 sm:bottom-6 sm:top-3 lg:inset-x-8 lg:bottom-8 lg:top-4"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
