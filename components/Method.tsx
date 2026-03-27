@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion"
 import { useMemo, useRef } from "react"
 
 type MethodCard = {
@@ -10,6 +10,7 @@ type MethodCard = {
   description: string
   accent: string
   rotation: string
+  tag: string
 }
 
 const windows: MethodCard[] = [
@@ -20,7 +21,8 @@ const windows: MethodCard[] = [
     description:
       "I’m Daniella, and Stay Playful was created to offer a softer, more human approach to wellbeing — one rooted in balance, self-trust, and a healthier relationship with food, body, and everyday life.",
     accent: "#FFABFF",
-    rotation: "-rotate-[1.4deg]",
+    rotation: "-rotate-[1.2deg]",
+    tag: "Soft support",
   },
   {
     id: "02",
@@ -29,7 +31,8 @@ const windows: MethodCard[] = [
     description:
       "The goal is not perfection, pressure, or constant self-monitoring. It’s helping you build something that feels sustainable, personal, and joyful — support that fits your real life.",
     accent: "#00E2FF",
-    rotation: "rotate-[1.1deg]",
+    rotation: "rotate-[1deg]",
+    tag: "Real life fit",
   },
   {
     id: "03",
@@ -38,7 +41,8 @@ const windows: MethodCard[] = [
     description:
       "We use curiosity, reflection, and thoughtful guidance to create lasting shifts. No rigid rules, no extremes — just a grounded process that helps you move forward with more ease and clarity.",
     accent: "#FFBD17",
-    rotation: "-rotate-[0.8deg]",
+    rotation: "-rotate-[0.9deg]",
+    tag: "Gentle structure",
   },
 ]
 
@@ -50,11 +54,11 @@ export function Method() {
     offset: ["start end", "end start"],
   })
 
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -90])
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.1, 0.16, 0.22])
-  const headingY = useTransform(scrollYProgress, [0, 1], [0, -24])
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -120])
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.25, 1], [0.08, 0.14, 0.2])
+  const headingY = useTransform(scrollYProgress, [0, 1], [0, -26])
 
-  const repeatedRows = useMemo(() => Array.from({ length: 6 }, (_, i) => i), [])
+  const repeatedRows = useMemo(() => Array.from({ length: 7 }, (_, i) => i), [])
 
   return (
     <section
@@ -63,19 +67,19 @@ export function Method() {
       aria-labelledby="method-title"
       className="relative overflow-hidden bg-[#F5F0E6] py-20 sm:py-24 lg:py-28 xl:py-32"
     >
-      {/* base background */}
+      {/* background layers */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_45%,#EEE6D8_100%)]" />
-        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.05)_49.5%,transparent_50%,transparent_100%)]" />
-        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.05)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_48%,#ECE3D4_100%)]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.06)_49.5%,transparent_50%,transparent_100%)]" />
+        <div className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.08)_100%)]" />
       </div>
 
-      {/* big repeated background type */}
+      {/* repeated editorial text */}
       <motion.div
         style={{ y: bgY, opacity: bgOpacity }}
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute inset-0 px-4 py-10 font-sans text-[3.1rem] font-black uppercase leading-[0.8] tracking-[-0.09em] text-[#E8E0CF] sm:text-[4.8rem] lg:text-[7.5rem] xl:text-[9.4rem] 2xl:text-[10.5rem]">
+        <div className="absolute inset-0 px-4 py-8 font-sans text-[3rem] font-black uppercase leading-[0.8] tracking-[-0.09em] text-[#DDD3C2] sm:text-[4.5rem] lg:text-[7.4rem] xl:text-[9rem] 2xl:text-[10.5rem]">
           <div className="space-y-2 sm:space-y-3 lg:space-y-4">
             {repeatedRows.map((row) => (
               <div key={row} className="whitespace-nowrap">
@@ -86,11 +90,11 @@ export function Method() {
         </div>
       </motion.div>
 
-      {/* subtle dividers */}
+      {/* subtle frame lines */}
       <div className="pointer-events-none absolute inset-y-0 left-[4%] hidden w-px bg-black/5 xl:block" />
       <div className="pointer-events-none absolute inset-y-0 right-[4%] hidden w-px bg-black/5 xl:block" />
 
-      <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1640px] px-4 sm:px-6 lg:px-8">
         {/* heading */}
         <motion.div
           style={{ y: headingY }}
@@ -102,7 +106,7 @@ export function Method() {
 
           <h2
             id="method-title"
-            className="mt-4 font-sans text-[2.9rem] font-black uppercase leading-[0.86] tracking-[-0.09em] text-black sm:text-[4.2rem] lg:text-[5.8rem] xl:text-[6.5rem]"
+            className="mt-4 font-sans text-[2.8rem] font-black uppercase leading-[0.86] tracking-[-0.09em] text-black sm:text-[4.1rem] lg:text-[5.8rem] xl:text-[6.5rem]"
           >
             THREE LAYERS
             <br />
@@ -110,33 +114,33 @@ export function Method() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
-            The heart of Stay Playful comes down to three simple things — who I
-            am, what this work is meant to support, and the way we create change
-            with more curiosity, more care, and far less pressure.
+            The heart of Stay Playful comes down to three simple things — who I am,
+            what this work is meant to support, and the way we create change with
+            more curiosity, more care, and far less pressure.
           </p>
         </motion.div>
 
-        {/* mobile layout */}
+        {/* mobile */}
         <div className="relative z-10 mt-12 grid gap-6 lg:hidden">
           {windows.map((item, index) => (
             <motion.article
               key={item.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 34 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.18 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
               className="overflow-hidden rounded-[28px] border-[4px] border-black bg-white shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
             >
-              <WindowCard item={item} compact={false} />
+              <WindowCard item={item} mobile />
             </motion.article>
           ))}
         </div>
 
-        {/* desktop stacked cards */}
+        {/* desktop scroll-story layout */}
         <div className="relative z-10 mt-16 hidden lg:block xl:mt-20">
-          <div className="mx-auto max-w-[980px]">
+          <div className="mx-auto max-w-[1100px]">
             {windows.map((item, index) => (
-              <StackedMethodCard
+              <ScrollLayerCard
                 key={item.id}
                 item={item}
                 index={index}
@@ -150,7 +154,7 @@ export function Method() {
   )
 }
 
-function StackedMethodCard({
+function ScrollLayerCard({
   item,
   index,
   total,
@@ -159,36 +163,38 @@ function StackedMethodCard({
   index: number
   total: number
 }) {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start 82%", "end 24%"],
+    target: wrapperRef,
+    offset: ["start 88%", "end 22%"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [70, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [0.94, 1])
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.45, 1])
+  const y = useTransform(scrollYProgress, [0, 0.35, 1], [120, 35, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [0.92, 1])
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 1], [0.35, 0.75, 1])
+  const rotate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [index % 2 === 0 ? -2 : 2, 0]
+  )
 
-  const topOffsets = ["top-[110px]", "top-[150px]", "top-[190px]"]
-  const zIndexes = ["z-[30]", "z-[20]", "z-[10]"]
-  const rotateFallback = ["-rotate-[1deg]", "rotate-[0.85deg]", "-rotate-[0.7deg]"]
+  const topMap = ["top-[120px]", "top-[150px]", "top-[180px]"]
+  const zMap = ["z-[30]", "z-[20]", "z-[10]"]
 
   return (
     <div
-      ref={cardRef}
-      className={`relative ${index !== total - 1 ? "mb-[18vh]" : ""}`}
+      ref={wrapperRef}
+      className={`relative ${index !== total - 1 ? "h-[108vh]" : "h-[92vh]"}`}
     >
       <motion.article
-        style={{ y, scale, opacity }}
-        className={`sticky ${topOffsets[index] ?? "top-[120px]"} ${zIndexes[index] ?? "z-[10]"
-          }`}
+        style={{ y, scale, opacity, rotate }}
+        className={`sticky ${topMap[index] ?? "top-[130px]"} ${zMap[index] ?? "z-[10]"}`}
       >
         <div
-          className={`group relative overflow-hidden rounded-[30px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 ${item.rotation || rotateFallback[index]
-            }`}
+          className={`relative overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[14px_14px_0_0_rgba(0,0,0,1)] ${item.rotation}`}
         >
-          <WindowCard item={item} compact />
+          <WindowCard item={item} />
         </div>
       </motion.article>
     </div>
@@ -197,10 +203,10 @@ function StackedMethodCard({
 
 function WindowCard({
   item,
-  compact = false,
+  mobile = false,
 }: {
   item: MethodCard
-  compact?: boolean
+  mobile?: boolean
 }) {
   return (
     <div className="flex h-full flex-col">
@@ -220,20 +226,26 @@ function WindowCard({
         </span>
       </div>
 
-      <div
-        className={`flex flex-1 flex-col ${compact ? "p-7 xl:p-8" : "p-6 sm:p-7"
-          }`}
-      >
-        <p className="text-[11px] font-black uppercase tracking-[0.16em] text-black/55">
-          Stay Playful
-        </p>
+      <div className={`flex flex-1 flex-col ${mobile ? "p-6 sm:p-7" : "p-7 xl:p-8"}`}>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-black/55">
+            Stay Playful
+          </p>
 
-        <div className="mt-5 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-[32rem]">
+          <div className="rounded-full border-[3px] border-black bg-[#F8F3EA] px-4 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-black/70 sm:text-xs">
+            {item.tag}
+          </div>
+        </div>
+
+        <div
+          className={`mt-6 grid gap-8 ${mobile ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-[1.1fr_0.7fr]"
+            }`}
+        >
+          <div>
             <h3
-              className={`font-sans font-black uppercase leading-[0.9] tracking-[-0.07em] text-black ${compact
-                  ? "text-[2.3rem] xl:text-[2.8rem]"
-                  : "text-[2rem] sm:text-[2.2rem]"
+              className={`font-sans font-black uppercase leading-[0.9] tracking-[-0.07em] text-black ${mobile
+                  ? "text-[2rem] sm:text-[2.2rem]"
+                  : "text-[2.4rem] xl:text-[3rem]"
                 }`}
             >
               {item.title}
@@ -244,29 +256,49 @@ function WindowCard({
             </p>
 
             <p
-              className={`mt-6 max-w-[42rem] text-black/78 ${compact ? "text-[1.03rem] leading-8" : "text-base leading-8"
+              className={`mt-6 max-w-[42rem] text-black/78 ${mobile ? "text-base leading-8" : "text-[1.04rem] leading-8 xl:text-[1.08rem]"
                 }`}
             >
               {item.description}
             </p>
           </div>
 
-          <div className="shrink-0 lg:pt-2">
-            <div className="rounded-full border-[3px] border-black bg-[#F8F3EA] px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-black/70">
-              Gentle work
+          <div className="flex flex-col justify-between gap-6">
+            <div className="rounded-[24px] border-[3px] border-black bg-[#F9F4EA] p-5">
+              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-black/50">
+                Layer {item.id}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-black/72">
+                A more grounded and playful way to create change — designed to feel
+                supportive, clear, and realistic.
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border-[3px] border-black bg-white p-5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black uppercase tracking-[0.16em] text-black/65">
+                  Stay Playful
+                </span>
+
+                <span
+                  className="inline-flex h-4 w-4 rounded-full border-[3px] border-black"
+                  style={{ backgroundColor: item.accent }}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-between border-t-[3px] border-black pt-4">
-          <span className="text-xs font-black uppercase tracking-[0.16em] text-black/65">
-            Stay Playful
-          </span>
+        <div className="mt-8 border-t-[3px] border-black pt-4">
+          <div className="flex items-center justify-between gap-4">
+            <span className="text-xs font-black uppercase tracking-[0.16em] text-black/65">
+              Editorial scrolling card
+            </span>
 
-          <span
-            className="inline-flex h-4 w-4 rounded-full border-[3px] border-black"
-            style={{ backgroundColor: item.accent }}
-          />
+            <span className="text-xs font-black uppercase tracking-[0.16em] text-black/45">
+              {item.id} / 03
+            </span>
+          </div>
         </div>
       </div>
     </div>
