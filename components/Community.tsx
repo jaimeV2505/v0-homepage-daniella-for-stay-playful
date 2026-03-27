@@ -27,13 +27,7 @@ const faqItems: FaqItem[] = [
       "This is for people who feel tired of all-or-nothing wellness. It’s especially helpful if you’ve tried plans that felt too strict, too clinical, or impossible to sustain. Whether you want private support or a structured program, the work is tailored to where you are now.",
     accent: "bg-[#FFABFF]",
   },
-  {
-    id: "results",
-    question: "How long does it typically take to see results?",
-    answer:
-      "That depends on your starting point and your goals, but most people begin noticing shifts early — more clarity, less pressure around food, and a stronger sense of trust in themselves. The deeper results come from consistency and support, not speed.",
-    accent: "bg-[#FFBD17]",
-  },
+
   {
     id: "diet",
     question: "Do I need to follow a specific diet or meal plan?",
