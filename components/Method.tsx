@@ -1,6 +1,12 @@
 "use client"
 
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion"
 import { useRef } from "react"
 
 type MethodCard = {
@@ -70,12 +76,18 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  const blobY = useTransform(scrollYProgress, [0, 1], [-30, 50])
-  const blobScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1, 1.08])
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 110,
+    damping: 26,
+    mass: 0.4,
+  })
+
+  const blobY = useTransform(smoothProgress, [0, 1], [-20, 36])
+  const blobScale = useTransform(smoothProgress, [0, 0.5, 1], [0.94, 1, 1.04])
   const blobOpacity = useTransform(
-    scrollYProgress,
+    smoothProgress,
     [0, 0.15, 0.85, 1],
-    [0.45, 0.85, 0.82, 0.6]
+    [0.55, 0.82, 0.8, 0.7]
   )
 
   return (
@@ -95,10 +107,10 @@ export function Method() {
             scale: blobScale,
             opacity: blobOpacity,
           }}
-          className="absolute top-10 left-1/2 h-[280px] w-[90%] -translate-x-1/2 z-0"
+          className="absolute top-10 left-1/2 z-0 h-[280px] w-[90%] -translate-x-1/2"
         >
           <div
-            className="w-full h-full blur-[40px]"
+            className="h-full w-full blur-[40px]"
             style={{
               backgroundColor: "#FFABFF",
               clipPath:
@@ -108,20 +120,20 @@ export function Method() {
         </motion.div>
       </div>
 
-      <div className="sticky top-0 h-screen flex items-center">
+      <div className="sticky top-0 flex h-screen items-center">
         <div className="relative mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <p className="text-sm font-black uppercase tracking-[0.26em] text-black/55">
               Stay Playful
             </p>
 
             <h2
               id="method-title"
-              className="mt-5 font-sans text-[2.9rem] font-black uppercase leading-[0.84] tracking-[-0.09em] text-[#14532D] sm:text-[4.4rem] lg:text-[5.8rem]"
+              className="mt-5 font-sans text-[3rem] font-black uppercase leading-[0.84] tracking-[-0.09em] text-[#14532D] sm:text-[4.6rem] lg:text-[6.4rem]"
             >
-              STAY PLAYFUL
+              THREE LAYERS
               <br />
-              METHOD
+              <span className="inline-block">OF THE WORK</span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
@@ -151,7 +163,7 @@ export function Method() {
                   key={card.id}
                   card={card}
                   index={index}
-                  progress={scrollYProgress}
+                  progress={smoothProgress}
                   total={methodCards.length}
                 />
               ))}
@@ -179,49 +191,49 @@ function ParallaxMethodCard({
   const mid = start + step / 2
   const end = start + step
 
-  const prev = Math.max(0, start - step / 2)
-  const next = Math.min(1, end + step / 2)
+  const prev = Math.max(0, start - step * 0.5)
+  const next = Math.min(1, end + step * 0.5)
 
   const y = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [140, 70, 0, -70, -140]
+    [90, 36, 0, -36, -90]
   )
 
   const scale = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [0.86, 0.93, 1, 0.95, 0.88]
+    [0.965, 0.985, 1, 0.985, 0.965]
   )
 
   const opacity = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [0, 0.45, 1, 0.45, 0]
+    [0.96, 0.985, 1, 0.985, 0.96]
   )
 
   const rotate = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [3, 1.5, 0, -1.5, -3]
+    [1.2, 0.5, 0, -0.5, -1.2]
   )
 
   const blur = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [10, 4, 0, 4, 10]
+    [1.2, 0.4, 0, 0.4, 1.2]
   )
 
   const contentY = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [40, 20, 0, -20, -40]
+    [18, 8, 0, -8, -18]
   )
 
   const panelY = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [60, 24, 0, -24, -60]
+    [24, 10, 0, -10, -24]
   )
 
   const zIndex = total - index
