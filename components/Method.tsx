@@ -118,7 +118,7 @@ export function Method() {
         <div className="relative flex-1 bg-[#F5F0E6]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
           
-          <div className="relative mx-auto h-full max-w-[1200px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+          <div className="relative mx-auto flex h-full max-w-[1100px] items-center justify-center px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
             {methodCards.map((card, index) => (
               <MethodCardComponent
                 key={card.id}
@@ -248,11 +248,11 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-0 will-change-transform"
+      className="absolute inset-4 will-change-transform sm:inset-6 lg:inset-8"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
-        className="flex h-full flex-col overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[24px] lg:rounded-[28px]"
+        className="flex h-full flex-col overflow-hidden rounded-[18px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[22px] lg:rounded-[26px]"
         style={{
           boxShadow: `0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.2)`,
         }}
