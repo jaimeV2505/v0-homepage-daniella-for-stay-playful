@@ -70,7 +70,6 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  // Ultra smooth spring for premium feel
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 80,
     damping: 25,
@@ -85,45 +84,37 @@ export function Method() {
       className="relative bg-[#F5F0E6]"
       style={{ height: "280vh" }}
     >
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {/* Header Bar - always visible, no entrance animation */}
-        <div className="relative z-50 shrink-0 border-b-[3px] border-black bg-[#14532D]">
-          <div className="flex items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
-            <h2
-              id="method-title"
-              className="text-sm font-black uppercase tracking-[0.08em] text-white sm:text-base md:text-lg"
-            >
-              Stay Playful Method
-            </h2>
-            
-            {/* Center Progress Dots */}
-            <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2">
-              {methodCards.map((card, i) => (
-                <ProgressDot key={card.id} index={i} progress={smoothProgress} accent={card.accent} />
-              ))}
-            </div>
-            
-            <span className="text-sm font-black uppercase tracking-[0.08em] text-white sm:text-base md:text-lg">
-              Stay Playful Method
-            </span>
-          </div>
+      {/* Divider label */}
+      <div className="flex items-center gap-4 px-6 py-6 sm:px-10 sm:py-8">
+        <span className="text-xs font-black uppercase tracking-[0.25em] text-black/40 sm:text-sm">
+          Stay Playful Method
+        </span>
+        <div className="h-[2px] flex-1 bg-black/15" />
+        {/* Progress dots */}
+        <div className="flex items-center gap-1.5">
+          {methodCards.map((card, i) => (
+            <ProgressDot key={card.id} index={i} progress={smoothProgress} accent={card.accent} />
+          ))}
         </div>
+        <div className="h-[2px] flex-1 bg-black/15" />
+        <span className="text-xs font-black uppercase tracking-[0.25em] text-black/40 sm:text-sm">
+          Three Layers
+        </span>
+      </div>
 
-        {/* Cards Area - Takes remaining space */}
-        <div className="relative flex-1 bg-[#F5F0E6]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
-          
-          <div className="relative mx-auto h-full max-w-[1100px] px-0">
-            {methodCards.map((card, index) => (
-              <MethodCardComponent
-                key={card.id}
-                card={card}
-                index={index}
-                total={methodCards.length}
-                progress={smoothProgress}
-              />
-            ))}
-          </div>
+      {/* Sticky cards viewport */}
+      <div className="sticky top-0 h-screen">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
+        <div className="relative h-full w-full">
+          {methodCards.map((card, index) => (
+            <MethodCardComponent
+              key={card.id}
+              card={card}
+              index={index}
+              total={methodCards.length}
+              progress={smoothProgress}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -143,23 +134,17 @@ function ProgressDot({
   const start = index * segment
   const end = (index + 1) * segment
 
-  const isActive = useTransform(progress, (p) => p >= start - 0.02 && p < end + 0.02)
-
   const scale = useTransform(
     progress,
     [start - 0.05, start, start + segment / 2, end, end + 0.05],
     [0.7, 1.3, 1.4, 1.3, 0.7]
   )
 
-  const bgOpacity = useTransform(
-    progress,
-    [start - 0.05, start, end, end + 0.05],
-    [0.2, 1, 1, 0.2]
-  )
+  const bgOpacity = useTransform(progress, [start - 0.05, start, end, end + 0.05], [0.2, 1, 1, 0.2])
 
   return (
-    <motion.div className="relative h-4 w-4 sm:h-5 sm:w-5" style={{ scale }}>
-      <span className="absolute inset-0 rounded-full border-2 border-white/40" />
+    <motion.div className="relative h-3 w-3 sm:h-4 sm:w-4" style={{ scale }}>
+      <span className="absolute inset-0 rounded-full border-2 border-black/30" />
       <motion.span
         className="absolute inset-[2px] rounded-full"
         style={{ backgroundColor: accent, opacity: bgOpacity }}
@@ -183,20 +168,17 @@ function MethodCardComponent({
   const start = index * segment
   const end = (index + 1) * segment
 
-  // Clean transitions with no content movement
-  const enterStart = start
   const enterEnd = start + 0.06
   const exitStart = end - 0.06
   const exitEnd = end
 
-  // Opacity transitions
   const opacity = useTransform(
     progress,
     index === 0
       ? [0, 0.01, exitStart, exitEnd]
       : index === total - 1
-        ? [enterStart, enterEnd, 1, 1]
-        : [enterStart, enterEnd, exitStart, exitEnd],
+        ? [start, enterEnd, 1, 1]
+        : [start, enterEnd, exitStart, exitEnd],
     index === 0
       ? [1, 1, 1, 0]
       : index === total - 1
@@ -204,14 +186,13 @@ function MethodCardComponent({
         : [0, 1, 1, 0]
   )
 
-  // Y movement - cards slide up
   const y = useTransform(
     progress,
     index === 0
       ? [0, exitStart, exitEnd]
       : index === total - 1
-        ? [enterStart, enterEnd, 1]
-        : [enterStart, enterEnd, exitStart, exitEnd],
+        ? [start, enterEnd, 1]
+        : [start, enterEnd, exitStart, exitEnd],
     index === 0
       ? [0, 0, -60]
       : index === total - 1
@@ -219,22 +200,20 @@ function MethodCardComponent({
         : [60, 0, 0, -60]
   )
 
-  // Scale for depth
   const scale = useTransform(
     progress,
     index === 0
       ? [0, exitStart, exitEnd]
       : index === total - 1
-        ? [enterStart, enterEnd, 1]
-        : [enterStart, enterEnd, exitStart, exitEnd],
+        ? [start, enterEnd, 1]
+        : [start, enterEnd, exitStart, exitEnd],
     index === 0
-      ? [1, 1, 0.95]
+      ? [1, 1, 0.96]
       : index === total - 1
-        ? [0.95, 1, 1]
-        : [0.95, 1, 1, 0.95]
+        ? [0.96, 1, 1]
+        : [0.96, 1, 1, 0.96]
   )
 
-  // Z-index
   const zIndex = useTransform(progress, (p) => {
     if (p >= start && p < end) return 20
     if (p >= end) return 10 - index
@@ -243,62 +222,56 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-x-4 bottom-4 top-3 will-change-transform sm:inset-x-6 sm:bottom-6 sm:top-4 lg:inset-x-8 lg:bottom-6 lg:top-4"
+      className="absolute inset-x-4 bottom-6 top-6 will-change-transform sm:inset-x-8 sm:bottom-10 sm:top-10 lg:inset-x-12 lg:bottom-12 lg:top-12"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
         className="flex h-full flex-col overflow-hidden rounded-[18px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[22px] lg:rounded-[26px]"
         style={{
-          boxShadow: `0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.2)`,
+          boxShadow: "0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.2)",
         }}
       >
         {/* Card Header */}
         <div
-          className="flex items-center justify-between border-b-[3px] border-black px-4 py-2.5 sm:px-5 sm:py-3"
+          className="flex shrink-0 items-center justify-between border-b-[3px] border-black px-4 py-3 sm:px-6 sm:py-3.5"
           style={{ backgroundColor: card.accent }}
         >
-          <span className="text-xs font-black uppercase tracking-[0.08em] text-black sm:text-sm">
+          <span className="text-xs font-black uppercase tracking-[0.1em] text-black sm:text-sm">
             {card.eyebrow}
           </span>
-          <span className="text-xs font-black tracking-[0.02em] text-black/60 sm:text-sm">
+          <span className="text-xs font-black tracking-[0.02em] text-black/50 sm:text-sm">
             [{card.id}]
           </span>
         </div>
 
-        {/* Card Body - Static content, no internal animations */}
+        {/* Card Body */}
         <div className="grid min-h-0 flex-1 overflow-hidden lg:grid-cols-[1.3fr_0.7fr]">
-          {/* Text Content */}
-          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 pt-8 sm:p-7 sm:pt-12 lg:p-9 lg:pt-16">
+          {/* Text Content - fully static, no internal animation */}
+          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 sm:p-8 lg:p-10">
             <h3
               className="max-w-[16ch] font-sans leading-[0.88] tracking-[-0.04em] text-black"
-              style={{
-                fontSize: "clamp(1.8rem, 4.5vw, 3.2rem)",
-                fontWeight: 900,
-              }}
+              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3rem)", fontWeight: 900 }}
             >
               {card.title}
             </h3>
 
-            <p className="mt-3 max-w-[32rem] text-base font-semibold leading-snug text-black/80 sm:mt-4 sm:text-lg">
+            <p className="mt-3 max-w-[32rem] text-sm font-semibold leading-snug text-black/80 sm:mt-4 sm:text-base lg:text-lg">
               {card.subtitle}
             </p>
 
-            <p className="mt-3 max-w-[36rem] text-sm leading-relaxed text-black/60 sm:mt-4 sm:text-base">
+            <p className="mt-3 max-w-[36rem] text-xs leading-relaxed text-black/60 sm:mt-4 sm:text-sm lg:text-base">
               {card.description}
             </p>
 
             <div className="mt-4 sm:mt-5">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/45 sm:text-xs">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 sm:text-xs">
                 What this means:
               </p>
-              <ul className="mt-2.5 space-y-1.5 sm:mt-3">
+              <ul className="mt-2.5 space-y-1.5 sm:mt-3 sm:space-y-2">
                 {card.points.map((point, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-2.5 text-xs leading-snug text-black/70 sm:gap-3 sm:text-sm"
-                  >
+                  <li key={i} className="flex items-start gap-2.5 text-xs leading-snug text-black/70 sm:text-sm">
                     <span
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full border-2 border-black sm:h-2.5 sm:w-2.5 sm:border-[2.5px]"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full border-2 border-black sm:h-2.5 sm:w-2.5"
                       style={{ backgroundColor: card.accent }}
                     />
                     <span>{point}</span>
@@ -313,42 +286,37 @@ function MethodCardComponent({
             className="hidden border-l-[3px] border-black lg:flex lg:items-center lg:justify-center"
             style={{ backgroundColor: card.panel }}
           >
-            <div className="w-full max-w-[220px] rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)]">
-              {/* Mini Header */}
+            <div className="w-full max-w-[200px] rounded-[14px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_5px_0_0_rgba(0,0,0,1)]">
               <div
-                className="flex items-center justify-between border-b-[2.5px] border-black px-3 py-1.5"
+                className="flex items-center justify-between border-b-[2px] border-black px-3 py-1.5"
                 style={{ backgroundColor: card.accent }}
               >
-                <span className="text-[8px] font-black uppercase tracking-[0.1em] text-black/70">
+                <span className="text-[8px] font-black uppercase tracking-widest text-black/70">
                   Stay Playful
                 </span>
                 <div className="flex gap-0.5">
-                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
-                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
-                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
+                  {[0, 1, 2].map((d) => (
+                    <span key={d} className="h-1.5 w-1.5 rounded-full border border-black bg-white" />
+                  ))}
                 </div>
               </div>
-
-              {/* Mini Content */}
               <div className="p-3">
                 <div
                   className="flex aspect-[4/5] items-center justify-center rounded-lg border-[2px] border-black"
                   style={{ backgroundColor: card.accent }}
                 >
-                  <div className="text-center font-sans text-lg font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D]">
+                  <div className="text-center font-sans text-base font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D]">
                     <div>Stay</div>
                     <div>Playful</div>
                   </div>
                 </div>
               </div>
-
-              {/* Mini Footer */}
-              <div className="flex items-center justify-between border-t-[2.5px] border-black px-3 py-1.5">
+              <div className="flex items-center justify-between border-t-[2px] border-black px-3 py-1.5">
                 <span className="text-[8px] font-bold uppercase tracking-wider text-black/40">
                   Layer {card.id}
                 </span>
                 <span
-                  className="h-2 w-2 rounded-full border-[1.5px] border-black"
+                  className="h-2 w-2 rounded-full border border-black"
                   style={{ backgroundColor: card.accent }}
                 />
               </div>
