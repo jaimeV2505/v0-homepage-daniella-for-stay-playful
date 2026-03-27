@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 type MethodCard = {
@@ -70,12 +70,6 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 24,
-    mass: 0.45,
-  })
-
   return (
     <section
       ref={sectionRef}
@@ -88,11 +82,11 @@ export function Method() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_48%,#EEE6D8_100%)]" />
 
         <div className="relative mx-auto flex h-full max-w-[1400px] flex-col px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          {/* Header */}
           <header className="relative z-30 mb-6 text-center sm:mb-8">
             <span className="mb-2 inline-block text-xs font-bold uppercase tracking-[0.2em] text-black/60 sm:text-sm">
               Stay Playful
             </span>
-
             <h2
               id="method-title"
               className="mx-auto font-sans text-[2.2rem] font-black uppercase leading-[0.88] tracking-[-0.06em] text-black sm:text-[3rem] lg:text-[4rem]"
@@ -100,32 +94,24 @@ export function Method() {
               <span className="block">Three Layers</span>
               <span className="block">Of The Work</span>
             </h2>
-
             <p className="mx-auto mt-3 max-w-[600px] text-sm leading-relaxed text-black/70 sm:mt-4 sm:text-base">
-              The heart of Stay Playful comes down to three simple things — who I am,
-              what this work is here to support, and the way we create change with
-              more curiosity, more care, and far less pressure.
+              The heart of Stay Playful comes down to three simple things — who I am, what this work is here to support, and the way we create change with more curiosity, more care, and far less pressure.
             </p>
           </header>
 
+          {/* Pill Bar */}
           <div className="relative z-20 mb-4 sm:mb-6">
             <div className="mx-auto max-w-[800px] rounded-full border-[3px] border-black bg-[#14532D] px-4 py-2.5 shadow-[0_4px_0_0_rgba(0,0,0,1)] sm:px-6 sm:py-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white sm:text-xs">
                   Stay Playful Method
                 </span>
-
+                {/* Progress Dots */}
                 <div className="flex items-center gap-2">
                   {methodCards.map((card, i) => (
-                    <ProgressDot
-                      key={card.id}
-                      index={i}
-                      progress={smoothProgress}
-                      total={methodCards.length}
-                    />
+                    <ProgressDot key={card.id} index={i} progress={scrollYProgress} />
                   ))}
                 </div>
-
                 <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white sm:text-xs">
                   Three Layers
                 </span>
@@ -133,15 +119,16 @@ export function Method() {
             </div>
           </div>
 
+          {/* Card Stage */}
           <div className="relative z-10 flex flex-1 items-center justify-center">
             <div className="relative h-[420px] w-full max-w-[1000px] sm:h-[460px] lg:h-[500px]">
               {methodCards.map((card, index) => (
-                <MethodCardPanel
+                <MethodCard
                   key={card.id}
                   card={card}
                   index={index}
                   total={methodCards.length}
-                  progress={smoothProgress}
+                  progress={scrollYProgress}
                 />
               ))}
             </div>
@@ -152,31 +139,13 @@ export function Method() {
   )
 }
 
-function ProgressDot({
-  index,
-  progress,
-  total,
-}: {
-  index: number
-  progress: ReturnType<typeof useScroll>["scrollYProgress"]
-  total: number
-}) {
-  const segment = 1 / total
+function ProgressDot({ index, progress }: { index: number; progress: ReturnType<typeof useScroll>["scrollYProgress"] }) {
+  const segment = 1 / 3
   const start = index * segment
   const end = (index + 1) * segment
-  const mid = start + segment / 2
 
-  const opacity = useTransform(
-    progress,
-    [start - 0.04, start + 0.04, mid, end - 0.04, end + 0.04],
-    [0.35, 0.7, 1, 0.7, 0.35]
-  )
-
-  const scale = useTransform(
-    progress,
-    [start - 0.04, start + 0.04, mid, end - 0.04, end + 0.04],
-    [0.95, 1.05, 1.28, 1.05, 0.95]
-  )
+  const opacity = useTransform(progress, [start, start + 0.05, end - 0.05, end], [0.4, 1, 1, 0.4])
+  const scale = useTransform(progress, [start, start + 0.05, end - 0.05, end], [1, 1.3, 1.3, 1])
 
   return (
     <motion.span
@@ -186,7 +155,7 @@ function ProgressDot({
   )
 }
 
-function MethodCardPanel({
+function MethodCard({
   card,
   index,
   total,
@@ -202,51 +171,37 @@ function MethodCardPanel({
   const end = (index + 1) * segment
   const mid = start + segment / 2
 
-  const enterStart = Math.max(0, start - 0.08)
-  const enterEnd = start + 0.06
-  const exitStart = end - 0.06
-  const exitEnd = Math.min(1, end + 0.08)
-
+  // Card visibility: fully visible during its segment
   const opacity = useTransform(
     progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [0.2, 1, 1, 1, 0.2]
+    [
+      Math.max(0, start - 0.05),
+      start + 0.02,
+      end - 0.02,
+      Math.min(1, end + 0.05),
+    ],
+    [0, 1, 1, 0]
   )
 
+  // Subtle Y movement
   const y = useTransform(
     progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [26, 0, 0, 0, -26]
+    [start - 0.05, start + 0.02, mid, end - 0.02, end + 0.05],
+    [60, 0, 0, 0, -60]
   )
 
+  // Subtle scale
   const scale = useTransform(
     progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [0.985, 1, 1, 1, 0.985]
+    [start - 0.05, start + 0.02, end - 0.02, end + 0.05],
+    [0.95, 1, 1, 0.95]
   )
 
-  const rotate = useTransform(
+  // Z-index based on visibility
+  const zIndex = useTransform(
     progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [0.35, 0, 0, 0, -0.35]
-  )
-
-  const contentOpacity = useTransform(
-    progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [0.85, 1, 1, 1, 0.85]
-  )
-
-  const leftX = useTransform(
-    progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [10, 0, 0, 0, -10]
-  )
-
-  const rightX = useTransform(
-    progress,
-    [enterStart, enterEnd, mid, exitStart, exitEnd],
-    [-10, 0, 0, 0, 10]
+    [start - 0.01, start, end, end + 0.01],
+    [0, 10, 10, 0]
   )
 
   return (
@@ -256,14 +211,11 @@ function MethodCardPanel({
         opacity,
         y,
         scale,
-        rotate,
-        zIndex: total - index,
+        zIndex,
       }}
     >
-      <motion.div
-        className="h-full overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)] sm:rounded-[24px]"
-        style={{ opacity: contentOpacity }}
-      >
+      <div className="h-full overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)] sm:rounded-[24px]">
+        {/* Card Header */}
         <div
           className="flex items-center justify-between border-b-[3px] border-black px-4 py-2.5 sm:px-5 sm:py-3"
           style={{ backgroundColor: card.accent }}
@@ -276,11 +228,10 @@ function MethodCardPanel({
           </span>
         </div>
 
+        {/* Card Content */}
         <div className="grid h-[calc(100%-44px)] sm:h-[calc(100%-48px)] lg:grid-cols-[1.15fr_0.85fr]">
-          <motion.div
-            className="flex flex-col justify-center overflow-y-auto p-4 sm:p-6 lg:p-8"
-            style={{ x: leftX }}
-          >
+          {/* Left: Text Content */}
+          <div className="flex flex-col justify-center overflow-y-auto p-4 sm:p-6 lg:p-8">
             <h3 className="max-w-[16ch] font-sans text-[1.5rem] font-black leading-[0.92] tracking-[-0.04em] text-black sm:text-[2rem] lg:text-[2.4rem]">
               {card.title}
             </h3>
@@ -297,7 +248,6 @@ function MethodCardPanel({
               <p className="text-[10px] font-black uppercase tracking-wide text-black sm:text-xs">
                 What this means:
               </p>
-
               <ul className="mt-2 space-y-1.5 sm:mt-3 sm:space-y-2">
                 {card.points.map((point) => (
                   <li
@@ -313,11 +263,12 @@ function MethodCardPanel({
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
+          {/* Right: Visual Panel (desktop only) */}
+          <div
             className="hidden border-l-[3px] border-black lg:flex lg:items-center lg:justify-center lg:p-5"
-            style={{ backgroundColor: card.panel, x: rightX }}
+            style={{ backgroundColor: card.panel }}
           >
             <div className="w-full max-w-[240px] rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_4px_0_0_rgba(0,0,0,1)]">
               <div
@@ -327,7 +278,6 @@ function MethodCardPanel({
                 <span className="text-[9px] font-black uppercase tracking-[0.1em] text-black/70">
                   Stay Playful
                 </span>
-
                 <div className="flex items-center gap-1">
                   <span className="h-2 w-2 rounded-full border-[2px] border-black bg-white" />
                   <span className="h-2 w-2 rounded-full border-[2px] border-black bg-[#FFF4D6]" />
@@ -357,9 +307,9 @@ function MethodCardPanel({
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.article>
   )
 }
