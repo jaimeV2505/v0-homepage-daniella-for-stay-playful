@@ -46,14 +46,6 @@ const topRibbon = [
   "SOFTER WELLBEING",
 ]
 
-const bottomRibbon = [
-  "QUESTIONS ANSWERED",
-  "STAY PLAYFUL",
-  "CALM SUPPORT",
-  "REAL LIFE WELLNESS",
-  "QUESTIONS ANSWERED",
-  "STAY PLAYFUL",
-]
 
 export function Community() {
   const [openId, setOpenId] = useState<string>(faqItems[0].id)
