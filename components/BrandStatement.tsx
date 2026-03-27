@@ -77,7 +77,7 @@ export function BrandStatement() {
               </div>
 
               <div className="relative mx-auto flex h-full max-w-[760px] flex-col justify-end">
-                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] bubble-mask">
+                <div className="relative aspect-[4/5] w-full bg-[#FF65FF] bubble-mask shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                   <Image
                     src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
                     alt="Editorial group portrait for Stay Playful"
@@ -112,25 +112,20 @@ export function BrandStatement() {
       <style jsx>{`
         .bubble-mask {
           overflow: hidden;
-          border-radius: 30px;
-
-          -webkit-mask-image: url("/bubble-mask.svg");
-          mask-image: url("/bubble-mask.svg");
-
+          -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
           -webkit-mask-position: center;
-          mask-position: center;
-
           -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
+          mask-position: center;
           mask-repeat: no-repeat;
-
-          -webkit-mask-size: 120% 120%;
-          mask-size: 120% 120%;
+          mask-size: contain;
         }
 
         @media (max-width: 768px) {
           .bubble-mask {
-            -webkit-mask-size: 128% 128%;
-            mask-size: 128% 128%;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
           }
         }
       `}</style>
