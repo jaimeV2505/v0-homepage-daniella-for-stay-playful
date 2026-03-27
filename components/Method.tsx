@@ -86,13 +86,8 @@ export function Method() {
       style={{ height: "280vh" }}
     >
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {/* Header Bar - Sticky like the reference */}
-        <motion.div
-          className="relative z-50 border-b-[3px] border-black bg-[#14532D]"
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
+        {/* Header Bar - always visible, no entrance animation */}
+        <div className="relative z-50 shrink-0 border-b-[3px] border-black bg-[#14532D]">
           <div className="flex items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
             <h2
               id="method-title"
@@ -112,7 +107,7 @@ export function Method() {
               Stay Playful Method
             </span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Cards Area - Takes remaining space */}
         <div className="relative flex-1 bg-[#F5F0E6]">
