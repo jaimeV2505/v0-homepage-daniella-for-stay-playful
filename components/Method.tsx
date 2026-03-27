@@ -1,9 +1,18 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useMemo, useRef } from "react"
 
-const windows = [
+type MethodCard = {
+  id: string
+  title: string
+  subtitle: string
+  description: string
+  accent: string
+  rotation: string
+}
+
+const windows: MethodCard[] = [
   {
     id: "01",
     title: "About Me",
@@ -11,7 +20,7 @@ const windows = [
     description:
       "I’m Daniella, and Stay Playful was created to offer a softer, more human approach to wellbeing — one rooted in balance, self-trust, and a healthier relationship with food, body, and everyday life.",
     accent: "#FFABFF",
-    rotation: "-rotate-[1.5deg]",
+    rotation: "-rotate-[1.4deg]",
   },
   {
     id: "02",
@@ -20,7 +29,7 @@ const windows = [
     description:
       "The goal is not perfection, pressure, or constant self-monitoring. It’s helping you build something that feels sustainable, personal, and joyful — support that fits your real life.",
     accent: "#00E2FF",
-    rotation: "rotate-[1.2deg]",
+    rotation: "rotate-[1.1deg]",
   },
   {
     id: "03",
@@ -29,96 +38,71 @@ const windows = [
     description:
       "We use curiosity, reflection, and thoughtful guidance to create lasting shifts. No rigid rules, no extremes — just a grounded process that helps you move forward with more ease and clarity.",
     accent: "#FFBD17",
-    rotation: "-rotate-[1deg]",
+    rotation: "-rotate-[0.8deg]",
   },
 ]
 
 export function Method() {
-  const ref = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
 
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: sectionRef,
     offset: ["start end", "end start"],
   })
 
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -90])
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.18, 0.24, 0.3])
-  const headingY = useTransform(scrollYProgress, [0, 1], [0, -28])
-  const headingRotate = useTransform(scrollYProgress, [0, 1], [0, -0.6])
+  const bgOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.1, 0.16, 0.22])
+  const headingY = useTransform(scrollYProgress, [0, 1], [0, -24])
 
-  const blob1Y = useTransform(scrollYProgress, [0, 1], [0, -30])
-  const blob2Y = useTransform(scrollYProgress, [0, 1], [0, 22])
-  const blob3Y = useTransform(scrollYProgress, [0, 1], [0, -18])
+  const repeatedRows = useMemo(() => Array.from({ length: 6 }, (_, i) => i), [])
 
   return (
     <section
-      ref={ref}
+      ref={sectionRef}
       id="method"
       aria-labelledby="method-title"
       className="relative overflow-hidden bg-[#F5F0E6] py-20 sm:py-24 lg:py-28 xl:py-32"
     >
-      {/* layered background */}
+      {/* base background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_45%,#EEE6D8_100%)]" />
-        <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.06)_49.5%,transparent_50%,transparent_100%)]" />
-        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.06)_100%)]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(90deg,transparent_0%,rgba(0,0,0,0.05)_49.5%,transparent_50%,transparent_100%)]" />
+        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.05)_100%)]" />
       </div>
 
-      {/* repeated type */}
+      {/* big repeated background type */}
       <motion.div
         style={{ y: bgY, opacity: bgOpacity }}
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div className="absolute inset-0 px-4 py-10 font-sans text-[3.3rem] font-black uppercase leading-[0.8] tracking-[-0.09em] text-[#E8E0CF] sm:text-[5rem] lg:text-[8rem] xl:text-[10rem] 2xl:text-[11rem]">
-          <RepeatedStayPlayful />
+        <div className="absolute inset-0 px-4 py-10 font-sans text-[3.1rem] font-black uppercase leading-[0.8] tracking-[-0.09em] text-[#E8E0CF] sm:text-[4.8rem] lg:text-[7.5rem] xl:text-[9.4rem] 2xl:text-[10.5rem]">
+          <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+            {repeatedRows.map((row) => (
+              <div key={row} className="whitespace-nowrap">
+                STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL
+              </div>
+            ))}
+          </div>
         </div>
       </motion.div>
 
-      {/* decorative blobs */}
-      <motion.div
-        style={{ y: blob1Y }}
-        className="pointer-events-none absolute left-[3%] top-[9%] hidden lg:block"
-      >
-        <BlobText
-          className="h-[260px] w-[370px] xl:h-[320px] xl:w-[470px]"
-          bg="#FFABFF"
-          textColor="#14532D"
-          variant="large"
-        />
-      </motion.div>
+      {/* subtle dividers */}
+      <div className="pointer-events-none absolute inset-y-0 left-[4%] hidden w-px bg-black/5 xl:block" />
+      <div className="pointer-events-none absolute inset-y-0 right-[4%] hidden w-px bg-black/5 xl:block" />
 
-      <motion.div
-        style={{ y: blob2Y }}
-        className="pointer-events-none absolute right-[8%] top-[12%] hidden lg:block"
-      >
-        <BlobText
-          className="h-[180px] w-[220px] xl:h-[220px] xl:w-[270px]"
-          bg="#FFABFF"
-          textColor="#14532D"
-          variant="small"
-        />
-      </motion.div>
-
-      <motion.div
-        style={{ y: blob3Y }}
-        className="pointer-events-none absolute bottom-[10%] right-[16%] hidden xl:block"
-      >
-        <BlobSolid className="h-[90px] w-[110px]" bg="#FF65FF" />
-      </motion.div>
-
-      <div className="relative mx-auto max-w-[1680px] px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         {/* heading */}
         <motion.div
-          style={{ y: headingY, rotate: headingRotate }}
+          style={{ y: headingY }}
           className="relative z-10 mx-auto max-w-5xl text-center"
         >
-          <p className="text-sm font-black uppercase tracking-[0.24em] text-black/65">
+          <p className="text-sm font-black uppercase tracking-[0.24em] text-black/60">
             Stay Playful
           </p>
 
           <h2
             id="method-title"
-            className="mt-4 font-sans text-[2.9rem] font-black uppercase leading-[0.86] tracking-[-0.09em] text-black sm:text-[4.3rem] lg:text-[5.9rem] xl:text-[6.7rem]"
+            className="mt-4 font-sans text-[2.9rem] font-black uppercase leading-[0.86] tracking-[-0.09em] text-black sm:text-[4.2rem] lg:text-[5.8rem] xl:text-[6.5rem]"
           >
             THREE LAYERS
             <br />
@@ -132,36 +116,32 @@ export function Method() {
           </p>
         </motion.div>
 
-        {/* mobile */}
+        {/* mobile layout */}
         <div className="relative z-10 mt-12 grid gap-6 lg:hidden">
           {windows.map((item, index) => (
             <motion.article
-              key={item.title}
-              initial={{ opacity: 0, y: 36 }}
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.18 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
               className="overflow-hidden rounded-[28px] border-[4px] border-black bg-white shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
             >
-              <WindowCard item={item} />
+              <WindowCard item={item} compact={false} />
             </motion.article>
           ))}
         </div>
 
-        {/* desktop */}
+        {/* desktop stacked cards */}
         <div className="relative z-10 mt-16 hidden lg:block xl:mt-20">
-          <div className="grid grid-cols-3 items-start gap-6 xl:gap-8">
+          <div className="mx-auto max-w-[980px]">
             {windows.map((item, index) => (
-              <motion.article
-                key={item.title}
-                initial={{ opacity: 0, y: 56, rotate: index === 1 ? 1.5 : -1.5 }}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-                viewport={{ once: true, amount: 0.18 }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className={`group relative overflow-hidden rounded-[30px] border-[4px] border-black bg-white shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 ${item.rotation}`}
-              >
-                <WindowCard item={item} />
-              </motion.article>
+              <StackedMethodCard
+                key={item.id}
+                item={item}
+                index={index}
+                total={windows.length}
+              />
             ))}
           </div>
         </div>
@@ -170,20 +150,61 @@ export function Method() {
   )
 }
 
+function StackedMethodCard({
+  item,
+  index,
+  total,
+}: {
+  item: MethodCard
+  index: number
+  total: number
+}) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start 82%", "end 24%"],
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], [70, 0])
+  const scale = useTransform(scrollYProgress, [0, 1], [0.94, 1])
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.45, 1])
+
+  const topOffsets = ["top-[110px]", "top-[150px]", "top-[190px]"]
+  const zIndexes = ["z-[30]", "z-[20]", "z-[10]"]
+  const rotateFallback = ["-rotate-[1deg]", "rotate-[0.85deg]", "-rotate-[0.7deg]"]
+
+  return (
+    <div
+      ref={cardRef}
+      className={`relative ${index !== total - 1 ? "mb-[18vh]" : ""}`}
+    >
+      <motion.article
+        style={{ y, scale, opacity }}
+        className={`sticky ${topOffsets[index] ?? "top-[120px]"} ${zIndexes[index] ?? "z-[10]"
+          }`}
+      >
+        <div
+          className={`group relative overflow-hidden rounded-[30px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)] transition-transform duration-300 hover:-translate-y-1 ${item.rotation || rotateFallback[index]
+            }`}
+        >
+          <WindowCard item={item} compact />
+        </div>
+      </motion.article>
+    </div>
+  )
+}
+
 function WindowCard({
   item,
+  compact = false,
 }: {
-  item: {
-    id: string
-    title: string
-    subtitle: string
-    description: string
-    accent: string
-  }
+  item: MethodCard
+  compact?: boolean
 }) {
   return (
     <div className="flex h-full flex-col">
-      {/* top window bar */}
+      {/* top bar */}
       <div
         className="flex items-center justify-between border-b-[4px] border-black px-5 py-4 sm:px-6"
         style={{ backgroundColor: item.accent }}
@@ -199,22 +220,43 @@ function WindowCard({
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-6 xl:p-7">
+      <div
+        className={`flex flex-1 flex-col ${compact ? "p-7 xl:p-8" : "p-6 sm:p-7"
+          }`}
+      >
         <p className="text-[11px] font-black uppercase tracking-[0.16em] text-black/55">
           Stay Playful
         </p>
 
-        <h3 className="mt-5 font-sans text-[2rem] font-black uppercase leading-[0.9] tracking-[-0.07em] text-black xl:text-[2.35rem]">
-          {item.title}
-        </h3>
+        <div className="mt-5 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-[32rem]">
+            <h3
+              className={`font-sans font-black uppercase leading-[0.9] tracking-[-0.07em] text-black ${compact
+                  ? "text-[2.3rem] xl:text-[2.8rem]"
+                  : "text-[2rem] sm:text-[2.2rem]"
+                }`}
+            >
+              {item.title}
+            </h3>
 
-        <p className="mt-3 text-sm font-black uppercase tracking-[0.16em] text-black/50">
-          {item.subtitle}
-        </p>
+            <p className="mt-3 text-sm font-black uppercase tracking-[0.16em] text-black/50">
+              {item.subtitle}
+            </p>
 
-        <p className="mt-6 text-base leading-8 text-black/78 xl:text-[1.04rem]">
-          {item.description}
-        </p>
+            <p
+              className={`mt-6 max-w-[42rem] text-black/78 ${compact ? "text-[1.03rem] leading-8" : "text-base leading-8"
+                }`}
+            >
+              {item.description}
+            </p>
+          </div>
+
+          <div className="shrink-0 lg:pt-2">
+            <div className="rounded-full border-[3px] border-black bg-[#F8F3EA] px-5 py-2 text-xs font-black uppercase tracking-[0.16em] text-black/70">
+              Gentle work
+            </div>
+          </div>
+        </div>
 
         <div className="mt-8 flex items-center justify-between border-t-[3px] border-black pt-4">
           <span className="text-xs font-black uppercase tracking-[0.16em] text-black/65">
@@ -228,79 +270,5 @@ function WindowCard({
         </div>
       </div>
     </div>
-  )
-}
-
-function RepeatedStayPlayful() {
-  const rows = Array.from({ length: 6 }, (_, i) => i)
-
-  return (
-    <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-      {rows.map((row) => (
-        <div key={row} className="whitespace-nowrap">
-          STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function BlobText({
-  className,
-  bg,
-  textColor,
-  variant,
-}: {
-  className?: string
-  bg: string
-  textColor: string
-  variant: "large" | "small"
-}) {
-  const clipPath =
-    variant === "large"
-      ? "polygon(12% 2%,35% 0%,52% 10%,76% 4%,96% 18%,100% 40%,92% 60%,100% 80%,84% 96%,58% 92%,36% 100%,16% 88%,0% 70%,4% 46%,0% 20%)"
-      : "polygon(28% 0%,52% 8%,72% 0%,88% 14%,100% 36%,90% 58%,100% 80%,80% 100%,56% 92%,34% 100%,16% 84%,0% 64%,8% 40%,0% 18%,16% 6%)"
-
-  return (
-    <div
-      className={`relative overflow-hidden flex items-center justify-center ${className ?? ""}`}
-      style={{
-        backgroundColor: bg,
-        clipPath,
-      }}
-    >
-      {/* CONTENT WRAPPER centrado REAL */}
-      <div
-        className={`text-center font-sans font-black uppercase leading-[0.85] tracking-[-0.06em] ${variant === "large"
-            ? "max-w-[70%] text-[3.2rem] xl:text-[4.2rem]"
-            : "max-w-[65%] text-[1.8rem] xl:text-[2.4rem]"
-          }`}
-        style={{ color: textColor }}
-      >
-        <div>stay</div>
-        <div>playful</div>
-        <div>stay</div>
-        <div>playful</div>
-      </div>
-    </div>
-  )
-}
-
-function BlobSolid({
-  className,
-  bg,
-}: {
-  className?: string
-  bg: string
-}) {
-  return (
-    <div
-      className={className}
-      style={{
-        backgroundColor: bg,
-        clipPath:
-          "polygon(28% 0%,56% 8%,80% 0%,96% 18%,100% 46%,88% 70%,100% 88%,74% 100%,44% 92%,18% 100%,0% 78%,8% 48%,0% 18%)",
-      }}
-    />
   )
 }
