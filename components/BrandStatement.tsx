@@ -8,10 +8,39 @@ export function BrandStatement() {
       aria-labelledby="brand-statement-title"
       className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16"
     >
+      {/* Responsive shape definition */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <clipPath id="brand-eight-shape" clipPathUnits="objectBoundingBox">
+            <path d="M0.12,0
+              H0.38
+              C0.43,0 0.46,0.06 0.5,0.11
+              C0.54,0.06 0.57,0 0.62,0
+              H0.88
+              C0.94,0 1,0.06 1,0.12
+              V0.38
+              C1,0.43 0.94,0.46 0.91,0.5
+              C0.94,0.54 1,0.57 1,0.62
+              V0.88
+              C1,0.94 0.94,1 0.88,1
+              H0.62
+              C0.57,1 0.54,0.94 0.5,0.89
+              C0.46,0.94 0.43,1 0.38,1
+              H0.12
+              C0.06,1 0,0.94 0,0.88
+              V0.62
+              C0,0.57 0.06,0.54 0.09,0.5
+              C0.06,0.46 0,0.43 0,0.38
+              V0.12
+              C0,0.06 0.06,0 0.12,0
+              Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <div className="mx-auto max-w-[1780px] px-0 sm:px-4 lg:px-6">
         <div className="overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="grid min-h-[680px] lg:grid-cols-[0.49fr_0.51fr] xl:min-h-[760px] 2xl:min-h-[820px]">
-
             {/* LEFT PANEL */}
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
@@ -78,7 +107,7 @@ export function BrandStatement() {
               </div>
 
               <div className="relative mx-auto flex h-full max-w-[760px] flex-col justify-end">
-                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] cloud-eight-shape">
+                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] eight-cloud-shape">
                   <Image
                     src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
                     alt="Editorial group portrait for Stay Playful"
@@ -109,74 +138,9 @@ export function BrandStatement() {
         </div>
       </div>
 
-      {/* 🔥 NUEVO SHAPE */}
       <style jsx>{`
-        .cloud-eight-shape {
-          clip-path: polygon(
-            18% 0%,
-            34% 0%,
-            40% 7%,
-            50% 0%,
-            60% 7%,
-            66% 0%,
-            82% 0%,
-            100% 16%,
-            100% 34%,
-            92% 42%,
-            100% 50%,
-            100% 66%,
-            92% 74%,
-            100% 84%,
-            82% 100%,
-            66% 100%,
-            60% 93%,
-            50% 100%,
-            40% 93%,
-            34% 100%,
-            18% 100%,
-            0% 84%,
-            0% 66%,
-            8% 58%,
-            0% 50%,
-            0% 34%,
-            8% 26%,
-            0% 16%
-          );
-        }
-
-        @media (max-width: 768px) {
-          .cloud-eight-shape {
-            clip-path: polygon(
-              12% 0%,
-              32% 0%,
-              40% 8%,
-              50% 0%,
-              60% 8%,
-              68% 0%,
-              88% 0%,
-              100% 12%,
-              100% 30%,
-              92% 40%,
-              100% 50%,
-              100% 70%,
-              92% 80%,
-              100% 88%,
-              88% 100%,
-              68% 100%,
-              60% 92%,
-              50% 100%,
-              40% 92%,
-              32% 100%,
-              12% 100%,
-              0% 88%,
-              0% 70%,
-              8% 60%,
-              0% 50%,
-              0% 30%,
-              8% 20%,
-              0% 12%
-            );
-          }
+        .eight-cloud-shape {
+          clip-path: url(#brand-eight-shape);
         }
       `}</style>
     </section>
