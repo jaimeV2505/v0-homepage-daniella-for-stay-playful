@@ -243,7 +243,7 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-x-4 bottom-4 top-2 will-change-transform sm:inset-x-6 sm:bottom-6 sm:top-3 lg:inset-x-8 lg:bottom-8 lg:top-4"
+      className="absolute inset-x-4 bottom-4 top-3 will-change-transform sm:inset-x-6 sm:bottom-6 sm:top-4 lg:inset-x-8 lg:bottom-6 lg:top-4"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
@@ -266,9 +266,9 @@ function MethodCardComponent({
         </div>
 
         {/* Card Body - Static content, no internal animations */}
-        <div className="grid flex-1 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="grid min-h-0 flex-1 overflow-hidden lg:grid-cols-[1.3fr_0.7fr]">
           {/* Text Content */}
-          <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-9">
+          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 sm:p-7 lg:p-9">
             <h3
               className="max-w-[16ch] font-sans leading-[0.88] tracking-[-0.04em] text-black"
               style={{
