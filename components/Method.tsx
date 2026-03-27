@@ -84,15 +84,16 @@ export function Method() {
       className="relative bg-[#F5F0E6]"
       style={{ height: "280vh" }}
     >
-      {/* Top label area */}
-      <div className="relative z-20 px-5 pt-10 pb-4 sm:px-8 sm:pt-14 sm:pb-6 lg:px-12 lg:pt-16 lg:pb-8">
-        <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-4">
-          <span className="text-[11px] font-black uppercase tracking-[0.28em] text-black/35 sm:text-xs">
+      {/* Minimal neutral top divider */}
+      <div className="relative z-20 px-5 pt-6 pb-2 sm:px-8 sm:pt-8 sm:pb-3 lg:px-12 lg:pt-10 lg:pb-4">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4">
+          <span className="text-[10px] font-black uppercase tracking-[0.28em] text-black/30 sm:text-xs">
             Stay Playful Method
           </span>
 
-          <div className="flex items-center gap-3 rounded-full bg-[#EFE7DA] px-4 py-2 sm:px-5">
-            <span className="h-[7px] w-[18px] rounded-full bg-[#D8CEC0]" />
+          <div className="flex items-center gap-3">
+            <span className="h-[2px] w-6 rounded-full bg-black/10" />
+
             <div className="flex items-center gap-1.5">
               {methodCards.map((card, i) => (
                 <ProgressDot
@@ -103,10 +104,11 @@ export function Method() {
                 />
               ))}
             </div>
-            <span className="h-[7px] w-[18px] rounded-full bg-[#D8CEC0]" />
+
+            <span className="h-[2px] w-6 rounded-full bg-black/10" />
           </div>
 
-          <span className="text-[11px] font-black uppercase tracking-[0.28em] text-black/35 sm:text-xs">
+          <span className="text-[10px] font-black uppercase tracking-[0.28em] text-black/30 sm:text-xs">
             Three Layers
           </span>
         </div>
