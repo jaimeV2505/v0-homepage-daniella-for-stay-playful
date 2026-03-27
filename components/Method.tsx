@@ -259,7 +259,7 @@ function MethodCardComponent({
       >
         {/* Card Header */}
         <div
-          className="flex items-center justify-between border-b-[3px] border-black px-5 py-3 sm:px-6 sm:py-4"
+          className="flex items-center justify-between border-b-[3px] border-black px-4 py-2.5 sm:px-5 sm:py-3"
           style={{ backgroundColor: card.accent }}
         >
           <span className="text-xs font-black uppercase tracking-[0.08em] text-black sm:text-sm">
@@ -273,37 +273,37 @@ function MethodCardComponent({
         {/* Card Body - Static content, no internal animations */}
         <div className="grid flex-1 lg:grid-cols-[1.3fr_0.7fr]">
           {/* Text Content */}
-          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+          <div className="flex flex-col justify-center p-5 sm:p-7 lg:p-9">
             <h3
               className="max-w-[16ch] font-sans leading-[0.88] tracking-[-0.04em] text-black"
               style={{
-                fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                fontSize: "clamp(1.8rem, 4.5vw, 3.2rem)",
                 fontWeight: 900,
               }}
             >
               {card.title}
             </h3>
 
-            <p className="mt-4 max-w-[32rem] text-base font-semibold leading-snug text-black/80 sm:mt-5 sm:text-lg lg:text-xl">
+            <p className="mt-3 max-w-[32rem] text-base font-semibold leading-snug text-black/80 sm:mt-4 sm:text-lg">
               {card.subtitle}
             </p>
 
-            <p className="mt-4 max-w-[36rem] text-sm leading-relaxed text-black/60 sm:mt-5 sm:text-base">
+            <p className="mt-3 max-w-[36rem] text-sm leading-relaxed text-black/60 sm:mt-4 sm:text-base">
               {card.description}
             </p>
 
-            <div className="mt-5 sm:mt-6">
+            <div className="mt-4 sm:mt-5">
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/45 sm:text-xs">
                 What this means:
               </p>
-              <ul className="mt-3 space-y-2 sm:mt-4">
+              <ul className="mt-2.5 space-y-1.5 sm:mt-3">
                 {card.points.map((point, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-3 text-sm leading-snug text-black/70 sm:text-base"
+                    className="flex items-start gap-2.5 text-xs leading-snug text-black/70 sm:gap-3 sm:text-sm"
                   >
                     <span
-                      className="mt-[5px] inline-block h-2.5 w-2.5 shrink-0 rounded-full border-[2.5px] border-black sm:h-3 sm:w-3"
+                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full border-2 border-black sm:h-2.5 sm:w-2.5 sm:border-[2.5px]"
                       style={{ backgroundColor: card.accent }}
                     />
                     <span>{point}</span>
@@ -321,26 +321,26 @@ function MethodCardComponent({
             <div className="w-full max-w-[220px] rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)]">
               {/* Mini Header */}
               <div
-                className="flex items-center justify-between border-b-[2.5px] border-black px-4 py-2"
+                className="flex items-center justify-between border-b-[2.5px] border-black px-3 py-1.5"
                 style={{ backgroundColor: card.accent }}
               >
-                <span className="text-[9px] font-black uppercase tracking-[0.12em] text-black/70">
+                <span className="text-[8px] font-black uppercase tracking-[0.1em] text-black/70">
                   Stay Playful
                 </span>
-                <div className="flex gap-1">
-                  <span className="h-2 w-2 rounded-full border-[1.5px] border-black bg-white" />
-                  <span className="h-2 w-2 rounded-full border-[1.5px] border-black bg-white" />
-                  <span className="h-2 w-2 rounded-full border-[1.5px] border-black bg-white" />
+                <div className="flex gap-0.5">
+                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
+                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
+                  <span className="h-1.5 w-1.5 rounded-full border-[1px] border-black bg-white" />
                 </div>
               </div>
 
               {/* Mini Content */}
-              <div className="p-4">
+              <div className="p-3">
                 <div
-                  className="flex aspect-[4/5] items-center justify-center rounded-xl border-[3px] border-black"
+                  className="flex aspect-[4/5] items-center justify-center rounded-lg border-[2px] border-black"
                   style={{ backgroundColor: card.accent }}
                 >
-                  <div className="text-center font-sans text-xl font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D]">
+                  <div className="text-center font-sans text-lg font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D]">
                     <div>Stay</div>
                     <div>Playful</div>
                   </div>
@@ -348,12 +348,12 @@ function MethodCardComponent({
               </div>
 
               {/* Mini Footer */}
-              <div className="flex items-center justify-between border-t-[2.5px] border-black px-4 py-2">
-                <span className="text-[9px] font-bold uppercase tracking-wider text-black/40">
+              <div className="flex items-center justify-between border-t-[2.5px] border-black px-3 py-1.5">
+                <span className="text-[8px] font-bold uppercase tracking-wider text-black/40">
                   Layer {card.id}
                 </span>
                 <span
-                  className="h-2.5 w-2.5 rounded-full border-[2px] border-black"
+                  className="h-2 w-2 rounded-full border-[1.5px] border-black"
                   style={{ backgroundColor: card.accent }}
                 />
               </div>
