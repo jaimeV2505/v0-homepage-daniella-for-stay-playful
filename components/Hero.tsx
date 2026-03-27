@@ -21,71 +21,125 @@ export function Hero() {
       aria-label="Stay Playful hero"
     >
       <div className="relative overflow-visible border-b-[3px] border-[#2B1A16] bg-[#FFFFED]">
-        {/* COLOR BLOCKS */}
+        {/* split background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-x-0 top-0 h-[58%] bg-[#F6B8D1]" />
-          <div className="absolute inset-x-0 bottom-0 h-[42%] bg-[#FFFFED]" />
+          <div className="absolute inset-x-0 top-0 h-[56%] bg-[#E6B2C9]" />
+          <div className="absolute inset-x-0 bottom-0 h-[44%] bg-[#FFFFED]" />
         </div>
 
         <motion.div
           style={{ y: heroY }}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85 }}
-          className="relative z-10 mx-auto max-w-[1500px] px-4 pb-16 pt-12 sm:px-6 sm:pb-18 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20"
+          transition={{ duration: 0.85, ease: "easeOut" }}
+          className="relative z-10 mx-auto max-w-[1600px] px-4 pb-14 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:px-8 lg:pb-20 lg:pt-16"
         >
-          {/* DESKTOP */}
-          <div className="relative mx-auto min-h-[760px] max-w-[1400px] xl:min-h-[820px]">
+          {/* MOBILE */}
+          <div className="lg:hidden">
+            <div className="relative mx-auto max-w-[430px]">
+              <div className="pointer-events-none absolute left-1/2 top-0 z-10 -translate-x-1/2">
+                <div className="hero-top-mobile text-[#FFF4EA]/90">STAY</div>
+              </div>
 
-            {/* BACK WORD */}
-            <div className="pointer-events-none absolute left-1/2 top-[6%] z-10 -translate-x-1/2">
-              <div className="hero-top text-[#FFF3E8]/90">STAY</div>
-            </div>
-
-            {/* IMAGE */}
-            <div className="absolute left-1/2 top-[12%] z-20 -translate-x-1/2 translate-y-[70px]">
-              <div className="relative w-[460px] xl:w-[520px]">
-                <div className="relative aspect-[4/5] overflow-hidden bg-[#F05B4F] shadow-[0_24px_50px_rgba(0,0,0,0.12)]">
+              <div className="relative z-20 ml-auto mr-3 w-[74vw] max-w-[300px] pt-16">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#F05B4F] shadow-[0_18px_36px_rgba(0,0,0,0.10)]">
                   <Image
                     src="/1pro.jpg"
-                    alt="Editorial portrait"
+                    alt="Editorial portrait for Stay Playful"
                     fill
                     priority
+                    sizes="(max-width: 768px) 74vw, 300px"
                     className="object-cover object-center"
                   />
                 </div>
               </div>
-            </div>
 
-            {/* FRONT WORD */}
-            <div className="pointer-events-none absolute left-1/2 top-[54%] z-30 -translate-x-1/2">
-              <div className="hero-front text-[#D8A51C]">PLAYFUL</div>
-            </div>
+              <div className="pointer-events-none relative z-30 mt-[-70px] text-center">
+                <div className="hero-front-mobile text-[#D8A51C]">PLAYFUL</div>
+              </div>
 
-            {/* STATEMENT */}
-            <div className="absolute bottom-[6%] left-1/2 z-30 max-w-[680px] -translate-x-1/2 text-center">
-              <p className="text-[1.8rem] leading-[1.2] tracking-[-0.03em] text-black/75 xl:text-[2rem]">
-                A softer, more personal approach to wellbeing.
-              </p>
+              <div className="mx-auto mt-6 max-w-[330px] text-center">
+                <p className="text-[1.02rem] leading-7 text-black/76">
+                  A softer, more personal approach to wellbeing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* DESKTOP */}
+          <div className="hidden lg:block">
+            <div className="relative mx-auto min-h-[860px] max-w-[1450px] xl:min-h-[930px]">
+              {/* STAY behind */}
+              <div className="pointer-events-none absolute left-1/2 top-[6%] z-10 -translate-x-1/2">
+                <div className="hero-top-desktop text-[#FFF4EA]/90">STAY</div>
+              </div>
+
+              {/* image offset right */}
+              <div className="absolute left-[52%] top-[13%] z-20 -translate-x-1/2">
+                <div className="relative w-[470px] xl:w-[540px]">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#F05B4F] shadow-[0_24px_52px_rgba(0,0,0,0.12)]">
+                    <Image
+                      src="/1pro.jpg"
+                      alt="Editorial portrait for Stay Playful"
+                      fill
+                      priority
+                      sizes="(max-width: 1536px) 470px, 540px"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* PLAYFUL front, lower so it doesn't cut face */}
+              <div className="pointer-events-none absolute left-1/2 top-[58%] z-30 -translate-x-1/2">
+                <div className="hero-front-desktop text-[#D8A51C]">PLAYFUL</div>
+              </div>
+
+              {/* statement */}
+              <div className="absolute bottom-[7%] left-1/2 z-30 max-w-[780px] -translate-x-1/2 text-center">
+                <p className="text-[2rem] leading-[1.12] tracking-[-0.035em] text-black/76 xl:text-[2.25rem]">
+                  A softer, more personal approach to wellbeing.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
 
       <style jsx>{`
-        .hero-top {
-          font-family: Georgia, serif;
+        .hero-top-desktop {
+          font-family: Georgia, "Times New Roman", serif;
           font-weight: 600;
-          font-size: clamp(9rem, 14vw, 15rem);
+          line-height: 0.88;
           letter-spacing: -0.05em;
+          font-size: clamp(9rem, 14vw, 15rem);
           text-transform: uppercase;
         }
 
-        .hero-front {
-          font-family: Georgia, serif;
+        .hero-front-desktop {
+          font-family: Georgia, "Times New Roman", serif;
           font-weight: 600;
-          font-size: clamp(8rem, 13vw, 13rem);
+          line-height: 0.88;
           letter-spacing: -0.05em;
+          font-size: clamp(8.4rem, 13.5vw, 13.6rem);
+          text-transform: uppercase;
+        }
+
+        .hero-top-mobile {
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 600;
+          line-height: 0.9;
+          letter-spacing: -0.05em;
+          font-size: clamp(4.6rem, 18vw, 6.8rem);
+          text-transform: uppercase;
+        }
+
+        .hero-front-mobile {
+          font-family: Georgia, "Times New Roman", serif;
+          font-weight: 600;
+          line-height: 0.9;
+          letter-spacing: -0.05em;
+          font-size: clamp(4rem, 14vw, 5.8rem);
           text-transform: uppercase;
         }
       `}</style>
