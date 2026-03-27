@@ -268,7 +268,7 @@ function MethodCardComponent({
         {/* Card Body - Static content, no internal animations */}
         <div className="grid min-h-0 flex-1 overflow-hidden lg:grid-cols-[1.3fr_0.7fr]">
           {/* Text Content */}
-          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 sm:p-7 lg:p-9">
+          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 pt-8 sm:p-7 sm:pt-12 lg:p-9 lg:pt-16">
             <h3
               className="max-w-[16ch] font-sans leading-[0.88] tracking-[-0.04em] text-black"
               style={{
