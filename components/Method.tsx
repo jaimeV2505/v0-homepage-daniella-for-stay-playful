@@ -84,37 +84,25 @@ export function Method() {
       className="relative bg-[#F5F0E6]"
       style={{ height: "280vh" }}
     >
-      {/* Minimal neutral top divider */}
-      <div className="relative z-20 px-5 pt-6 pb-2 sm:px-8 sm:pt-8 sm:pb-3 lg:px-12 lg:pt-10 lg:pb-4">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4">
-          <span className="text-[10px] font-black uppercase tracking-[0.28em] text-black/30 sm:text-xs">
-            Stay Playful Method
-          </span>
+      {/* Minimal divider */}
+      <div className="relative z-20 flex justify-center py-6 sm:py-8">
+        <div className="flex items-center gap-3 opacity-60">
+          <span className="h-[2px] w-10 rounded-full bg-black/10" />
 
-          <div className="flex items-center gap-3">
-            <span className="h-[2px] w-6 rounded-full bg-black/10" />
+          {methodCards.map((card, i) => (
+            <ProgressDot
+              key={card.id}
+              index={i}
+              progress={smoothProgress}
+              accent={card.accent}
+            />
+          ))}
 
-            <div className="flex items-center gap-1.5">
-              {methodCards.map((card, i) => (
-                <ProgressDot
-                  key={card.id}
-                  index={i}
-                  progress={smoothProgress}
-                  accent={card.accent}
-                />
-              ))}
-            </div>
-
-            <span className="h-[2px] w-6 rounded-full bg-black/10" />
-          </div>
-
-          <span className="text-[10px] font-black uppercase tracking-[0.28em] text-black/30 sm:text-xs">
-            Three Layers
-          </span>
+          <span className="h-[2px] w-10 rounded-full bg-black/10" />
         </div>
       </div>
 
-      {/* Sticky cards viewport */}
+      {/* Sticky cards */}
       <div className="sticky top-0 h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
 
@@ -161,7 +149,7 @@ function ProgressDot({
 
   return (
     <motion.div className="relative h-3 w-3 sm:h-4 sm:w-4" style={{ scale }}>
-      <span className="absolute inset-0 rounded-full border-2 border-black/22" />
+      <span className="absolute inset-0 rounded-full border-2 border-black/20" />
       <motion.span
         className="absolute inset-[2px] rounded-full"
         style={{ backgroundColor: accent, opacity: bgOpacity }}
@@ -245,10 +233,10 @@ function MethodCardComponent({
       <div
         className="flex h-full flex-col overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[24px] lg:rounded-[28px]"
         style={{
-          boxShadow: "0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.18)",
+          boxShadow:
+            "0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.18)",
         }}
       >
-        {/* Card Header */}
         <div
           className="flex shrink-0 items-center justify-between border-b-[3px] border-black px-4 py-3 sm:px-6 sm:py-3.5"
           style={{ backgroundColor: card.accent }}
@@ -261,12 +249,14 @@ function MethodCardComponent({
           </span>
         </div>
 
-        {/* Card Body */}
         <div className="grid min-h-0 flex-1 overflow-hidden lg:grid-cols-[1.3fr_0.7fr]">
           <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-6 sm:p-8 lg:p-10 xl:p-12">
             <h3
               className="max-w-[14ch] font-sans leading-[0.88] tracking-[-0.045em] text-black"
-              style={{ fontSize: "clamp(1.9rem, 4.2vw, 3.2rem)", fontWeight: 900 }}
+              style={{
+                fontSize: "clamp(1.9rem, 4.2vw, 3.2rem)",
+                fontWeight: 900,
+              }}
             >
               {card.title}
             </h3>
