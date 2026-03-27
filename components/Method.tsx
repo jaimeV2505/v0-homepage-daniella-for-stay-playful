@@ -76,15 +76,18 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 28,
-    mass: 0.45,
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 110,
+    damping: 24,
+    mass: 0.42,
   })
 
-  const blobY = useTransform(smoothProgress, [0, 1], [-10, 26])
-  const blobScale = useTransform(smoothProgress, [0, 0.5, 1], [0.98, 1, 1.03])
-  const blobRotate = useTransform(smoothProgress, [0, 1], [-1.2, 1.2])
+  const blobY = useTransform(progress, [0, 1], [-12, 24])
+  const blobScale = useTransform(progress, [0, 0.5, 1], [0.96, 1, 1.04])
+  const blobRotate = useTransform(progress, [0, 1], [-1.5, 1.5])
+
+  const headerY = useTransform(progress, [0, 0.18, 0.32], [0, -8, -16])
+  const headerScale = useTransform(progress, [0, 0.25], [1, 0.985])
 
   return (
     <section
@@ -92,9 +95,9 @@ export function Method() {
       id="method"
       aria-labelledby="method-title"
       className="relative bg-[#F5F0E6]"
-      style={{ height: "340vh" }}
+      style={{ height: "320vh" }}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_45%,#EEE6D8_100%)]" />
 
         <motion.div
@@ -103,42 +106,50 @@ export function Method() {
             scale: blobScale,
             rotate: blobRotate,
           }}
-          className="absolute left-1/2 top-[13.5rem] z-0 h-[360px] w-[92%] -translate-x-1/2 sm:top-[15rem] sm:h-[390px] lg:top-[16.5rem] lg:h-[430px]"
+          className="absolute left-1/2 top-[12.5rem] z-0 h-[320px] w-[88%] -translate-x-1/2 sm:top-[13.5rem] sm:h-[360px] lg:top-[15rem] lg:h-[400px]"
         >
           <div
             className="h-full w-full"
             style={{
-              backgroundColor: "#E9BFE3",
+              backgroundColor: "#EAB4F0",
               clipPath:
-                "polygon(6% 24%, 18% 10%, 40% 6%, 61% 9%, 85% 18%, 97% 36%, 92% 60%, 82% 82%, 66% 95%, 40% 92%, 20% 80%, 8% 60%, 2% 40%)",
+                "polygon(6% 24%, 18% 10%, 38% 6%, 60% 8%, 82% 16%, 96% 34%, 92% 58%, 84% 78%, 66% 92%, 40% 90%, 20% 82%, 8% 62%, 2% 40%)",
             }}
           />
         </motion.div>
       </div>
 
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="relative mx-auto flex h-full max-w-[1380px] flex-col px-4 pt-24 sm:px-6 sm:pt-28 lg:px-8 lg:pt-32">
-          <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
-            <p className="text-sm font-black uppercase tracking-[0.26em] text-black/55">
-              Stay Playful
-            </p>
+        <div className="relative mx-auto flex h-full max-w-[1380px] flex-col px-4 sm:px-6 lg:px-8">
+          <motion.div
+            style={{
+              y: headerY,
+              scale: headerScale,
+            }}
+            className="relative z-10 pt-24 sm:pt-28 lg:pt-32"
+          >
+            <div className="mx-auto max-w-5xl text-center">
+              <p className="text-sm font-black uppercase tracking-[0.26em] text-black/55">
+                Stay Playful
+              </p>
 
-            <h2
-              id="method-title"
-              className="mt-5 font-sans text-[3rem] font-black uppercase leading-[0.88] tracking-[-0.085em] text-[#14532D] sm:text-[4.8rem] lg:text-[6.4rem]"
-            >
-              <span className="block">THREE LAYERS</span>
-              <span className="mt-1 block">OF THE WORK</span>
-            </h2>
+              <h2
+                id="method-title"
+                className="mt-5 font-sans text-[3rem] font-black uppercase leading-[0.86] tracking-[-0.09em] text-[#14532D] sm:text-[4.8rem] lg:text-[6.2rem]"
+              >
+                <span className="block">THREE LAYERS</span>
+                <span className="block">OF THE WORK</span>
+              </h2>
 
-            <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-black/68 sm:text-lg">
-              The heart of Stay Playful comes down to three simple things — who I am,
-              what this work is here to support, and the way we create change with more
-              curiosity, more care, and far less pressure.
-            </p>
-          </div>
+              <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
+                The heart of Stay Playful comes down to three simple things — who I am,
+                what this work is here to support, and the way we create change with more
+                curiosity, more care, and far less pressure.
+              </p>
+            </div>
+          </motion.div>
 
-          <div className="relative z-20 mt-12 sm:mt-14 lg:mt-16">
+          <div className="relative z-20 mt-12 flex-1 sm:mt-14 lg:mt-16">
             <div className="mb-5 sm:mb-6">
               <div className="rounded-full border-[4px] border-black bg-[#14532D] px-6 py-4 shadow-[0_6px_0_0_rgba(0,0,0,1)]">
                 <div className="flex items-center justify-between gap-4">
@@ -152,14 +163,14 @@ export function Method() {
               </div>
             </div>
 
-            <div className="relative h-[560px] sm:h-[610px] lg:h-[650px]">
+            <div className="relative h-[560px] sm:h-[610px] lg:h-[660px]">
               {methodCards.map((card, index) => (
-                <ParallaxMethodCard
+                <ParallaxCard
                   key={card.id}
                   card={card}
                   index={index}
-                  progress={smoothProgress}
                   total={methodCards.length}
+                  progress={progress}
                 />
               ))}
             </div>
@@ -170,66 +181,42 @@ export function Method() {
   )
 }
 
-function ParallaxMethodCard({
+function ParallaxCard({
   card,
   index,
-  progress,
   total,
+  progress,
 }: {
   card: MethodCard
   index: number
-  progress: MotionValue<number>
   total: number
+  progress: MotionValue<number>
 }) {
-  const step = 1 / total
-  const start = index * step
-  const center = start + step / 2
-  const end = start + step
+  const segment = 1 / total
+  const start = index * segment
+  const center = start + segment / 2
+  const end = start + segment
 
-  const prev = Math.max(0, start - step * 0.42)
-  const next = Math.min(1, end + step * 0.42)
+  const pad = segment * 0.42
 
-  const y = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [120, 56, 0, -56, -120]
-  )
+  const input = [
+    Math.max(0, start - pad),
+    start,
+    center,
+    end,
+    Math.min(1, end + pad),
+  ]
 
-  const scale = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [0.93, 0.97, 1, 0.97, 0.93]
-  )
+  const y = useTransform(progress, input, [140, 70, 0, -70, -140])
+  const scale = useTransform(progress, input, [0.92, 0.965, 1, 0.965, 0.92])
+  const opacity = useTransform(progress, input, [0.84, 0.94, 1, 0.94, 0.84])
+  const rotate = useTransform(progress, input, [2.2, 1, 0, -1, -2.2])
+  const blur = useTransform(progress, input, [4, 1.5, 0, 1.5, 4])
 
-  const opacity = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [0.9, 0.97, 1, 0.97, 0.9]
-  )
+  const contentY = useTransform(progress, input, [30, 14, 0, -14, -30])
+  const panelY = useTransform(progress, input, [40, 18, 0, -18, -40])
 
-  const rotate = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [2.1, 1, 0, -1, -2.1]
-  )
-
-  const blur = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [3, 1.1, 0, 1.1, 3]
-  )
-
-  const contentY = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [32, 14, 0, -14, -32]
-  )
-
-  const panelY = useTransform(
-    progress,
-    [prev, start, center, end, next],
-    [40, 18, 0, -18, -40]
-  )
+  const shadowLift = useTransform(progress, input, [0.96, 0.985, 1, 0.985, 0.96])
 
   const zIndex = total - index
 
@@ -245,7 +232,10 @@ function ParallaxMethodCard({
         filter: useTransform(blur, (v) => `blur(${v}px)`),
       }}
     >
-      <div className="overflow-hidden rounded-[28px] border-[4px] border-black bg-[#F7F1E6] shadow-[0_10px_0_0_rgba(0,0,0,1)] sm:rounded-[32px]">
+      <motion.div
+        style={{ scale: shadowLift }}
+        className="overflow-hidden rounded-[28px] border-[4px] border-black bg-[#F7F1E6] shadow-[0_10px_0_0_rgba(0,0,0,1)] sm:rounded-[32px]"
+      >
         <div
           className="flex items-center justify-between gap-3 border-b-[4px] border-black px-4 py-3 sm:px-6"
           style={{ backgroundColor: card.accent }}
@@ -345,7 +335,7 @@ function ParallaxMethodCard({
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </motion.article>
   )
 }
