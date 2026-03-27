@@ -131,34 +131,6 @@ export function Testimonials() {
         </div>
       </div>
 
-      {/* Decorative moving tapes */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[180px] overflow-visible lg:block">
-        <div className="absolute left-1/2 top-4 w-[150vw] -translate-x-1/2 rotate-[-2.6deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
-          <div className="overflow-hidden whitespace-nowrap">
-            <motion.div
-              initial={{ x: "0%" }}
-              animate={{ x: "-50%" }}
-              transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
-              className="flex w-max items-center"
-            >
-              {[0, 1].map((group) => (
-                <div
-                  key={`top-group-${group}`}
-                  className="flex shrink-0 items-center whitespace-nowrap"
-                >
-                  {topTapeSequence.map((item, index) => (
-                    <span
-                      key={`top-${group}-${item}-${index}`}
-                      className={`${tapeTextClass} text-[2.25rem]`}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
 
         <div className="absolute left-1/2 top-16 w-[152vw] -translate-x-1/2 rotate-[3.1deg] border-y-2 border-[#2B1A16] bg-[#F4DCE9] py-4 opacity-95">
           <div className="overflow-hidden whitespace-nowrap">
@@ -340,7 +312,7 @@ export function Testimonials() {
           <div className="h-[2px] w-24 rounded-full bg-[#FF008E]/24 sm:w-32" />
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
