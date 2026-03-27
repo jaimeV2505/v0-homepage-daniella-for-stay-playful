@@ -11,6 +11,7 @@ export function BrandStatement() {
       <div className="mx-auto max-w-[1780px] px-0 sm:px-4 lg:px-6">
         <div className="overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="grid min-h-[680px] lg:grid-cols-[0.49fr_0.51fr] xl:min-h-[760px] 2xl:min-h-[820px]">
+
             {/* LEFT PANEL */}
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
@@ -77,7 +78,7 @@ export function BrandStatement() {
               </div>
 
               <div className="relative mx-auto flex h-full max-w-[760px] flex-col justify-end">
-                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] scallop-shape">
+                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] cloud-eight-shape">
                   <Image
                     src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
                     alt="Editorial group portrait for Stay Playful"
@@ -108,74 +109,72 @@ export function BrandStatement() {
         </div>
       </div>
 
+      {/* 🔥 NUEVO SHAPE */}
       <style jsx>{`
-        .scallop-shape {
+        .cloud-eight-shape {
           clip-path: polygon(
-            12% 0%,
-            26% 0%,
-            32% 6%,
-            40% 0%,
-            56% 0%,
-            62% 6%,
-            70% 0%,
-            86% 0%,
-            100% 12%,
-            100% 28%,
-            94% 34%,
-            100% 42%,
-            100% 58%,
-            94% 64%,
-            100% 72%,
-            100% 88%,
-            88% 100%,
-            72% 100%,
-            66% 94%,
-            58% 100%,
-            42% 100%,
-            34% 94%,
-            26% 100%,
-            12% 100%,
-            0% 88%,
-            0% 72%,
-            6% 64%,
-            0% 58%,
-            0% 42%,
-            6% 34%,
-            0% 28%,
-            0% 12%
+            18% 0%,
+            34% 0%,
+            40% 7%,
+            50% 0%,
+            60% 7%,
+            66% 0%,
+            82% 0%,
+            100% 16%,
+            100% 34%,
+            92% 42%,
+            100% 50%,
+            100% 66%,
+            92% 74%,
+            100% 84%,
+            82% 100%,
+            66% 100%,
+            60% 93%,
+            50% 100%,
+            40% 93%,
+            34% 100%,
+            18% 100%,
+            0% 84%,
+            0% 66%,
+            8% 58%,
+            0% 50%,
+            0% 34%,
+            8% 26%,
+            0% 16%
           );
         }
 
         @media (max-width: 768px) {
-          .scallop-shape {
+          .cloud-eight-shape {
             clip-path: polygon(
-              10% 0%,
-              28% 0%,
-              35% 7%,
+              12% 0%,
+              32% 0%,
+              40% 8%,
               50% 0%,
-              72% 0%,
-              90% 0%,
-              100% 10%,
+              60% 8%,
+              68% 0%,
+              88% 0%,
+              100% 12%,
               100% 30%,
-              93% 38%,
+              92% 40%,
               100% 50%,
               100% 70%,
-              93% 78%,
-              100% 90%,
-              90% 100%,
-              70% 100%,
-              62% 93%,
+              92% 80%,
+              100% 88%,
+              88% 100%,
+              68% 100%,
+              60% 92%,
               50% 100%,
-              30% 100%,
-              22% 93%,
-              10% 100%,
-              0% 90%,
+              40% 92%,
+              32% 100%,
+              12% 100%,
+              0% 88%,
               0% 70%,
-              7% 62%,
+              8% 60%,
               0% 50%,
               0% 30%,
-              7% 22%,
-              0% 10%
+              8% 20%,
+              0% 12%
             );
           }
         }
