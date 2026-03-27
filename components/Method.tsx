@@ -84,27 +84,38 @@ export function Method() {
       className="relative bg-[#F5F0E6]"
       style={{ height: "280vh" }}
     >
-      {/* Divider label */}
-      <div className="flex items-center gap-4 px-6 py-6 sm:px-10 sm:py-8">
-        <span className="text-xs font-black uppercase tracking-[0.25em] text-black/40 sm:text-sm">
-          Stay Playful Method
-        </span>
-        <div className="h-[2px] flex-1 bg-black/15" />
-        {/* Progress dots */}
-        <div className="flex items-center gap-1.5">
-          {methodCards.map((card, i) => (
-            <ProgressDot key={card.id} index={i} progress={smoothProgress} accent={card.accent} />
-          ))}
+      {/* Top label area */}
+      <div className="relative z-20 px-5 pt-10 pb-4 sm:px-8 sm:pt-14 sm:pb-6 lg:px-12 lg:pt-16 lg:pb-8">
+        <div className="mx-auto flex max-w-[1480px] items-center justify-between gap-4">
+          <span className="text-[11px] font-black uppercase tracking-[0.28em] text-black/35 sm:text-xs">
+            Stay Playful Method
+          </span>
+
+          <div className="flex items-center gap-3 rounded-full bg-[#EFE7DA] px-4 py-2 sm:px-5">
+            <span className="h-[7px] w-[18px] rounded-full bg-[#D8CEC0]" />
+            <div className="flex items-center gap-1.5">
+              {methodCards.map((card, i) => (
+                <ProgressDot
+                  key={card.id}
+                  index={i}
+                  progress={smoothProgress}
+                  accent={card.accent}
+                />
+              ))}
+            </div>
+            <span className="h-[7px] w-[18px] rounded-full bg-[#D8CEC0]" />
+          </div>
+
+          <span className="text-[11px] font-black uppercase tracking-[0.28em] text-black/35 sm:text-xs">
+            Three Layers
+          </span>
         </div>
-        <div className="h-[2px] flex-1 bg-black/15" />
-        <span className="text-xs font-black uppercase tracking-[0.25em] text-black/40 sm:text-sm">
-          Three Layers
-        </span>
       </div>
 
       {/* Sticky cards viewport */}
       <div className="sticky top-0 h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#FFF8EF_0%,#F5F0E6_100%)]" />
+
         <div className="relative h-full w-full">
           {methodCards.map((card, index) => (
             <MethodCardComponent
@@ -137,14 +148,18 @@ function ProgressDot({
   const scale = useTransform(
     progress,
     [start - 0.05, start, start + segment / 2, end, end + 0.05],
-    [0.7, 1.3, 1.4, 1.3, 0.7]
+    [0.7, 1.2, 1.35, 1.2, 0.7]
   )
 
-  const bgOpacity = useTransform(progress, [start - 0.05, start, end, end + 0.05], [0.2, 1, 1, 0.2])
+  const bgOpacity = useTransform(
+    progress,
+    [start - 0.05, start, end, end + 0.05],
+    [0.25, 1, 1, 0.25]
+  )
 
   return (
     <motion.div className="relative h-3 w-3 sm:h-4 sm:w-4" style={{ scale }}>
-      <span className="absolute inset-0 rounded-full border-2 border-black/30" />
+      <span className="absolute inset-0 rounded-full border-2 border-black/22" />
       <motion.span
         className="absolute inset-[2px] rounded-full"
         style={{ backgroundColor: accent, opacity: bgOpacity }}
@@ -222,13 +237,13 @@ function MethodCardComponent({
 
   return (
     <motion.article
-      className="absolute inset-x-6 bottom-8 top-8 will-change-transform sm:inset-x-12 sm:bottom-12 sm:top-12 lg:inset-x-20 lg:bottom-16 lg:top-16"
+      className="absolute inset-x-5 bottom-6 top-[8.5rem] will-change-transform sm:inset-x-8 sm:bottom-8 sm:top-[9.5rem] lg:inset-x-14 lg:bottom-10 lg:top-[10.5rem] xl:inset-x-20"
       style={{ opacity, y, scale, zIndex }}
     >
       <div
-        className="flex h-full flex-col overflow-hidden rounded-[18px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[22px] lg:rounded-[26px]"
+        className="flex h-full flex-col overflow-hidden rounded-[20px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[24px] lg:rounded-[28px]"
         style={{
-          boxShadow: "0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.2)",
+          boxShadow: "0 10px 0 0 rgba(0,0,0,1), 0 30px 80px -20px rgba(0,0,0,0.18)",
         }}
       >
         {/* Card Header */}
@@ -246,32 +261,35 @@ function MethodCardComponent({
 
         {/* Card Body */}
         <div className="grid min-h-0 flex-1 overflow-hidden lg:grid-cols-[1.3fr_0.7fr]">
-          {/* Text Content - fully static, no internal animation */}
-          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-5 sm:p-8 lg:p-10">
+          <div className="flex min-h-0 flex-col justify-center overflow-y-auto p-6 sm:p-8 lg:p-10 xl:p-12">
             <h3
-              className="max-w-[16ch] font-sans leading-[0.88] tracking-[-0.04em] text-black"
-              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3rem)", fontWeight: 900 }}
+              className="max-w-[14ch] font-sans leading-[0.88] tracking-[-0.045em] text-black"
+              style={{ fontSize: "clamp(1.9rem, 4.2vw, 3.2rem)", fontWeight: 900 }}
             >
               {card.title}
             </h3>
 
-            <p className="mt-3 max-w-[32rem] text-sm font-semibold leading-snug text-black/80 sm:mt-4 sm:text-base lg:text-lg">
+            <p className="mt-4 max-w-[34rem] text-sm font-semibold leading-snug text-black/82 sm:text-base lg:text-lg">
               {card.subtitle}
             </p>
 
-            <p className="mt-3 max-w-[36rem] text-xs leading-relaxed text-black/60 sm:mt-4 sm:text-sm lg:text-base">
+            <p className="mt-4 max-w-[38rem] text-sm leading-relaxed text-black/62 sm:text-base">
               {card.description}
             </p>
 
-            <div className="mt-4 sm:mt-5">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/40 sm:text-xs">
+            <div className="mt-5 sm:mt-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-black/38 sm:text-xs">
                 What this means:
               </p>
-              <ul className="mt-2.5 space-y-1.5 sm:mt-3 sm:space-y-2">
+
+              <ul className="mt-3 space-y-2 sm:space-y-2.5">
                 {card.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs leading-snug text-black/70 sm:text-sm">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-sm leading-snug text-black/72"
+                  >
                     <span
-                      className="mt-1 inline-block h-2 w-2 shrink-0 rounded-full border-2 border-black sm:h-2.5 sm:w-2.5"
+                      className="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full border-2 border-black"
                       style={{ backgroundColor: card.accent }}
                     />
                     <span>{point}</span>
@@ -281,12 +299,11 @@ function MethodCardComponent({
             </div>
           </div>
 
-          {/* Visual Panel - Desktop only */}
           <div
             className="hidden border-l-[3px] border-black lg:flex lg:items-center lg:justify-center"
             style={{ backgroundColor: card.panel }}
           >
-            <div className="w-full max-w-[200px] rounded-[14px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_5px_0_0_rgba(0,0,0,1)]">
+            <div className="w-full max-w-[230px] rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_6px_0_0_rgba(0,0,0,1)] xl:max-w-[250px]">
               <div
                 className="flex items-center justify-between border-b-[2px] border-black px-3 py-1.5"
                 style={{ backgroundColor: card.accent }}
@@ -296,21 +313,26 @@ function MethodCardComponent({
                 </span>
                 <div className="flex gap-0.5">
                   {[0, 1, 2].map((d) => (
-                    <span key={d} className="h-1.5 w-1.5 rounded-full border border-black bg-white" />
+                    <span
+                      key={d}
+                      className="h-1.5 w-1.5 rounded-full border border-black bg-white"
+                    />
                   ))}
                 </div>
               </div>
+
               <div className="p-3">
                 <div
-                  className="flex aspect-[4/5] items-center justify-center rounded-lg border-[2px] border-black"
+                  className="flex aspect-[4/5] items-center justify-center rounded-[14px] border-[2px] border-black"
                   style={{ backgroundColor: card.accent }}
                 >
-                  <div className="text-center font-sans text-base font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D]">
+                  <div className="text-center font-sans text-lg font-black uppercase leading-[0.85] tracking-[-0.03em] text-[#14532D] xl:text-[1.35rem]">
                     <div>Stay</div>
                     <div>Playful</div>
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center justify-between border-t-[2px] border-black px-3 py-1.5">
                 <span className="text-[8px] font-bold uppercase tracking-wider text-black/40">
                   Layer {card.id}
