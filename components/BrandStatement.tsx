@@ -8,34 +8,9 @@ export function BrandStatement() {
       aria-labelledby="brand-statement-title"
       className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16"
     >
-      {/* SVG SHAPE (CLAVE DEL CAMBIO) */}
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <clipPath id="brand-eight-shape" clipPathUnits="objectBoundingBox">
-            <path
-              d="
-                M 0.50 0.00
-                C 0.70 0.00, 0.84 0.05, 0.84 0.21
-                C 0.84 0.30, 0.77 0.39, 0.64 0.43
-                C 0.84 0.47, 1.00 0.60, 1.00 0.78
-                C 1.00 0.93, 0.88 1.00, 0.72 1.00
-                C 0.58 1.00, 0.52 0.92, 0.50 0.84
-                C 0.48 0.92, 0.42 1.00, 0.28 1.00
-                C 0.12 1.00, 0.00 0.93, 0.00 0.78
-                C 0.00 0.60, 0.16 0.47, 0.36 0.43
-                C 0.23 0.39, 0.16 0.30, 0.16 0.21
-                C 0.16 0.05, 0.30 0.00, 0.50 0.00
-                Z
-              "
-            />
-          </clipPath>
-        </defs>
-      </svg>
-
       <div className="mx-auto max-w-[1780px] px-0 sm:px-4 lg:px-6">
         <div className="overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="grid min-h-[680px] lg:grid-cols-[0.49fr_0.51fr] xl:min-h-[760px] 2xl:min-h-[820px]">
-
             {/* LEFT PANEL */}
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
@@ -102,14 +77,14 @@ export function BrandStatement() {
               </div>
 
               <div className="relative mx-auto flex h-full max-w-[760px] flex-col justify-end">
-                {/* 🔥 AQUÍ ESTÁ EL CAMBIO */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden border-[4px] border-black bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] eight-cloud-shape">
+                <div className="relative aspect-[4/5] w-full bg-[#FF65FF] bubble-mask shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                   <Image
                     src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
                     alt="Editorial group portrait for Stay Playful"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 760px"
                     className="object-cover"
+                    priority={false}
                   />
                 </div>
 
@@ -134,10 +109,24 @@ export function BrandStatement() {
         </div>
       </div>
 
-      {/* ACTIVAR CLIP */}
       <style jsx>{`
-        .eight-cloud-shape {
-          clip-path: url(#brand-eight-shape);
+        .bubble-mask {
+          overflow: hidden;
+          -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
+          -webkit-mask-position: center;
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: contain;
+          mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
+          mask-position: center;
+          mask-repeat: no-repeat;
+          mask-size: contain;
+        }
+
+        @media (max-width: 768px) {
+          .bubble-mask {
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+          }
         }
       `}</style>
     </section>
