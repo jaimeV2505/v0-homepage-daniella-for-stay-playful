@@ -52,7 +52,7 @@ const tapeItems = [
   "CLIENT LOVE",
 ]
 
-const repeatedTapeItems = Array.from({ length: 6 }, () => tapeItems).flat()
+const tapeSequence = [...tapeItems, ...tapeItems, ...tapeItems]
 
 const AUTO_ROTATE_MS = 4500
 
@@ -220,8 +220,8 @@ export function Testimonials() {
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Show testimonial from ${item.author}`}
                 className={`h-3 rounded-full border border-[#2B1A16]/25 transition-all duration-300 ${isActive
-                    ? "w-10 bg-[#FF008E]"
-                    : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
+                  ? "w-10 bg-[#FF008E]"
+                  : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
                   }`}
               />
             )
