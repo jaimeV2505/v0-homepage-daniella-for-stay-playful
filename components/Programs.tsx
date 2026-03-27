@@ -299,26 +299,42 @@ export function Programs() {
                         </p>
                       </div>
 
-
+                      <div className="flex gap-3">
+                        <button
+                          type="button"
+                          onClick={goPrev}
+                          className={cn(navigationButtonClass, "h-12 w-12")}
+                          aria-label="Previous program"
+                        >
+                          <ArrowLeft className="h-5 w-5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={goNext}
+                          className={cn(navigationButtonClass, "h-12 w-12")}
+                          aria-label="Next program"
+                        >
+                          <ArrowRight className="h-5 w-5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="mx-auto mt-8 max-w-[760px] text-center">
-          <p className="text-lg leading-8 text-sp-deep-brown/78 sm:text-[1.15rem]">
-            Different levels of support, one consistent approach: personal,
-            thoughtful, and designed to fit real life.
-          </p>
+          <div className="mx-auto mt-8 max-w-[760px] text-center">
+            <p className="text-lg leading-8 text-sp-deep-brown/78 sm:text-[1.15rem]">
+              Different levels of support, one consistent approach: personal,
+              thoughtful, and designed to fit real life.
+            </p>
+          </div>
         </div>
-      </div>
-    </section >
+      </section>
 
-      {/* MOBILE / TABLET */ }
-      < section className = "bg-sp-cream px-4 py-16 xl:hidden" >
+      {/* MOBILE / TABLET */}
+      <section className="bg-sp-cream px-4 py-16 xl:hidden">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-[760px] text-center">
             <p className="mb-4 text-sm font-black uppercase tracking-[0.28em] text-sp-hot-pink">
@@ -469,7 +485,7 @@ export function Programs() {
             </p>
           </div>
         </div>
-      </section >
+      </section>
     </>
   )
 }
