@@ -1,6 +1,12 @@
 "use client"
 
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion"
 import { useRef } from "react"
 
 type MethodCard = {
@@ -62,6 +68,13 @@ const methodCards: MethodCard[] = [
   },
 ]
 
+const WATERMARK_ROWS = [
+  "STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL",
+  "STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL",
+  "STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL",
+  "STAY PLAYFUL STAY PLAYFUL STAY PLAYFUL",
+]
+
 export function Method() {
   const sectionRef = useRef<HTMLElement | null>(null)
 
@@ -70,13 +83,17 @@ export function Method() {
     offset: ["start start", "end end"],
   })
 
-  const blobY = useTransform(scrollYProgress, [0, 1], [-30, 50])
-  const blobScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1, 1.08])
-  const blobOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.15, 0.85, 1],
-    [0.45, 0.85, 0.82, 0.6]
-  )
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 22,
+    mass: 0.35,
+  })
+
+  const blobLeftY = useTransform(smoothProgress, [0, 1], [-12, 30])
+  const blobRightY = useTransform(smoothProgress, [0, 1], [16, -22])
+  const blobLeftRotate = useTransform(smoothProgress, [0, 1], [-4, 5])
+  const blobRightRotate = useTransform(smoothProgress, [0, 1], [5, -4])
+  const blobScale = useTransform(smoothProgress, [0, 0.5, 1], [0.96, 1, 1.04])
 
   return (
     <section
@@ -84,50 +101,99 @@ export function Method() {
       id="method"
       aria-labelledby="method-title"
       className="relative bg-[#F5F0E6] py-20 sm:py-24 lg:py-28"
-      style={{ height: "300vh" }}
+      style={{ height: "320vh" }}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#FFF8EF_0%,#F5F0E6_45%,#EEE6D8_100%)]" />
+        <div className="absolute inset-0 bg-[#F5F0E6]" />
+
+        <div className="absolute inset-0">
+          <div className="mx-auto flex h-full max-w-[1800px] flex-col justify-between px-4 py-6 sm:px-6 lg:px-8">
+            {WATERMARK_ROWS.map((row, i) => (
+              <div
+                key={i}
+                className="select-none text-center font-sans text-[4.6rem] font-black uppercase leading-none tracking-[-0.08em] text-black/[0.025] sm:text-[7rem] lg:text-[9.5rem]"
+              >
+                {row}
+              </div>
+            ))}
+          </div>
+        </div>
 
         <motion.div
           style={{
-            y: blobY,
+            y: blobLeftY,
+            rotate: blobLeftRotate,
             scale: blobScale,
-            opacity: blobOpacity,
           }}
-          className="absolute top-10 left-1/2 h-[280px] w-[90%] -translate-x-1/2 z-0"
+          className="absolute left-[2%] top-[6.5rem] z-0 hidden h-[420px] w-[36%] min-w-[280px] lg:block"
         >
           <div
-            className="w-full h-full blur-[40px]"
+            className="relative h-full w-full"
             style={{
-              backgroundColor: "#FFABFF",
               clipPath:
-                "polygon(5% 20%, 15% 5%, 40% 0%, 70% 8%, 90% 20%, 100% 40%, 95% 65%, 85% 85%, 60% 100%, 30% 95%, 10% 80%, 0% 55%)",
+                "polygon(8% 10%, 30% 8%, 47% 16%, 70% 10%, 88% 22%, 92% 45%, 86% 65%, 92% 86%, 72% 96%, 52% 88%, 30% 96%, 14% 82%, 4% 62%, 8% 40%, 2% 22%)",
+              backgroundColor: "#E59BEA",
             }}
-          />
+          >
+            <div className="absolute inset-0 flex items-center justify-center px-8 text-center">
+              <div className="font-sans text-[4rem] font-black uppercase leading-[0.82] tracking-[-0.08em] text-[#14532D] xl:text-[4.8rem]">
+                <div>Stay</div>
+                <div>Playful</div>
+                <div>Stay</div>
+                <div>Playful</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          style={{
+            y: blobRightY,
+            rotate: blobRightRotate,
+            scale: blobScale,
+          }}
+          className="absolute right-[3%] top-[8rem] z-0 hidden h-[360px] w-[23%] min-w-[220px] lg:block"
+        >
+          <div
+            className="relative h-full w-full"
+            style={{
+              clipPath:
+                "polygon(14% 14%, 36% 6%, 58% 14%, 80% 6%, 94% 22%, 100% 42%, 90% 62%, 100% 86%, 84% 100%, 62% 92%, 42% 100%, 22% 86%, 8% 68%, 10% 46%, 2% 26%)",
+              backgroundColor: "#E59BEA",
+            }}
+          >
+            <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+              <div className="font-sans text-[2.6rem] font-black uppercase leading-[0.88] tracking-[-0.08em] text-[#14532D] xl:text-[3.2rem]">
+                <div>Stay</div>
+                <div>Playful</div>
+                <div>Stay</div>
+                <div>Playful</div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-      <div className="sticky top-0 h-screen flex items-center">
+      <div className="sticky top-0 flex h-screen items-center">
         <div className="relative mx-auto w-full max-w-[1380px] px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-sm font-black uppercase tracking-[0.26em] text-black/55">
+          <div className="relative z-10 mx-auto max-w-6xl text-center">
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-black/60 sm:text-base">
               Stay Playful
             </p>
 
             <h2
               id="method-title"
-              className="mt-5 font-sans text-[2.9rem] font-black uppercase leading-[0.84] tracking-[-0.09em] text-[#14532D] sm:text-[4.4rem] lg:text-[5.8rem]"
+              className="mt-4 font-sans text-[3.4rem] font-black uppercase leading-[0.84] tracking-[-0.1em] text-black sm:text-[5.5rem] lg:text-[8rem] xl:text-[9rem]"
             >
-              STAY PLAYFUL
+              THREE LAYERS
               <br />
-              METHOD
+              OF THE WORK
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
+            <p className="mx-auto mt-6 max-w-4xl text-[1.2rem] leading-9 text-black/65 sm:text-[1.5rem] sm:leading-10">
               The heart of Stay Playful comes down to three simple things — who I am,
-              what this work is here to support, and the way we create change with more
-              curiosity, more care, and far less pressure.
+              what this work is meant to support, and the way we create change with
+              more curiosity, more care, and far less pressure.
             </p>
           </div>
 
@@ -151,7 +217,7 @@ export function Method() {
                   key={card.id}
                   card={card}
                   index={index}
-                  progress={scrollYProgress}
+                  progress={smoothProgress}
                   total={methodCards.length}
                 />
               ))}
@@ -179,49 +245,55 @@ function ParallaxMethodCard({
   const mid = start + step / 2
   const end = start + step
 
-  const prev = Math.max(0, start - step / 2)
-  const next = Math.min(1, end + step / 2)
+  const prev = Math.max(0, start - step * 0.55)
+  const next = Math.min(1, end + step * 0.55)
 
   const y = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [140, 70, 0, -70, -140]
+    [110, 44, 0, -44, -110]
   )
 
   const scale = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [0.86, 0.93, 1, 0.95, 0.88]
+    [0.94, 0.975, 1, 0.985, 0.955]
   )
 
   const opacity = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [0, 0.45, 1, 0.45, 0]
+    [0.88, 0.96, 1, 0.96, 0.88]
   )
 
   const rotate = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [3, 1.5, 0, -1.5, -3]
+    [1.6, 0.8, 0, -0.8, -1.6]
   )
 
   const blur = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [10, 4, 0, 4, 10]
+    [2.2, 0.8, 0, 0.8, 2.2]
   )
 
   const contentY = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [40, 20, 0, -20, -40]
+    [22, 10, 0, -10, -22]
   )
 
   const panelY = useTransform(
     progress,
     [prev, start, mid, end, next],
-    [60, 24, 0, -24, -60]
+    [34, 14, 0, -14, -34]
+  )
+
+  const innerScale = useTransform(
+    progress,
+    [prev, start, mid, end, next],
+    [0.992, 0.997, 1, 0.997, 0.992]
   )
 
   const zIndex = total - index
@@ -238,7 +310,10 @@ function ParallaxMethodCard({
       }}
       className="absolute inset-0 will-change-transform"
     >
-      <div className="overflow-hidden rounded-[28px] border-[4px] border-black bg-[#F7F1E6] shadow-[0_10px_0_0_rgba(0,0,0,1)] sm:rounded-[32px]">
+      <motion.div
+        style={{ scale: innerScale }}
+        className="overflow-hidden rounded-[28px] border-[4px] border-black bg-[#F7F1E6] shadow-[0_10px_0_0_rgba(0,0,0,1)] sm:rounded-[32px]"
+      >
         <div
           className="flex items-center justify-between gap-3 border-b-[4px] border-black px-4 py-3 sm:px-6"
           style={{ backgroundColor: card.accent }}
@@ -338,7 +413,7 @@ function ParallaxMethodCard({
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </motion.article>
   )
 }
