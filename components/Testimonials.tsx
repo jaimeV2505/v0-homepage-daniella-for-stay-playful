@@ -87,29 +87,21 @@ export function Testimonials() {
       <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-[190px] overflow-visible lg:block">
         <div className="absolute left-1/2 top-2 w-[130vw] -translate-x-1/2 rotate-[-4deg] border-y-2 border-[#2B1A16] bg-[#E7A9D3] py-4">
           <div className="overflow-hidden whitespace-nowrap">
-  <motion.div
-    initial={{ x: 0 }}
-    animate={{ x: "-50%" }}
-    transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-    className="flex w-max items-center"
-  >
-    {[
-      ...tapeItems,
-      ...tapeItems,
-      ...tapeItems,
-      ...tapeItems,
-      ...tapeItems,
-      ...tapeItems,
-    ].map((item, index) => (
-      <span
-        key={`${item}-${index}-top`}
-        className="mx-6 inline-block shrink-0 font-serif text-[2.5rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
-      >
-        {item}
-      </span>
-    ))}
-  </motion.div>
-</div>
+            <motion.div
+              initial={{ x: "0%" }}
+              animate={{ x: "-50%" }}
+              transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+              className="flex min-w-max items-center"
+            >
+              {[...tapeItems, ...tapeItems, ...tapeItems].map((item, index) => (
+                <span
+                  key={`${item}-${index}-top`}
+                  className="mx-6 font-serif text-[2.5rem] leading-none tracking-[-0.04em] text-[#2B1A16]"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </div>
 
@@ -221,8 +213,8 @@ export function Testimonials() {
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Show testimonial from ${item.author}`}
                 className={`h-3 rounded-full border border-[#2B1A16]/25 transition-all duration-300 ${isActive
-                    ? "w-10 bg-[#FF008E]"
-                    : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
+                  ? "w-10 bg-[#FF008E]"
+                  : "w-3 bg-white/70 hover:bg-[#E7A9D3]"
                   }`}
               />
             )
@@ -293,7 +285,7 @@ export function Testimonials() {
           <div className="h-[2px] w-32 rounded-full bg-[#FF008E]/24" />
         </div>
       </div>
-    </section >
+    </section>
   )
 }
 
