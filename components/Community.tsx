@@ -74,7 +74,7 @@ export function Community() {
       </div>
 
       {/* Top divider / ribbon */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-24 lg:block">
+      <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-24 lg:block">
         <div className="absolute left-[-6%] right-[-6%] top-4 rotate-[-2.5deg] border-y-2 border-[#2B1A16] bg-[#FFF8F2] py-3 shadow-[0_8px_18px_rgba(0,0,0,0.06)]">
           <div className="flex overflow-hidden whitespace-nowrap">
             <motion.div
