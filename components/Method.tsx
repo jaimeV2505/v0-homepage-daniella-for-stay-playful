@@ -83,17 +83,17 @@ export function Method() {
       id="method"
       aria-labelledby="method-title"
       className="relative bg-[#F5F0E6]"
-      style={{ height: "250vh" }}
+      style={{ height: "300vh" }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,#FFF8EF_0%,#F5F0E6_50%,#EEE6D8_100%)]" />
 
-        <div className="relative mx-auto flex h-full max-w-[1400px] flex-col px-4 pt-6 sm:px-6 sm:pt-10 lg:px-8 lg:pt-12">
-          {/* Header - Compact */}
-          <header className="relative z-30 mb-4 text-center sm:mb-6">
-            <motion.span 
-              className="mb-2 inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#14532D]/70 sm:text-sm"
+        <div className="relative mx-auto flex h-full max-w-[1400px] flex-col px-4 pb-6 pt-6 sm:px-6 sm:pt-10 lg:px-8 lg:pt-12">
+          {/* Header */}
+          <header className="relative z-30 mb-4 text-center sm:mb-5">
+            <motion.span
+              className="mb-2 inline-block rounded-full border-2 border-[#14532D]/30 bg-[#14532D]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.3em] text-[#14532D] sm:text-xs"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -102,19 +102,37 @@ export function Method() {
             </motion.span>
             <motion.h2
               id="method-title"
-              className="mx-auto font-sans text-[2rem] font-black uppercase leading-[0.85] tracking-[-0.05em] text-black sm:text-[2.8rem] lg:text-[3.5rem]"
-              initial={{ opacity: 0, y: 20 }}
+              className="mx-auto font-sans uppercase leading-[0.82] tracking-[-0.06em] text-black"
+              style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", fontWeight: 900 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="block">Three Layers</span>
-              <span className="block">Of The Work</span>
+              <span
+                className="relative block"
+                style={{
+                  WebkitTextStroke: "3px black",
+                  color: "transparent",
+                }}
+              >
+                Of The Work
+                <motion.span
+                  className="absolute inset-0 block"
+                  style={{ color: "#14532D", WebkitTextStroke: "0px" }}
+                  initial={{ clipPath: "inset(0 100% 0 0)" }}
+                  whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+                  transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  Of The Work
+                </motion.span>
+              </span>
             </motion.h2>
-            <motion.p 
-              className="mx-auto mt-2 max-w-[540px] text-xs leading-relaxed text-black/60 sm:mt-3 sm:text-sm"
+            <motion.p
+              className="mx-auto mt-2 max-w-[500px] text-xs leading-relaxed text-black/55 sm:mt-3 sm:text-sm"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               The heart of Stay Playful comes down to three simple things — who I am, what this work is here to support, and the way we create change with more curiosity.
             </motion.p>
@@ -143,8 +161,8 @@ export function Method() {
           </div>
 
           {/* Cards Container */}
-          <div className="relative z-10 flex flex-1 items-start justify-center pt-2">
-            <div className="relative h-[calc(100vh-220px)] w-full max-w-[960px] sm:h-[calc(100vh-240px)]">
+          <div className="relative z-10 min-h-0 flex-1 px-0">
+            <div className="relative h-full w-full max-w-[960px] mx-auto">
               {methodCards.map((card, index) => (
                 <MethodCardComponent
                   key={card.id}
@@ -313,8 +331,8 @@ function MethodCardComponent({
         zIndex,
       }}
     >
-      <div 
-        className="h-full overflow-hidden rounded-[16px] border-[3px] border-black bg-[#FDFAF5] shadow-[0_8px_0_0_rgba(0,0,0,1)] sm:rounded-[20px] lg:rounded-[24px]"
+        <div
+          className="flex h-full flex-col overflow-hidden rounded-[16px] border-[3px] border-black bg-[#FDFAF5] sm:rounded-[20px] lg:rounded-[24px]"
         style={{
           boxShadow: `0 8px 0 0 rgba(0,0,0,1), 0 20px 60px -15px rgba(0,0,0,0.15)`,
         }}
@@ -333,7 +351,7 @@ function MethodCardComponent({
         </div>
 
         {/* Card Body */}
-        <div className="grid h-[calc(100%-40px)] sm:h-[calc(100%-44px)] lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid min-h-0 flex-1 overflow-y-auto lg:grid-cols-[1.2fr_0.8fr]">
           {/* Text Content */}
           <div className="flex flex-col justify-center p-5 sm:p-6 lg:p-8">
             <h3 className="max-w-[18ch] font-sans text-[1.6rem] font-black leading-[0.9] tracking-[-0.04em] text-black sm:text-[2.2rem] lg:text-[2.6rem]">
