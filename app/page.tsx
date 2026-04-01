@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero"
 import { BrandStatement } from "@/components/BrandStatement"
 import { Programs } from "@/components/Programs"
 import { Method } from "@/components/Method"
-import { VisualStories } from "@/components/VisualStories"
 import { Testimonials } from "@/components/Testimonials"
 import { Community } from "@/components/Community"
 import { ContactForm } from "@/components/ContactForm"
@@ -18,7 +17,6 @@ export default function HomePage() {
       <BrandStatement />
       <Method />
       <Programs />
-      <VisualStories />
       <Testimonials />
       <Community />
       <ContactForm />
