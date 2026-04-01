@@ -19,14 +19,49 @@ const methodCards: MethodCard[] = [
   {
     id: "001",
     eyebrow: "ABOUT ME",
-    title: "The Person Behind Stay Playful.",
-    subtitle: "A softer, more human approach to wellbeing.",
-    description:
-      "I'm Daniella, and Stay Playful was created to offer a more grounded and compassionate approach to wellbeing — one rooted in balance, self-trust, and a healthier relationship with food, body, and everyday life.",
+    title: "Meet the Founder",
+    subtitle: "",
+    description: (
+      <>
+        <p>Hej mitt namn är Daniella.</p>
+
+        <p>
+          Det började med en tillfrisknad från en ätstörning. En hyper fixering kring
+          psykologi och nutrition.
+        </p>
+
+        <p>
+          Till certifikat för kostrådgivning och några tävlingar inom bikini fitness.
+        </p>
+
+        <p>
+          Till flera år av föreläsning inom ätstörning- och självskadebeteende.
+          Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.
+        </p>
+
+        <p>
+          <strong>
+            Tills att jag sa blää — vad är det människor håller på med där ute?
+          </strong>
+        </p>
+
+        <p>
+          Jag ser fler och fler som “gör allt rätt”: tränar, äter enligt plan, har kunskapen.
+          Men i perioder.
+        </p>
+
+        <p>
+          Tänk om problemet inte är att vi inte har tillräckligt med disciplin —
+          utan att vi faktiskt lägger ner för mycket tid på något vi inte tycker om.
+        </p>
+
+        <p><strong>Den insikten förändrade allt!</strong></p>
+      </>
+    ),
     points: [
-      "Gentle support without extremes",
-      "A more sustainable relationship with wellbeing",
-      "Guidance built for real life, not perfection",
+      "Lugnt stöd utan ytterligheter",
+      "En mer hållbar relation till välmående",
+      "Vägledning anpassad för verkliga livet, inte perfektion",
     ],
     accent: "#FFABFF",
     panel: "#F6C8F4",
@@ -35,14 +70,29 @@ const methodCards: MethodCard[] = [
   {
     id: "002",
     eyebrow: "THE GOAL",
-    title: "Support That Feels Sustainable.",
-    subtitle: "Less pressure. More clarity. More joy.",
-    description:
-      "The goal is not perfection, pressure, or constant self-monitoring. It's helping you build something that feels personal, sustainable, and joyful — support that actually fits your life.",
+    title: "Strategin",
+    subtitle: "aEtt nytt sätt att se på balans och välmående",
+    description: (
+      <>
+        <p>
+          Målet är inte perfektion, press eller ständig självkontroll.
+        </p>
+
+        <p>
+          Det handlar om att hjälpa dig bygga något som känns personligt,
+          hållbart och glädjefyllt.
+        </p>
+
+        <p>
+          Ett stöd som faktiskt passar ditt liv.
+        </p>
+      </>
+    ),
+
     points: [
-      "A realistic path you can actually maintain",
-      "More trust in yourself and your process",
-      "Wellbeing that feels supportive, not controlling",
+      "En realistisk väg som du faktiskt kan hålla över tid",
+      "Mer tillit till dig själv och din process",
+      "Välmående som känns stödjande, inte kontrollerande",
     ],
     accent: "#00E2FF",
     panel: "#D9F9FF",
@@ -51,14 +101,14 @@ const methodCards: MethodCard[] = [
   {
     id: "003",
     eyebrow: "THE STRATEGY",
-    title: "Change Through Curiosity, Not Force.",
-    subtitle: "A calmer process with lasting shifts.",
+    title: "Målet",
+    subtitle: "En lekfull syn på välmående.",
     description:
-      "We use curiosity, reflection, and thoughtful guidance to create change that lasts. No rigid rules, no extremes — just a grounded process that helps you move forward with more ease and clarity.",
+      "Sluta aldrig leka genom livet och för att orka göra det så behöver du energi och näring! Företagets övergripande mål är att förmedla att ett hälsosamt liv inte är ett krav eller ett projekt, utan något som kan vara härligt, personligt och i linje med dina egna värderingar och livsstil.\n\nStay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.",
     points: [
-      "Thoughtful support instead of strict rules",
-      "Small shifts that create real momentum",
-      "A process built around care, reflection, and trust",
+      "Energi och näring för att leva fullt ut",
+      "Ett hälsosamt liv utan krav eller press",
+      "Välmående som känns personligt och glädjefyllt",
     ],
     accent: "#FFBD17",
     panel: "#FFE7A0",
@@ -84,7 +134,7 @@ export function Method() {
       <div className="mx-auto max-w-7xl px-5 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24 xl:px-16">
         <div className="max-w-4xl">
           <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/35 sm:text-xs">
-            MY METHOD
+            MIN METOD
           </p>
 
           <h2
@@ -95,12 +145,13 @@ export function Method() {
               fontWeight: 900,
             }}
           >
-            A layered process that unfolds as you move.
+            Tre grundpelare som gör Stay Playful unik.
           </h2>
 
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-black/60 sm:text-base lg:text-lg">
-            Each layer reveals a little more of the philosophy — slowly,
-            clearly, and with intention.
+            Vem är jag, vad är strategin och vad är målet? Här får du en tydlig bild av
+            filosofin bakom Stay Playful — och hur vi tillsammans skapar balans,
+            energi och ett mer lekfullt liv.
           </p>
         </div>
       </div>
