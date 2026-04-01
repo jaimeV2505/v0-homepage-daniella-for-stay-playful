@@ -66,7 +66,7 @@ const methodCards: MethodCard[] = [
   },
 ]
 
-export function MethodStickyStackPremium() {
+export function Method() {
   const wrapperRef = useRef<HTMLDivElement | null>(null)
 
   const { scrollYProgress } = useScroll({
