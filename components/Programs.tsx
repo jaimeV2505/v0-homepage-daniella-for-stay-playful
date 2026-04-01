@@ -118,15 +118,15 @@ export function Programs() {
             </p>
 
             <h2 className="font-serif text-[5.2rem] leading-[0.92] tracking-[-0.06em] text-sp-deep-brown">
-              Your path to
+              Din väg till
               <span className="mx-auto mt-3 block w-fit bg-[#DDF0D5] px-4 py-1 italic text-sp-hot-pink">
-                wellbeing
+                välmående
               </span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-[760px] text-[1.35rem] leading-[1.65] text-sp-deep-brown/72">
-              Every journey is unique. Choose the level of support that fits
-              your life and explore each pathway in a more intentional way.
+              Min rådgivning är individuell och kommer att anpassas efter din utgångspunkt.
+              Klicka för att se grundvalen som stödjer ditt liv.
             </p>
           </div>
 
@@ -471,7 +471,8 @@ export function Programs() {
                     href="#contact"
                     className="rounded-full bg-sp-hot-pink px-5 py-3 text-sm font-black uppercase tracking-[0.08em] text-white transition-all duration-200 hover:-translate-y-0.5"
                   >
-                    Learn more
+
+                    Läs mer
                   </a>
                 </div>
               </div>
