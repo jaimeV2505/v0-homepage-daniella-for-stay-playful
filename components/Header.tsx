@@ -35,7 +35,7 @@ export function Header() {
       {/* TOP ANNOUNCEMENT BAR */}
       <div className="relative z-[60] border-b-[3px] border-black bg-[#E3488B] px-4 py-3 text-white">
         <div className="mx-auto flex max-w-[1720px] items-center justify-center text-center text-sm font-semibold sm:text-[15px]">
-          <span>Where your vision becomes something unforgettable</span>
+          <span>Där din vision blir något oförglömligt</span>
           <span className="mx-3 opacity-90">|</span>
           <Link
             href="#contact"
