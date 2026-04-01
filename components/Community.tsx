@@ -181,18 +181,16 @@ export function Community() {
                   <div className="flex h-full flex-col justify-between">
                     <div>
                       <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#9C1B24]">
-                        Quick clarity
+                        Klarhet utan press
                       </p>
 
                       <h3 className="max-w-[14ch] font-sans text-[2rem] font-black uppercase leading-[0.92] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem]">
-                        Do I need to be “perfect” for this to work?
+                        Ett mer hållbart sätt att må bra
                       </h3>
 
                       <p className="mt-5 text-[1rem] leading-7 text-[#2B1A16]/78 sm:text-[1.05rem]">
-                        Nope — not even a little. This work is designed for real
-                        life, real routines, and real people. Progress here
-                        comes from support, flexibility, and consistency — not
-                        from obsession or doing everything flawlessly.
+                        Här handlar det inte om perfektion eller kontroll. Det handlar om att hitta ett sätt
+                        att leva som faktiskt fungerar i din vardag — med mer balans, frihet och tillit till dig själv.
                       </p>
                     </div>
 
@@ -202,8 +200,7 @@ export function Community() {
                       </div>
 
                       <p className="max-w-[18ch] text-sm leading-6 text-[#2B1A16]/68">
-                        Thoughtful answers to the questions people usually have
-                        before reaching out.
+                        Perspektiv som hjälper dig förstå, känna dig trygg och ta nästa steg.
                       </p>
                     </div>
                   </div>
