@@ -63,7 +63,7 @@ export function Hero() {
               {/* statement */}
               <div className="mx-auto mt-3 max-w-[320px] px-2 text-center sm:mt-4 sm:max-w-[360px]">
                 <p className="text-[1rem] leading-[1.45] tracking-[-0.02em] text-black/76 sm:text-[1.1rem]">
-                  A softer, more personal approach to wellbeing.
+                  your life, your playground - stay playful.
                 </p>
               </div>
             </div>

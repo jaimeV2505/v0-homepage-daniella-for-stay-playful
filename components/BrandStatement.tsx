@@ -33,13 +33,11 @@ export function BrandStatement() {
 
                 <div className="mt-8 max-w-[460px] space-y-4 text-base leading-8 text-white/95 sm:text-lg">
                   <p>
-                    Stay Playful is rooted in balance, curiosity, and a more joyful
-                    relationship with food, body, and everyday life.
+                    Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo.
                   </p>
 
                   <p>
-                    A softer, more personal approach to wellbeing — one that makes
-                    room for freedom, pleasure, and real life.
+                    Med mindre ohälsosam fixering till kost, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.
                   </p>
                 </div>
               </div>
@@ -63,7 +61,7 @@ export function BrandStatement() {
                 </div>
 
                 <p className="mt-3 max-w-[210px] text-[10px] font-bold uppercase leading-4 tracking-[0.08em] text-black sm:text-[11px]">
-                  wellbeing with more curiosity, less control, and room for joy
+                  VARNING: Stay Playful kan orsaka följande biverkningar:
                 </p>
               </div>
             </div>
