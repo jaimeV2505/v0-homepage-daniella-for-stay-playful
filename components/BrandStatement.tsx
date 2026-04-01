@@ -15,31 +15,31 @@ export function BrandStatement() {
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
                 <p className="text-[11px] font-black uppercase tracking-[0.26em] text-white sm:text-sm">
-                  Here at Stay Playful
+                  Här hos Stay Playful
                 </p>
 
                 <h2
                   id="brand-statement-title"
                   className="mt-5 max-w-[720px] text-[2.9rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-white sm:text-[4rem] lg:text-[5rem] xl:text-[5.8rem] 2xl:text-[6.3rem]"
                 >
-                  WE TALK
+                  VARNING:
                   <br />
-                  ABOUT
+                  STAY PLAYFUL
                   <br />
-                  WELLBEING
+                  KAN ORSAKA
                   <br />
-                  DIFFERENTLY
+                  FÖLJANDE
+                  <br />
+                  BIVERKNINGAR:
                 </h2>
 
                 <div className="mt-8 max-w-[460px] space-y-4 text-base leading-8 text-white/95 sm:text-lg">
                   <p>
-                    Stay Playful is rooted in balance, curiosity, and a more joyful
-                    relationship with food, body, and everyday life.
+                    Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo.
                   </p>
 
                   <p>
-                    A softer, more personal approach to wellbeing — one that makes
-                    room for freedom, pleasure, and real life.
+                    Med mindre ohälsosam fixering till kost, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.
                   </p>
                 </div>
               </div>
@@ -63,7 +63,8 @@ export function BrandStatement() {
                 </div>
 
                 <p className="mt-3 max-w-[210px] text-[10px] font-bold uppercase leading-4 tracking-[0.08em] text-black sm:text-[11px]">
-                  wellbeing with more curiosity, less control, and room for joy
+                  Sluta jaga perfektion
+                  och börja njuta av livet.
                 </p>
               </div>
             </div>
@@ -93,8 +94,8 @@ export function BrandStatement() {
                     Stay Playful
                   </p>
                   <p className="mt-2 text-sm leading-6 text-black sm:text-[15px]">
-                    Health should feel personal, joyful, and sustainable — never
-                    like punishment.
+                    Mindre kontroll, mer nyfikenhet —
+                    det är där verkligt välmående börjar.
                   </p>
                 </div>
               </div>

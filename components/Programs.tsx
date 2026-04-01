@@ -22,58 +22,58 @@ const programs: Program[] = [
   {
     id: "coaching",
     step: "01",
-    eyebrow: "Personal Guidance",
+    eyebrow: "Personlig vägledning",
     title: "1:1 Coaching",
     description:
-      "Tailored support designed around your unique needs, lifestyle, and goals. Direct access to personalized nutrition and wellness coaching.",
+      "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
     accent: "bg-[#E7DDF6]",
     panelAccent: "bg-[#F3ECFB]",
-    chip: "Tailored support",
-    note: "Private, personal, and fully adapted to your life.",
+    chip: "Individuell rådgivning",
+    note: "Privat, personlig och anpassad efter ditt liv.",
     format: "1:1 Support",
-    focus: "Real Life Change",
+    focus: "Verklig förändring",
   },
   {
     id: "program-6",
     step: "02",
-    eyebrow: "Focused Support",
-    title: "6-Week Program",
+    eyebrow: "Fokuserat stöd",
+    title: "6-veckors program",
     description:
-      "A supportive reset designed to help you create momentum, build confidence, and establish practical shifts that feel realistic in everyday life.",
+      "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
     accent: "bg-[#FFE8D9]",
     panelAccent: "bg-[#FFF1E8]",
-    chip: "Steady support",
-    note: "A shorter container with structure, direction, and clarity.",
-    format: "Guided Program",
-    focus: "Confidence & Momentum",
+    chip: "Strukturerat stöd",
+    note: "En tydlig plan för att skapa verklig förändring.",
+    format: "Guidad process",
+    focus: "Riktning & utveckling",
   },
   {
     id: "program-8",
     step: "03",
-    eyebrow: "Foundation Builder",
-    title: "8-Week Program",
+    eyebrow: "Grund för förändring",
+    title: "8-veckors program",
     description:
-      "A structured journey to establish healthy habits and transform your relationship with food. Perfect for those ready to commit to change.",
+      "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
     accent: "bg-[#D8EDF6]",
     panelAccent: "bg-[#ECF8FC]",
-    chip: "Build momentum",
-    note: "A grounded space to create habits that actually last.",
-    format: "Structured Journey",
-    focus: "Habit Building",
+    chip: "Bygg hållbara vanor",
+    note: "En stabil grund för en livsstil som håller över tid.",
+    format: "Strukturerad resa",
+    focus: "Vanor & livsstil",
   },
   {
     id: "program-12",
     step: "04",
-    eyebrow: "Deep Transformation",
-    title: "12-Week Program",
+    eyebrow: "Fördjupat stöd",
+    title: "Specialaren",
     description:
-      "The comprehensive experience for lasting change. Extended support, deeper work, and the time needed for true transformation.",
+      "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn (med/utan koppling till ev diagnos och kost-problematik). Om du har tävlat inom fitness (eller är nära en tävling) och behöver stöd efter långvarig diet.",
     accent: "bg-[#F7E1EA]",
     panelAccent: "bg-[#FDF0F5]",
-    chip: "Lasting change",
-    note: "A longer-term path for deeper support and sustainable change.",
-    format: "Deep Support",
-    focus: "Lasting Transformation",
+    chip: "Individanpassat stöd",
+    note: "För specifika behov och situationer som kräver extra stöd.",
+    format: "Specialanpassat stöd",
+    focus: "Individuella behov",
   },
 ]
 
@@ -118,15 +118,15 @@ export function Programs() {
             </p>
 
             <h2 className="font-serif text-[5.2rem] leading-[0.92] tracking-[-0.06em] text-sp-deep-brown">
-              Your path to
+              Din väg till
               <span className="mx-auto mt-3 block w-fit bg-[#DDF0D5] px-4 py-1 italic text-sp-hot-pink">
-                wellbeing
+                välmående
               </span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-[760px] text-[1.35rem] leading-[1.65] text-sp-deep-brown/72">
-              Every journey is unique. Choose the level of support that fits
-              your life and explore each pathway in a more intentional way.
+              Min rådgivning är individuell och kommer att anpassas efter din utgångspunkt.
+              Klicka för att se grundvalen som stödjer ditt liv.
             </p>
           </div>
 
@@ -229,7 +229,8 @@ export function Programs() {
                       href="#contact"
                       className="inline-flex items-center justify-center rounded-full bg-sp-hot-pink px-7 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[0_8px_24px_rgba(255,0,142,0.22)] transition-all duration-200 hover:-translate-y-0.5"
                     >
-                      Learn more
+
+                      Läs mer
                     </a>
                   </div>
                 </div>
@@ -471,7 +472,8 @@ export function Programs() {
                     href="#contact"
                     className="rounded-full bg-sp-hot-pink px-5 py-3 text-sm font-black uppercase tracking-[0.08em] text-white transition-all duration-200 hover:-translate-y-0.5"
                   >
-                    Learn more
+
+                    Läs mer
                   </a>
                 </div>
               </div>

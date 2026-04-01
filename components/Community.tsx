@@ -15,34 +15,76 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     id: "different",
-    question: "What makes Stay Playful different from other wellness approaches?",
-    answer:
-      "Stay Playful is not built on restriction, guilt, or rigid food rules. The approach is softer, more personal, and designed to fit real life. Instead of chasing perfection, we focus on sustainable wellbeing, supportive structure, and a healthier relationship with food, body, and lifestyle.",
+    question: "Vem är det här till för?",
+    answer: (
+      <>
+        <p>
+          Traditionell kostrådgivning och personliga tränare förespråkar gym och
+          kostscheman men adresserar i mindre utsträckning näringen, relationen till
+          mat och beteendemönster kring “av och på”.
+        </p>
+
+        <p><strong>Stay Playful är till för dig som:</strong></p>
+
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet</li>
+          <li>
+            Nybörjare inom ämnet — vill ha kostrådgivning eller är redan rätt så
+            välinformerad men känner dig fortfarande i obalans kring kost/mat
+          </li>
+          <li>Fast i “jag borde”-tänk</li>
+          <li>
+            Periodvis motiverad, men utan en hållbar strategi i nuläget
+          </li>
+        </ul>
+
+        <p><strong>Jag skulle också säga att det är för:</strong></p>
+
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Medvetna och reflekterande</li>
+          <li>Högpresterande eller självkritiska</li>
+          <li>Öppna för personlig utveckling</li>
+        </ul>
+
+        <p><em>Men jag kan ha fel?</em></p>
+      </>
+    ),
     accent: "bg-[#FF008E]",
   },
   {
     id: "who-for",
-    question: "Who is this for?",
+    question: "Hur kommer vi att jobba tillsammans?",
     answer:
-      "This is for people who feel tired of all-or-nothing wellness. It’s especially helpful if you’ve tried plans that felt too strict, too clinical, or impossible to sustain. Whether you want private support or a structured program, the work is tailored to where you are now.",
+      "Beroende på “problematiken” så kommer det generellt att se ut på följande sätt: Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din utveckling. Datan tittar vi på tillsammans och diskuterar, veckovis.  Jag tror även på nära kontakt så under veckan kommer jag finnas som stöd och tillgänglig vid frågor.",
     accent: "bg-[#FFABFF]",
   },
   {
     id: "diet",
-    question: "Do I need to follow a specific diet or meal plan?",
-    answer:
-      "No. This is not about forcing you into a rigid system. Guidance is personalized and designed to support your routine, preferences, and needs. The goal is to build something sustainable — not hand you another plan you’ll want to abandon in two weeks.",
+    question: "Kommer man att kunna äta glass?",
+    answer: (
+      <>
+        Lic. Kostrådgivare: från SAFE/the Academy,{" "}
+        <a href="https://theacademy.se/" target="_blank" rel="noopener noreferrer">
+          theacademy.se
+        </a>
+        <br />
+        Vid föreläsning om självskade beteende och ätstörning till företag/större gruppen används faktan från{" "}
+        <a href="http://shedo.se" target="_blank" rel="noopener noreferrer">
+          SHEDO.se
+        </a>
+      </>
+    ), 
     accent: "bg-[#00E2FF]",
   },
 ]
 
 const topRibbon = [
-  "FREQUENTLY ASKED QUESTIONS",
-  "REAL SUPPORT",
-  "SOFTER WELLBEING",
-  "FREQUENTLY ASKED QUESTIONS",
-  "REAL SUPPORT",
-  "SOFTER WELLBEING",
+  "KLARHET UTAN PRESS",
+  "PERSONLIGT STÖD",
+  "ETT MER LEKFULLT VÄLMÅENDE",
+  "KLARHET UTAN PRESS",
+  "STÖD SOM PASSAR DITT LIV",
+  "BALANS ISTÄLLET FÖR KONTROLL",
 ]
 
 export function Community() {
@@ -94,16 +136,16 @@ export function Community() {
           className="mx-auto mb-14 max-w-4xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#FF008E]">
-            Before you book
+            Innan du bokar
           </p>
 
           <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#2B1A16] sm:text-[4rem] lg:text-[5rem]">
-            A few things people <span className="italic">always ask</span>
+            Booring men svar på blandade <span className="italic">frågor</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#2B1A16]/68">
-            The gentle version of frequently asked questions — so you can feel
-            clear, calm, and informed before taking the next step.
+            En mjukare version av vanliga frågor — så att du kan känna dig lugn,
+            trygg och redo att ta nästa steg.
           </p>
         </motion.div>
 
@@ -139,29 +181,26 @@ export function Community() {
                   <div className="flex h-full flex-col justify-between">
                     <div>
                       <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#9C1B24]">
-                        Quick clarity
+                        Klarhet utan press
                       </p>
 
                       <h3 className="max-w-[14ch] font-sans text-[2rem] font-black uppercase leading-[0.92] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem]">
-                        Do I need to be “perfect” for this to work?
+                        Ett mer hållbart sätt att må bra
                       </h3>
 
                       <p className="mt-5 text-[1rem] leading-7 text-[#2B1A16]/78 sm:text-[1.05rem]">
-                        Nope — not even a little. This work is designed for real
-                        life, real routines, and real people. Progress here
-                        comes from support, flexibility, and consistency — not
-                        from obsession or doing everything flawlessly.
+                        Här handlar det inte om perfektion eller kontroll. Det handlar om att hitta ett sätt
+                        att leva som faktiskt fungerar i din vardag — med mer balans, frihet och tillit till dig själv.
                       </p>
                     </div>
 
                     <div className="mt-8 flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#DDF0D5] text-sm font-black text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
-                        x4
+                        x3
                       </div>
 
                       <p className="max-w-[18ch] text-sm leading-6 text-[#2B1A16]/68">
-                        Thoughtful answers to the questions people usually have
-                        before reaching out.
+                        Perspektiv som hjälper dig förstå, känna dig trygg och ta nästa steg.
                       </p>
                     </div>
                   </div>
@@ -248,11 +287,10 @@ export function Community() {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FF008E]">
-                      Still wondering?
+                      Fortfarande funderingar?
                     </p>
                     <p className="mt-2 text-[1.05rem] leading-7 text-[#2B1A16]/74">
-                      If you’d rather talk it through than read another FAQ,
-                      that works too.
+                      Om du hellre vill prata igenom det än att läsa fler frågor, så går det lika bra.
                     </p>
                   </div>
 
@@ -260,7 +298,7 @@ export function Community() {
                     href="#contact"
                     className="inline-flex items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#FF008E] px-6 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E30081]"
                   >
-                    Let’s talk
+                    Låt oss prata
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
