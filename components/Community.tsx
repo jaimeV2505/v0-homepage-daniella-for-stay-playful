@@ -98,12 +98,12 @@ export function Community() {
           </p>
 
           <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#2B1A16] sm:text-[4rem] lg:text-[5rem]">
-            A few things people <span className="italic">always ask</span>
+            Booring men svar på blandade <span className="italic">frågor</span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#2B1A16]/68">
-            The gentle version of frequently asked questions — so you can feel
-            clear, calm, and informed before taking the next step.
+            En mjukare version av vanliga frågor — så att du kan känna dig lugn,
+            trygg och redo att ta nästa steg.
           </p>
         </motion.div>
 
