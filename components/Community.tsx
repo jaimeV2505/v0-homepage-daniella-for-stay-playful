@@ -196,7 +196,7 @@ export function Community() {
 
                     <div className="mt-8 flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#DDF0D5] text-sm font-black text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
-                        x4
+                        x3
                       </div>
 
                       <p className="max-w-[18ch] text-sm leading-6 text-[#2B1A16]/68">
@@ -298,7 +298,7 @@ export function Community() {
                     href="#contact"
                     className="inline-flex items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#FF008E] px-6 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[4px_4px_0_0_rgba(0,0,0,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E30081]"
                   >
-                    Let’s talk
+                    Låt oss prata
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
