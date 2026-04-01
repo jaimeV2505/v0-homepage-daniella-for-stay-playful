@@ -15,9 +15,40 @@ type FaqItem = {
 const faqItems: FaqItem[] = [
   {
     id: "different",
-    question: "What makes Stay Playful different from other wellness approaches?",
-    answer:
-      "Stay Playful is not built on restriction, guilt, or rigid food rules. The approach is softer, more personal, and designed to fit real life. Instead of chasing perfection, we focus on sustainable wellbeing, supportive structure, and a healthier relationship with food, body, and lifestyle.",
+    question: "Vem är det här till för?",
+    answer: (
+      <>
+        <p>
+          Traditionell kostrådgivning och personliga tränare förespråkar gym och
+          kostscheman men adresserar i mindre utsträckning näringen, relationen till
+          mat och beteendemönster kring “av och på”.
+        </p>
+
+        <p><strong>Stay Playful är till för dig som:</strong></p>
+
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet</li>
+          <li>
+            Nybörjare inom ämnet — vill ha kostrådgivning eller är redan rätt så
+            välinformerad men känner dig fortfarande i obalans kring kost/mat
+          </li>
+          <li>Fast i “jag borde”-tänk</li>
+          <li>
+            Periodvis motiverad, men utan en hållbar strategi i nuläget
+          </li>
+        </ul>
+
+        <p><strong>Jag skulle också säga att det är för:</strong></p>
+
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Medvetna och reflekterande</li>
+          <li>Högpresterande eller självkritiska</li>
+          <li>Öppna för personlig utveckling</li>
+        </ul>
+
+        <p><em>Men jag kan ha fel?</em></p>
+      </>
+    ),
     accent: "bg-[#FF008E]",
   },
   {
