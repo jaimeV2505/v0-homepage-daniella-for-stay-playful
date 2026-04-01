@@ -229,7 +229,8 @@ export function Programs() {
                       href="#contact"
                       className="inline-flex items-center justify-center rounded-full bg-sp-hot-pink px-7 py-3 text-sm font-black uppercase tracking-[0.08em] text-white shadow-[0_8px_24px_rgba(255,0,142,0.22)] transition-all duration-200 hover:-translate-y-0.5"
                     >
-                      Learn more
+
+                      Läs mer
                     </a>
                   </div>
                 </div>
