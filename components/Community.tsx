@@ -79,12 +79,12 @@ const faqItems: FaqItem[] = [
 ]
 
 const topRibbon = [
-  "FREQUENTLY ASKED QUESTIONS",
-  "REAL SUPPORT",
-  "SOFTER WELLBEING",
-  "FREQUENTLY ASKED QUESTIONS",
-  "REAL SUPPORT",
-  "SOFTER WELLBEING",
+  "KLARHET UTAN PRESS",
+  "PERSONLIGT STÖD",
+  "ETT MER LEKFULLT VÄLMÅENDE",
+  "KLARHET UTAN PRESS",
+  "STÖD SOM PASSAR DITT LIV",
+  "BALANS ISTÄLLET FÖR KONTROLL",
 ]
 
 export function Community() {
@@ -136,7 +136,7 @@ export function Community() {
           className="mx-auto mb-14 max-w-4xl text-center"
         >
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#FF008E]">
-            Before you book
+            Innan du bokar
           </p>
 
           <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#2B1A16] sm:text-[4rem] lg:text-[5rem]">
