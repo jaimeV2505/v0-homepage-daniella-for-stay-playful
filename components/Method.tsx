@@ -59,9 +59,7 @@ const methodCards: MethodCard[] = [
       </>
     ),
     points: [
-      "Lugnt stöd utan ytterligheter",
-      "En mer hållbar relation till välmående",
-      "Vägledning anpassad för verkliga livet, inte perfektion",
+
     ],
     accent: "#FFABFF",
     panel: "#F6C8F4",
@@ -262,7 +260,7 @@ function StickyPanel({
 
               <div className="relative z-10 mt-7 sm:mt-8">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-black/34 sm:text-xs">
-                  What this means
+
                 </p>
 
                 <ul className="mt-4 grid gap-3 sm:gap-3.5">
