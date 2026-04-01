@@ -53,16 +53,27 @@ const faqItems: FaqItem[] = [
   },
   {
     id: "who-for",
-    question: "Who is this for?",
+    question: "Hur kommer vi att jobba tillsammans?",
     answer:
-      "This is for people who feel tired of all-or-nothing wellness. It’s especially helpful if you’ve tried plans that felt too strict, too clinical, or impossible to sustain. Whether you want private support or a structured program, the work is tailored to where you are now.",
+      "Beroende på “problematiken” så kommer det generellt att se ut på följande sätt: Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din utveckling. Datan tittar vi på tillsammans och diskuterar, veckovis.  Jag tror även på nära kontakt så under veckan kommer jag finnas som stöd och tillgänglig vid frågor.",
     accent: "bg-[#FFABFF]",
   },
   {
     id: "diet",
-    question: "Do I need to follow a specific diet or meal plan?",
-    answer:
-      "No. This is not about forcing you into a rigid system. Guidance is personalized and designed to support your routine, preferences, and needs. The goal is to build something sustainable — not hand you another plan you’ll want to abandon in two weeks.",
+    question: "Kommer man att kunna äta glass?",
+    answer: (
+      <>
+        Lic. Kostrådgivare: från SAFE/the Academy,{" "}
+        <a href="https://theacademy.se/" target="_blank" rel="noopener noreferrer">
+          theacademy.se
+        </a>
+        <br />
+        Vid föreläsning om självskade beteende och ätstörning till företag/större gruppen används faktan från{" "}
+        <a href="http://shedo.se" target="_blank" rel="noopener noreferrer">
+          SHEDO.se
+        </a>
+      </>
+    ), 
     accent: "bg-[#00E2FF]",
   },
 ]
@@ -279,11 +290,10 @@ export function Community() {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FF008E]">
-                      Still wondering?
+                      Fortfarande funderingar?
                     </p>
                     <p className="mt-2 text-[1.05rem] leading-7 text-[#2B1A16]/74">
-                      If you’d rather talk it through than read another FAQ,
-                      that works too.
+                      Om du hellre vill prata igenom det än att läsa fler frågor, så går det lika bra.
                     </p>
                   </div>
 
