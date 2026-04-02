@@ -209,8 +209,8 @@ export function Header() {
                             <Link
                               href={item.href}
                               className={`border-[3px] border-black bg-white px-5 py-4 text-[1.25rem] font-black uppercase leading-none tracking-[-0.03em] text-black shadow-[6px_6px_0_0_rgba(0,0,0,1)] transition-transform duration-200 hover:-translate-y-0.5 ${index % 2 === 0
-                                  ? "rotate-[-1deg]"
-                                  : "rotate-[1deg]"
+                                ? "rotate-[-1deg]"
+                                : "rotate-[1deg]"
                                 }`}
                             >
                               {item.label}
