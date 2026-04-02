@@ -97,7 +97,7 @@ export function Hero() {
 
               <div className="absolute bottom-[7%] left-1/2 z-30 max-w-[780px] -translate-x-1/2 text-center">
                 <p className="text-[2rem] leading-[1.12] tracking-[-0.035em] text-black/76 xl:text-[2.25rem]">
-                  A softer, more personal approach to wellbeing.
+                  your life, your playground - stay playful
                 </p>
               </div>
             </div>
