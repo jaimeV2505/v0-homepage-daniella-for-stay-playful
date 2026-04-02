@@ -6,10 +6,10 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 const footerLinks = [
-  { label: "Programs", href: "#programs" },
-  { label: "Method", href: "#method" },
-  { label: "Stories", href: "#stories" },
-  { label: "Contact", href: "#contact" },
+  { label: "Program", href: "#programs" },
+  { label: "Metod", href: "#method" },
+  { label: "Berättelser", href: "#stories" },
+  { label: "Kontakt", href: "#contact" },
 ]
 
 export function Footer() {
@@ -92,7 +92,7 @@ export function Footer() {
           >
             <div className="rounded-[28px] border-[3px] border-sp-deep-brown bg-[#FDF3EA] px-5 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-transform duration-300 hover:-translate-y-1">
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-sp-hot-pink">
-                Stay Connected
+                Håll kontakten
               </p>
 
               <p className="text-base font-medium text-sp-deep-brown">
@@ -110,7 +110,7 @@ export function Footer() {
 
                 <a
                   href="mailto:hello@stayplayful.com"
-                  aria-label="Email"
+                  aria-label="E-post"
                   className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]"
                 >
                   <Mail className="h-5 w-5" />
@@ -129,16 +129,8 @@ export function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#FFF4EA]/90">
-            <Link href="#" className="transition-opacity hover:opacity-70">
-              Privacy
-            </Link>
-            <span className="hidden sm:inline">|</span>
-            <Link href="#" className="transition-opacity hover:opacity-70">
-              Terms
-            </Link>
-            <span className="hidden sm:inline">|</span>
             <a href="#contact" className="transition-opacity hover:opacity-70">
-              Let&apos;s Talk
+              Låt oss prata
             </a>
           </div>
         </div>
