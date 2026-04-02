@@ -397,7 +397,7 @@ export function ContactForm() {
 
                       <div className="hidden min-h-[96px] min-w-[132px] items-center justify-center rounded-[2rem] bg-[#DDF0D5] px-6 py-4 text-center sm:flex">
                         <span className="text-[0.95rem] font-black uppercase leading-[1.35] tracking-[0.16em] text-[#2B1A16]">
-                          Svar inom
+                          Svar inomn
                           <br />
                           48h
                         </span>
