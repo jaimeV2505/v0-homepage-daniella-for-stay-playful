@@ -109,7 +109,9 @@ export function LetsChatWidget() {
               rotate-180
             "
           >
-            LET&apos;S CHAT
+            SKA VI CHATTA?
+
+
           </span>
         </motion.button>
       )}

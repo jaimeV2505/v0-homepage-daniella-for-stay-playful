@@ -124,7 +124,7 @@ export function Header() {
                 href="https://my.practicebetter.io/#/signin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] font-medium leading-[1.2] text-black/75 transition-colors hover:text-black"
+                className="inline-flex min-h-[56px] items-center justify-center rounded-full border-[3px] border-black bg-[#F6F1E7] px-6 text-[14px] font-black uppercase tracking-[0.08em] text-black shadow-[5px_5px_0_0_rgba(0,0,0,0.10)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-white xl:px-7"
               >
                 Client Login
               </Link>

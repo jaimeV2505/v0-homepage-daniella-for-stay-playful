@@ -55,7 +55,7 @@ const faqItems: FaqItem[] = [
       </div>
     ),
     accent: "bg-[#FF008E]",
-    shadow: "bg-[#FFABFF]/18",
+    shadow: "bg-[#FF008E]/18",
   },
   {
     id: "who-for",
@@ -77,7 +77,7 @@ const faqItems: FaqItem[] = [
       </div>
     ),
     accent: "bg-[#FFABFF]",
-    shadow: "bg-[#F1D9AE]",
+    shadow: "bg-[#FFABFF]",
   },
   {
     id: "diet",
@@ -185,7 +185,7 @@ function EditorialCard() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="relative"
+      className="relative self-start"
     >
       <div className="rounded-[2rem] bg-[#F1D9AE] p-4 sm:p-5 lg:p-6">
         <div className="overflow-hidden rounded-[2rem] border-[2.5px] border-[#2B1A16] bg-[#9C1B24] shadow-[10px_10px_0_0_rgba(0,0,0,0.10)]">
@@ -196,7 +196,7 @@ function EditorialCard() {
           </div>
 
           <div className="grid md:grid-cols-[0.78fr_1fr]">
-            <div className="relative min-h-[280px] border-b-[2.5px] border-[#2B1A16] md:border-b-0 md:border-r-[2.5px]">
+            <div className="relative min-h-[320px] border-b-[2.5px] border-[#2B1A16] md:min-h-[640px] md:border-b-0 md:border-r-[2.5px]">
               <img
                 src="https://images.pexels.com/photos/7081150/pexels-photo-7081150.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="Editorial portrait"
@@ -212,18 +212,18 @@ function EditorialCard() {
                     Klarhet utan press
                   </p>
 
-                  <h3 className="max-w-[14ch] font-sans text-[2rem] font-black uppercase leading-[0.92] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem]">
+                  <h3 className="max-w-[12ch] font-sans text-[2rem] font-black uppercase leading-[0.92] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem]">
                     Ett mer hållbart sätt att må bra
                   </h3>
 
-                  <p className="mt-5 text-[1rem] leading-7 text-[#2B1A16]/78 sm:text-[1.05rem]">
+                  <p className="mt-5 max-w-[24ch] text-[1rem] leading-7 text-[#2B1A16]/78 sm:text-[1.05rem]">
                     Här handlar det inte om perfektion eller kontroll. Det handlar om att hitta ett sätt
                     att leva som faktiskt fungerar i din vardag — med mer balans, frihet och tillit till dig själv.
                   </p>
                 </div>
 
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#DDF0D5] text-sm font-black text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#DDF0D5] text-sm font-black text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
                     x3
                   </div>
                   <p className="max-w-[18ch] text-sm leading-6 text-[#2B1A16]/68">
@@ -323,7 +323,7 @@ function FaqColumn() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
-      className="space-y-5"
+      className="space-y-5 self-start"
     >
       {faqItems.map((item, index) => (
         <FaqCard
