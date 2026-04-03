@@ -24,10 +24,9 @@ const programs: Program[] = [
     eyebrow: "PERSONLIG VÄGLEDNING",
     title: "1:1 COACHING",
     circleTitle: "1:1\nCoaching",
-    description:
-      "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
+    description: "1:1 Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
     accent: "bg-[#DDBAF0]",
-    cardBg: "bg-[#DDBAF0]",
+    cardBg: "bg-[#F0E2FA]",
     chip: "INDIVIDUELL RÅDGIVNING",
     note: "Privat, personlig och anpassad efter ditt liv.",
   },
@@ -37,10 +36,9 @@ const programs: Program[] = [
     eyebrow: "FOKUSERAT STÖD",
     title: "6-VECKORS PROGRAM",
     circleTitle: "6-\nveckors\nprogram",
-    description:
-      "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
+    description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
     accent: "bg-[#ffbd17]",
-    cardBg: "bg-[#ffbd17]",
+    cardBg: "bg-[#F5C94A]",
     chip: "STRUKTURERAT STÖD",
     note: "En tydlig plan för att skapa verklig förändring.",
   },
@@ -50,10 +48,9 @@ const programs: Program[] = [
     eyebrow: "GRUND FÖR FÖRÄNDRING",
     title: "8-VECKORS PROGRAM",
     circleTitle: "8-\nveckors\nprogram",
-    description:
-      "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
+    description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
     accent: "bg-[#00e2ff]",
-    cardBg: "bg-[#00e2ff]",
+    cardBg: "bg-[#8FEAF4]",
     chip: "BYGG HÅLLBARA VANOR",
     note: "En stabil grund för en livsstil som håller över tid.",
   },
@@ -63,163 +60,185 @@ const programs: Program[] = [
     eyebrow: "FÖRDJUPAT STÖD",
     title: "SPECIALAREN",
     circleTitle: "Specialaren",
-    description:
-      "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn, eller om du har tävlat inom fitness och behöver stöd efter långvarig diet.",
+    description: "Fråga om Specialaren om:Du är anhörig/förälder som behöver stöd om kost till dina barn (med/utan koppling till ev diagnos och kost-problematik).Om du har tävlat inom fitness (eller är nära en tävling) och behöver stöd efter långvarig diet.",
     accent: "bg-[#ffabff]",
-    cardBg: "bg-[#ffabff]",
+    cardBg: "bg-[#F2C6F2]",
     chip: "INDIVIDANPASSAT STÖD",
-    note: "För specifika behov och situationer som kräver extra stöd.",
+    note: "För specifika behov och situationer...",
   },
 ]
 
-const navigationButtonClass =
-  "inline-flex items-center justify-center rounded-full border-[3px] border-[#3A2B2B] bg-[#D7B48A] text-[#3A2B2B] transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+const navBtn =
+  "inline-flex items-center justify-center rounded-full border-[3px] border-[#3A2B2B] bg-[#D7B48A] text-[#3A2B2B] transition-all duration-300 ease-out hover:scale-110 hover:shadow-[0_8px_18px_rgba(0,0,0,0.12)] active:scale-[0.96]"
 
 export function Programs() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const active = useMemo(() => programs[activeIndex], [activeIndex])
 
-  const activeProgram = useMemo(() => programs[activeIndex], [activeIndex])
+  const prev = () =>
+    setActiveIndex((i) => (i === 0 ? programs.length - 1 : i - 1))
 
-  const setProgram = (index: number) => setActiveIndex(index)
-
-  const goPrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? programs.length - 1 : prev - 1))
-  }
-
-  const goNext = () => {
-    setActiveIndex((prev) => (prev === programs.length - 1 ? 0 : prev + 1))
-  }
+  const next = () =>
+    setActiveIndex((i) => (i === programs.length - 1 ? 0 : i + 1))
 
   return (
-    <section id="programs" className="bg-[#F3F1EE] px-4 py-14 md:px-8 md:py-18 xl:px-10 xl:py-20">
-      <div className="mx-auto max-w-[1180px]">
-        {/* TITLE */}
-        <div className="mx-auto max-w-[760px] text-center">
-          <p className="mb-4 text-[11px] font-black uppercase tracking-[0.32em] text-[#E84D8A] sm:text-xs">
+    <section className="relative overflow-hidden bg-[#F3F1EE] px-4 py-16">
+
+      {/* WATERMARK */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <span className="select-none font-serif text-[18vw] leading-none text-[#3A2B2B]/[0.04]">
+          STAY PLAYFUL
+        </span>
+      </div>
+
+      {/* TOP DIVIDER */}
+      <div className="mx-auto mb-10 max-w-[900px]">
+        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#3A2B2B]/30 to-transparent" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1100px]">
+
+        {/* HEADER */}
+        <div className="mx-auto max-w-[820px] text-center">
+          <p className="text-[13px] font-black uppercase tracking-[0.32em] text-[#E84D8A]">
             Programs
           </p>
 
-          <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#3A2B2B] sm:text-[4rem] xl:text-[4.8rem]">
+          <h2 className="mt-4 font-serif text-[3.2rem] leading-[0.95] tracking-[-0.04em] text-[#3A2B2B] sm:text-[4.2rem] lg:text-[5rem]">
             Din väg till
-            <span className="mx-auto mt-3 block w-fit bg-[#DDF0D5] px-3 py-1 italic text-[#E84D8A]">
+            <span className="mx-auto mt-3 block w-fit bg-[#DDF0D5] px-4 py-1 italic text-[#E84D8A]">
               välmående
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-[680px] text-base leading-8 text-[#3A2B2B]/72 sm:text-[1.05rem]">
-            Min rådgivning är individuell och anpassas efter din utgångspunkt.
-            Välj det stöd som passar dig bäst.
+          <p className="mt-6 text-[1.15rem] leading-8 text-[#3A2B2B]/70 sm:text-[1.25rem]">
+            Välj det stöd som passar dig bäst och bygg något som faktiskt håller.
           </p>
         </div>
 
         {/* CIRCLES */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 lg:gap-6">
-          {programs.map((program, index) => {
-            const isActive = activeIndex === index
+        <div className="mt-12 flex flex-wrap justify-center gap-5">
+          {programs.map((p, i) => {
+            const activeCircle = i === activeIndex
 
             return (
               <button
-                key={program.id}
-                type="button"
-                onClick={() => setProgram(index)}
-                aria-pressed={isActive}
-                aria-label={`Select ${program.title}`}
+                key={p.id}
+                onClick={() => setActiveIndex(i)}
                 className={cn(
-                  "group relative flex h-[154px] w-[154px] shrink-0 flex-col items-center justify-center rounded-full border-[4px] text-center transition-all duration-300 ease-out lg:h-[188px] lg:w-[188px]",
-                  "shadow-[0_8px_0_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:shadow-[0_12px_0_rgba(0,0,0,0.05)]",
-                  isActive ? "border-[#3A2B2B]" : "border-[#D6CACA]",
-                  program.accent
+                  "relative flex h-[150px] w-[150px] items-center justify-center rounded-full border-[5px] text-center transition-all duration-300 lg:h-[180px] lg:w-[180px]",
+                  "hover:scale-[1.06] hover:shadow-[0_16px_0_rgba(0,0,0,0.06)] active:scale-[0.98]",
+                  activeCircle
+                    ? "scale-105 border-[#3A2B2B] shadow-[0_12px_0_rgba(0,0,0,0.06)]"
+                    : "border-[#D6CACA]",
+                  p.accent
                 )}
               >
-                <span className="absolute left-6 top-6 text-[0.82rem] font-black uppercase tracking-[0.16em] text-[#E84D8A] lg:left-7 lg:top-7 lg:text-[0.9rem]">
-                  {program.step}
+                <span className="whitespace-pre-line px-2 font-serif text-[1.3rem] leading-[0.9] lg:text-[1.6rem]">
+                  {p.circleTitle}
                 </span>
 
-                <span className="whitespace-pre-line px-4 font-serif text-[1.5rem] leading-[0.92] tracking-[-0.04em] text-[#3A2B2B] lg:text-[1.75rem]">
-                  {program.circleTitle}
-                </span>
-
-                {isActive && (
-                  <span className="absolute -bottom-[9px] left-1/2 h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-[#3A2B2B] bg-[#F3F1EE]" />
+                {activeCircle && (
+                  <span className="absolute -bottom-[10px] h-5 w-5 rounded-full border-[4px] border-[#3A2B2B] bg-[#F3F1EE]" />
                 )}
               </button>
             )
           })}
         </div>
 
-        {/* MAIN CARD */}
-        <div className="mx-auto mt-10 max-w-[1080px]">
-          <div
+        {/* CARD */}
+        <div className="relative mx-auto mt-10 max-w-[900px]">
+
+          {/* LEFT ARROW */}
+          <button
+            onClick={prev}
             className={cn(
-              "overflow-hidden rounded-[2.2rem] border-[4px] border-[#3A2B2B] shadow-[10px_10px_0_rgba(0,0,0,0.06)] transition-colors duration-300",
-              activeProgram.cardBg
+              navBtn,
+              "absolute -left-10 top-1/2 z-20 hidden h-20 w-20 -translate-y-1/2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] lg:inline-flex"
             )}
           >
-            <div className="relative px-6 py-7 md:px-10 md:py-10 xl:px-12 xl:py-11">
-              <span className="pointer-events-none absolute left-5 top-5 text-[0.92rem] font-black uppercase tracking-[0.18em] text-[#E84D8A] md:left-7 md:top-7">
-                {activeProgram.step}
+            <ArrowLeft className="h-8 w-8" />
+          </button>
+
+          {/* RIGHT ARROW */}
+          <button
+            onClick={next}
+            className={cn(
+              navBtn,
+              "absolute -right-10 top-1/2 z-20 hidden h-20 w-20 -translate-y-1/2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] lg:inline-flex"
+            )}
+          >
+            <ArrowRight className="h-8 w-8" />
+          </button>
+
+          <div
+            className={cn(
+              "rounded-[2rem] border-[4px] border-[#3A2B2B] shadow-[10px_10px_0_rgba(0,0,0,0.06)] transition-colors duration-300",
+              active.cardBg
+            )}
+          >
+            <div className="relative px-6 py-8 md:px-10">
+
+              {/* NUMBERS */}
+              <span className="absolute left-6 top-5 text-[1.2rem] font-black text-[#E84D8A]">
+                {active.step}
+              </span>
+              <span className="absolute right-6 top-5 text-[1.2rem] font-black text-[#E84D8A]">
+                {active.step}
               </span>
 
-              <span className="pointer-events-none absolute right-5 top-5 text-[0.92rem] font-black uppercase tracking-[0.18em] text-[#E84D8A] md:right-7 md:top-7">
-                {activeProgram.step}
-              </span>
+              <div className="mx-auto max-w-[640px] text-center">
 
-              <div className="mx-auto max-w-[820px] pt-8 md:pt-10">
-                <p className="text-[0.88rem] font-black uppercase tracking-[0.3em] text-[#E84D8A] md:text-[0.95rem]">
-                  {activeProgram.eyebrow}
+                <p className="text-xs font-black uppercase tracking-[0.3em] text-[#E84D8A]">
+                  {active.eyebrow}
                 </p>
 
-                <h3 className="mt-5 font-sans text-[2.8rem] font-black uppercase leading-[0.9] tracking-[-0.08em] text-black sm:text-[3.5rem] lg:text-[4.25rem]">
-                  {activeProgram.title}
+                <h3 className="mt-4 text-[3rem] font-black leading-[0.9] tracking-[-0.04em] lg:text-[4rem]">
+                  {active.title}
                 </h3>
 
-                <p className="mt-9 max-w-[820px] text-[1.12rem] leading-[1.85] text-[#665E59] sm:text-[1.3rem] lg:text-[1.5rem]">
-                  {activeProgram.description}
+                <p className="mt-6 text-[1.25rem] leading-[1.8] text-[#665E59] lg:text-[1.5rem]">
+                  {active.description}
                 </p>
 
-                <div className="mt-10">
-                  <span className="inline-flex rounded-full border-[4px] border-[#3A2B2B] bg-[#E7DDCC] px-6 py-3 text-[0.78rem] font-black uppercase tracking-[0.24em] text-[#3A2B2B] md:px-8 md:py-3.5 md:text-[0.88rem]">
-                    {activeProgram.chip}
+                <div className="mt-7">
+                  <span className="rounded-full border-[4px] border-[#3A2B2B] bg-[#E7DDCC] px-6 py-3 text-sm font-black tracking-[0.2em]">
+                    {active.chip}
                   </span>
                 </div>
 
-                <p className="mt-10 max-w-[680px] text-[1.08rem] leading-[1.8] text-[#665E59] md:text-[1.25rem]">
-                  {activeProgram.note}
+                <p className="mt-6 text-[1.1rem] text-[#665E59]">
+                  {active.note}
                 </p>
 
-                <div className="mt-12 flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
-                  <div className="flex items-center gap-4">
-                    <button
-                      type="button"
-                      onClick={goPrev}
-                      className={cn(navigationButtonClass, "h-16 w-16 md:h-[72px] md:w-[72px]")}
-                      aria-label="Previous program"
-                    >
-                      <ArrowLeft className="h-7 w-7 md:h-8 md:w-8" />
-                    </button>
+                <div className="mt-8 flex items-center justify-between">
 
-                    <button
-                      type="button"
-                      onClick={goNext}
-                      className={cn(navigationButtonClass, "h-16 w-16 md:h-[72px] md:w-[72px]")}
-                      aria-label="Next program"
-                    >
-                      <ArrowRight className="h-7 w-7 md:h-8 md:w-8" />
+                  <div className="flex gap-3">
+                    <button onClick={prev} className={cn(navBtn, "h-12 w-12")}>
+                      <ArrowLeft className="h-5 w-5" />
+                    </button>
+                    <button onClick={next} className={cn(navBtn, "h-12 w-12")}>
+                      <ArrowRight className="h-5 w-5" />
                     </button>
                   </div>
 
-                  <a
-                    href="#contact"
-                    className="inline-flex w-fit items-center justify-center rounded-full bg-[#E84D8A] px-9 py-3.5 text-[0.92rem] font-black uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_rgba(232,77,138,0.18)] transition-all duration-200 hover:-translate-y-0.5 md:px-11 md:py-4"
-                  >
+                  {/* CTA GRANDE */}
+                  <a className="rounded-full bg-[#E84D8A] px-12 py-5 text-[1.2rem] font-black tracking-[0.05em] text-white shadow-[0_18px_40px_rgba(232,77,138,0.28)] transition-all duration-300 hover:scale-[1.08] hover:shadow-[0_22px_50px_rgba(232,77,138,0.32)] active:scale-[0.96]">
                     Läs mer
                   </a>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* BOTTOM DIVIDER */}
+      <div className="mx-auto mt-14 max-w-[900px]">
+        <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#3A2B2B]/30 to-transparent" />
+      </div>
+
     </section>
   )
 }

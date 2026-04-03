@@ -77,7 +77,7 @@ const faqItems: FaqItem[] = [
       </div>
     ),
     accent: "bg-[#FFABFF]",
-    shadow: "bg-[#FFABFF]",
+    shadow: "bg-[#FFABFF]/35",
   },
   {
     id: "diet",
@@ -155,7 +155,7 @@ function SectionIntro() {
 function TopRibbon() {
   return (
     <div className="pointer-events-none absolute inset-x-0 top-10 hidden h-24 lg:block">
-      <div className="absolute left-[-6%] right-[-6%] top-4 rotate-[-2.5deg] border-y-2 border-[#2B1A16] bg-[#FFF8F2] py-3 shadow-[0_8px_18px_rgba(0,0,0,0.06)]">
+      <div className="absolute left-[-6%] right-[-6%] top-4 rotate-[-2.5deg] border-y-2 border-[#2B1A16] bg-[#FFF8F2]/95 py-3 shadow-[0_8px_18px_rgba(0,0,0,0.06)] backdrop-blur-sm">
         <div className="flex overflow-hidden whitespace-nowrap">
           <motion.div
             initial={{ x: "0%" }}
@@ -175,67 +175,6 @@ function TopRibbon() {
         </div>
       </div>
     </div>
-  )
-}
-
-function EditorialCard() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -28 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className="relative self-start"
-    >
-      <div className="rounded-[2rem] bg-[#F1D9AE] p-4 sm:p-5 lg:p-6">
-        <div className="overflow-hidden rounded-[2rem] border-[2.5px] border-[#2B1A16] bg-[#9C1B24] shadow-[10px_10px_0_0_rgba(0,0,0,0.10)]">
-          <div className="border-b-[2.5px] border-[#2B1A16] px-5 py-3">
-            <div className="inline-flex rounded-full border-[2px] border-[#2B1A16] bg-[#FFF8F2] px-5 py-2 text-xs font-black uppercase tracking-[0.14em] text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
-              4 questions answered
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-[0.78fr_1fr]">
-            <div className="relative min-h-[320px] border-b-[2.5px] border-[#2B1A16] md:min-h-[640px] md:border-b-0 md:border-r-[2.5px]">
-              <img
-                src="https://images.pexels.com/photos/7081150/pexels-photo-7081150.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Editorial portrait"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-transparent" />
-            </div>
-
-            <div className="bg-[#FFF7EF] p-7 sm:p-9">
-              <div className="flex h-full flex-col justify-between">
-                <div>
-                  <p className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#9C1B24]">
-                    Klarhet utan press
-                  </p>
-
-                  <h3 className="max-w-[12ch] font-sans text-[2rem] font-black uppercase leading-[0.92] tracking-[-0.05em] text-[#2B1A16] sm:text-[2.5rem]">
-                    Ett mer hållbart sätt att må bra
-                  </h3>
-
-                  <p className="mt-5 max-w-[24ch] text-[1rem] leading-7 text-[#2B1A16]/78 sm:text-[1.05rem]">
-                    Här handlar det inte om perfektion eller kontroll. Det handlar om att hitta ett sätt
-                    att leva som faktiskt fungerar i din vardag — med mer balans, frihet och tillit till dig själv.
-                  </p>
-                </div>
-
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-[2.5px] border-[#2B1A16] bg-[#DDF0D5] text-sm font-black text-[#2B1A16] shadow-[4px_4px_0_0_rgba(0,0,0,0.08)]">
-                    x3
-                  </div>
-                  <p className="max-w-[18ch] text-sm leading-6 text-[#2B1A16]/68">
-                    Perspektiv som hjälper dig förstå, känna dig trygg och ta nästa steg.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.div>
   )
 }
 
@@ -266,7 +205,7 @@ function FaqCard({ item, isOpen, onToggle, index }: FaqCardProps) {
         )}
       />
 
-      <div className="relative overflow-hidden rounded-[1.8rem] border-[2.5px] border-[#2B1A16] bg-[#FFFDF9] shadow-[0_12px_28px_rgba(0,0,0,0.04)]">
+      <div className="relative overflow-hidden rounded-[1.8rem] border-[2.5px] border-[#2B1A16] bg-[#FFFDF9]/95 shadow-[0_12px_28px_rgba(0,0,0,0.04)] backdrop-blur-[2px]">
         <button
           type="button"
           onClick={onToggle}
@@ -311,7 +250,7 @@ function FaqCard({ item, isOpen, onToggle, index }: FaqCardProps) {
 }
 
 function FaqColumn() {
-  const [openId, setOpenId] = useState<string>(faqItems[0].id)
+  const [openId, setOpenId] = useState<string>("")
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? "" : id))
@@ -319,11 +258,11 @@ function FaqColumn() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: 28 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
-      className="space-y-5 self-start"
+      className="mx-auto w-full max-w-4xl space-y-5"
     >
       {faqItems.map((item, index) => (
         <FaqCard
@@ -336,7 +275,7 @@ function FaqColumn() {
       ))}
 
       <div className="pt-4">
-        <div className="rounded-[1.8rem] border-[2.5px] border-[#2B1A16] bg-[#FFF8F2] px-6 py-6 shadow-[6px_6px_0_0_rgba(0,0,0,0.06)] sm:px-8">
+        <div className="rounded-[1.8rem] border-[2.5px] border-[#2B1A16] bg-[#FFF8F2]/95 px-6 py-6 shadow-[6px_6px_0_0_rgba(0,0,0,0.06)] backdrop-blur-[2px] sm:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FF008E]">
@@ -375,24 +314,54 @@ function BottomDivider() {
   )
 }
 
+function PlayfulBackground() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 bg-[#F7EFE9]" />
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,171,255,0.35),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(255,0,142,0.18),_transparent_30%),radial-gradient(circle_at_bottom_left,_rgba(255,189,23,0.20),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(0,226,255,0.16),_transparent_30%)]" />
+
+      <div className="absolute inset-0 opacity-[0.18]">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(43,26,22,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(43,26,22,0.08) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
+
+      <div className="absolute left-[-120px] top-[8%] h-[320px] w-[320px] rounded-full bg-[#FF008E]/14 blur-3xl" />
+      <div className="absolute right-[-100px] top-[14%] h-[340px] w-[340px] rounded-full bg-[#FFABFF]/18 blur-3xl" />
+      <div className="absolute bottom-[6%] left-[8%] h-[280px] w-[280px] rounded-full bg-[#FFBD17]/16 blur-3xl" />
+      <div className="absolute bottom-[4%] right-[10%] h-[280px] w-[280px] rounded-full bg-[#00E2FF]/14 blur-3xl" />
+
+      <div className="absolute left-[7%] top-[22%] h-20 w-20 rotate-12 rounded-[1.8rem] border border-white/40 bg-white/20 backdrop-blur-md" />
+      <div className="absolute right-[9%] top-[30%] h-16 w-16 rounded-full border border-white/40 bg-[#FFABFF]/18 backdrop-blur-md" />
+      <div className="absolute bottom-[22%] left-[12%] h-16 w-16 rotate-[18deg] rounded-[1.4rem] border border-white/40 bg-[#FFBD17]/18 backdrop-blur-md" />
+      <div className="absolute bottom-[16%] right-[12%] h-20 w-20 rotate-[-14deg] rounded-[1.8rem] border border-white/40 bg-[#00E2FF]/14 backdrop-blur-md" />
+
+      <div className="absolute inset-y-0 left-[4%] hidden w-px bg-[#2B1A16]/6 xl:block" />
+      <div className="absolute inset-y-0 right-[4%] hidden w-px bg-[#2B1A16]/6 xl:block" />
+
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/30 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/20 to-transparent" />
+    </div>
+  )
+}
+
 export function Community() {
   return (
-    <section className="relative overflow-hidden bg-[#F7EFE9] py-20 sm:py-24 lg:py-28">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-[14%] h-48 w-48 rounded-full bg-[#FFABFF]/10 blur-3xl" />
-        <div className="absolute right-[10%] top-[20%] h-56 w-56 rounded-full bg-[#FF008E]/8 blur-3xl" />
-        <div className="absolute bottom-[8%] left-[30%] h-64 w-64 rounded-full bg-[#FFBD17]/8 blur-3xl" />
-        <div className="absolute inset-y-0 left-[4%] hidden w-px bg-[#2B1A16]/6 xl:block" />
-        <div className="absolute inset-y-0 right-[4%] hidden w-px bg-[#2B1A16]/6 xl:block" />
-      </div>
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+      <PlayfulBackground />
 
       <TopRibbon />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-10">
         <SectionIntro />
 
-        <div className="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
-          <EditorialCard />
+        <div className="flex justify-center">
           <FaqColumn />
         </div>
 
