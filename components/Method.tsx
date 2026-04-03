@@ -254,9 +254,9 @@ function StickyPanel({
                 {card.subtitle}
               </p>
 
-              <p className="relative z-10 mt-5 max-w-[44rem] text-sm leading-relaxed text-black/63 sm:text-base lg:text-lg">
+              <div className="relative z-10 mt-5 max-w-[44rem] space-y-3 text-sm leading-relaxed text-black/63 sm:text-base lg:text-lg [&>p]:m-0">
                 {card.description}
-              </p>
+              </div>
 
               <div className="relative z-10 mt-7 sm:mt-8">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-black/34 sm:text-xs">
