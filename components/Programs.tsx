@@ -24,7 +24,7 @@ const programs: Program[] = [
     eyebrow: "PERSONLIG VÄGLEDNING",
     title: "1:1 COACHING",
     circleTitle: "1:1\nCoaching",
-    description: "1:1Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
+    description: "1:1 Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
     accent: "bg-[#DDBAF0]",
     cardBg: "bg-[#F0E2FA]",
     chip: "INDIVIDUELL RÅDGIVNING",
