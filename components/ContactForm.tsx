@@ -144,9 +144,10 @@ export function ContactForm() {
 
                 <div className="mt-8 max-w-xl space-y-6 text-[1.02rem] leading-[1.75] text-white/92 sm:text-[1.14rem]">
                   <p>
-                    Nyfiken på coaching? Intresserad av något av programmen?
-                    Eller vill du bara känna efter om det här är rätt plats för
-                    dig? Skicka ett meddelande så börjar vi där.
+                    Nyfiken på vad det här kan leda till? Eller vill du bara känna efter om det här är rätt plats för dig? Skicka ett meddelande så börjar vi där.
+
+                    Stay Playful handlar om stöd som ska kännas genomtänkt för dig, och en livsstil som blir en del av dig -  inte stelt, pressat eller ett annat måste i vardagen.
+
                   </p>
 
                   <p>
@@ -155,11 +156,7 @@ export function ContactForm() {
                     överväldigande.
                   </p>
 
-                  <p className="font-semibold text-white">
-                    Om det du söker känns varmt, ärligt och förankrat i verkliga
-                    livet, finns det en stor chans att vi kommer att trivas bra
-                    tillsammans.
-                  </p>
+
                 </div>
               </div>
 
@@ -172,12 +169,13 @@ export function ContactForm() {
               >
                 <div className="max-w-[720px]">
                   <p className="font-sans text-[2.2rem] font-black uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-[3rem] lg:text-[3.5rem]">
-                    Du får svar inom
+
+                    du får svar inom 48 timmar
                     <br />
-                    48 timmar —
+
                   </p>
                   <p className="mt-1 font-serif text-[1.9rem] italic leading-none text-[#FFF2E8] sm:text-[2.25rem] lg:text-[2.55rem]">
-                    om jag inte är mitt i en latte ☕
+                    om jag inte är mitt i en lek
                   </p>
                 </div>
 
