@@ -16,14 +16,14 @@ export function BrandStatement() {
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
                 <p className="text-[11px] font-black uppercase tracking-[0.26em] text-white sm:text-sm">
-                  Här hos Stay Playful
+
                 </p>
 
                 <h2
                   id="brand-statement-title"
                   className="mt-5 max-w-[720px] text-[2.9rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-white sm:text-[4rem] lg:text-[5rem] xl:text-[5.8rem] 2xl:text-[6.3rem]"
                 >
-                  VARNING:
+                  🚨VARNING:
                   <br />
                   STAY PLAYFUL
                   <br />
@@ -51,7 +51,7 @@ export function BrandStatement() {
               {/* BURBUJA */}
               <div className="relative mx-auto h-[520px] w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:h-[620px] lg:h-[760px] xl:h-[860px] 2xl:h-[920px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80"
+                  src="/Playful.JPG"
                   alt="Editorial"
                   fill
                   className="object-cover object-center"
@@ -64,8 +64,7 @@ export function BrandStatement() {
                   Stay Playful
                 </p>
                 <p className="mt-2 text-sm leading-6 text-black sm:text-[15px]">
-                  Mindre kontroll, mer nyfikenhet —
-                  det är där verkligt välmående börjar.
+                  Bra kost och massa rörelse -  inte längre är ett projekt vid sidan av livet.
                 </p>
               </div>
 
