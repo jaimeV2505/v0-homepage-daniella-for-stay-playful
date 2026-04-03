@@ -1,81 +1,40 @@
-   "use client"
+"use client"
 
 import Image from "next/image"
 
 export function Hero() {
   return (
     <section
-      aria-label="Stay Playful hero"
-      className="relative overflow-hidden bg-[#d7ae91]"
+      aria-label="Hero background"
+      className="relative w-full overflow-hidden bg-[#cfa487]"
     >
-      <div className="relative h-[72vw] min-h-[520px] max-h-[980px] w-full sm:min-h-[620px] lg:min-h-[760px] xl:min-h-[860px]">
+      {/* TOP DIVIDER (menos espacio) */}
+      <div className="relative z-10 mx-auto w-full max-w-[1800px] px-4 pt-3 sm:px-6 lg:px-8 lg:pt-4">
+        <div className="flex items-center justify-center">
+          <div className="h-px flex-1 bg-black/20" />
 
-        {/* =========================
-            IMAGE (CONTROL REAL)
-           ========================= */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="
-              absolute inset-0
-              scale-[1.08]
-              -translate-y-[12%]
-              sm:-translate-y-[-4%]
-              lg:-translate-y-[-4%]
-            "
-          >
-            <Image
-              src="/StayPlay.JPG"
-              alt="Stay Playful hero background"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
+          <div className="mx-3 rounded-full border border-black/15 bg-white/70 px-5 py-1.5 backdrop-blur-sm sm:px-6">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-pink-500 sm:text-xs">
+              Stay Playful
+            </span>
           </div>
+
+          <div className="h-px flex-1 bg-black/20" />
         </div>
+      </div>
 
-        {/* Overlay muy suave */}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(215,174,145,0.03)_0%,rgba(215,174,145,0.015)_24%,rgba(215,174,145,0)_50%)]" />
-
-        {/* =========================
-            CONTENT
-           ========================= */}
-        <div className="relative z-10 h-full w-full">
-          <div
-            className="absolute -translate-y-1/2"
-            style={{
-              left: "4.2%",
-              top: "66%",
-            }}
-          >
-            {/* TEXTO */}
-            <h1
-              className="m-0 max-w-[320px] uppercase text-[#202020] sm:max-w-[360px] lg:max-w-[720px]"
-              style={{
-                fontFamily: "Helvetica, Arial, sans-serif",
-                fontSize: "27px",
-                fontWeight: 700,
-                lineHeight: "1.02",
-                letterSpacing: "-0.04em",
-              }}
-            >
-              YOUR LIFE, YOUR PLAYGROUND
-            </h1>
-
-            {/* LOGO */}
-            <div className="mt-4">
-              <Image
-                src="/logo1.png"
-                alt="Stay Playful logo"
-                width={2346}
-                height={2346}
-                priority
-                className="h-auto w-[140px] sm:w-[165px] lg:w-[210px] xl:w-[230px]"
-              />
-            </div>
-          </div>
+      {/* HERO IMAGE (menos padding vertical) */}
+      <div className="relative mx-auto w-full max-w-[1800px] px-4 pb-3 pt-3 sm:px-6 sm:pb-4 lg:px-8 lg:pb-6">
+        <div className="relative h-[60vw] min-h-[360px] max-h-[820px] w-full">
+          <Image
+            src="/playground.png"
+            alt="Stay Playful hero background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain object-center"
+          />
         </div>
-
       </div>
     </section>
   )
