@@ -24,8 +24,7 @@ const programs: Program[] = [
     eyebrow: "PERSONLIG VÄGLEDNING",
     title: "1:1 COACHING",
     circleTitle: "1:1\nCoaching",
-    description:
-      "Första tillfället är en kostnadsfri konsultation på ca 20 min...",
+    description: "1:1Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
     accent: "bg-[#DDBAF0]",
     cardBg: "bg-[#F0E2FA]",
     chip: "INDIVIDUELL RÅDGIVNING",
@@ -37,7 +36,7 @@ const programs: Program[] = [
     eyebrow: "FOKUSERAT STÖD",
     title: "6-VECKORS PROGRAM",
     circleTitle: "6-\nveckors\nprogram",
-    description: "För att faktiskt kunna göra någon skillnad...",
+    description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
     accent: "bg-[#ffbd17]",
     cardBg: "bg-[#F5C94A]",
     chip: "STRUKTURERAT STÖD",
@@ -49,7 +48,7 @@ const programs: Program[] = [
     eyebrow: "GRUND FÖR FÖRÄNDRING",
     title: "8-VECKORS PROGRAM",
     circleTitle: "8-\nveckors\nprogram",
-    description: "För att ge dig själv bästa förutsättningar...",
+    description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
     accent: "bg-[#00e2ff]",
     cardBg: "bg-[#8FEAF4]",
     chip: "BYGG HÅLLBARA VANOR",
@@ -61,7 +60,7 @@ const programs: Program[] = [
     eyebrow: "FÖRDJUPAT STÖD",
     title: "SPECIALAREN",
     circleTitle: "Specialaren",
-    description: "Fråga om Specialaren om...",
+    description: "Fråga om Specialaren om:Du är anhörig/förälder som behöver stöd om kost till dina barn (med/utan koppling till ev diagnos och kost-problematik).Om du har tävlat inom fitness (eller är nära en tävling) och behöver stöd efter långvarig diet.",
     accent: "bg-[#ffabff]",
     cardBg: "bg-[#F2C6F2]",
     chip: "INDIVIDANPASSAT STÖD",
@@ -84,6 +83,7 @@ export function Programs() {
 
   return (
     <section className="relative overflow-hidden bg-[#F3F1EE] px-4 py-16">
+
       {/* WATERMARK */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <span className="select-none font-serif text-[18vw] leading-none text-[#3A2B2B]/[0.04]">
@@ -97,6 +97,7 @@ export function Programs() {
       </div>
 
       <div className="relative mx-auto max-w-[1100px]">
+
         {/* HEADER */}
         <div className="mx-auto max-w-[820px] text-center">
           <p className="text-[13px] font-black uppercase tracking-[0.32em] text-[#E84D8A]">
@@ -124,9 +125,8 @@ export function Programs() {
               <button
                 key={p.id}
                 onClick={() => setActiveIndex(i)}
-                aria-label={`Välj ${p.title}`}
                 className={cn(
-                  "relative flex h-[150px] w-[150px] items-center justify-center rounded-full border-[5px] text-center transition-all duration-300 ease-out lg:h-[180px] lg:w-[180px]",
+                  "relative flex h-[150px] w-[150px] items-center justify-center rounded-full border-[5px] text-center transition-all duration-300 lg:h-[180px] lg:w-[180px]",
                   "hover:scale-[1.06] hover:shadow-[0_16px_0_rgba(0,0,0,0.06)] active:scale-[0.98]",
                   activeCircle
                     ? "scale-105 border-[#3A2B2B] shadow-[0_12px_0_rgba(0,0,0,0.06)]"
@@ -148,27 +148,27 @@ export function Programs() {
 
         {/* CARD */}
         <div className="relative mx-auto mt-10 max-w-[900px]">
-          {/* SIDE ARROWS */}
+
+          {/* LEFT ARROW */}
           <button
             onClick={prev}
             className={cn(
               navBtn,
-              "absolute -left-6 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 shadow-lg lg:inline-flex"
+              "absolute -left-10 top-1/2 z-20 hidden h-20 w-20 -translate-y-1/2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] lg:inline-flex"
             )}
-            aria-label="Föregående program"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-8 w-8" />
           </button>
 
+          {/* RIGHT ARROW */}
           <button
             onClick={next}
             className={cn(
               navBtn,
-              "absolute -right-6 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 shadow-lg lg:inline-flex"
+              "absolute -right-10 top-1/2 z-20 hidden h-20 w-20 -translate-y-1/2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] lg:inline-flex"
             )}
-            aria-label="Nästa program"
           >
-            <ArrowRight className="h-6 w-6" />
+            <ArrowRight className="h-8 w-8" />
           </button>
 
           <div
@@ -178,15 +178,17 @@ export function Programs() {
             )}
           >
             <div className="relative px-6 py-8 md:px-10">
+
               {/* NUMBERS */}
-              <span className="absolute left-6 top-5 text-[1.15rem] font-black tracking-[0.04em] text-[#E84D8A] md:text-[1.3rem]">
+              <span className="absolute left-6 top-5 text-[1.2rem] font-black text-[#E84D8A]">
                 {active.step}
               </span>
-              <span className="absolute right-6 top-5 text-[1.15rem] font-black tracking-[0.04em] text-[#E84D8A] md:text-[1.3rem]">
+              <span className="absolute right-6 top-5 text-[1.2rem] font-black text-[#E84D8A]">
                 {active.step}
               </span>
 
               <div className="mx-auto max-w-[640px] text-center">
+
                 <p className="text-xs font-black uppercase tracking-[0.3em] text-[#E84D8A]">
                   {active.eyebrow}
                 </p>
@@ -210,6 +212,7 @@ export function Programs() {
                 </p>
 
                 <div className="mt-8 flex items-center justify-between">
+
                   <div className="flex gap-3">
                     <button onClick={prev} className={cn(navBtn, "h-12 w-12")}>
                       <ArrowLeft className="h-5 w-5" />
@@ -219,11 +222,11 @@ export function Programs() {
                     </button>
                   </div>
 
-                  <a
-                    className="rounded-full bg-[#E84D8A] px-8 py-3.5 text-[1rem] font-black text-white shadow-[0_12px_24px_rgba(232,77,138,0.24)] transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_16px_30px_rgba(232,77,138,0.28)] active:scale-[0.98]"
-                  >
+                  {/* CTA GRANDE */}
+                  <a className="rounded-full bg-[#E84D8A] px-12 py-5 text-[1.2rem] font-black tracking-[0.05em] text-white shadow-[0_18px_40px_rgba(232,77,138,0.28)] transition-all duration-300 hover:scale-[1.08] hover:shadow-[0_22px_50px_rgba(232,77,138,0.32)] active:scale-[0.96]">
                     Läs mer
                   </a>
+
                 </div>
               </div>
             </div>
@@ -235,6 +238,7 @@ export function Programs() {
       <div className="mx-auto mt-14 max-w-[900px]">
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#3A2B2B]/30 to-transparent" />
       </div>
+
     </section>
   )
 }
