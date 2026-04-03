@@ -107,8 +107,7 @@ export function ContactForm() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.pexels.com/photos/6899549/pexels-photo-6899549.jpeg?auto=compress&cs=tinysrgb&w=1800')",
+              backgroundImage: "url('/slite.jpg')",
             }}
           />
           <div className="absolute inset-0 bg-[#120B0A]/58" />
