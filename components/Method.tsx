@@ -21,7 +21,7 @@ export function Method() {
   }, [scrollYProgress, manualProgress])
 
   return (
-    <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-hidden">
+    <section id="method" className="relative bg-[#F5F0E6] pb-0">
       <div className="mx-auto max-w-7xl px-6 pt-12 flex items-center gap-6">
         <div className="h-[2px] flex-1 bg-black/10" />
         <div className="flex gap-2">
@@ -59,8 +59,8 @@ export function Method() {
 
       <div
         ref={containerRef}
-        style={{ position: "relative", height: `${cardIds.length * 100}vh` }}
-        className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10"
+        className="relative mx-auto"
+        style={{ height: `${cardIds.length * 100}vh` }}
       >
         {cardIds.map((id, index) => (
           <StickyPanel
@@ -105,10 +105,10 @@ function StickyPanel({
 
   return (
     <div
-      className="sticky w-full h-screen flex items-center justify-center"
-      style={{ top: 0, zIndex: index + 1 }}
+      className="sticky top-0 w-full h-screen flex items-center justify-center px-4 sm:px-6"
+      style={{ zIndex: index + 1 }}
     >
-      <article className="grid h-[80vh] w-full overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
+      <article className="grid h-[85vh] max-h-[800px] w-full max-w-[1400px] overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
           <div
             className="flex shrink-0 items-center justify-between border-b-[4px] border-black px-8 py-5"
