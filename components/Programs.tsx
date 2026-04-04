@@ -34,7 +34,7 @@ export function Programs() {
   const next = () => setActiveIndex((i) => (i === programs.length - 1 ? 0 : i + 1))
 
   return (
-    <section id="programs" className="relative bg-[#F3F1EE] px-4 pb-24 overflow-hidden pt-0">
+    <section id="programs" className="relative bg-[#F3F1EE] px-4 sm:px-6 pb-24 overflow-hidden pt-0">
 
       <div className="w-full py-10 flex items-center justify-center bg-[#F3F1EE]">
         <div className="w-full max-w-[1100px] flex items-center justify-center gap-4 px-6 opacity-30">
@@ -102,7 +102,7 @@ export function Programs() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
               className={cn(
-                "rounded-[2.5rem] border-[4px] border-[#3A2B2B] p-10 sm:p-16 shadow-[16px_16px_0_#3A2B2B]",
+                "rounded-[1.5rem] sm:rounded-[2.5rem] border-[3px] sm:border-[4px] border-[#3A2B2B] p-6 sm:p-16 shadow-[8px_8px_0_#3A2B2B] sm:shadow-[16px_16px_0_#3A2B2B]",
                 active.cardBg
               )}
             >

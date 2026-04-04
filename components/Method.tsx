@@ -22,7 +22,7 @@ export function Method() {
   })
 
   return (
-    <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-visible">
+    <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 pt-12 flex items-center gap-6">
         <div className="h-[2px] flex-1 bg-black/10" />
         <div className="flex gap-2">
@@ -105,7 +105,7 @@ function StickyPanel({
       className="sticky top-0 flex items-center justify-center h-screen w-full"
       style={{ top: `${index * 40}px`, zIndex: index + 1 }}
     >
-      <article className="grid h-[80vh] w-full overflow-hidden rounded-[32px] border-[4px] border-black bg-[#FDF9F3] shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
+      <article className="grid h-[80vh] w-full overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
           <div
             className="flex shrink-0 items-center justify-between border-b-[4px] border-black px-8 py-5"
@@ -134,7 +134,7 @@ function StickyPanel({
           <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(black 1px, transparent 0)', backgroundSize: '24px 24px' }} />
 
           <motion.div style={{ y: visualY, scale: visualScale }} className="w-full max-w-[380px] p-8 z-10">
-            <div className="rounded-[35px] border-[4px] border-black bg-white overflow-hidden shadow-[15px_15px_0_0_rgba(0,0,0,1)]">
+            <div className="rounded-[35px] border-[4px] border-black bg-white overflow-hidden shadow-[10px_10px_0_0_rgba(0,0,0,1)]">
               <div className="flex items-center justify-between border-b-[3.5px] border-black px-6 py-4" style={{ backgroundColor: accent }}>
                 <span className="text-[10px] font-black uppercase tracking-[0.15em] text-black">STAY PLAYFUL</span>
                 <div className="flex gap-1.5">

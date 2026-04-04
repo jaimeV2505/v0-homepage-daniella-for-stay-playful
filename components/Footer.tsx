@@ -32,7 +32,7 @@ export function Footer() {
         <div className="absolute bottom-0 left-[30%] h-40 w-40 rounded-full bg-[#00E2FF] blur-3xl opacity-15" />
       </motion.div>
 
-      <div className="relative z-10 mx-auto max-w-[1700px] px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
+      <div className="relative z-10 mx-auto max-w-[1700px] px-6 pt-6 sm:px-6 lg:px-8 lg:pt-8">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[220px_1fr_330px] lg:items-start">
 
           <div className="order-2 lg:order-1">
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
 
           <motion.div style={{ y: cardY }} className="order-3 justify-self-start lg:justify-self-end">
-            <div className="rounded-[28px] border-[3px] border-sp-deep-brown bg-[#FDF3EA] px-5 py-4 shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-transform duration-300 hover:-translate-y-1">
+            <div className="rounded-[20px] sm:rounded-[28px] border-[3px] border-sp-deep-brown bg-[#FDF3EA] px-5 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.14)] sm:shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-transform duration-300 hover:-translate-y-1">
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-sp-hot-pink">{t("footer.keepInTouch")}</p>
               <p className="text-base font-medium text-sp-deep-brown">hello@stayplayful.com</p>
               <div className="mt-4 flex gap-3">
@@ -76,7 +76,7 @@ export function Footer() {
       </div>
 
       <div className="relative z-10 border-t border-[#FFF4EA]/30">
-        <div className="mx-auto flex max-w-[1700px] flex-col items-center justify-between gap-3 px-4 py-4 text-center sm:px-6 md:flex-row lg:px-8">
+        <div className="mx-auto flex max-w-[1700px] flex-col items-center justify-between gap-3 px-6 py-4 text-center sm:px-6 md:flex-row lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.06em] text-[#FFF4EA]/90">{t("footer.copyright")}</p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#FFF4EA]/90">
             <a href="#contact" className="transition-opacity hover:opacity-70">{t("footer.letsTalk")}</a>

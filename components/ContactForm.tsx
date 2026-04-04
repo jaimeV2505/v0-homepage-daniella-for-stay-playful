@@ -83,7 +83,7 @@ export function ContactForm() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,0,142,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(255,171,255,0.14),transparent_28%),radial-gradient(circle_at_64%_82%,rgba(255,127,0,0.10),transparent_22%),radial-gradient(circle_at_34%_78%,rgba(0,226,255,0.10),transparent_24%)]" />
         </motion.div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid items-start gap-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-14">
 
             <motion.div
@@ -152,8 +152,8 @@ export function ContactForm() {
               transition={{ duration: 0.75, ease: "easeOut", delay: 0.08 }}
               className="relative"
             >
-              <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#FF008E]/16 blur-[1px]" />
-              <div className="relative rounded-[2rem] border-[3px] border-[#2B1A16] bg-[#FDF7F0] p-6 shadow-[10px_10px_0_0_rgba(0,0,0,0.16)] sm:p-8 lg:p-9">
+              <div className="absolute inset-0 translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 rounded-[1.5rem] sm:rounded-[2rem] bg-[#FF008E]/16 blur-[1px]" />
+              <div className="relative rounded-[1.5rem] sm:rounded-[2rem] border-[3px] border-[#2B1A16] bg-[#FDF7F0] p-5 shadow-[6px_6px_0_0_rgba(0,0,0,0.16)] sm:p-8 sm:shadow-[10px_10px_0_0_rgba(0,0,0,0.16)] lg:p-9">
                 {isSubmitted ? (
                   <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="flex min-h-[560px] flex-col items-center justify-center text-center">
                     <div className="flex h-20 w-20 items-center justify-center rounded-full border-[3px] border-[#2B1A16] bg-[#DDF0D5] shadow-[6px_6px_0_0_rgba(0,0,0,0.12)]">

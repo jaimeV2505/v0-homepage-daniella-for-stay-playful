@@ -12,8 +12,8 @@ export function BrandStatement() {
       aria-labelledby="brand-statement-title"
       className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16"
     >
-      <div className="mx-auto max-w-[1780px] px-0 sm:px-4 lg:px-6">
-        <div className="overflow-hidden rounded-[34px] border-[4px] border-black bg-white shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
+      <div className="mx-auto max-w-[1780px] px-4 sm:px-4 lg:px-6">
+        <div className="overflow-hidden rounded-[20px] sm:rounded-[34px] border-[3px] sm:border-[4px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="grid min-h-[680px] lg:grid-cols-[0.49fr_0.51fr] xl:min-h-[760px] 2xl:min-h-[820px]">
 
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">

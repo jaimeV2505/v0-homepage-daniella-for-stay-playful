@@ -26,11 +26,11 @@ export function Testimonials() {
         </motion.div>
       </div>
 
-      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-12 py-12 sm:py-20 lg:py-32">
+      <div className="mx-auto max-w-[1800px] px-6 sm:px-8 lg:px-12 py-12 sm:py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] items-center gap-10 sm:gap-16 lg:gap-24">
 
           <div className="relative order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-[30px] sm:rounded-[45px] border-[3px] sm:border-[4px] border-black bg-white shadow-[15px_15px_0_0_rgba(0,0,0,1)] sm:shadow-[25px_25px_0_0_rgba(0,0,0,1)] aspect-[4/5] lg:aspect-[3/4.2]">
+            <div className="relative overflow-hidden rounded-[30px] sm:rounded-[45px] border-[3px] sm:border-[4px] border-black bg-white shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:shadow-[25px_25px_0_0_rgba(0,0,0,1)] aspect-[4/5] lg:aspect-[3/4.2]">
               <Image
                 src="/smile.JPG"
                 alt="Stay Playful Editorial"

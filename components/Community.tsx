@@ -243,8 +243,8 @@ function PlayfulBackground() {
       <div className="absolute inset-0 opacity-[0.18]">
         <div className="h-full w-full" style={{ backgroundImage: "linear-gradient(to right, rgba(43,26,22,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(43,26,22,0.08) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
       </div>
-      <div className="absolute left-[-120px] top-[8%] h-[320px] w-[320px] rounded-full bg-[#FF008E]/14 blur-3xl" />
-      <div className="absolute right-[-100px] top-[14%] h-[340px] w-[340px] rounded-full bg-[#FFABFF]/18 blur-3xl" />
+      <div className="absolute left-0 top-[8%] h-[200px] w-[200px] sm:left-[-60px] sm:h-[320px] sm:w-[320px] rounded-full bg-[#FF008E]/14 blur-3xl" />
+      <div className="absolute right-0 top-[14%] h-[200px] w-[200px] sm:right-[-50px] sm:h-[340px] sm:w-[340px] rounded-full bg-[#FFABFF]/18 blur-3xl" />
       <div className="absolute bottom-[6%] left-[8%] h-[280px] w-[280px] rounded-full bg-[#FFBD17]/16 blur-3xl" />
       <div className="absolute bottom-[4%] right-[10%] h-[280px] w-[280px] rounded-full bg-[#00E2FF]/14 blur-3xl" />
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/30 to-transparent" />
@@ -258,7 +258,7 @@ export function Community() {
     <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
       <PlayfulBackground />
       <TopRibbon />
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-6 lg:px-8 lg:pt-10">
         <SectionIntro />
         <div className="flex justify-center">
           <FaqColumn />
