@@ -38,7 +38,8 @@ export function Hero() {
             fill
             priority
             quality={100}
-            className="object-cover object-[45%_center]" // Desplazamos un poco a Daniella para dar aire al texto
+            sizes="100vw"
+            className="object-cover object-[45%_center]"
           />
         </motion.div>
 

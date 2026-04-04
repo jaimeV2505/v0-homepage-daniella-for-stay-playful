@@ -1,10 +1,10 @@
 "use client"
 
-import { useLanguage } from "@/lib/use-language"
+import { useLanguageSafe } from "@/lib/use-language"
 import type { Language } from "@/lib/config"
 
 export function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage, mounted } = useLanguageSafe()
 
   const languages: { code: Language; label: string }[] = [
     { code: "sv", label: "SV" },

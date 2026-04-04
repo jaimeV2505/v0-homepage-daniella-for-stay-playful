@@ -1,18 +1,19 @@
 // Hook para manejo de idioma - FASE 4: Traducción
 "use client"
 
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState, ReactNode } from "react"
 import type { Language } from "@/lib/config"
 
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
   t: (key: string) => string
+  mounted: boolean
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("sv")
   const [mounted, setMounted] = useState(false)
 
@@ -34,10 +35,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return getTranslation(language, key)
   }
 
-  if (!mounted) return <>{children}</>
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, mounted }}>
       {children}
     </LanguageContext.Provider>
   )
@@ -49,4 +48,9 @@ export function useLanguage() {
     throw new Error("useLanguage debe usarse dentro de LanguageProvider")
   }
   return context
+}
+
+export function useLanguageSafe() {
+  const context = useContext(LanguageContext)
+  return context || { language: "sv" as Language, setLanguage: () => {}, t: (key: string) => key, mounted: false }
 }
