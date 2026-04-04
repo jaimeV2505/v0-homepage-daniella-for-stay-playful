@@ -61,7 +61,11 @@ export function Method() {
         </div>
       </div>
 
-      <div ref={containerRef} style={{ position: "relative" }} className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+      <div
+        ref={containerRef}
+        style={{ position: "relative", height: `${cardIds.length * 100}vh` }}
+        className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10"
+      >
         {cardIds.map((id, index) => (
           <StickyPanel
             key={id}
@@ -105,8 +109,8 @@ function StickyPanel({
 
   return (
     <div
-      className="sticky top-0 flex items-center justify-center h-screen w-full"
-      style={{ top: `${index * 40}px`, zIndex: index + 1 }}
+      className="sticky w-full h-screen flex items-center justify-center"
+      style={{ top: 0, zIndex: index + 1 }}
     >
       <article className="grid h-[80vh] w-full overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">

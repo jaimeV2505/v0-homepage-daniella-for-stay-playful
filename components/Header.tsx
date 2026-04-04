@@ -34,74 +34,30 @@ export function Header() {
       {/* HEADER PRINCIPAL */}
       <header
         className={`sticky top-0 z-[60] border-b-[3px] border-black transition-all duration-300 bg-[#DDBAF0] overflow-x-hidden ${
-          isScrolled ? "h-[80px]" : "h-[100px]"
+          isScrolled ? "h-[64px] sm:h-[80px]" : "h-[64px] sm:h-[100px]"
         }`}
       >
         <div className="mx-auto h-full w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
-          <div className="grid h-full grid-cols-[1fr_auto_1fr] items-center gap-4">
-            {/* IZQUIERDA: Logo pequeño + Nav */}
-            <div className="flex items-center gap-8">
-              <Link href="/" className="shrink-0">
-                <div className="relative w-[80px] h-[60px]">
-                  <Image
-                    src="/logo1.png"
-                    alt="Stay Playful"
-                    fill
-                    sizes="80px"
-                    className="object-contain object-left"
-                  />
-                </div>
-              </Link>
+          {/* MOBILE layout: logo | spacer | switcher + hamburger */}
+          <div className="flex h-full items-center justify-between lg:hidden">
+            <Link href="/" className="shrink-0">
+              <div className="relative w-[64px] h-[48px]">
+                <Image
+                  src="/logo1.png"
+                  alt="Stay Playful"
+                  fill
+                  sizes="64px"
+                  className="object-contain object-left"
+                />
+              </div>
+            </Link>
 
-              <nav className="hidden lg:flex items-center gap-6">
-                <Link href="#programs" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
-                  {t("nav.programs")}
-                </Link>
-                <Link href="#method" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
-                  {t("nav.method")}
-                </Link>
-                <Link href="#contact" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
-                  {t("nav.contact")}
-                </Link>
-              </nav>
-            </div>
-
-            {/* CENTRO: STAY PLAYFUL grande */}
-            <div className="flex justify-center">
-              <Link
-                href="/"
-                className={`font-serif font-black uppercase leading-[0.75] tracking-tight text-black transition-all duration-300 whitespace-nowrap ${
-                  isScrolled ? "text-[2rem] sm:text-[2.5rem]" : "text-[2.5rem] sm:text-[3.5rem]"
-                }`}
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                STAY<br />PLAYFUL
-              </Link>
-            </div>
-
-            {/* DERECHA: Language + Botones */}
-            <div className="flex items-center justify-end gap-3">
+            <div className="flex items-center gap-2">
               <LanguageSwitcher />
-
-              <Link
-                href={siteConfig.urls.contact}
-                className="hidden lg:inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
-              >
-                {t("nav.clientLogin")}
-              </Link>
-
-              <Link
-                href={siteConfig.urls.contact}
-                className="hidden md:inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-[#E3488B] text-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
-              >
-                {t("nav.bookCall")}
-              </Link>
-
-              {/* MOBILE MENU */}
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button className="lg:hidden h-12 w-12 border-[3px] border-black bg-white shadow-[3px_3px_0_0_rgba(227,72,139,1)] hover:bg-white p-0">
-                    <Menu className="h-6 w-6 text-black" />
+                  <Button className="h-10 w-10 border-[3px] border-black bg-white shadow-[3px_3px_0_0_rgba(227,72,139,1)] hover:bg-white p-0">
+                    <Menu className="h-5 w-5 text-black" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent className="bg-[#DDBAF0] border-l-[6px] border-black w-full sm:w-96">
@@ -121,12 +77,82 @@ export function Header() {
                         {t("nav.contact")}
                       </Link>
                     </nav>
-                    <div className="pt-4 border-t-[2px] border-black">
-                      <LanguageSwitcher />
+                    <div className="pt-4 border-t-[2px] border-black flex flex-col gap-3">
+                      <Link
+                        href={siteConfig.urls.contact}
+                        className="flex h-[50px] items-center justify-center border-[3px] border-black bg-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+                      >
+                        {t("nav.clientLogin")}
+                      </Link>
+                      <Link
+                        href={siteConfig.urls.contact}
+                        className="flex h-[50px] items-center justify-center border-[3px] border-black bg-[#E3488B] text-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+                      >
+                        {t("nav.bookCall")}
+                      </Link>
                     </div>
                   </div>
                 </SheetContent>
               </Sheet>
+            </div>
+          </div>
+
+          {/* DESKTOP layout: logo+nav | wordmark | buttons */}
+          <div className="hidden lg:grid h-full grid-cols-[1fr_auto_1fr] items-center gap-4">
+            {/* IZQUIERDA: Logo + Nav */}
+            <div className="flex items-center gap-8">
+              <Link href="/" className="shrink-0">
+                <div className="relative w-[80px] h-[60px]">
+                  <Image
+                    src="/logo1.png"
+                    alt="Stay Playful"
+                    fill
+                    sizes="80px"
+                    className="object-contain object-left"
+                  />
+                </div>
+              </Link>
+              <nav className="flex items-center gap-6">
+                <Link href="#programs" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                  {t("nav.programs")}
+                </Link>
+                <Link href="#method" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                  {t("nav.method")}
+                </Link>
+                <Link href="#contact" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                  {t("nav.contact")}
+                </Link>
+              </nav>
+            </div>
+
+            {/* CENTRO: STAY PLAYFUL */}
+            <div className="flex justify-center">
+              <Link
+                href="/"
+                className={`font-serif font-black uppercase leading-[0.75] tracking-tight text-black transition-all duration-300 whitespace-nowrap ${
+                  isScrolled ? "text-[2rem] sm:text-[2.5rem]" : "text-[2.5rem] sm:text-[3.5rem]"
+                }`}
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                STAY<br />PLAYFUL
+              </Link>
+            </div>
+
+            {/* DERECHA: Switcher + Botones */}
+            <div className="flex items-center justify-end gap-3">
+              <LanguageSwitcher />
+              <Link
+                href={siteConfig.urls.contact}
+                className="inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+              >
+                {t("nav.clientLogin")}
+              </Link>
+              <Link
+                href={siteConfig.urls.contact}
+                className="inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-[#E3488B] text-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+              >
+                {t("nav.bookCall")}
+              </Link>
             </div>
           </div>
         </div>
