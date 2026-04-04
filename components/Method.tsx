@@ -74,6 +74,12 @@ export function Method() {
           />
         ))}
       </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF9F3; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #000; border-radius: 20px; }
+      `}</style>
     </section>
   )
 }
@@ -103,11 +109,10 @@ function StickyPanel({
   const p3 = t(`method.cards.${cardId}.p3`)
 
   return (
-    <div style={{ height: "100vh" }}>
-      <div
-        className="sticky top-0 w-full h-screen flex items-center justify-center px-4 sm:px-6"
-        style={{ zIndex: index + 1 }}
-      >
+    <div
+      className="sticky top-0 w-full h-screen flex items-center justify-center px-4 sm:px-6"
+      style={{ zIndex: index + 1 }}
+    >
         <article className="grid h-[85vh] max-h-[800px] w-full max-w-[1400px] overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
             <div
@@ -158,13 +163,6 @@ function StickyPanel({
           </div>
         </article>
 
-      </div>
-
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF9F3; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #000; border-radius: 20px; }
-      `}</style>
     </div>
   )
 }
