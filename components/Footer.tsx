@@ -20,7 +20,7 @@ export function Footer() {
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [0.16, 0.32])
 
   return (
-    <footer ref={ref} className="relative mb-0 overflow-hidden border-t-[3px] border-sp-deep-brown bg-[#CFA6E2] pb-0">
+    <footer ref={ref} style={{ position: "relative" }} className="mb-0 overflow-hidden border-t-[3px] border-sp-deep-brown bg-[#CFA6E2] pb-0">
       <motion.div style={{ y: bgY }} className="absolute inset-0 bg-[linear-gradient(180deg,#DDB8EB_0%,#CFA6E2_52%,#C89DDD_100%)]" />
 
       <motion.div style={{ opacity: glowOpacity }} className="pointer-events-none absolute inset-0">

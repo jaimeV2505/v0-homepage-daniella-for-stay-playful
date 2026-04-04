@@ -55,7 +55,7 @@ export function Method() {
         </div>
       </div>
 
-      <div ref={containerRef} className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+      <div ref={containerRef} style={{ position: "relative" }} className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         {cardIds.map((id, index) => (
           <StickyPanel
             key={id}

@@ -68,7 +68,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="relative overflow-hidden bg-[#F7EFE9]">
+    <section id="contact" ref={sectionRef} style={{ position: "relative" }} className="overflow-hidden bg-[#F7EFE9]">
       <div className="h-8 bg-[#F4E7F7]" />
       <div className="h-[3px] bg-[#2B1A16]" />
 
