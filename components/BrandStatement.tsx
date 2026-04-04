@@ -54,6 +54,7 @@ export function BrandStatement() {
                   src="/Playful.JPG"
                   alt="Editorial"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 51vw"
                   className="object-cover object-center"
                 />
               </div>

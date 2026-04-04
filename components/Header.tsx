@@ -48,6 +48,7 @@ export function Header() {
                     alt="Stay Playful"
                     fill
                     priority
+                    sizes="(max-width: 640px) 200px, 300px"
                     className="object-contain object-left transition-transform group-hover:scale-105"
                   />
                 </div>
