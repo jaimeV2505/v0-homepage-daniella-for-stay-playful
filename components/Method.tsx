@@ -8,69 +8,55 @@ type MethodCard = {
   eyebrow: string
   subtitle: string
   description: ReactNode
-  points: string[]
   accent: string
   panel: string
-  sectionBg: string
-  image?: string
+  image: string
 }
 
 const methodCards: MethodCard[] = [
   {
     id: "01",
     eyebrow: "Meet the Founder",
-    subtitle: "Daniella - Grundare av Stay Playful",
+    subtitle: "Hej mitt namn är Daniella.",
     description: (
       <>
-        <p>Det började med en tillfrisknad från en ätstörning. En hyper fixering kring psykologi och nutrition.</p>
-        <p>Till certifikat för kostrådgivning och tävlingar inom bikini fitness. Tills att jag sa blää — vad är det människor håller på med där ute?</p>
-        <p><strong>Den insikten förändrade allt!</strong> Problemet är inte disciplin, utan att vi lägger tid på det vi inte gillar.</p>
+        <p>Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende.</p>
+        <p>Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” men ändå inte mår bra över tid.</p>
+        <p className="font-black text-black">Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!</p>
       </>
     ),
-    points: ["Certifierad kostrådgivare", "Erfarenhet inom ätstörningsvård", "Passion för hållbar livsstil"],
     accent: "#FFABFF",
     panel: "#F6C8F4",
-    sectionBg: "#F5F0E6",
     image: "/Daniella.jpg",
   },
   {
     id: "02",
-    eyebrow: "Vision",
-    subtitle: "Ett nytt sätt att se på balans och välmående",
+    eyebrow: "Visionen",
+    subtitle: "Ett nytt sätt att se på balans.",
     description: (
       <>
-        <p>Målet är inte perfektion, press eller ständig självkontroll.</p>
-        <p>Det handlar om att hjälpa dig bygga något som känns personligt, hållbart och glädjefyllt.</p>
-        <p>Ett stöd som faktiskt passar ditt liv.</p>
+        <p>Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.</p>
+        <p>Vi ska omdefiniera hur människor ser på träning och kost: från något man kämpar med, till något som känns tillgängligt, lustfyllt och något som känns bra.</p>
+        <p>Genom att kombinera individanpassad kostrådgivning ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med vardagen.</p>
       </>
     ),
-    points: [
-      "En realistisk väg över tid",
-      "Mer tillit till dig själv",
-      "Välmående utan kontrollbehov",
-    ],
     accent: "#00E2FF",
     panel: "#D9F9FF",
-    sectionBg: "#F3EEE4",
+    image: "stayhappy.JPG",
   },
   {
     id: "03",
-    eyebrow: "Strategin",
-    subtitle: "En lekfull syn på välmående.",
+    eyebrow: "Strategin och målet",
+    subtitle: "Lekfull syn på välmående.",
     description: (
       <>
-        <p>Sluta aldrig leka genom livet! För att orka det behöver du energi och näring.</p>
-        <p>Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.</p>
+        <p>Stay playful erbjuder stöd med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning.</p>
+        <p>Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi.</p>
+        <p className="font-black text-black">Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.</p>
       </>
     ),
-    points: [
-      "Energi för att leva fullt ut",
-      "Hälsa utan krav eller press",
-      "Glädjefyllt välmående",
-    ],
     accent: "#FFBD17",
     panel: "#FFE7A0",
-    sectionBg: "#EFE9DD",
     image: "/stay.JPG",
   },
 ]
@@ -84,27 +70,22 @@ export function Method() {
   })
 
   return (
-    <section
-      id="method"
-      className="relative bg-[#F5F0E6] pb-24"
-    >
-      {/* Intro Section */}
-      <div className="mx-auto max-w-7xl px-5 pt-24 sm:px-8 lg:px-12 xl:px-16 mb-12">
-        <div className="max-w-4xl">
-          <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/35">
-            MIN METOD
-          </p>
-          <h2
-            className="mt-4 font-sans leading-[0.9] tracking-[-0.06em] text-black"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5.6rem)", fontWeight: 900 }}
-          >
-            Tre grundpelare som gör Stay Playful unik.
-          </h2>
-        </div>
+    <section id="method" className="relative bg-[#F5F0E6] pb-32">
+      {/* Título Masivo Estilo Referencia */}
+      <div className="mx-auto max-w-7xl px-6 pt-24 mb-20">
+        <p className="text-[11px] font-black uppercase tracking-[0.24em] text-black/35 mb-4">
+          MIN METOD
+        </p>
+        <h2
+          className="font-sans leading-[0.85] tracking-[-0.05em] text-black"
+          style={{ fontSize: "clamp(3.5rem, 10vw, 8.5rem)", fontWeight: 900 }}
+        >
+          Tre grundpelare <br /> som gör Stay <br /> Playful unik.
+        </h2>
       </div>
 
-      {/* Cards Container */}
-      <div ref={containerRef} className="relative mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-8">
+      {/* Cards Stacking Container */}
+      <div ref={containerRef} className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         {methodCards.map((card, index) => (
           <StickyPanel
             key={index}
@@ -120,79 +101,121 @@ export function Method() {
 }
 
 function StickyPanel({ card, index, progress, total }: { card: MethodCard; index: number; progress: any; total: number }) {
-  // Animación suave de escala y movimiento para el contenido visual derecho
   const start = index / total
   const end = (index + 1) / total
-  const visualY = useTransform(progress, [start, end], [40, -40])
-  const visualScale = useTransform(progress, [start, end], [0.95, 1.05])
+
+  const visualY = useTransform(progress, [start, end], [60, -60])
+  const visualScale = useTransform(progress, [start, end], [0.92, 1.05])
 
   return (
     <div
-      className="sticky top-0 flex items-center justify-center h-screen"
+      className="sticky top-0 flex items-center justify-center h-screen w-full"
       style={{
-        // El top acumulado crea el efecto de "stacking" donde se ve un borde de la card anterior
-        top: `${index * 32 + 40}px`,
-        zIndex: index
+        top: `${index * 35 + 40}px`,
+        zIndex: index + 10
       }}
     >
       <article
-        className="grid h-[80vh] w-full overflow-hidden rounded-[24px] border-[3px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:rounded-[34px] lg:grid-cols-[1.1fr_0.9fr]"
-        style={{ backgroundColor: "#FDF9F3" }}
+        className="grid h-[82vh] w-full overflow-hidden rounded-[32px] border-[4px] border-black bg-[#FDF9F3] shadow-[14px_14px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]"
       >
-        {/* Left Content */}
-        <div className="flex flex-col h-full">
+        {/* Izquierda: Texto Dinámico */}
+        <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
           <div
-            className="flex items-center justify-between border-b-[3px] border-black px-6 py-4"
+            className="flex shrink-0 items-center justify-between border-b-[4px] border-black px-8 py-5"
             style={{ backgroundColor: card.accent }}
           >
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-black sm:text-xs">
               {card.eyebrow}
             </span>
-            <span className="text-[10px] font-black text-black/50">[{card.id}]</span>
+            <span className="font-mono text-xs font-bold text-black/40">[{card.id}]</span>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-8 lg:p-12 xl:p-16">
-            <h3 className="text-3xl lg:text-5xl font-black leading-none tracking-tighter mb-4">
+          <div className="flex-1 overflow-y-auto p-8 sm:p-12 xl:p-16 custom-scrollbar bg-white">
+            <h3 className="font-sans text-[2.8rem] font-black leading-[0.95] tracking-tighter text-black sm:text-[3.8rem] lg:text-[4.2rem]">
               {card.subtitle}
             </h3>
-            <div className="space-y-4 text-lg text-black/70 leading-relaxed max-w-xl">
+
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-black/75 sm:text-lg lg:text-xl">
               {card.description}
             </div>
-
-            <ul className="mt-8 space-y-3">
-              {card.points.map((point, i) => (
-                <li key={i} className="flex items-center gap-3 font-bold text-sm lg:text-base">
-                  <div className="h-2.5 w-2.5 rounded-full border-2 border-black" style={{ backgroundColor: card.accent }} />
-                  {point}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
-        {/* Right Visual */}
+        {/* Derecha: Efecto Visual Teléfono */}
         <div
-          className="hidden lg:flex relative border-l-[3px] border-black items-center justify-center overflow-hidden"
+          className="hidden lg:flex relative h-full items-center justify-center overflow-hidden"
           style={{ backgroundColor: card.panel }}
         >
+          {/* Patrón de puntos neo-brutalista de fondo */}
+          <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(black 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+
           <motion.div
             style={{ y: visualY, scale: visualScale }}
-            className="w-full max-w-[380px] p-8"
+            className="w-full max-w-[420px] p-10 z-10"
           >
-            <div className="rounded-[24px] border-[3px] border-black bg-white p-4 shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
-              <div className="aspect-[4/5] rounded-[16px] border-[2px] border-black overflow-hidden relative">
-                {card.image ? (
-                  <img src={card.image} className="h-full w-full object-cover" alt="" />
-                ) : (
-                  <div className="h-full w-full flex items-center justify-center font-black text-4xl p-6 text-center" style={{ backgroundColor: card.accent }}>
-                    STAY PLAYFUL
+            {/* EL DISPOSITIVO (REFERENCIA image_9177a7.png) */}
+            <div className="rounded-[35px] border-[4px] border-black bg-white overflow-hidden shadow-[15px_15px_0_0_rgba(0,0,0,1)]">
+
+              {/* Header Status Bar */}
+              <div
+                className="flex items-center justify-between border-b-[3.5px] border-black px-6 py-4"
+                style={{ backgroundColor: card.accent }}
+              >
+                <span className="text-[10px] font-black uppercase tracking-[0.15em] text-black">
+                  STAY PLAYFUL
+                </span>
+                <div className="flex gap-1.5">
+                  {[0, 1, 2].map(d => (
+                    <span key={d} className="h-2.5 w-2.5 rounded-full border-[2px] border-black bg-white" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Main Visual Area */}
+              <div className="p-5 bg-white">
+                <div className="aspect-[4/5] rounded-[24px] border-[3.5px] border-black overflow-hidden relative shadow-[inset_0_4px_10px_rgba(0,0,0,0.05)]">
+                  <img
+                    src={card.image}
+                    alt="Stay Playful Founder"
+                    className="h-full w-full object-cover"
+                  />
+
+                  {/* Floating Tag */}
+                  <div className="absolute bottom-5 left-0 right-0 flex justify-center">
+                    <div className="inline-flex items-center gap-2.5 rounded-full border-[2.5px] border-black bg-white/95 px-5 py-2 text-[10px] font-black uppercase tracking-widest text-black backdrop-blur-md shadow-sm">
+                      <span className="h-3 w-3 rounded-full border-[2px] border-black" style={{ backgroundColor: card.accent }} />
+                      Stay Playful
+                    </div>
                   </div>
-                )}
+                </div>
+              </div>
+
+              {/* Footer Reveal Bar */}
+              <div className="flex items-center justify-between border-t-[3.5px] border-black bg-[#FDF9F3] px-6 py-3.5">
+                <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-black/50">
+                  SCROLL TO REVEAL
+                </span>
+                <span className="font-mono text-[12px] font-black text-black">
+                  {index + 1}/03
+                </span>
               </div>
             </div>
           </motion.div>
         </div>
       </article>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #FDF9F3;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #000;
+          border-radius: 20px;
+        }
+      `}</style>
     </div>
   )
 }
