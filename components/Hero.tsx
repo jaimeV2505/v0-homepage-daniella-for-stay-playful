@@ -27,7 +27,7 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-[1800px] px-4 pb-3 pt-3 sm:px-6 sm:pb-4 lg:px-8 lg:pb-6">
         <div className="relative h-[60vw] min-h-[360px] max-h-[820px] w-full">
           <Image
-            src="/playground.png"
+            src="/herostay.png"
             alt="Stay Playful hero background"
             fill
             priority
