@@ -102,22 +102,8 @@
 
   html,
   body {
+    @apply overflow-x-hidden;
     max-width: 100vw;
-    overflow-x: clip;
-  }
-
-  /* Custom scrollbar for Method section */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #FDF9F3;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #000;
-    border-radius: 20px;
   }
 
   body {
