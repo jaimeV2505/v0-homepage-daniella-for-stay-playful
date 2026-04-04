@@ -60,6 +60,7 @@ export function Method() {
       <div
         ref={containerRef}
         className="relative mx-auto"
+        style={{ height: `${cardIds.length * 100}vh` }}
       >
         {cardIds.map((id, index) => (
           <StickyPanel
