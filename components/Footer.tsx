@@ -3,17 +3,16 @@
 import Link from "next/link"
 import { Instagram, Mail } from "lucide-react"
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
-import { useRef, useEffect } from "react"
+import { useEffect } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 export function Footer() {
-  const ref = useRef<HTMLElement>(null)
   const { t } = useLanguageSafe()
 
   const footerLinks = t("footer.links") as unknown as { label: string; href: string }[]
 
   const rawProgress = useMotionValue(0)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"], layoutEffect: false })
+  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     return scrollYProgress.on("change", (v) => rawProgress.set(v))
@@ -26,7 +25,7 @@ export function Footer() {
   const glowOpacity = useTransform(rawProgress, [0, 1], [0.16, 0.32])
 
   return (
-    <footer ref={ref} style={{ position: "relative" }} className="mb-0 overflow-hidden border-t-[3px] border-sp-deep-brown bg-[#CFA6E2] pb-0">
+    <footer style={{ position: "relative" }} className="mb-0 overflow-hidden border-t-[3px] border-sp-deep-brown bg-[#CFA6E2] pb-0">
       <motion.div style={{ y: bgY }} className="absolute inset-0 bg-[linear-gradient(180deg,#DDB8EB_0%,#CFA6E2_52%,#C89DDD_100%)]" />
 
       <motion.div style={{ opacity: glowOpacity }} className="pointer-events-none absolute inset-0">
