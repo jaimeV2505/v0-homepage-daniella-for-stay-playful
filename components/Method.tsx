@@ -14,11 +14,7 @@ export function Method() {
   const { t } = useLanguageSafe()
 
   const manualProgress = useMotionValue(0)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-    layoutEffect: false,
-  })
+  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     return scrollYProgress.on("change", (v) => manualProgress.set(v))

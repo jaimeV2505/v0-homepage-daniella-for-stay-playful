@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { ArrowRight, Check, Mail, Clock3, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -26,11 +26,10 @@ type FormState = {
 const initialState: FormState = { name: "", email: "", interest: "", message: "" }
 
 export function ContactForm() {
-  const sectionRef = useRef<HTMLElement>(null)
   const { t } = useLanguageSafe()
 
   const rawProgress = useMotionValue(0)
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"], layoutEffect: false })
+  const { scrollYProgress } = useScroll()
 
   useEffect(() => {
     return scrollYProgress.on("change", (v) => rawProgress.set(v))
@@ -74,7 +73,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} style={{ position: "relative" }} className="overflow-hidden bg-[#F7EFE9]">
+    <section id="contact" style={{ position: "relative" }} className="overflow-hidden bg-[#F7EFE9]">
       <div className="h-8 bg-[#F4E7F7]" />
       <div className="h-[3px] bg-[#2B1A16]" />
 
