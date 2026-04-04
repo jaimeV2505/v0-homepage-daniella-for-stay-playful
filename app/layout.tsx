@@ -4,13 +4,13 @@ import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/use-language'
 import './globals.css'
 
-const dmSans = DM_Sans({ 
+const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: '--font-dm-sans',
   weight: ['400', '500', '600', '700'],
 })
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: '--font-playfair',
   weight: ['400', '500', '600', '700'],
@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased overflow-x-hidden">
+      <body className="font-sans antialiased">
         <LanguageProvider>
           {children}
         </LanguageProvider>

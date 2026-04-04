@@ -8,21 +8,21 @@
   --sp-cream: #F5F3F0;
   --sp-off-white: #FEFDFB;
   --sp-warm-beige: #F5EBE0;
-  
+
   /* Section Block Colors */
   --sp-lilac: #E8E0F7;
   --sp-soft-green: #E3F0E5;
   --sp-sky-blue: #E0F0F7;
   --sp-pastel-pink: #F7E8F0;
   --sp-warm-block: #F5EBE0;
-  
+
   /* Accent Colors */
   --sp-hot-pink: #E74C89;
   --sp-orange: #F97316;
   --sp-yellow: #FCD34D;
   --sp-cyan: #00D9FF;
   --sp-deep-brown: #2D2420;
-  
+
   /* Base Theme Variables */
   --background: var(--sp-cream);
   --foreground: var(--sp-deep-brown);
@@ -50,7 +50,7 @@
   --font-sans: 'DM Sans', system-ui, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'Geist Mono', monospace;
-  
+
   /* Brand Colors */
   --color-sp-cream: var(--sp-cream);
   --color-sp-off-white: var(--sp-off-white);
@@ -65,7 +65,7 @@
   --color-sp-yellow: var(--sp-yellow);
   --color-sp-cyan: var(--sp-cyan);
   --color-sp-deep-brown: var(--sp-deep-brown);
-  
+
   /* Theme Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -86,7 +86,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -99,54 +99,77 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html, body {
-    @apply overflow-x-hidden;
+
+  html,
+  body {
     max-width: 100vw;
+    overflow-x: clip;
   }
+
+  /* Custom scrollbar for Method section */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #FDF9F3;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 20px;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
-  
+
   /* Custom scrollbar for brand feel */
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-track {
     background: var(--sp-cream);
   }
+
   ::-webkit-scrollbar-thumb {
     background: var(--sp-warm-beige);
     border-radius: 4px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: #E0D6CC;
   }
 }
 
 @layer utilities {
+
   /* Text balance for headlines */
   .text-balance {
     text-wrap: balance;
   }
+
   .text-pretty {
     text-wrap: pretty;
   }
-  
+
   /* Smooth scroll behavior */
   html {
     scroll-behavior: smooth;
   }
-  
+
   /* Vertical text for widget */
   .writing-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;
   }
-  
+
   /* Wave divider backgrounds */
   .wave-divider-top {
     position: relative;
   }
+
   .wave-divider-top::before {
     content: '';
     position: absolute;
@@ -157,10 +180,11 @@
     background: inherit;
     clip-path: ellipse(60% 100% at 50% 100%);
   }
-  
+
   .wave-divider-bottom {
     position: relative;
   }
+
   .wave-divider-bottom::after {
     content: '';
     position: absolute;

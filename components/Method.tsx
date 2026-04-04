@@ -1,7 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform, useMotionValue, MotionValue } from "framer-motion"
-import { useRef, useEffect } from "react"
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
 import { useLanguageSafe } from "@/lib/use-language"
 
 const cardImages = ["/Daniella.jpg", "/StayPlay.JPG", "/stay.JPG"]
@@ -10,18 +9,12 @@ const cardPanels = ["#F6C8F4", "#D9F9FF", "#FFE7A0"]
 const cardIds = ["01", "02", "03"] as const
 
 export function Method() {
-  const containerRef = useRef<HTMLDivElement | null>(null)
   const { t } = useLanguageSafe()
-
-  const manualProgress = useMotionValue(0)
   const { scrollYProgress } = useScroll()
 
-  useEffect(() => {
-    return scrollYProgress.on("change", (v) => manualProgress.set(v))
-  }, [scrollYProgress, manualProgress])
-
   return (
-    <section id="method" className="relative bg-[#F5F0E6] pb-0">
+    <section id="method" className="relative bg-[#F5F0E6]">
+      {/* Decorative header */}
       <div className="mx-auto max-w-7xl px-6 pt-12 flex items-center gap-6">
         <div className="h-[2px] flex-1 bg-black/10" />
         <div className="flex gap-2">
@@ -32,10 +25,12 @@ export function Method() {
         <div className="h-[2px] flex-1 bg-black/10" />
       </div>
 
+      {/* Background text */}
       <div className="absolute top-[10%] left-[-2%] pointer-events-none select-none opacity-[0.03] z-0">
         <h2 className="text-[20vw] font-black leading-none text-black">{t("method.eyebrow")}</h2>
       </div>
 
+      {/* Section heading */}
       <div className="mx-auto max-w-7xl px-6 pt-20 mb-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
@@ -57,16 +52,14 @@ export function Method() {
         </div>
       </div>
 
-      <div
-        ref={containerRef}
-        className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10"
-      >
+      {/* Sticky stacking cards container */}
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         {cardIds.map((id, index) => (
           <StickyPanel
             key={id}
             cardId={id}
             index={index}
-            progress={manualProgress}
+            progress={scrollYProgress}
             total={cardIds.length}
             image={cardImages[index]}
             accent={cardAccents[index]}
@@ -75,11 +68,8 @@ export function Method() {
         ))}
       </div>
 
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF9F3; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #000; border-radius: 20px; }
-      `}</style>
+      {/* Bottom spacing */}
+      <div className="h-24" />
     </section>
   )
 }
@@ -111,10 +101,14 @@ function StickyPanel({
   return (
     <div className="h-screen">
       <div
-        className="sticky top-0 w-full h-screen flex items-center justify-center px-4 sm:px-6"
-        style={{ zIndex: index + 1 }}
+        className="sticky top-0 w-full h-screen flex items-center justify-center"
+        style={{ 
+          zIndex: index + 1,
+          top: `${index * 32 + 40}px`
+        }}
       >
-        <article className="grid h-[85vh] max-h-[800px] w-full max-w-[1400px] overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
+        <article className="grid h-[80vh] max-h-[800px] w-full max-w-[1400px] overflow-hidden rounded-[20px] sm:rounded-[32px] border-[3px] sm:border-[4px] border-black bg-[#FDF9F3] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Left: Content */}
           <div className="flex flex-col h-full border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
             <div
               className="flex shrink-0 items-center justify-between border-b-[4px] border-black px-8 py-5"
@@ -136,6 +130,7 @@ function StickyPanel({
             </div>
           </div>
 
+          {/* Right: Image */}
           <div
             className="hidden lg:flex relative h-full items-center justify-center overflow-hidden"
             style={{ backgroundColor: panel }}
