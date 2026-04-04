@@ -11,7 +11,7 @@ import { LetsChatWidget } from "@/components/LetsChatWidget"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-x-hidden w-full max-w-full">
+    <main className="min-h-screen w-full max-w-full">
       <Header />
       <Hero />
       <BrandStatement />
