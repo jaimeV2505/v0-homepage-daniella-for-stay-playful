@@ -23,7 +23,7 @@ export function Hero() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="/fullhero.png"
+            src="/herostayplay.png"
             alt="Daniella - Stay Playful"
             fill
             priority
