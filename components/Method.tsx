@@ -51,7 +51,7 @@ const methodCards: MethodCard[] = [
     description: (
       <>
         <p>Stay playful erbjuder stöd med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning.</p>
-        <p>Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi.</p>
+        <p>Genom coaching, upplevelser y ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi.</p>
         <p className="font-black text-black">Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.</p>
       </>
     ),
@@ -71,8 +71,7 @@ export function Method() {
 
   return (
     <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-visible">
-
-      {/* 1. DIVIDER MINIMALISTA */}
+      {/* 1. DIVIDER */}
       <div className="mx-auto max-w-7xl px-6 pt-12 flex items-center gap-6">
         <div className="h-[2px] flex-1 bg-black/10" />
         <div className="flex gap-2">
@@ -88,7 +87,7 @@ export function Method() {
         <h2 className="text-[20vw] font-black leading-none text-black">METHOD</h2>
       </div>
 
-      {/* 3. TÍTULO REFINADO */}
+      {/* 3. TÍTULO */}
       <div className="mx-auto max-w-7xl px-6 pt-20 mb-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
@@ -110,7 +109,7 @@ export function Method() {
         </div>
       </div>
 
-      {/* CARDS CONTAINER CON EFECTO STACKING RESTAURADO */}
+      {/* CARDS CONTAINER */}
       <div ref={containerRef} className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         {methodCards.map((card, index) => (
           <StickyPanel
@@ -130,7 +129,6 @@ function StickyPanel({ card, index, progress, total }: { card: MethodCard; index
   const start = index / total
   const end = (index + 1) / total
 
-  // Efecto de desplazamiento sutil dentro de la carta
   const visualY = useTransform(progress, [start, end], [50, -50])
   const visualScale = useTransform(progress, [start, end], [0.95, 1.05])
 
@@ -138,7 +136,6 @@ function StickyPanel({ card, index, progress, total }: { card: MethodCard; index
     <div
       className="sticky top-0 flex items-center justify-center h-screen w-full"
       style={{
-        // Este cálculo mantiene el efecto de apilamiento donde una se queda debajo de la otra
         top: `${index * 40}px`,
         zIndex: index + 1
       }}
@@ -181,7 +178,7 @@ function StickyPanel({ card, index, progress, total }: { card: MethodCard; index
             className="w-full max-w-[380px] p-8 z-10"
           >
             <div className="rounded-[35px] border-[4px] border-black bg-white overflow-hidden shadow-[15px_15px_0_0_rgba(0,0,0,1)]">
-              {/* Header */}
+              {/* Header Teléfono */}
               <div
                 className="flex items-center justify-between border-b-[3.5px] border-black px-6 py-4"
                 style={{ backgroundColor: card.accent }}
@@ -194,20 +191,15 @@ function StickyPanel({ card, index, progress, total }: { card: MethodCard; index
                 </div>
               </div>
 
-              {/* Image Area */}
+              {/* Área Imagen */}
               <div className="p-5 bg-white">
                 <div className="aspect-[4/5] rounded-[24px] border-[3.5px] border-black overflow-hidden relative shadow-[inset_0_4px_10px_rgba(0,0,0,0.05)]">
                   <img src={card.image} alt="Founder" className="h-full w-full object-cover" />
-                  <div className="absolute bottom-5 left-0 right-0 flex justify-center">
-                    <div className="inline-flex items-center gap-2.5 rounded-full border-[2.5px] border-black bg-white/95 px-5 py-2 text-[10px] font-black uppercase tracking-widest text-black shadow-sm">
-                      <span className="h-3 w-3 rounded-full border-[2px] border-black" style={{ backgroundColor: card.accent }} />
-                      Card {card.id}
-                    </div>
-                  </div>
+                  {/* AQUÍ ESTABA LA MINI CARD BLANCA Y HA SIDO ELIMINADA */}
                 </div>
               </div>
 
-              {/* Footer */}
+              {/* Footer Teléfono */}
               <div className="flex items-center justify-between border-t-[3.5px] border-black bg-[#FDF9F3] px-6 py-3.5">
                 <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-black/40">STAY PLAYFUL</span>
                 <span className="font-mono text-[12px] font-black text-black">{index + 1}/03</span>
