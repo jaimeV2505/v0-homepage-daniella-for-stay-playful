@@ -2,25 +2,28 @@
 
 import Link from "next/link"
 import { Instagram, Mail } from "lucide-react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef, useEffect, useState } from "react"
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
+import { useRef, useEffect } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 export function Footer() {
   const ref = useRef<HTMLElement>(null)
-  const [isMounted, setIsMounted] = useState(false)
   const { t } = useLanguageSafe()
-
-  useEffect(() => { setIsMounted(true) }, [])
 
   const footerLinks = t("footer.links") as unknown as { label: string; href: string }[]
 
-  const { scrollYProgress } = useScroll({ target: isMounted ? ref : undefined, offset: ["start end", "end end"] })
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -18])
-  const stayY = useTransform(scrollYProgress, [0, 1], [0, -8])
-  const playfulY = useTransform(scrollYProgress, [0, 1], [0, -18])
-  const cardY = useTransform(scrollYProgress, [0, 1], [0, -6])
-  const glowOpacity = useTransform(scrollYProgress, [0, 1], [0.16, 0.32])
+  const rawProgress = useMotionValue(0)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"], layoutEffect: false })
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (v) => rawProgress.set(v))
+  }, [scrollYProgress, rawProgress])
+
+  const bgY = useTransform(rawProgress, [0, 1], [0, -18])
+  const stayY = useTransform(rawProgress, [0, 1], [0, -8])
+  const playfulY = useTransform(rawProgress, [0, 1], [0, -18])
+  const cardY = useTransform(rawProgress, [0, 1], [0, -6])
+  const glowOpacity = useTransform(rawProgress, [0, 1], [0.16, 0.32])
 
   return (
     <footer ref={ref} style={{ position: "relative" }} className="mb-0 overflow-hidden border-t-[3px] border-sp-deep-brown bg-[#CFA6E2] pb-0">

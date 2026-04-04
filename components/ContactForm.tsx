@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { ArrowRight, Check, Mail, Clock3, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -27,16 +27,19 @@ const initialState: FormState = { name: "", email: "", interest: "", message: ""
 
 export function ContactForm() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [isMounted, setIsMounted] = useState(false)
   const { t } = useLanguageSafe()
 
-  useEffect(() => { setIsMounted(true) }, [])
+  const rawProgress = useMotionValue(0)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"], layoutEffect: false })
 
-  const { scrollYProgress } = useScroll({ target: isMounted ? sectionRef : undefined, offset: ["start end", "end start"] })
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, -38])
-  const leftY = useTransform(scrollYProgress, [0, 1], [24, -14])
-  const stickerRotate = useTransform(scrollYProgress, [0, 1], [-8, -3])
-  const paperY = useTransform(scrollYProgress, [0, 1], [0, -24])
+  useEffect(() => {
+    return scrollYProgress.on("change", (v) => rawProgress.set(v))
+  }, [scrollYProgress, rawProgress])
+
+  const bgY = useTransform(rawProgress, [0, 1], [0, -38])
+  const leftY = useTransform(rawProgress, [0, 1], [24, -14])
+  const stickerRotate = useTransform(rawProgress, [0, 1], [-8, -3])
+  const paperY = useTransform(rawProgress, [0, 1], [0, -24])
 
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)

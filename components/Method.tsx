@@ -1,7 +1,7 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef, useEffect, useState } from "react"
+import { motion, useScroll, useTransform, useMotionValue, MotionValue } from "framer-motion"
+import { useRef, useEffect } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 const cardImages = ["/Daniella.jpg", "/StayPlay.JPG", "/stay.JPG"]
@@ -11,15 +11,18 @@ const cardIds = ["01", "02", "03"] as const
 
 export function Method() {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const [isMounted, setIsMounted] = useState(false)
   const { t } = useLanguageSafe()
 
-  useEffect(() => { setIsMounted(true) }, [])
-
+  const manualProgress = useMotionValue(0)
   const { scrollYProgress } = useScroll({
-    target: isMounted ? containerRef : undefined,
+    target: containerRef,
     offset: ["start start", "end end"],
+    layoutEffect: false,
   })
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (v) => manualProgress.set(v))
+  }, [scrollYProgress, manualProgress])
 
   return (
     <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-hidden">
@@ -64,7 +67,7 @@ export function Method() {
             key={id}
             cardId={id}
             index={index}
-            progress={scrollYProgress}
+            progress={manualProgress}
             total={cardIds.length}
             image={cardImages[index]}
             accent={cardAccents[index]}
@@ -81,7 +84,7 @@ function StickyPanel({
 }: {
   cardId: string
   index: number
-  progress: ReturnType<typeof useScroll>["scrollYProgress"]
+  progress: MotionValue<number>
   total: number
   image: string
   accent: string
