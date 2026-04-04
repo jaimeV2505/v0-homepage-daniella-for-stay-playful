@@ -2,13 +2,13 @@
 // FASE 3 & 4: Traducción y enlaces centralizados
 
 export const siteConfig = {
-  name: "Stay Playful",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
   description: "A Healthier Way to Feel Well",
   urls: {
-    contact: "mailto:TODO_CONTACT_EMAIL",
-    instagram: "https://instagram.com/TODO_INSTAGRAM",
-    linkedin: "https://linkedin.com/company/TODO_LINKEDIN",
-    phone: "tel:+46TODO_PHONE",
+    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mailto:hello@stayplayful.com",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
+    phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "tel:+46-123-456-789",
   },
 }
 
