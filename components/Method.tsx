@@ -74,6 +74,12 @@ export function Method() {
           />
         ))}
       </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF9F3; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #000; border-radius: 20px; }
+      `}</style>
     </section>
   )
 }
@@ -157,11 +163,6 @@ function StickyPanel({
           </div>
         </article>
 
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #FDF9F3; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #000; border-radius: 20px; }
-      `}</style>
     </div>
   )
 }
