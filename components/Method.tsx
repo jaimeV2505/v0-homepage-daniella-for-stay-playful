@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 const cardImages = ["/Daniella.jpg", "/StayPlay.JPG", "/stay.JPG"]
@@ -11,10 +11,13 @@ const cardIds = ["01", "02", "03"] as const
 
 export function Method() {
   const containerRef = useRef<HTMLDivElement | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
   const { t } = useLanguageSafe()
 
+  useEffect(() => { setIsMounted(true) }, [])
+
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: isMounted ? containerRef : undefined,
     offset: ["start start", "end end"],
   })
 

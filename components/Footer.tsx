@@ -3,16 +3,19 @@
 import Link from "next/link"
 import { Instagram, Mail } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 export function Footer() {
   const ref = useRef<HTMLElement>(null)
+  const [isMounted, setIsMounted] = useState(false)
   const { t } = useLanguageSafe()
+
+  useEffect(() => { setIsMounted(true) }, [])
 
   const footerLinks = t("footer.links") as unknown as { label: string; href: string }[]
 
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] })
+  const { scrollYProgress } = useScroll({ target: isMounted ? ref : undefined, offset: ["start end", "end end"] })
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -18])
   const stayY = useTransform(scrollYProgress, [0, 1], [0, -8])
   const playfulY = useTransform(scrollYProgress, [0, 1], [0, -18])
