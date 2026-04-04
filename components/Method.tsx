@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { ReactNode, useRef } from "react"
+import { ReactNode } from "react"
 
 type MethodCard = {
   id: string
@@ -62,13 +62,7 @@ const methodCards: MethodCard[] = [
 ]
 
 export function Method() {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-    layoutEffect: false,
-  })
+  const { scrollYProgress } = useScroll()
 
   return (
     <section id="method" className="relative bg-[#F5F0E6] pb-32 overflow-visible">
@@ -112,7 +106,7 @@ export function Method() {
       </div>
 
       {/* CARDS CONTAINER CON EFECTO STACKING RESTAURADO */}
-      <div ref={containerRef} style={{ position: "relative" }} className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         {methodCards.map((card, index) => (
           <StickyPanel
             key={index}
