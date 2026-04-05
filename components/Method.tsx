@@ -3,7 +3,7 @@
 import { useLanguageSafe } from "@/lib/use-language"
 import { motion } from "framer-motion"
 
-const cardImages = ["/Daniella.jpg", "/stayhappy.JPG", "/stay.JPG"]
+const cardImages = ["/Daniella.jpg", "/StayPlay.JPG", "/stay.JPG"]
 const cardAccents = ["#FFABFF", "#00E2FF", "#FFBD17"]
 const cardPanels = ["#F6C8F4", "#D9F9FF", "#FFE7A0"]
 const cardIds = ["01", "02", "03"] as const

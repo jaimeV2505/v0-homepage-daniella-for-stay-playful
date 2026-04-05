@@ -100,86 +100,48 @@
     @apply border-border outline-ring/50;
   }
 
-  html,
-  body {
-    @apply overflow-x-hidden;
-    max-width: 100vw;
-  }
-
   body {
     @apply bg-background text-foreground;
+    /* Evitamos el scroll horizontal por los textos gigantes que sobresalen */
+    overflow-x: hidden;
   }
 
-  /* Custom scrollbar for brand feel */
-  ::-webkit-scrollbar {
-    width: 8px;
+  /* Custom scrollbar para las cartas (oculta pero funcional si quieres) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  ::-webkit-scrollbar-track {
-    background: var(--sp-cream);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--sp-warm-beige);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #E0D6CC;
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
 @layer utilities {
 
-  /* Text balance for headlines */
+  /* EFECTO DE TEXTO DE FONDO GIGANTE */
+  .bg-text-outline {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.05);
+    color: transparent;
+  }
+
+  .z-below {
+    z-index: -1;
+  }
+
+  /* Text balance para titulares */
   .text-balance {
     text-wrap: balance;
   }
 
-  .text-pretty {
-    text-wrap: pretty;
-  }
-
-  /* Smooth scroll behavior */
+  /* Smooth scroll */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Vertical text for widget */
+  /* Vertical text para el widget lateral */
   .writing-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;
-  }
-
-  /* Wave divider backgrounds */
-  .wave-divider-top {
-    position: relative;
-  }
-
-  .wave-divider-top::before {
-    content: '';
-    position: absolute;
-    top: -48px;
-    left: 0;
-    right: 0;
-    height: 48px;
-    background: inherit;
-    clip-path: ellipse(60% 100% at 50% 100%);
-  }
-
-  .wave-divider-bottom {
-    position: relative;
-  }
-
-  .wave-divider-bottom::after {
-    content: '';
-    position: absolute;
-    bottom: -48px;
-    left: 0;
-    right: 0;
-    height: 48px;
-    background: inherit;
-    clip-path: ellipse(60% 100% at 50% 0%);
-    z-index: 1;
   }
 }
