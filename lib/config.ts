@@ -30,7 +30,7 @@ export const translations = {
     },
     brand: {
       eyebrow: "",
-      heading: "VARNING: STAY PLAYFUL KAN ORSAKA FÖLJANDE BIVERKNINGAR:",
+      heading: " 🚨VARNING: STAY PLAYFUL KAN ORSAKA FÖLJANDE BIVERKNINGAR:",
       body: "Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till kost, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.",
       cardTag: "Stay Playful",
       cardBody: "Bra kost och massa rörelse — inte längre är ett projekt vid sidan av livet.",
@@ -190,7 +190,7 @@ export const translations = {
     },
     brand: {
       eyebrow: "",
-      heading: "WARNING: STAY PLAYFUL MAY CAUSE THE FOLLOWING SIDE EFFECTS:",
+      heading: "🚨WARNING: STAY PLAYFUL MAY CAUSE THE FOLLOWING SIDE EFFECTS:",
       body: "That you suddenly think less about food and other wonderful parts of life start taking up more space. With the right nutrition for you, we ensure you have the best conditions to live life to the fullest. With less unhealthy fixation on diet, we strengthen other parts of life, encourage curiosity and create space for joy, creativity and personal engagement.",
       cardTag: "Stay Playful",
       cardBody: "Good nutrition and plenty of movement — no longer a side project in life.",
