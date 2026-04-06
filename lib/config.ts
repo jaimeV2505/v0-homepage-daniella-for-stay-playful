@@ -79,9 +79,9 @@ export const translations = {
         },
         "02": {
           eyebrow: "Visionen",
-          subtitle: "Stay Playful driver",
+          subtitle: "Visionen",
 
-          p1: "och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
+          p1: "Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
           p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra. Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag.",
 
 
@@ -251,8 +251,8 @@ export const translations = {
         },
         "02": {
           eyebrow: "The Vision",
-          subtitle: "Stay Playful drives",
-          p1: "and strives for a change where health is no longer a project on the side of life, but an integrated part of how we live and feel.",
+          subtitle: "The Vision",
+          p1: "Stay Playful drives and strives for a change where health is no longer a project on the side of life, but an integrated part of how we live and feel.",
           p2: "We will redefine how people view exercise and nutrition: from something you postpone, struggle with, or 'need to deal with', to something that feels accessible, joyful, and simply feels good. By combining personalized nutrition coaching with a broader lifestyle perspective, we ensure to build a life where movement, nutrition, and well-being interact with personal interests, values, and everyday life.",
 
         },
