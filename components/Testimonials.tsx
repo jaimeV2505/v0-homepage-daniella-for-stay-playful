@@ -6,10 +6,9 @@ import { useLanguageSafe } from "@/lib/use-language"
 
 export function Testimonials() {
   const { t } = useLanguageSafe()
-
   const { scrollYProgress } = useScroll()
 
-  // Movimientos sutiles para dar profundidad sin desordenar
+  // Movimientos sutiles para dar profundidad sin sacrificar performance
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"])
   const floatingElementY = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"])
 
@@ -18,28 +17,44 @@ export function Testimonials() {
       id="testimonials"
       className="relative overflow-hidden bg-[#FFFDF9] w-full"
     >
-      {/* 1. TICKER (CINTA SUPERIOR) - ESPACIADO FIJO */}
-      <div className="w-full border-b-[3px] border-black bg-[#40E0D0] py-4 lg:py-6 shadow-[0_4px_0_0_rgba(0,0,0,1)] relative z-50">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap"
-        >
-          {[0, 1].map((i) => (
-            <div key={i} className="flex shrink-0 items-center">
-              <span className="mx-8 font-black uppercase tracking-[0.15em] text-black text-2xl lg:text-4xl">
-                {t("testimonials.ticker")} ★ {t("testimonials.ticker")} ★
+      {/* 1. CINTAS CRUZADAS SUPERIORES (Estilo Neobrutalista) */}
+      <div className="relative h-40 lg:h-64 w-full overflow-hidden border-b-[3px]">
+        {/* Tira 1: Fondo - Rotación Negativa */}
+        <div className="absolute top-1/2 left-[-5%] w-[110%] border-y-[3px] border-black bg-[#40E0D0] py-3 lg:py-5 -rotate-2 z-10 shadow-lg -translate-y-1/2">
+          <motion.div
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="flex whitespace-nowrap"
+          >
+            {[0, 1, 2].map((i) => (
+              <span key={i} className="mx-6 font-black uppercase tracking-widest text-black text-lg lg:text-3xl shrink-0">
+                STAY PLAYFUL ★ SOFTER WELLBEING ★ CLIENT LOVE ★
               </span>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Tira 2: Frente - Rotación Positiva (Cruza por encima) */}
+        <div className="absolute top-1/2 left-[-5%] w-[110%] border-y-[3px] border-black bg-[#40E0D0] py-3 lg:py-5 rotate-3 z-20 shadow-2xl -translate-y-1/2">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="flex whitespace-nowrap"
+          >
+            {[0, 1, 2].map((i) => (
+              <span key={i} className="mx-6 font-black uppercase tracking-widest text-black text-lg lg:text-3xl shrink-0">
+                TESTIMONIALS ★ REAL STORIES ★ STAY PLAYFUL ★
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
-      {/* 2. CONTENEDOR PRINCIPAL - ORGANIZACIÓN DE ESPACIOS */}
+      {/* 2. CONTENEDOR PRINCIPAL */}
       <div className="mx-auto max-w-[1700px] px-6 sm:px-12 lg:px-20 py-16 lg:py-32">
         <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
 
-          {/* BLOQUE DE TEXTO (COLUMNAS 1-7) */}
+          {/* BLOQUE DE TEXTO (Desktop: Izquierda / Mobile: Abajo) */}
           <div className="lg:col-span-7 z-30 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -50,30 +65,27 @@ export function Testimonials() {
               <h2 className="font-serif text-[15vw] lg:text-[11vw] font-black uppercase leading-[0.8] tracking-[-0.05em] text-black">
                 {t("testimonials.heading")}
                 <br />
-                <span className="text-[#FF008E] italic inline-block mt-4 lg:ml-12 drop-shadow-[6px_6px_0px_#000]">
+                <span className="text-[#FF008E] italic inline-block mt-4 lg:ml-12 drop-shadow-[4px_4px_0px_#000] lg:drop-shadow-[6px_6px_0px_#000]">
                   {t("testimonials.headingAccent")}
                 </span>
               </h2>
 
-              {/* Espaciador controlado entre Título e Info */}
               <div className="mt-16 lg:mt-24 space-y-8">
                 <p className="font-serif text-3xl lg:text-5xl italic text-black/80 leading-tight">
                   {t("testimonials.comingSoon")}
                 </p>
               </div>
-
-
             </motion.div>
           </div>
 
-          {/* BLOQUE DE IMAGEN (COLUMNAS 7-12 con OVERLAP) */}
+          {/* BLOQUE DE IMAGEN (Desktop: Derecha / Mobile: Arriba) */}
           <div className="lg:col-span-5 lg:-ml-20 relative order-first lg:order-last">
             <motion.div
               style={{ y: imageY }}
               className="relative z-20"
             >
-              {/* Contenedor de la foto con sombra brutalista desplazada */}
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5.5] overflow-hidden rounded-[30px] lg:rounded-[50px] border-[4px] lg:border-[6px] border-black bg-white shadow-[20px_20px_0_0_rgba(0,0,0,1)] lg:shadow-[35px_35px_0_0_rgba(255,0,142,1)] transition-transform duration-500 hover:scale-[1.02]">
+              {/* Card con sombra brutalista rosa */}
+              <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5.5] overflow-hidden rounded-[30px] lg:rounded-[50px] border-[4px] lg:border-[6px] border-black bg-white shadow-[15px_15px_0_0_rgba(0,0,0,1)] lg:shadow-[35px_35px_0_0_rgba(255,0,142,1)] transition-transform duration-500 hover:scale-[1.02]">
                 <Image
                   src="/smile.JPG"
                   alt="Editorial Highlight"
@@ -83,7 +95,7 @@ export function Testimonials() {
                 />
               </div>
 
-              {/* Elemento Decorativo Flotante (Tag Editorial) */}
+              {/* Tag Flotante "NEW ERA" */}
               <motion.div
                 style={{ y: floatingElementY }}
                 className="absolute -top-10 -right-5 lg:-right-12 z-30 bg-black text-[#40E0D0] px-6 py-4 rounded-2xl border-2 border-black rotate-12 shadow-xl"
@@ -92,19 +104,15 @@ export function Testimonials() {
               </motion.div>
             </motion.div>
           </div>
-
         </div>
       </div >
 
-      {/* 3. ESPACIO DE FONDO (WATERMARK) - PARA RELLENAR VACÍOS */}
-      < div className="absolute bottom-10 left-10 pointer-events-none z-0 select-none opacity-[0.03]" >
+      {/* 3. WATERMARK (Fondo decorativo sutil) */}
+      <div className="absolute bottom-10 left-10 pointer-events-none z-0 select-none opacity-[0.03]" >
         <span className="font-serif text-[25vw] font-black uppercase leading-none">
           STAY PLAYFUL
         </span>
       </div >
-
-      {/* Relleno decorativo inferior para asegurar el cierre de sección */}
-      < div className="h-20 lg:h-40 w-full" />
     </section >
   )
 }
