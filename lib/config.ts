@@ -96,7 +96,7 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "Stöd som passar ditt liv ✦ Lekfullt ✦ i linje med dina värderingar ✦ STAY PLAYFUL ✦ MOTIVERANDE ✦ ENERGIGIVANDE",
+      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
       heading: "Your",
       headingAccent: "playground!",
       comingSoon: "Mer info kommer snart!",
@@ -267,7 +267,7 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "Support that fits your life ✦ Playful ✦ aligned with your values ✦ STAY PLAYFUL ✦ MOTIVATING ✦ ENERGIZING",
+      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
       heading: "Your",
       headingAccent: "playground!",
       comingSoon: "More info coming soon!",
