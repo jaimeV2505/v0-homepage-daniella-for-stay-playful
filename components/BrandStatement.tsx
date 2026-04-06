@@ -14,13 +14,14 @@ export function BrandStatement() {
     >
       <div className="mx-auto max-w-[1780px] px-4 sm:px-4 lg:px-6">
         <div className="overflow-hidden rounded-[20px] sm:rounded-[34px] border-[3px] sm:border-[4px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
-          <div className="grid min-h-[680px] lg:grid-cols-[0.49fr_0.51fr] xl:min-h-[760px] 2xl:min-h-[820px]">
+          <div className="grid lg:grid-cols-[0.49fr_0.51fr]">
 
+            {/* LEFT: text */}
             <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
               <div className="max-w-[620px]">
                 <h2
                   id="brand-statement-title"
-                  className="mt-5 max-w-[720px] text-[2.9rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-white sm:text-[4rem] lg:text-[5rem] xl:text-[5.8rem] 2xl:text-[6.3rem]"
+                  className="mt-5 max-w-[720px] text-[2.4rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-white sm:text-[3.5rem] lg:text-[4.2rem] xl:text-[5.2rem] 2xl:text-[6rem]"
                 >
                   {brand("heading")}
                 </h2>
@@ -31,11 +32,14 @@ export function BrandStatement() {
               </div>
             </div>
 
-            <div className="relative min-h-[640px] bg-[#FFABFF] px-5 py-5 sm:px-6 sm:py-6 lg:min-h-full lg:px-8 lg:py-8 xl:px-10 xl:py-10">
+            {/* RIGHT: photo with bubble mask */}
+            <div className="relative flex flex-col bg-[#FFABFF] px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8 xl:px-10 xl:py-10">
 
               <div className="pointer-events-none absolute left-0 top-0 h-[120px] w-full bg-gradient-to-b from-[#E89BE6] to-transparent z-10" />
 
-              <div className="relative mx-auto h-[520px] w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] sm:h-[620px] lg:h-[760px] xl:h-[860px] 2xl:h-[920px]">
+              {/* Bubble mask container — grows to fill available height */}
+              <div className="relative w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
+                   style={{ aspectRatio: "3/4", maxHeight: "none" }}>
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
