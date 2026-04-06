@@ -48,12 +48,12 @@ export const translations = {
           description: "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig",
         },
         program6: {
-          title: "6-VECKORS PROGRAM",
+          title: "8-VECKORS PROGRAM",
           circleTitle: "6-v\nprog",
           description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
         },
         program8: {
-          title: "8-VECKORS PROGRAM",
+          title: "12-VECKORS PROGRAM",
           circleTitle: "8-v\nprog",
           description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
         },
@@ -220,13 +220,13 @@ export const translations = {
           description: "The first session is a free consultation of approximately 20 minutes, where we go through what help you need and what I can do to assist you.",
         },
         program6: {
-          title: "6-WEEK PROGRAM",
-          circleTitle: "6-w\nprog",
+          title: "8-WEEK PROGRAM",
+          circleTitle: "8-w\nprog",
           description: "To actually make a difference, we need to set up a plan.",
         },
         program8: {
-          title: "8-WEEK PROGRAM",
-          circleTitle: "8-w\nprog",
+          title: "12-WEEK PROGRAM",
+          circleTitle: "12-w\nprog",
           description: "To give yourself the best possible conditions for both results and your new lifestyle.",
         },
         specialaren: {
