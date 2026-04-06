@@ -126,9 +126,7 @@ export function ContactForm() {
                   <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
                     <Mail className="h-4 w-4" />hello@stayplayful.com
                   </div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
-                    <MapPin className="h-4 w-4" />Stockholm, Sverige
-                  </div>
+
                 </div>
               </motion.div>
 
