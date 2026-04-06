@@ -63,8 +63,8 @@ export function Programs() {
           </h2>
         </div>
 
-        {/* SELECTOR DE PROGRAMAS (CIRCULOS) - OCULTO EN MOBILE */}
-        <div className="hidden sm:flex justify-center gap-4 sm:gap-8 mb-14 px-4 overflow-x-auto pb-4">
+        {/* SELECTOR DE PROGRAMAS (CIRCULOS) - Ajustado py-4 para que no se corte el círculo ni la sombra */}
+        <div className="hidden sm:flex justify-center gap-4 sm:gap-10 mb-14 px-4 py-4 overflow-visible">
           {programs.map((p, i) => {
             const isActive = i === activeIndex
             return (
@@ -78,7 +78,7 @@ export function Programs() {
                     : "bg-white/40 border-[#3A2B2B]/10 hover:border-[#3A2B2B]/40"
                 )}
               >
-                <span className="font-serif text-[0.8rem] sm:text-[1.2rem] font-bold leading-tight text-[#3A2B2B] whitespace-pre-line text-center px-2">
+                <span className="font-serif text-[0.8rem] sm:text-[1.1rem] font-bold leading-tight text-[#3A2B2B] whitespace-pre-line text-center px-2">
                   {p.circleTitle}
                 </span>
                 {isActive && (
@@ -112,7 +112,7 @@ export function Programs() {
               )}
             >
               <div className="flex flex-col items-center text-center w-full">
-                {/* INDICADOR DE PASO PARA MOBILE (Sustituye visualmente a los círculos) */}
+                {/* INDICADOR DE PASO PARA MOBILE */}
                 <div className="flex gap-2 mb-6 sm:hidden">
                   {programs.map((_, i) => (
                     <div key={i} className={cn("h-1.5 rounded-full transition-all duration-300", i === activeIndex ? "w-8 bg-[#3A2B2B]" : "w-2 bg-[#3A2B2B]/20")} />
@@ -128,7 +128,7 @@ export function Programs() {
                 </p>
 
                 <div className="flex flex-col items-center gap-8 w-full justify-center">
-                  {/* NAVEGACIÓN MOBILE (SIEMPRE DEBAJO EN PEQUEÑO) */}
+                  {/* NAVEGACIÓN MOBILE */}
                   <div className="flex gap-6 xl:hidden">
                     <button onClick={prev} className={cn(navBtn, "h-14 w-14")} aria-label="Anterior">
                       <ArrowLeft className="w-6 h-6" />
