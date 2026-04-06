@@ -5,13 +5,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 import { LanguageSwitcher } from "@/components/LanguageSwitcher"
 import { useLanguageSafe } from "@/lib/use-language"
-import { siteConfig } from "@/lib/config"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+
+const LOGIN_URL = "https://my.practicebetter.io/#/signin"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLanguageSafe()
 
   useEffect(() => {
@@ -20,13 +23,23 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false)
+    setTimeout(() => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    }, 300)
+  }
+
   return (
     <>
       {/* TOP BAR */}
       <div className="relative z-[70] border-b-[3px] border-black bg-[#E3488B] py-2 text-white overflow-x-hidden">
         <div className="mx-auto flex max-w-full items-center justify-center px-4 sm:px-6">
           <p className="text-[11px] font-black uppercase tracking-[0.2em] text-center">
-            {t("topBar")} | <Link href={siteConfig.urls.contact} className="underline">{t("getInTouch")}</Link>
+            {t("topBar")} | <button onClick={() => scrollToSection("contact")} className="underline">{t("getInTouch")}</button>
           </p>
         </div>
       </div>
@@ -54,42 +67,56 @@ export function Header() {
 
             <div className="flex items-center gap-2">
               <LanguageSwitcher />
-              <Sheet>
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <SheetTrigger asChild>
                   <Button className="h-10 w-10 border-[3px] border-black bg-white shadow-[3px_3px_0_0_rgba(227,72,139,1)] hover:bg-white p-0">
                     <Menu className="h-5 w-5 text-black" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent className="bg-[#DDBAF0] border-l-[6px] border-black w-full sm:w-96">
+                  <VisuallyHidden>
+                    <SheetTitle>Navigation Menu</SheetTitle>
+                    <SheetDescription>Main navigation menu for mobile devices</SheetDescription>
+                  </VisuallyHidden>
                   <div className="flex flex-col gap-6 py-8">
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="font-black text-lg uppercase">Menu</h3>
-                      <SheetClose />
                     </div>
                     <nav className="flex flex-col gap-4">
-                      <Link href="#programs" className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                      <button 
+                        onClick={() => scrollToSection("programs")} 
+                        className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors text-left"
+                      >
                         {t("nav.programs")}
-                      </Link>
-                      <Link href="#method" className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection("method")} 
+                        className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors text-left"
+                      >
                         {t("nav.method")}
-                      </Link>
-                      <Link href="#contact" className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                      </button>
+                      <button 
+                        onClick={() => scrollToSection("contact")} 
+                        className="text-sm font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors text-left"
+                      >
                         {t("nav.contact")}
-                      </Link>
+                      </button>
                     </nav>
                     <div className="pt-4 border-t-[2px] border-black flex flex-col gap-3">
-                      <Link
-                        href={siteConfig.urls.contact}
+                      <a
+                        href={LOGIN_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex h-[50px] items-center justify-center border-[3px] border-black bg-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
                       >
                         {t("nav.clientLogin")}
-                      </Link>
-                      <Link
-                        href={siteConfig.urls.contact}
+                      </a>
+                      <button
+                        onClick={() => scrollToSection("contact")}
                         className="flex h-[50px] items-center justify-center border-[3px] border-black bg-[#E3488B] text-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
                       >
                         {t("nav.bookCall")}
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </SheetContent>
@@ -113,15 +140,24 @@ export function Header() {
                 </div>
               </Link>
               <nav className="flex items-center gap-6">
-                <Link href="#programs" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                <button 
+                  onClick={() => scrollToSection("programs")} 
+                  className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors"
+                >
                   {t("nav.programs")}
-                </Link>
-                <Link href="#method" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                </button>
+                <button 
+                  onClick={() => scrollToSection("method")} 
+                  className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors"
+                >
                   {t("nav.method")}
-                </Link>
-                <Link href="#contact" className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors">
+                </button>
+                <button 
+                  onClick={() => scrollToSection("contact")} 
+                  className="text-xs font-black uppercase tracking-[0.15em] text-black hover:text-[#E3488B] transition-colors"
+                >
                   {t("nav.contact")}
-                </Link>
+                </button>
               </nav>
             </div>
 
@@ -141,18 +177,20 @@ export function Header() {
             {/* DERECHA: Switcher + Botones */}
             <div className="flex items-center justify-end gap-3">
               <LanguageSwitcher />
-              <Link
-                href={siteConfig.urls.contact}
+              <a
+                href={LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
               >
                 {t("nav.clientLogin")}
-              </Link>
-              <Link
-                href={siteConfig.urls.contact}
+              </a>
+              <button
+                onClick={() => scrollToSection("contact")}
                 className="inline-flex h-[50px] items-center justify-center border-[3px] border-black bg-[#E3488B] text-white px-6 text-[11px] font-black uppercase tracking-widest shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
               >
                 {t("nav.bookCall")}
-              </Link>
+              </button>
             </div>
           </div>
         </div>
