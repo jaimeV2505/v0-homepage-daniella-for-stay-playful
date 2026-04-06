@@ -284,19 +284,28 @@ export const translations = {
       letsTalk: "Let's talk",
       faq: {
         q1: "Who is this for?",
-        a1_intro: "Stay Playful is for you if you:",
-        a1_items: ["Have an active life and/or want more alternatives to activity", "Are a beginner in the subject — want nutrition counseling or are already quite well-informed but still feel out of balance around diet/food", "Are stuck in \"I should\" thinking", "Are periodically motivated, but without a sustainable strategy right now"],
+        a1_intro: "Stay playful is for you if you:",
+        a1_items: [
+          "Have an active life and/or want more alternatives to activity.",
+          "Are a beginner in the subject - want nutrition coaching or are already quite well-informed but still feel out of balance around diet/food.",
+          "Are stuck in “I should” thinking.",
+          "Are periodically motivated, but without a sustainable strategy at the moment."
+        ],
         a1_also: "I would also say it's for:",
-        a1_alsoItems: ["The conscious and reflective", "High achievers or self-critical people", "Those open to personal development"],
+        a1_alsoItems: [
+          "conscious and reflective individuals",
+          "high-achievers or self-critical people",
+          "those open to personal development"
+        ],
         a1_footer: "But I could be wrong?",
-        q2: "How will we work together?",
-        a2_p1: "Depending on the \"issue\", it will generally look like this:",
-        a2_p2: "After setting a goal, you will get a login to an external platform where you register your progress. We look at the data together and discuss it weekly.",
-        a2_p3: "I also believe in close contact, so during the week I will be available as support and for questions.",
+        q2: "How we work together towards your goal",
+        a2_p1: "Depending on the focus, it will generally look like this:",
+        a2_p2: "After setting a goal, you will receive a login to an external platform where you register your nutrition. Activity and other prioritized focus areas will be logged in a text document. We look at the data together and discuss it weekly.",
+        a2_p3: "I also believe in close contact, so during the week I will be available as support and for any questions.",
         q3: "Will I be able to eat ice cream?",
-        a3_p1: "Yes — the goal is not to create more control or fear around food, but more freedom, calm and sustainable choices in everyday life.",
-        a3_p2: "Licensed Nutrition Counselor: from SAFE/the Academy",
-        a3_p3: "When lecturing on self-harm and eating disorders to companies/larger groups, facts from SHEDO.se are used.",
+        a3_p1: "I would say so..",
+        a3_p2: "But something else important, My license: Nutrition Counselor: from SAFE/the Academy, https://theacademy.se/",
+        a3_p3: "Support for diet-related issues (/self-harm) and facts for lectures to companies/larger groups are used from http://SHEDO.se"
       },
     },
     contact: {
