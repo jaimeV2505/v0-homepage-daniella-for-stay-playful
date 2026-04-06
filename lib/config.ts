@@ -113,19 +113,28 @@ export const translations = {
       letsTalk: "Låt oss prata",
       faq: {
         q1: "Vem är det här till för?",
-        a1_intro: "Stay Playful är till för dig som:",
-        a1_items: ["Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet", "Nybörjare inom ämnet — vill ha kostrådgivning eller är redan rätt så välinformerad men känner dig fortfarande i obalans kring kost/mat", "Fast i \"jag borde\"-tänk", "Periodvis motiverad, men utan en hållbar strategi i nuläget"],
+        a1_intro: "Stay playful är till för dig som:",
+        a1_items: [
+          "Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet.",
+          "Nybörjare inom ämnet - vill ha kostrådgivning eller är redan rätt så välinformerad men känner dig fortfarande i obalans kring kost/mat.",
+          "Fast i “jag borde”-tänk.",
+          "Periodvis motiverade, men inte hållbar strategi i nuläget."
+        ],
         a1_also: "Jag skulle också säga att det är för:",
-        a1_alsoItems: ["Medvetna och reflekterande", "Högpresterande eller självkritiska", "Öppna för personlig utveckling"],
+        a1_alsoItems: [
+          "medvetna och reflekterande",
+          "högpresterande eller självkritiska",
+          "öppna för personlig utveckling"
+        ],
         a1_footer: "Men jag kan ha fel?",
-        q2: "Hur kommer vi att jobba tillsammans?",
-        a2_p1: "Beroende på \"problematiken\" så kommer det generellt att se ut på följande sätt:",
-        a2_p2: "Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din utveckling. Datan tittar vi på tillsammans och diskuterar, veckovis.",
+        q2: "Så arbetar vi tillsammans mot ditt mål",
+        a2_p1: "Beroende på fokuset så kommer det generellt att se ut på följande sätt:",
+        a2_p2: "Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din kost. Aktiviteten och de andra prioriterade fokusområden kommer vi att logga i ett text-dokument. Datan tittar vi på tillsammans och diskuterar, veckovis.",
         a2_p3: "Jag tror även på nära kontakt så under veckan kommer jag finnas som stöd och tillgänglig vid frågor.",
         q3: "Kommer man att kunna äta glass?",
-        a3_p1: "Ja — målet är inte att skapa mer kontroll eller rädsla kring mat, utan mer frihet, lugn och hållbara val i vardagen.",
-        a3_p2: "Lic. Kostrådgivare: från SAFE/the Academy",
-        a3_p3: "Vid föreläsning om självskadebeteende och ätstörning till företag/större grupper används fakta från SHEDO.se",
+        a3_p1: "Det skulle jag säga..",
+        a3_p2: "Men något annat viktigt, Min licens: Kostrådgivare: från SAFE/the Academy, https://theacademy.se/",
+        a3_p3: "Stöttning vid kostrelaterad problematik (/självskadebeteende) och fakta för föreläsning till företag/större grupper används från http://SHEDO.se"
       },
     },
     contact: {
