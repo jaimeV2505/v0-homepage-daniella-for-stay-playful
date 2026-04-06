@@ -74,8 +74,8 @@ export const translations = {
           subtitle: "Meet the founder",
 
           p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
-          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid.",
-          p3: "Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!"
+          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid. Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!",
+
 
         },
         "02": {
@@ -83,16 +83,16 @@ export const translations = {
           subtitle: "Stay Playful driver",
 
           p1: "och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
-          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra.",
-          p3: "Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag."
+          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra. Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag.",
+
 
         },
         "03": {
           eyebrow: "Strategin och målet",
           subtitle: "Lekfull syn på välmående.",
-          p1: "Stay playful erbjuder stöd med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning.",
-          p2: "Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi.",
-          p3: "Stay Playful handlar inte om att bli \"bättre på hälsan\". Det handlar om att ha kul med de bästa förutsättningarna.",
+          p1: "Traditionell kostrådgivning och personliga tränare förespråkar gym och kostscheman men adresserar i mindre utsträckning näringen, relationen till mat och beteendemönster kring “av och på”.",
+          p2: "Stay playful erbjuder ett skräddarsytt stöd och vägledning inom kostrådgivning, med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning. Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi i livet för att du ska vilja fortsätta framåt. Vi utgår från övertygelsen att hälsa och välmående ska kännas lekfullt, inspirerande och hållbart. Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.",
+
         },
       },
     },
@@ -238,24 +238,23 @@ export const translations = {
           subtitle: "Meet the founder",
 
           p1: "It began with a recovery from an eating disorder and a powerful drive (a total hyper-fixation) to immerse myself in nutrition and psychology. From nutrition coaching certifications and bikini fitness competitions, to years of lecturing on eating disorders and self-harm. To involvement in advisory boards discussing social issues in the field.",
-          p2: "Until I just said: Blegh! What is everyone out there doing?! I see people doing “everything right” – training, eating according to plan, having the knowledge – yet still not feeling good over time.",
-          p3: "What if the problem isn’t a lack of discipline, but that we spend too much time on something we don’t even like? That insight changed everything!"
+          p2: "Until I just said: Blegh! What is everyone out there doing?! I see people doing “everything right” – training, eating according to plan, having the knowledge – yet still not feeling good over time.What if the problem isn’t a lack of discipline, but that we spend too much time on something we don’t even like? That insight changed everything!",
 
         },
         "02": {
           eyebrow: "The Vision",
           subtitle: "Stay Playful drives",
           p1: "and strives for a change where health is no longer a project on the side of life, but an integrated part of how we live and feel.",
-          p2: "We will redefine how people view exercise and nutrition: from something you postpone, struggle with, or 'need to deal with', to something that feels accessible, joyful, and simply feels good.",
-          p3: "By combining personalized nutrition coaching with a broader lifestyle perspective, we ensure to build a life where movement, nutrition, and well-being interact with personal interests, values, and everyday life."
+          p2: "We will redefine how people view exercise and nutrition: from something you postpone, struggle with, or 'need to deal with', to something that feels accessible, joyful, and simply feels good. By combining personalized nutrition coaching with a broader lifestyle perspective, we ensure to build a life where movement, nutrition, and well-being interact with personal interests, values, and everyday life.",
 
         },
         "03": {
           eyebrow: "Strategy and Goal",
           subtitle: "A playful view on wellbeing.",
-          p1: "Stay Playful offers support with a conscious focus on the holistic perspective of your life rather than just calorie-counting and exercise.",
-          p2: "Through coaching, experiences and a playful approach, we help you find what gives you energy.",
-          p3: "Stay Playful is not about becoming \"better at health\". It's about having fun with the best possible conditions.",
+
+          p1: "Traditional nutrition coaching and personal trainers advocate for gyms and meal plans but address to a lesser extent nutrition, the relationship with food, and behavioral patterns around “on and off”.",
+          p2: "Stay Playful offers tailored support and guidance in nutrition coaching, with a conscious focus on the holistic perspective of your life rather than just calorie-focus and training. Through coaching, experiences, and a playful approach, we help you find what gives you energy in life so that you want to keep moving forward. We base this on the conviction that health and well-being should feel playful, inspiring, and sustainable. Stay Playful is not about becoming “better at health”. It's about having fun with the best possible conditions."
+
         },
       },
     },

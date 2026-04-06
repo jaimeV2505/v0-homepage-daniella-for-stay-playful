@@ -83,7 +83,6 @@ export function Method() {
                       <p>{t(`method.cards.${id}.p1`)}</p>
                       <p>{t(`method.cards.${id}.p2`)}</p>
                       <p className="font-black text-black text-2xl">
-                        {t(`method.cards.${id}.p3`)}
                       </p>
                     </div>
                   </div>
