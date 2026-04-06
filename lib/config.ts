@@ -60,7 +60,7 @@ export const translations = {
         specialaren: {
           title: "SPECIALAREN",
           circleTitle: "Specia-\nlaren",
-          description: "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn eller om du har tävlat inom fitness och behöver stöd efter långvarig diet.",
+          description: "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn (med/utan koppling till ev diagnos och kost-problematik).Om du har tävlat inom fitness (eller är nära en tävling) och behöver stöd efter långvarig diet.",
         },
       },
     },
@@ -219,12 +219,12 @@ export const translations = {
         program8: {
           title: "8-WEEK PROGRAM",
           circleTitle: "8-w\nprog",
-          description: "To give yourself the best conditions for both results and your new lifestyle.",
+          description: "To give yourself the best possible conditions for both results and your new lifestyle.",
         },
         specialaren: {
           title: "THE SPECIAL ONE",
           circleTitle: "The\nSpecial",
-          description: "Ask about The Special One if: You are a relative/parent who needs support on nutrition for your children or if you have competed in fitness and need support after a long-term diet.",
+          description: "Ask about The Special One if: You are a relative/parent who needs nutrition support for your children (with or without connection to potential diagnoses or dietary issues).If you have competed in fitness (or are close to a competition) and need support after a long-term diet.",
         },
       },
     },
