@@ -26,12 +26,12 @@ export const translations = {
     topBar: "Där din vision blir något oförglömligt",
     getInTouch: "Få kontakt",
     hero: {
-      title: "DITT LIV, DIN LEKPLATS",
+      title: "YOUR LIFE, YOUR PLAYGROUND",
     },
     brand: {
       eyebrow: "",
       heading: " 🚨VARNING: STAY PLAYFUL KAN ORSAKA FÖLJANDE BIVERKNINGAR:",
-      body: "Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till kost, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.",
+      body: "Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till mat, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.",
       cardTag: "Stay Playful",
       cardBody: "Bra kost och massa rörelse — inte längre är ett projekt vid sidan av livet.",
       bottomBar: "STAY PLAYFUL",
@@ -70,18 +70,22 @@ export const translations = {
       subheading: "Vem är jag, vad är strategin och vad är målet?",
       cards: {
         "01": {
-          eyebrow: "Meet the Founder",
-          subtitle: "Hej mitt namn är Daniella.",
-          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende.",
-          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör \"allt rätt\" men ändå inte mår bra över tid.",
-          p3: "Tänk om problemet inte är brist på disciplin, utan att vi lägger för mucho tid på något vi inte ens tycker om? Den insikten förändrade allt!",
+          eyebrow: "Vem är jag",
+          subtitle: "Meet the founder",
+
+          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
+          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid.",
+          p3: "Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!"
+
         },
         "02": {
           eyebrow: "Visionen",
-          subtitle: "Ett nytt sätt att se på balans.",
+          subtitle: "1",
+
           p1: "Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
-          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man kämpar med, till något som känns tillgängligt, lustfyllt och något som känns bra.",
-          p3: "Genom att kombinera individanpassad kostrådgivning ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med vardagen.",
+          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra.",
+          p3: "Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag."
+
         },
         "03": {
           eyebrow: "Strategin och målet",
@@ -191,7 +195,7 @@ export const translations = {
     brand: {
       eyebrow: "",
       heading: "🚨WARNING: STAY PLAYFUL MAY CAUSE THE FOLLOWING SIDE EFFECTS:",
-      body: "That you suddenly think less about food and other wonderful parts of life start taking up more space. With the right nutrition for you, we ensure you have the best conditions to live life to the fullest. With less unhealthy fixation on diet, we strengthen other parts of life, encourage curiosity and create space for joy, creativity and personal engagement.",
+      body: "That you suddenly think less about food and that other wonderful parts of life begin to take more space. With the right nutrition for you, we ensure to give you the best conditions to be able to live to the full. With less unhealthy fixation on food, we strengthen other parts of life, encourage curiosity and create space for joy, creativity and personal engagement.",
       cardTag: "Stay Playful",
       cardBody: "Good nutrition and plenty of movement — no longer a side project in life.",
       bottomBar: "STAY PLAYFUL",
@@ -230,15 +234,17 @@ export const translations = {
       subheading: "Who am I, what is the strategy and what is the goal?",
       cards: {
         "01": {
-          eyebrow: "Meet the Founder",
-          subtitle: "Hi, my name is Daniella.",
-          p1: "It started with recovering from an eating disorder and a strong drive to deepen my knowledge in nutrition and psychology. To a nutrition counseling certificate and some bikini fitness competitions. To several years of lecturing on eating disorders and self-harm.",
-          p2: "Until I said enough — what are people out there doing! I see people doing \"everything right\" but still not feeling well over time.",
-          p3: "What if the problem isn't lack of discipline, but that we spend too much time on something we don't even enjoy? That insight changed everything!",
+          eyebrow: "Who Am I JAIME",
+          subtitle: "Meet the founder",
+
+          p1: "It began with a recovery from an eating disorder and a powerful drive (a total hyper-fixation) to immerse myself in nutrition and psychology. From nutrition coaching certifications and bikini fitness competitions, to years of lecturing on eating disorders and self-harm. To involvement in advisory boards discussing social issues in the field.",
+          p2: "Until I just said: Blegh! What is everyone out there doing?! I see people doing “everything right” – training, eating according to plan, having the knowledge – yet still not feeling good over time.",
+          p3: "What if the problem isn’t a lack of discipline, but that we spend too much time on something we don’t even like? That insight changed everything!"
+
         },
         "02": {
           eyebrow: "The Vision",
-          subtitle: "A new way to look at balance.",
+          subtitle: "",
           p1: "Stay Playful drives and strives for a change where health is no longer a side project in life, but an integrated part of how we live and feel.",
           p2: "We will redefine how people look at exercise and nutrition: from something you struggle with, to something that feels accessible, enjoyable and good.",
           p3: "By combining personalized nutrition counseling, we ensure building a life where movement, nutrition and wellbeing work together with everyday life.",
