@@ -45,7 +45,7 @@ export const translations = {
         coaching: {
           title: "1:1 COACHING",
           circleTitle: "1:1\nCoaching",
-          description: "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
+          description: "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig",
         },
         program6: {
           title: "6-VECKORS PROGRAM",
@@ -209,7 +209,7 @@ export const translations = {
         coaching: {
           title: "1:1 COACHING",
           circleTitle: "1:1\nCoaching",
-          description: "The first session is a free consultation of approx. 20 min, where we go through what help you need and what I can do to help you.",
+          description: "The first session is a free consultation of approximately 20 minutes, where we go through what help you need and what I can do to assist you.",
         },
         program6: {
           title: "6-WEEK PROGRAM",
