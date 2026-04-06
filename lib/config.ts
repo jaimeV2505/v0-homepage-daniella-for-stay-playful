@@ -66,13 +66,12 @@ export const translations = {
     },
     method: {
       eyebrow: "FILOSOFI & METOD",
-      heading: "Tre grundpelare som gör Stay Playful unik.",
-      subheading: "Vem är jag, vad är strategin och vad är målet?",
+      heading: "Tre grundpelare som gör Stay Playful unik:",
+      subheading: "Sluta aldrig leka genom livet och för att orka göra det så behöver du rätt kost på vägen! Vem är jag? Visionen. Strategin och målet.",
       cards: {
         "01": {
           eyebrow: "Vem är jag",
           subtitle: "Meet the founder",
-
           p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
           p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid. Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!",
 
@@ -239,8 +238,8 @@ export const translations = {
     },
     method: {
       eyebrow: "PHILOSOPHY & METHOD",
-      heading: "Three pillars that make Stay Playful unique.",
-      subheading: "Who am I, what is the strategy and what is the goal?",
+      heading: "Three pillars that make Stay Playful unique:",
+      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way!Who am I? The vision. The strategy and the goal.",
       cards: {
         "01": {
           eyebrow: "Who Am I",
