@@ -106,7 +106,7 @@ export const translations = {
       heading: "Booring men svar på blandade",
       headingAccent: "frågor",
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
-      topRibbon: ["KLARHET UTAN PRESS", "PERSONLIGT STÖD", "ETT MER LEKFULLT VÄLMÅENDE", "KLARHET UTAN PRESS", "STÖD SOM PASSAR DITT LIV", "BALANS ISTÄLLET FÖR KONTROLL"],
+      topRibbon: ["NIFIKENHET, LÅNGSIKTIGHEN, LÅT OSS KOMA IGÅNG"],
       stillQuestions: "Fortfarande funderingar?",
       stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
@@ -211,7 +211,7 @@ export const translations = {
     programs: {
       eyebrow: "CHOOSE YOUR PATH",
       heading: "Individual coaching adapted to your starting point.",
-      headingAccent: "See the foundation that supports your life",
+      headingAccent: "NIFTY, LONG TERM, LET'S GET STARTED",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
@@ -277,7 +277,7 @@ export const translations = {
       heading: "Boring but answers to mixed",
       headingAccent: "questions",
       subheading: "A softer version of FAQs — so you can feel calm, safe and ready to take the next step.",
-      topRibbon: ["CLARITY WITHOUT PRESSURE", "PERSONAL SUPPORT", "A MORE PLAYFUL WELLBEING", "CLARITY WITHOUT PRESSURE", "SUPPORT THAT FITS YOUR LIFE", "BALANCE INSTEAD OF CONTROL"],
+      topRibbon: ["NIFTY, LONG TERM, LET'S GET STARTED"],
       stillQuestions: "Still have questions?",
       stillQuestionsBody: "If you would rather talk through the questions, that's fine too.",
       letsTalk: "Let's talk",
