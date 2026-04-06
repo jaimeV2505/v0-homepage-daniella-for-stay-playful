@@ -44,7 +44,7 @@ export function BrandStatement() {
                   alt="Editorial"
                   fill
                   sizes="(max-width: 1024px) 100vw, 51vw"
-                  className="object-cover object-center"
+                  className="object-cover object-[center_20%]"
                 />
               </div>
 
