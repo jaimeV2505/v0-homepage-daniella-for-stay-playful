@@ -2,17 +2,12 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
-import { useRef } from "react"
 import { useLanguageSafe } from "@/lib/use-language"
 
 export function Testimonials() {
   const { t } = useLanguageSafe()
-  const containerRef = useRef(null)
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
+  const { scrollYProgress } = useScroll()
 
   // Movimientos sutiles para dar profundidad sin desordenar
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"])
@@ -20,7 +15,6 @@ export function Testimonials() {
 
   return (
     <section
-      ref={containerRef}
       id="testimonials"
       className="relative overflow-hidden bg-[#FFFDF9] w-full"
     >
