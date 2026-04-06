@@ -26,26 +26,26 @@ export const translations = {
     topBar: "Där din vision blir något oförglömligt",
     getInTouch: "Få kontakt",
     hero: {
-      title: "DITT LIV, DIN LEKPLATS",
+      title: "YOUR LIFE, YOUR PLAYGROUND",
     },
     brand: {
       eyebrow: "",
       heading: " 🚨VARNING: STAY PLAYFUL KAN ORSAKA FÖLJANDE BIVERKNINGAR:",
-      body: "Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till kost, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.",
+      body: "Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till mat, stärker vi andra delar av livet, uppmuntrar nyfikenhet och skapar utrymme för glädje, kreativitet och personligt engagemang.",
       cardTag: "Stay Playful",
       cardBody: "Bra kost och massa rörelse — inte längre är ett projekt vid sidan av livet.",
       bottomBar: "STAY PLAYFUL",
     },
     programs: {
       eyebrow: "VÄLJ DIN VÄG",
-      heading: "Din väg till",
-      headingAccent: "välmående",
+      heading: "Individuell rådgivning anpassad efter din utgångspunkt.",
+      headingAccent: "Se grundvalen som stödjer ditt liv",
       bookCta: "Läs mer & Boka Konsultation",
       items: {
         coaching: {
           title: "1:1 COACHING",
           circleTitle: "1:1\nCoaching",
-          description: "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig.",
+          description: "Första tillfället är en kostnadsfri konsultation på ca 20 min, där vi går igenom vilken hjälp du behöver och vad jag kan göra för att hjälpa dig",
         },
         program6: {
           title: "6-VECKORS PROGRAM",
@@ -60,40 +60,43 @@ export const translations = {
         specialaren: {
           title: "SPECIALAREN",
           circleTitle: "Specia-\nlaren",
-          description: "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn eller om du har tävlat inom fitness och behöver stöd efter långvarig diet.",
+          description: "Fråga om Specialaren om: Du är anhörig/förälder som behöver stöd om kost till dina barn (med/utan koppling till ev diagnos och kost-problematik).Om du har tävlat inom fitness (eller är nära en tävling) och behöver stöd efter långvarig diet.",
         },
       },
     },
     method: {
       eyebrow: "FILOSOFI & METOD",
-      heading: "Tre grundpelare som gör Stay Playful unik.",
-      subheading: "Vem är jag, vad är strategin och vad är målet?",
+      heading: "Tre grundpelare som gör Stay Playful unik:",
+      subheading: "Sluta aldrig leka genom livet och för att orka göra det så behöver du rätt kost på vägen! Vem är jag? Visionen. Strategin och målet.",
       cards: {
         "01": {
-          eyebrow: "Meet the Founder",
-          subtitle: "Hej mitt namn är Daniella.",
-          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende.",
-          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör \"allt rätt\" men ändå inte mår bra över tid.",
-          p3: "Tänk om problemet inte är brist på disciplin, utan att vi lägger för mucho tid på något vi inte ens tycker om? Den insikten förändrade allt!",
+          eyebrow: "Vem är jag",
+          subtitle: "Meet the founder",
+          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
+          p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid. Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!",
+
+
         },
         "02": {
           eyebrow: "Visionen",
-          subtitle: "Ett nytt sätt att se på balans.",
-          p1: "Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
-          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man kämpar med, till något som känns tillgängligt, lustfyllt och något som känns bra.",
-          p3: "Genom att kombinera individanpassad kostrådgivning ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med vardagen.",
+          subtitle: "Stay Playful driver",
+
+          p1: "och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
+          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra. Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag.",
+
+
         },
         "03": {
           eyebrow: "Strategin och målet",
-          subtitle: "Lekfull syn på välmående.",
-          p1: "Stay playful erbjuder stöd med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning.",
-          p2: "Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi.",
-          p3: "Stay Playful handlar inte om att bli \"bättre på hälsan\". Det handlar om att ha kul med de bästa förutsättningarna.",
+          subtitle: "Strategin och målet",
+          p1: "Traditionell kostrådgivning och personliga tränare förespråkar gym och kostscheman men adresserar i mindre utsträckning näringen, relationen till mat och beteendemönster kring “av och på”.",
+          p2: "Stay playful erbjuder ett skräddarsytt stöd och vägledning inom kostrådgivning, med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning. Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi i livet för att du ska vilja fortsätta framåt. Vi utgår från övertygelsen att hälsa och välmående ska kännas lekfullt, inspirerande och hållbart. Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.",
+
         },
       },
     },
     testimonials: {
-      ticker: "Stöd som passar ditt liv ✦ Lekfullt ✦ i linje med dina värderingar ✦ STAY PLAYFUL ✦ MOTIVERANDE ✦ ENERGIGIVANDE",
+      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
       heading: "Your",
       headingAccent: "playground!",
       comingSoon: "Mer info kommer snart!",
@@ -105,23 +108,32 @@ export const translations = {
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
       topRibbon: ["KLARHET UTAN PRESS", "PERSONLIGT STÖD", "ETT MER LEKFULLT VÄLMÅENDE", "KLARHET UTAN PRESS", "STÖD SOM PASSAR DITT LIV", "BALANS ISTÄLLET FÖR KONTROLL"],
       stillQuestions: "Fortfarande funderingar?",
-      stillQuestionsBody: "Om du hellre vill prata igenom det än att läsa fler frågor, så går det lika bra.",
+      stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
       faq: {
         q1: "Vem är det här till för?",
-        a1_intro: "Stay Playful är till för dig som:",
-        a1_items: ["Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet", "Nybörjare inom ämnet — vill ha kostrådgivning eller är redan rätt så välinformerad men känner dig fortfarande i obalans kring kost/mat", "Fast i \"jag borde\"-tänk", "Periodvis motiverad, men utan en hållbar strategi i nuläget"],
+        a1_intro: "Stay playful är till för dig som:",
+        a1_items: [
+          "Har ett aktivt liv och/eller vill ha fler alternativ till aktivitet.",
+          "Nybörjare inom ämnet - vill ha kostrådgivning eller är redan rätt så välinformerad men känner dig fortfarande i obalans kring kost/mat.",
+          "Fast i “jag borde”-tänk.",
+          "Periodvis motiverade, men inte hållbar strategi i nuläget."
+        ],
         a1_also: "Jag skulle också säga att det är för:",
-        a1_alsoItems: ["Medvetna och reflekterande", "Högpresterande eller självkritiska", "Öppna för personlig utveckling"],
+        a1_alsoItems: [
+          "medvetna och reflekterande",
+          "högpresterande eller självkritiska",
+          "öppna för personlig utveckling"
+        ],
         a1_footer: "Men jag kan ha fel?",
-        q2: "Hur kommer vi att jobba tillsammans?",
-        a2_p1: "Beroende på \"problematiken\" så kommer det generellt att se ut på följande sätt:",
-        a2_p2: "Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din utveckling. Datan tittar vi på tillsammans och diskuterar, veckovis.",
+        q2: "Så arbetar vi tillsammans mot ditt mål",
+        a2_p1: "Beroende på fokuset så kommer det generellt att se ut på följande sätt:",
+        a2_p2: "Efter ett uppsatt mål så kommer du att få ett inlogg till en extern plattform där du registrerar din kost. Aktiviteten och de andra prioriterade fokusområden kommer vi att logga i ett text-dokument. Datan tittar vi på tillsammans och diskuterar, veckovis.",
         a2_p3: "Jag tror även på nära kontakt så under veckan kommer jag finnas som stöd och tillgänglig vid frågor.",
         q3: "Kommer man att kunna äta glass?",
-        a3_p1: "Ja — målet är inte att skapa mer kontroll eller rädsla kring mat, utan mer frihet, lugn och hållbara val i vardagen.",
-        a3_p2: "Lic. Kostrådgivare: från SAFE/the Academy",
-        a3_p3: "Vid föreläsning om självskadebeteende och ätstörning till företag/större grupper används fakta från SHEDO.se",
+        a3_p1: "Det skulle jag säga..",
+        a3_p2: "Men något annat viktigt, Min licens: Kostrådgivare: från SAFE/the Academy, https://theacademy.se/",
+        a3_p3: "Stöttning vid kostrelaterad problematik (/självskadebeteende) och fakta för föreläsning till företag/större grupper används från http://SHEDO.se"
       },
     },
     contact: {
@@ -129,9 +141,9 @@ export const translations = {
       heading: "Är du redo att skapa din egen Playground?",
       body1: "Nyfiken på vad det här kan leda till? Eller vill du bara känna efter om det här är rätt plats för dig? Skicka ett meddelande så börjar vi där.",
       body2: "Stay Playful handlar om stöd som känns tryggt, genomtänkt, hållbart och mänskligt — inte stelt, pressat eller överväldigande.",
-      responseTitle: "du får svar inom 48 timmar",
-      responseSubtitle: "om jag inte är mitt i en lek",
-      basedIn: "Baserad i Stockholm",
+      responseTitle: "Du får troligtvis svar",
+      responseSubtitle: "inom 48 timmar",
+      basedIn: "Låt oss börja",
       formTitle: "Låt oss börja här",
       formSubheading: "Berätta vad som fick dig att höra av dig",
       labelName: "Ditt namn*",
@@ -191,21 +203,21 @@ export const translations = {
     brand: {
       eyebrow: "",
       heading: "🚨WARNING: STAY PLAYFUL MAY CAUSE THE FOLLOWING SIDE EFFECTS:",
-      body: "That you suddenly think less about food and other wonderful parts of life start taking up more space. With the right nutrition for you, we ensure you have the best conditions to live life to the fullest. With less unhealthy fixation on diet, we strengthen other parts of life, encourage curiosity and create space for joy, creativity and personal engagement.",
+      body: "That you suddenly think less about food and that other wonderful parts of life begin to take more space. With the right nutrition for you, we ensure to give you the best conditions to be able to live to the full. With less unhealthy fixation on food, we strengthen other parts of life, encourage curiosity and create space for joy, creativity and personal engagement.",
       cardTag: "Stay Playful",
       cardBody: "Good nutrition and plenty of movement — no longer a side project in life.",
       bottomBar: "STAY PLAYFUL",
     },
     programs: {
-      eyebrow: "SELECT YOUR PATH",
-      heading: "Your path to",
-      headingAccent: "wellbeing",
+      eyebrow: "CHOOSE YOUR PATH",
+      heading: "Individual coaching adapted to your starting point.",
+      headingAccent: "See the foundation that supports your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
           title: "1:1 COACHING",
           circleTitle: "1:1\nCoaching",
-          description: "The first session is a free consultation of approx. 20 min, where we go through what help you need and what I can do to help you.",
+          description: "The first session is a free consultation of approximately 20 minutes, where we go through what help you need and what I can do to assist you.",
         },
         program6: {
           title: "6-WEEK PROGRAM",
@@ -215,45 +227,47 @@ export const translations = {
         program8: {
           title: "8-WEEK PROGRAM",
           circleTitle: "8-w\nprog",
-          description: "To give yourself the best conditions for both results and your new lifestyle.",
+          description: "To give yourself the best possible conditions for both results and your new lifestyle.",
         },
         specialaren: {
           title: "THE SPECIAL ONE",
           circleTitle: "The\nSpecial",
-          description: "Ask about The Special One if: You are a relative/parent who needs support on nutrition for your children or if you have competed in fitness and need support after a long-term diet.",
+          description: "Ask about The Special One if: You are a relative/parent who needs nutrition support for your children (with or without connection to potential diagnoses or dietary issues).If you have competed in fitness (or are close to a competition) and need support after a long-term diet.",
         },
       },
     },
     method: {
       eyebrow: "PHILOSOPHY & METHOD",
-      heading: "Three pillars that make Stay Playful unique.",
-      subheading: "Who am I, what is the strategy and what is the goal?",
+      heading: "Three pillars that make Stay Playful unique:",
+      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way!Who am I? The vision. The strategy and the goal.",
       cards: {
         "01": {
-          eyebrow: "Meet the Founder",
-          subtitle: "Hi, my name is Daniella.",
-          p1: "It started with recovering from an eating disorder and a strong drive to deepen my knowledge in nutrition and psychology. To a nutrition counseling certificate and some bikini fitness competitions. To several years of lecturing on eating disorders and self-harm.",
-          p2: "Until I said enough — what are people out there doing! I see people doing \"everything right\" but still not feeling well over time.",
-          p3: "What if the problem isn't lack of discipline, but that we spend too much time on something we don't even enjoy? That insight changed everything!",
+          eyebrow: "Who Am I",
+          subtitle: "Meet the founder",
+
+          p1: "It began with a recovery from an eating disorder and a powerful drive (a total hyper-fixation) to immerse myself in nutrition and psychology. From nutrition coaching certifications and bikini fitness competitions, to years of lecturing on eating disorders and self-harm. To involvement in advisory boards discussing social issues in the field.",
+          p2: "Until I just said: Blegh! What is everyone out there doing?! I see people doing “everything right” – training, eating according to plan, having the knowledge – yet still not feeling good over time.What if the problem isn’t a lack of discipline, but that we spend too much time on something we don’t even like? That insight changed everything!",
+
         },
         "02": {
           eyebrow: "The Vision",
-          subtitle: "A new way to look at balance.",
-          p1: "Stay Playful drives and strives for a change where health is no longer a side project in life, but an integrated part of how we live and feel.",
-          p2: "We will redefine how people look at exercise and nutrition: from something you struggle with, to something that feels accessible, enjoyable and good.",
-          p3: "By combining personalized nutrition counseling, we ensure building a life where movement, nutrition and wellbeing work together with everyday life.",
+          subtitle: "Stay Playful drives",
+          p1: "and strives for a change where health is no longer a project on the side of life, but an integrated part of how we live and feel.",
+          p2: "We will redefine how people view exercise and nutrition: from something you postpone, struggle with, or 'need to deal with', to something that feels accessible, joyful, and simply feels good. By combining personalized nutrition coaching with a broader lifestyle perspective, we ensure to build a life where movement, nutrition, and well-being interact with personal interests, values, and everyday life.",
+
         },
         "03": {
           eyebrow: "Strategy and Goal",
-          subtitle: "A playful view on wellbeing.",
-          p1: "Stay Playful offers support with a conscious focus on the holistic perspective of your life rather than just calorie-counting and exercise.",
-          p2: "Through coaching, experiences and a playful approach, we help you find what gives you energy.",
-          p3: "Stay Playful is not about becoming \"better at health\". It's about having fun with the best possible conditions.",
+          subtitle: "The strategy and the goal",
+
+          p1: "Traditional nutrition coaching and personal trainers advocate for gyms and meal plans but address to a lesser extent nutrition, the relationship with food, and behavioral patterns around “on and off”.",
+          p2: "Stay Playful offers tailored support and guidance in nutrition coaching, with a conscious focus on the holistic perspective of your life rather than just calorie-focus and training. Through coaching, experiences, and a playful approach, we help you find what gives you energy in life so that you want to keep moving forward. We base this on the conviction that health and well-being should feel playful, inspiring, and sustainable. Stay Playful is not about becoming “better at health”. It's about having fun with the best possible conditions."
+
         },
       },
     },
     testimonials: {
-      ticker: "Support that fits your life ✦ Playful ✦ aligned with your values ✦ STAY PLAYFUL ✦ MOTIVATING ✦ ENERGIZING",
+      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
       heading: "Your",
       headingAccent: "playground!",
       comingSoon: "More info coming soon!",
@@ -265,23 +279,32 @@ export const translations = {
       subheading: "A softer version of FAQs — so you can feel calm, safe and ready to take the next step.",
       topRibbon: ["CLARITY WITHOUT PRESSURE", "PERSONAL SUPPORT", "A MORE PLAYFUL WELLBEING", "CLARITY WITHOUT PRESSURE", "SUPPORT THAT FITS YOUR LIFE", "BALANCE INSTEAD OF CONTROL"],
       stillQuestions: "Still have questions?",
-      stillQuestionsBody: "If you'd rather talk it through than read more questions, that works just as well.",
+      stillQuestionsBody: "If you would rather talk through the questions, that's fine too.",
       letsTalk: "Let's talk",
       faq: {
         q1: "Who is this for?",
-        a1_intro: "Stay Playful is for you if you:",
-        a1_items: ["Have an active life and/or want more alternatives to activity", "Are a beginner in the subject — want nutrition counseling or are already quite well-informed but still feel out of balance around diet/food", "Are stuck in \"I should\" thinking", "Are periodically motivated, but without a sustainable strategy right now"],
+        a1_intro: "Stay playful is for you if you:",
+        a1_items: [
+          "Have an active life and/or want more alternatives to activity.",
+          "Are a beginner in the subject - want nutrition coaching or are already quite well-informed but still feel out of balance around diet/food.",
+          "Are stuck in “I should” thinking.",
+          "Are periodically motivated, but without a sustainable strategy at the moment."
+        ],
         a1_also: "I would also say it's for:",
-        a1_alsoItems: ["The conscious and reflective", "High achievers or self-critical people", "Those open to personal development"],
+        a1_alsoItems: [
+          "conscious and reflective individuals",
+          "high-achievers or self-critical people",
+          "those open to personal development"
+        ],
         a1_footer: "But I could be wrong?",
-        q2: "How will we work together?",
-        a2_p1: "Depending on the \"issue\", it will generally look like this:",
-        a2_p2: "After setting a goal, you will get a login to an external platform where you register your progress. We look at the data together and discuss it weekly.",
-        a2_p3: "I also believe in close contact, so during the week I will be available as support and for questions.",
+        q2: "How we work together towards your goal",
+        a2_p1: "Depending on the focus, it will generally look like this:",
+        a2_p2: "After setting a goal, you will receive a login to an external platform where you register your nutrition. Activity and other prioritized focus areas will be logged in a text document. We look at the data together and discuss it weekly.",
+        a2_p3: "I also believe in close contact, so during the week I will be available as support and for any questions.",
         q3: "Will I be able to eat ice cream?",
-        a3_p1: "Yes — the goal is not to create more control or fear around food, but more freedom, calm and sustainable choices in everyday life.",
-        a3_p2: "Licensed Nutrition Counselor: from SAFE/the Academy",
-        a3_p3: "When lecturing on self-harm and eating disorders to companies/larger groups, facts from SHEDO.se are used.",
+        a3_p1: "I would say so..",
+        a3_p2: "But something else important, My license: Nutrition Counselor: from SAFE/the Academy, https://theacademy.se/",
+        a3_p3: "Support for diet-related issues (/self-harm) and facts for lectures to companies/larger groups are used from http://SHEDO.se"
       },
     },
     contact: {
@@ -289,9 +312,9 @@ export const translations = {
       heading: "Are you ready to create your own Playground?",
       body1: "Curious about where this could lead? Or do you just want to feel if this is the right place for you? Send a message and we'll start there.",
       body2: "Stay Playful is about support that feels safe, thoughtful, sustainable and human — not rigid, pressured or overwhelming.",
-      responseTitle: "you'll get a reply within 48 hours",
-      responseSubtitle: "unless I'm in the middle of a game",
-      basedIn: "Based in Stockholm",
+      responseTitle: "You will probably receive a response",
+      responseSubtitle: "within 48 hours",
+      basedIn: "Lets Start",
       formTitle: "Let's start here",
       formSubheading: "Tell me what made you reach out",
       labelName: "Your name*",

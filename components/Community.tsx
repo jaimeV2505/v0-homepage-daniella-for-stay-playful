@@ -84,15 +84,11 @@ function SectionIntro() {
       transition={{ duration: 0.65, ease: "easeOut" }}
       className="mx-auto mb-14 max-w-4xl text-center"
     >
-      <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#FF008E]">
-        {t("community.eyebrow")}
-      </p>
+
       <h2 className="font-serif text-[2.9rem] leading-[0.96] tracking-[-0.05em] text-[#2B1A16] sm:text-[4rem] lg:text-[5rem]">
         {t("community.heading")} <span className="italic">{t("community.headingAccent")}</span>
       </h2>
-      <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#2B1A16]/68">
-        {t("community.subheading")}
-      </p>
+
     </motion.div>
   )
 }
