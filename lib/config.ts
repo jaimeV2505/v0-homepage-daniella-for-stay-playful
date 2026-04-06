@@ -38,8 +38,8 @@ export const translations = {
     },
     programs: {
       eyebrow: "VÄLJ DIN VÄG",
-      heading: "Din väg till",
-      headingAccent: "välmående",
+      heading: "Min rådgivning är individuell och kommer att anpassas efter din utgångspunkt.",
+      headingAccent: "Klicka för att se grundvalen som stödjer ditt liv",
       bookCta: "Läs mer & Boka Konsultation",
       items: {
         coaching: {
