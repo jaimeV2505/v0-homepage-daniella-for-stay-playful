@@ -57,15 +57,12 @@ export function Testimonials() {
 
               {/* Espaciador controlado entre Título e Info */}
               <div className="mt-16 lg:mt-24 space-y-8">
-                <div className="flex items-center gap-6">
-                  <div className="h-[2px] w-16 lg:w-32 bg-black" />
-                  <p className="font-serif text-3xl lg:text-5xl italic text-black/80 leading-tight">
-                    {t("testimonials.comingSoon")}
-                  </p>
-                </div>
-                {/* Línea decorativa extra para balancear el peso visual */}
-                <div className="h-[10px] w-[100px] bg-black ml-0 lg:ml-40" />
+                <p className="font-serif text-3xl lg:text-5xl italic text-black/80 leading-tight">
+                  {t("testimonials.comingSoon")}
+                </p>
               </div>
+
+
             </motion.div>
           </div>
 
@@ -97,17 +94,17 @@ export function Testimonials() {
           </div>
 
         </div>
-      </div>
+      </div >
 
       {/* 3. ESPACIO DE FONDO (WATERMARK) - PARA RELLENAR VACÍOS */}
-      <div className="absolute bottom-10 left-10 pointer-events-none z-0 select-none opacity-[0.03]">
+      < div className="absolute bottom-10 left-10 pointer-events-none z-0 select-none opacity-[0.03]" >
         <span className="font-serif text-[25vw] font-black uppercase leading-none">
-          STAY
+          STAY PLAYFUL
         </span>
-      </div>
+      </div >
 
       {/* Relleno decorativo inferior para asegurar el cierre de sección */}
-      <div className="h-20 lg:h-40 w-full" />
-    </section>
+      < div className="h-20 lg:h-40 w-full" />
+    </section >
   )
 }
