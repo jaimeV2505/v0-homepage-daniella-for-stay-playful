@@ -30,9 +30,6 @@ export function Method() {
         {/* Título Principal con texto de fondo */}
         <div className="relative">
           {/* Texto de fondo: Usamos 'metod' o 'method' según el idioma */}
-          <span className="absolute -top-12 -left-4 select-none font-black text-[14vw] leading-none text-black/[0.03] pointer-events-none uppercase italic">
-            {t("nav.method")}
-          </span>
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-4xl">
