@@ -79,7 +79,7 @@ export function ContactForm() {
 
       <div className="relative overflow-hidden">
         <motion.div style={{ y: bgY }} className="absolute inset-0" aria-hidden="true">
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/slite.jpg')" }} />
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/imagedaniella.png')" }} />
           <div className="absolute inset-0 bg-[#120B0A]/58" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,11,10,0.22),rgba(18,11,10,0.72))]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(255,0,142,0.14),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(255,171,255,0.14),transparent_28%),radial-gradient(circle_at_64%_82%,rgba(255,127,0,0.10),transparent_22%),radial-gradient(circle_at_34%_78%,rgba(0,226,255,0.10),transparent_24%)]" />
