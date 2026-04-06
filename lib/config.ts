@@ -38,8 +38,8 @@ export const translations = {
     },
     programs: {
       eyebrow: "VÄLJ DIN VÄG",
-      heading: "Min rådgivning är individuell och kommer att anpassas efter din utgångspunkt.",
-      headingAccent: "Klicka för att se grundvalen som stödjer ditt liv",
+      heading: "Individuell rådgivning anpassad efter din utgångspunkt.",
+      headingAccent: "Se grundvalen som stödjer ditt liv",
       bookCta: "Läs mer & Boka Konsultation",
       items: {
         coaching: {
@@ -201,9 +201,9 @@ export const translations = {
       bottomBar: "STAY PLAYFUL",
     },
     programs: {
-      eyebrow: "SELECT YOUR PATH",
-      heading: "Your path to",
-      headingAccent: "wellbeing",
+      eyebrow: "CHOOSE YOUR PATH",
+      heading: "Individual coaching adapted to your starting point.",
+      headingAccent: "See the foundation that supports your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
