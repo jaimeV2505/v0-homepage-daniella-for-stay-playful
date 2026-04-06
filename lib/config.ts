@@ -88,7 +88,7 @@ export const translations = {
         },
         "03": {
           eyebrow: "Strategin och målet",
-          subtitle: "Lekfull syn på välmående.",
+          subtitle: "Strategin och målet",
           p1: "Traditionell kostrådgivning och personliga tränare förespråkar gym och kostscheman men adresserar i mindre utsträckning näringen, relationen till mat och beteendemönster kring “av och på”.",
           p2: "Stay playful erbjuder ett skräddarsytt stöd och vägledning inom kostrådgivning, med ett medvetet fokus på helhetsperspektivet i ditt liv snarare än enbart kalori-fokus och träning. Genom coaching, upplevelser och ett lekfullt förhållningssätt hjälper vi dig att hitta det som ger dig energi i livet för att du ska vilja fortsätta framåt. Vi utgår från övertygelsen att hälsa och välmående ska kännas lekfullt, inspirerande och hållbart. Stay Playful handlar inte om att bli “bättre på hälsan”. Det handlar om att ha kul med de bästa förutsättningarna.",
 
@@ -258,7 +258,7 @@ export const translations = {
         },
         "03": {
           eyebrow: "Strategy and Goal",
-          subtitle: "A playful view on wellbeing.",
+          subtitle: "The strategy and the goal",
 
           p1: "Traditional nutrition coaching and personal trainers advocate for gyms and meal plans but address to a lesser extent nutrition, the relationship with food, and behavioral patterns around “on and off”.",
           p2: "Stay Playful offers tailored support and guidance in nutrition coaching, with a conscious focus on the holistic perspective of your life rather than just calorie-focus and training. Through coaching, experiences, and a playful approach, we help you find what gives you energy in life so that you want to keep moving forward. We base this on the conviction that health and well-being should feel playful, inspiring, and sustainable. Stay Playful is not about becoming “better at health”. It's about having fun with the best possible conditions."
