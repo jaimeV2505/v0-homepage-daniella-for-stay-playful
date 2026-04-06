@@ -37,9 +37,8 @@ export function BrandStatement() {
 
               <div className="pointer-events-none absolute left-0 top-0 h-[120px] w-full bg-gradient-to-b from-[#E89BE6] to-transparent z-10" />
 
-              {/* Bubble mask container — grows to fill available height */}
-              <div className="relative w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]"
-                   style={{ aspectRatio: "3/4", maxHeight: "none" }}>
+              {/* Bubble mask container — fills available height */}
+              <div className="relative flex-1 w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
