@@ -49,12 +49,23 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* AJUSTE QUIRÚRGICO: 
+              1. En mobile quitamos el leading-none y usamos leading-[1.1] para dar aire.
+              2. En mobile eliminamos el margen negativo (-mt-2) para que no se pisen.
+              3. En desktop (lg) restauramos tu leading-none y el margen negativo original.
+          */}
           <div className="order-1 flex min-h-[180px] items-end justify-center overflow-hidden lg:order-2 lg:min-h-[250px]">
-            <div className="w-full text-center leading-none">
-              <motion.h2 style={{ y: stayY }} className="font-serif text-[4rem] tracking-[-0.055em] text-[#FFF4EA] sm:text-[5.5rem] md:text-[6.25rem] lg:text-[6.5rem] xl:text-[7.2rem]">
+            <div className="w-full text-center leading-[1.1] lg:leading-none">
+              <motion.h2
+                style={{ y: stayY }}
+                className="font-serif text-[4rem] tracking-[-0.055em] text-[#FFF4EA] sm:text-[5.5rem] md:text-[6.25rem] lg:text-[6.5rem] xl:text-[7.2rem]"
+              >
                 STAY
               </motion.h2>
-              <motion.h2 style={{ y: playfulY }} className="font-serif text-[5rem] tracking-[-0.07em] text-[#FFF4EA] sm:text-[7rem] md:text-[8rem] lg:text-[8.75rem] xl:text-[9.8rem] -mt-2 sm:-mt-3 lg:-mt-4">
+              <motion.h2
+                style={{ y: playfulY }}
+                className="font-serif text-[4rem] tracking-[-0.07em] text-[#FFF4EA] sm:text-[7rem] md:text-[8rem] lg:text-[8.75rem] xl:text-[9.8rem] mt-0 sm:mt-0 lg:-mt-4"
+              >
                 PLAYFUL
               </motion.h2>
             </div>
