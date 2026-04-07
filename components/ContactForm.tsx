@@ -62,7 +62,13 @@ export function ContactForm() {
     }
     try {
       setIsLoading(true)
-      await new Promise((resolve) => setTimeout(resolve, 1400))
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok || !data.success) throw new Error(data.error || "error")
       setIsSubmitted(true)
       setFormData(initialState)
     } catch {
