@@ -23,7 +23,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOKA SAMTAL",
     },
-    topBar: "Där din vision blir något oförglömligt",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Få kontakt",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -195,7 +195,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOOK A CALL",
     },
-    topBar: "Where your vision becomes something unforgettable",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Get in touch",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
