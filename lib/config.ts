@@ -211,7 +211,7 @@ export const translations = {
     programs: {
       eyebrow: "CHOOSE YOUR PATH",
       heading: "Individual coaching adapted to your starting point.",
-      headingAccent: "NIFTY, LONG TERM, LET'S GET STARTED",
+      headingAccent: "See the foundations that support your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
