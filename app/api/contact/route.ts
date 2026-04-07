@@ -17,8 +17,27 @@ export async function POST(req: Request) {
       from: 'StayPlayful <hola@stayplayful.se>',
       to: ['daniella@stayplayful.se'],
       replyTo: email,
-      subject: `Nuevo mensaje de ${name}`,
-      text: `Nombre: ${name}\nEmail: ${email}${interest ? `\nInterés: ${interest}` : ''}\n\nMensaje:\n${message}`,
+      subject: `New inquiry from ${name}`,
+      text: `
+Hello Daniella,
+
+You’ve received a new inquiry from your website:
+
+---------------------------------------
+
+Name: ${name}
+Email: ${email}
+${interest ? `Interest: ${interest}` : ''}
+
+---------------------------------------
+
+Message:
+${message}
+
+---------------------------------------
+
+Reply directly to this email to contact the sender.
+`,
     });
 
     if (error) {
