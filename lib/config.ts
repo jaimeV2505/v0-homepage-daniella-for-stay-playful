@@ -5,8 +5,8 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
   description: "A Healthier Way to Feel Well",
   urls: {
-    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mailto:hello@stayplayful.com",
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
+    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "daniella@stayplayful.se",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/danieella.nena/",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "tel:+46-123-456-789",
   },
@@ -23,7 +23,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOKA SAMTAL",
     },
-    topBar: "Där din vision blir något oförglömligt",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Få kontakt",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -195,7 +195,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOOK A CALL",
     },
-    topBar: "Where your vision becomes something unforgettable",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Get in touch",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -211,7 +211,7 @@ export const translations = {
     programs: {
       eyebrow: "CHOOSE YOUR PATH",
       heading: "Individual coaching adapted to your starting point.",
-      headingAccent: "NIFTY, LONG TERM, LET'S GET STARTED",
+      headingAccent: "See the foundations that support your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
