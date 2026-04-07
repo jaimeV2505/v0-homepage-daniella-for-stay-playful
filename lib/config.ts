@@ -5,8 +5,8 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
   description: "A Healthier Way to Feel Well",
   urls: {
-    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mailto:hello@stayplayful.com",
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
+    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "daniella@stayplayful.se",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/danieella.nena/",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "tel:+46-123-456-789",
   },

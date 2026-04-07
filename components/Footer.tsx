@@ -63,12 +63,12 @@ export function Footer() {
           <motion.div style={{ y: cardY }} className="order-3 justify-self-start lg:justify-self-end">
             <div className="rounded-[20px] sm:rounded-[28px] border-[3px] border-sp-deep-brown bg-[#FDF3EA] px-5 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.14)] sm:shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-transform duration-300 hover:-translate-y-1">
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-sp-hot-pink">{t("footer.keepInTouch")}</p>
-              <p className="text-base font-medium text-sp-deep-brown">hello@stayplayful.com</p>
+              <p className="text-base font-medium text-sp-deep-brown">daniella@stayplayful.se</p>
               <div className="mt-4 flex gap-3">
                 <a href="https://instagram.com" aria-label="Instagram" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="mailto:hello@stayplayful.com" aria-label="E-post" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
+                <a href="mailto:daniella@stayplayful.se" aria-label="E-post" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
                   <Mail className="h-5 w-5" />
                 </a>
               </div>
