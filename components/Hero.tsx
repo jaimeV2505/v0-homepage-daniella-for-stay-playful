@@ -60,7 +60,7 @@ export function Hero() {
 
             sizes="100vw"
 
-            className="object-cover object-[45%_-0%] lg:object-[45%_0%]"
+            className="object-cover object-[45%_0%] lg:object-[45%_0%]"
 
           />
 
@@ -155,5 +155,6 @@ export function Hero() {
   )
 
 }
+
 
 

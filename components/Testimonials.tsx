@@ -62,7 +62,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              {/* TÍTULO PRINCIPAL USANDO TUS NUEVAS LLAVES */}
+              {/* TÍTULO PRINCIPAL */}
               <h2 className="font-serif text-[15vw] lg:text-[11vw] font-black uppercase leading-[0.8] tracking-[-0.05em] text-black">
                 {t("testimonials.heading")}
                 <br />
@@ -71,7 +71,7 @@ export function Testimonials() {
                 </span>
               </h2>
 
-              {/* LISTADO DE PUNTOS CON TRADUCCIÓN */}
+              {/* LISTADO DE PUNTOS */}
               <ul className="mt-12 lg:mt-16 space-y-4 lg:space-y-6">
                 <li className="flex items-center gap-4 lg:gap-6">
                   <span className="h-4 w-4 lg:h-5 lg:w-5 bg-[#FF008E] rounded-full border-[3px] border-black shrink-0" />
@@ -93,8 +93,8 @@ export function Testimonials() {
                 </li>
               </ul>
 
-              {/* SECCIÓN "UNDER UTVECKLING" */}
-              <div className="mt-16 lg:mt-24 pt-10 border-t-[4px] border-black inline-block">
+              {/* SECCIÓN "UNDER DEVELOPMENT" - Línea eliminada y organizada */}
+              <div className="mt-12 lg:mt-20 flex flex-col items-start">
                 <p className="font-serif text-3xl lg:text-6xl italic text-black leading-tight">
                   {t("testimonials.underDevelopment")}
                 </p>
@@ -130,14 +130,14 @@ export function Testimonials() {
             </motion.div>
           </div>
         </div>
-      </div >
+      </div>
 
       {/* 3. WATERMARK */}
       <div className="absolute bottom-10 left-10 pointer-events-none z-0 select-none opacity-[0.03]" >
         <span className="font-serif text-[25vw] font-black uppercase leading-none">
           STAY PLAYFUL
         </span>
-      </div >
-    </section >
+      </div>
+    </section>
   )
 }
