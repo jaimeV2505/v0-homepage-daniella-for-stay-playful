@@ -106,7 +106,7 @@ export const translations = {
       heading: "Booring men svar på blandade",
       headingAccent: "frågor",
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
-      topRibbon: ["KLARHET UTAN PRESS", "PERSONLIGT STÖD", "ETT MER LEKFULLT VÄLMÅENDE", "KLARHET UTAN PRESS", "STÖD SOM PASSAR DITT LIV", "BALANS ISTÄLLET FÖR KONTROLL"],
+      topRibbon: ["NYFIKENHET, LÅNGSIKTIGHET, LÅT OSS KOMMA IGÅNG"],
       stillQuestions: "Fortfarande funderingar?",
       stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
