@@ -49,12 +49,12 @@ export const translations = {
         },
         program6: {
           title: "8-VECKORS PROGRAM",
-          circleTitle: "6-v\nprog",
+          circleTitle: "8-v\nprog",
           description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
         },
         program8: {
           title: "12-VECKORS PROGRAM",
-          circleTitle: "8-v\nprog",
+          circleTitle: "12-v\nprog",
           description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
         },
         specialaren: {
