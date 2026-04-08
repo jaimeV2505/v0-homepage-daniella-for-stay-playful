@@ -3,7 +3,7 @@
 
 export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
-  description: "A Healthier Way to Feel Well",
+  description: "A Fun Way to Stay Healthy",
   urls: {
     contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "daniella@stayplayful.se",
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/danieella.nena/",
