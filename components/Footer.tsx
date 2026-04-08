@@ -49,12 +49,23 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* AJUSTE QUIRÚRGICO: 
+              1. En mobile quitamos el leading-none y usamos leading-[1.1] para dar aire.
+              2. En mobile eliminamos el margen negativo (-mt-2) para que no se pisen.
+              3. En desktop (lg) restauramos tu leading-none y el margen negativo original.
+          */}
           <div className="order-1 flex min-h-[180px] items-end justify-center overflow-hidden lg:order-2 lg:min-h-[250px]">
-            <div className="w-full text-center leading-none">
-              <motion.h2 style={{ y: stayY }} className="font-serif text-[4rem] tracking-[-0.055em] text-[#FFF4EA] sm:text-[5.5rem] md:text-[6.25rem] lg:text-[6.5rem] xl:text-[7.2rem]">
+            <div className="w-full text-center leading-[1.1] lg:leading-none">
+              <motion.h2
+                style={{ y: stayY }}
+                className="font-serif text-[4rem] tracking-[-0.055em] text-[#FFF4EA] sm:text-[5.5rem] md:text-[6.25rem] lg:text-[6.5rem] xl:text-[7.2rem]"
+              >
                 STAY
               </motion.h2>
-              <motion.h2 style={{ y: playfulY }} className="font-serif text-[5rem] tracking-[-0.07em] text-[#FFF4EA] sm:text-[7rem] md:text-[8rem] lg:text-[8.75rem] xl:text-[9.8rem] -mt-2 sm:-mt-3 lg:-mt-4">
+              <motion.h2
+                style={{ y: playfulY }}
+                className="font-serif text-[4rem] tracking-[-0.07em] text-[#FFF4EA] sm:text-[7rem] md:text-[8rem] lg:text-[8.75rem] xl:text-[9.8rem] mt-0 sm:mt-0 lg:-mt-4"
+              >
                 PLAYFUL
               </motion.h2>
             </div>
@@ -63,12 +74,12 @@ export function Footer() {
           <motion.div style={{ y: cardY }} className="order-3 justify-self-start lg:justify-self-end">
             <div className="rounded-[20px] sm:rounded-[28px] border-[3px] border-sp-deep-brown bg-[#FDF3EA] px-5 py-4 shadow-[5px_5px_0_0_rgba(0,0,0,0.14)] sm:shadow-[8px_8px_0_0_rgba(0,0,0,0.14)] transition-transform duration-300 hover:-translate-y-1">
               <p className="mb-2 text-xs font-black uppercase tracking-[0.22em] text-sp-hot-pink">{t("footer.keepInTouch")}</p>
-              <p className="text-base font-medium text-sp-deep-brown">hello@stayplayful.com</p>
+              <p className="text-base font-medium text-sp-deep-brown">daniella@stayplayful.se</p>
               <div className="mt-4 flex gap-3">
                 <a href="https://instagram.com" aria-label="Instagram" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="mailto:hello@stayplayful.com" aria-label="E-post" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
+                <a href="mailto:daniella@stayplayful.se" aria-label="E-post" className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-sp-deep-brown bg-[#FFABFF] text-sp-deep-brown transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.03]">
                   <Mail className="h-5 w-5" />
                 </a>
               </div>

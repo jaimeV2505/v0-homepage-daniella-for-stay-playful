@@ -28,7 +28,7 @@ export function Testimonials() {
           >
             {[0, 1, 2].map((i) => (
               <span key={i} className="mx-6 font-black uppercase tracking-widest text-black text-lg lg:text-3xl shrink-0">
-                STAY PLAYFUL ★ SOFTER WELLBEING ★ CLIENT LOVE ★
+                STAY PLAYFUL ★ MOTIVARANDE ★ ENERGIGIVANDE ★
               </span>
             ))}
           </motion.div>
@@ -43,7 +43,7 @@ export function Testimonials() {
           >
             {[0, 1, 2].map((i) => (
               <span key={i} className="mx-6 font-black uppercase tracking-widest text-black text-lg lg:text-3xl shrink-0">
-                TESTIMONIALS ★ REAL STORIES ★ STAY PLAYFUL ★
+                STAY PLAYFUL ★ MOTIVARANDE ★ ENERGIGIVANDE ★
               </span>
             ))}
           </motion.div>
