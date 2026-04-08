@@ -49,12 +49,12 @@ export const translations = {
         },
         program6: {
           title: "8-VECKORS PROGRAM",
-          circleTitle: "6-v\nprog",
+          circleTitle: "8-v\nprog",
           description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
         },
         program8: {
           title: "12-VECKORS PROGRAM",
-          circleTitle: "8-v\nprog",
+          circleTitle: "12-v\nprog",
           description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
         },
         specialaren: {
@@ -96,10 +96,15 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
-      heading: "Your",
-      headingAccent: "playground!",
-      comingSoon: "Mer info kommer snart!",
+      "ticker": "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
+      "heading": "Your",
+      "headingAccent": "playground!",
+      "point1": "Din guide till aktiviteter",
+      "point2": "Inspiration till energikällor",
+      "point3": "Your community",
+      "underDevelopment": "Under utveckling -",
+      "comingSoon": "Mer info kommer snart!",
+      "tag": "NEW ERA"
     },
     community: {
       eyebrow: "Innan du bokar",
@@ -239,7 +244,7 @@ export const translations = {
     method: {
       eyebrow: "PHILOSOPHY & METHOD",
       heading: "Three pillars that make Stay Playful unique:",
-      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way!Who am I? The vision. The strategy and the goal.",
+      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way! Who am I? The vision. The strategy and the goal.",
       cards: {
         "01": {
           eyebrow: "Who Am I",
@@ -267,10 +272,15 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
-      heading: "Your",
-      headingAccent: "playground!",
-      comingSoon: "More info coming soon!",
+      "ticker": "STAY PLAYFUL, MOTIVATING, ENERGIZING",
+      "heading": "Your",
+      "headingAccent": "playground!",
+      "point1": "Your guide to activities",
+      "point2": "Inspiration for energy sources",
+      "point3": "Your community",
+      "underDevelopment": "Under development -",
+      "comingSoon": "More info coming soon!",
+      "tag": "NEW ERA"
     },
     community: {
       eyebrow: "Before you book",
