@@ -17,12 +17,12 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Stay Playful | A Healthier Way to Feel Well',
+  title: 'Stay Playful | A Fun Way To Stay Healthy ',
   description: 'Stay Playful offers personalized health coaching focused on building a sustainable relationship with food, movement, and wellbeing. Not a diet — a lifestyle.',
   keywords: ['health coaching', 'nutrition', 'wellbeing', 'sustainable health', 'food relationship', 'lifestyle coaching'],
   authors: [{ name: 'Stay Playful' }],
   openGraph: {
-    title: 'Stay Playful | A Healthier Way to Feel Well',
+    title: 'Stay Playful | A Fun Way To Stay Healthy',
     description: 'Personalized health coaching focused on sustainable wellbeing, not restriction.',
     type: 'website',
   },
