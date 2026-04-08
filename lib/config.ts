@@ -96,10 +96,15 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
-      heading: "Your",
-      headingAccent: "playground!",
-      comingSoon: "Mer info kommer snart!",
+      "ticker": "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
+      "heading": "Your",
+      "headingAccent": "playground!",
+      "point1": "Din guide till aktiviteter",
+      "point2": "Inspiration till energikällor",
+      "point3": "Your community",
+      "underDevelopment": "Under utveckling -",
+      "comingSoon": "Mer info kommer snart!",
+      "tag": "NEW ERA"
     },
     community: {
       eyebrow: "Innan du bokar",
@@ -267,10 +272,15 @@ export const translations = {
       },
     },
     testimonials: {
-      ticker: "STAY PLAYFUL, MOTIVERANDE, ENERGIGIVANDE",
-      heading: "Your",
-      headingAccent: "playground!",
-      comingSoon: "More info coming soon!",
+      "ticker": "STAY PLAYFUL, MOTIVATING, ENERGIZING",
+      "heading": "Your",
+      "headingAccent": "playground!",
+      "point1": "Your guide to activities",
+      "point2": "Inspiration for energy sources",
+      "point3": "Your community",
+      "underDevelopment": "Under development -",
+      "comingSoon": "More info coming soon!",
+      "tag": "NEW ERA"
     },
     community: {
       eyebrow: "Before you book",
