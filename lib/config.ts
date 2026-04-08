@@ -81,8 +81,8 @@ export const translations = {
           eyebrow: "Visionen",
           subtitle: "Visionen",
 
-          p1: "Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.",
-          p2: "Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns tillgängligt, lustfyllt och något som känns bra. Genom att kombinera individanpassad kostrådgivning med ett bredare livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag.",
+          p1: "Stay Playful driver och strävar efter en förändring där hälsa inte längre är ett projekt vid sidan av livet, utan en integrerad del av hur vi lever och mår.Vi ska omdefiniera hur människor ser på träning och kost: från något man skjuter upp, kämpar med eller “ska ta tag i”, till något som känns lustfyllt, lekfullt och energigivande.",
+          p2: "Genom att kombinera individanpassad kostrådgivning med ett  bredare aktivitets- och livsstilsperspektiv ser vi till att bygga ett liv där rörelse, näring och välmående samverkar med egna intressen, värderingar och vardag. Stay Playful handlar inte om att du ska bli “bättre på hälsan”. Den står för en helt ny genre i hälsobranschen, ett nytt koncept där din glädje spelar roll.",
 
 
         },
@@ -252,8 +252,8 @@ export const translations = {
         "02": {
           eyebrow: "The Vision",
           subtitle: "The Vision",
-          p1: "Stay Playful drives and strives for a change where health is no longer a project on the side of life, but an integrated part of how we live and feel.",
-          p2: "We will redefine how people view exercise and nutrition: from something you postpone, struggle with, or 'need to deal with', to something that feels accessible, joyful, and simply feels good. By combining personalized nutrition coaching with a broader lifestyle perspective, we ensure to build a life where movement, nutrition, and well-being interact with personal interests, values, and everyday life.",
+          p1: "Stay Playful is driven by and strives for a shift where health is no longer a side project, but an integrated part of how we live and feel.We aim to redefine how people view exercise and nutrition: from something you postpone, struggle with, or feel like you “should get around to,” into something that feels enjoyable, playful, and energizing.",
+          p2: "By combining personalized nutrition guidance with a broader perspective on activity and lifestyle, we create a way of living where movement, nourishment, and well-being align with your personal interests, values, and everyday life. Stay Playful is not about becoming “better at health.” It represents an entirely new approach within the wellness space — a new concept where your joy truly matters.",
 
         },
         "03": {
