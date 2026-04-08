@@ -57,16 +57,12 @@ export function Programs() {
 
         {/* HEADER */}
         <div className="text-center mb-14">
-          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-[#E84D8A] mb-3">
-            {t("programs.eyebrow")}
-          </p>
+          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-[#E84D8A] mb-3">{t("programs.eyebrow")}</p>
           <h2 className="font-serif text-[2.8rem] sm:text-[4.5rem] lg:text-[6rem] leading-[0.9] tracking-tighter text-[#3A2B2B]">
-            {t("programs.heading")}{" "}
-            <span className="italic text-[#E84D8A] text-[2rem] sm:text-[3rem] lg:text-[4rem]">
-              {t("programs.headingAccent")}
-            </span>
+            {t("programs.heading")} <span className="italic text-[#E84D8A]">{t("programs.headingAccent")}</span>
           </h2>
         </div>
+
         {/* SELECTOR DE PROGRAMAS (CIRCULOS) - Ajustado py-4 para que no se corte el círculo ni la sombra */}
         <div className="hidden sm:flex justify-center gap-4 sm:gap-10 mb-14 px-4 py-4 overflow-visible">
           {programs.map((p, i) => {
