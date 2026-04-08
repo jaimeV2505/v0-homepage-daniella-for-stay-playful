@@ -26,18 +26,19 @@ export function Method() {
           <div className="h-[1px] flex-1 bg-black/10" />
         </div>
 
-        <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="relative z-10 flex flex-col md:items-start justify-between gap-8">
           <div className="max-w-4xl">
             <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] text-black/40 mb-4 md:mb-6">
               {t("method.eyebrow")}
             </p>
-            <h2 className="font-sans text-black leading-[0.9] tracking-[-0.04em] font-black text-[clamp(2.5rem,7vw,6rem)]">
+            <h2 className="font-sans text-black leading-[0.9] tracking-[-0.04em] font-black text-[clamp(2.5rem,7vw,6rem)] mb-6 md:mb-10">
               {t("method.heading")}
             </h2>
           </div>
 
-          <div className="max-w-[240px] border-l-2 border-black/20 pl-4 py-1">
-            <p className="text-xs md:text-sm font-medium leading-relaxed text-black/50 italic">
+          {/* AJUSTE: Texto movido a la izquierda y con ancho máximo para desktop */}
+          <div className="max-w-[450px] border-l-2 md:border-l-4 border-[#FF008E] pl-6 py-2">
+            <p className="text-sm md:text-lg font-bold leading-relaxed text-black/50 italic">
               {t("method.subheading")}
             </p>
           </div>
@@ -68,7 +69,7 @@ export function Method() {
                     <span className="font-mono text-[10px] md:text-xs font-bold text-black/30">[{id}]</span>
                   </div>
 
-                  {/* Área de Texto - El scrollbar-hide es clave aquí */}
+                  {/* Área de Texto */}
                   <div className="flex-1 overflow-y-auto p-6 sm:p-10 md:p-12 xl:p-16 scrollbar-hide">
                     <div className="max-w-prose">
                       <h3 className="font-sans text-[2rem] sm:text-[2.5rem] md:text-[3.2rem] lg:text-[3.8rem] font-[900] leading-[0.95] tracking-tighter text-black italic mb-6 md:mb-8 uppercase">
@@ -77,14 +78,13 @@ export function Method() {
                       <div className="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl font-medium text-black/80 leading-relaxed">
                         <p>{t(`method.cards.${id}.p1`)}</p>
                         <p>{t(`method.cards.${id}.p2`)}</p>
-                        {/* Espacio extra para asegurar que el scroll se sienta bien */}
                         <div className="h-4 md:hidden" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* DERECHA: IMAGEN (Visible solo en Desktop para UX quirúrgica) */}
+                {/* DERECHA: IMAGEN */}
                 <div
                   className="hidden lg:flex relative h-full items-center justify-center overflow-hidden"
                   style={{ backgroundColor: cardPanels[index] }}
@@ -132,7 +132,6 @@ export function Method() {
         ))}
       </div>
 
-      {/* Espaciador final para el efecto sticky */}
       <div className="h-[20vh] md:h-[10vh]" />
     </section>
   )
