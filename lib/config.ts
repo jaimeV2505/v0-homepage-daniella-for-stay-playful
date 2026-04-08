@@ -244,7 +244,7 @@ export const translations = {
     method: {
       eyebrow: "PHILOSOPHY & METHOD",
       heading: "Three pillars that make Stay Playful unique:",
-      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way!Who am I? The vision. The strategy and the goal.",
+      subheading: "Never stop playing through life and to be able to do that you need the right nutrition along the way! Who am I? The vision. The strategy and the goal.",
       cards: {
         "01": {
           eyebrow: "Who Am I",
