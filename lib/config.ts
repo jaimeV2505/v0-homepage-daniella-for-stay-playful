@@ -72,7 +72,7 @@ export const translations = {
         "01": {
           eyebrow: "Vem är jag",
           subtitle: "Meet the founder",
-          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness. Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
+          p1: "Det började med en tillfrisknad från en ätstörning och en stark drivkraft (en total hyper fixering) att fördjupa mig i nutrition och psykologi. Till certifikat för kostrådgivning och några tävlingar inom bikini fitness (det sistnämnda som är det bästa jag vet). Till flera år av föreläsning inom ätstörning- och självskadebeteende. Till engagemang i brukarråd där man bl.a pratar om samhällsproblem inom området.",
           p2: "Tills att jag sa blää vad är det människor håller på med där ute! Jag ser människor som gör “allt rätt” - tränar, äter enligt plan, har kunskap – men ändå inte mår bra över tid. Tänk om problemet inte är brist på disciplin, utan att vi lägger för mycket tid på något vi inte ens tycker om? Den insikten förändrade allt!",
 
 
@@ -245,8 +245,8 @@ export const translations = {
           eyebrow: "Who Am I",
           subtitle: "Meet the founder",
 
-          p1: "It began with a recovery from an eating disorder and a powerful drive (a total hyper-fixation) to immerse myself in nutrition and psychology. From nutrition coaching certifications and bikini fitness competitions, to years of lecturing on eating disorders and self-harm. To involvement in advisory boards discussing social issues in the field.",
-          p2: "Until I just said: Blegh! What is everyone out there doing?! I see people doing “everything right” – training, eating according to plan, having the knowledge – yet still not feeling good over time.What if the problem isn’t a lack of discipline, but that we spend too much time on something we don’t even like? That insight changed everything!",
+          p1: "It all started with my recovery from an eating disorder and a strong drive (almost a total hyper-fixation) to dive deeper into nutrition and psychology. That led to certifications in nutrition coaching and even competing in bikini fitness (the latter being something I truly loved). It continued with several years of giving lectures on eating disorders and self-harm, as well as being involved in advisory groups where we discussed societal challenges within these areas.",
+          p2: "Until one day I thought — what are people actually doing out there? I see people doing “everything right” — training, following structured diets, having the knowledge — yet still not feeling well over time. What if the problem isn’t a lack of discipline, but that we’re spending too much time on things we don’t even enjoy?That realization changed everything."
 
         },
         "02": {
