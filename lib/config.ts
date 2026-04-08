@@ -5,8 +5,8 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
   description: "A Healthier Way to Feel Well",
   urls: {
-    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mailto:hello@stayplayful.com",
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
+    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "daniella@stayplayful.se",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/danieella.nena/",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "tel:+46-123-456-789",
   },
@@ -23,7 +23,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOKA SAMTAL",
     },
-    topBar: "Där din vision blir något oförglömligt",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Få kontakt",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -106,7 +106,7 @@ export const translations = {
       heading: "Booring men svar på blandade",
       headingAccent: "frågor",
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
-      topRibbon: ["KLARHET UTAN PRESS", "PERSONLIGT STÖD", "ETT MER LEKFULLT VÄLMÅENDE", "KLARHET UTAN PRESS", "STÖD SOM PASSAR DITT LIV", "BALANS ISTÄLLET FÖR KONTROLL"],
+      topRibbon: ["NIFIKENHET, LÅNGSIKTIGHEN, LÅT OSS KOMA IGÅNG"],
       stillQuestions: "Fortfarande funderingar?",
       stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
@@ -195,7 +195,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOOK A CALL",
     },
-    topBar: "Where your vision becomes something unforgettable",
+    topBar: "Welcome! What are we making space for today?",
     getInTouch: "Get in touch",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -211,7 +211,7 @@ export const translations = {
     programs: {
       eyebrow: "CHOOSE YOUR PATH",
       heading: "Individual coaching adapted to your starting point.",
-      headingAccent: "See the foundation that supports your life",
+      headingAccent: "See the foundations that support your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
@@ -277,7 +277,7 @@ export const translations = {
       heading: "Boring but answers to mixed",
       headingAccent: "questions",
       subheading: "A softer version of FAQs — so you can feel calm, safe and ready to take the next step.",
-      topRibbon: ["CLARITY WITHOUT PRESSURE", "PERSONAL SUPPORT", "A MORE PLAYFUL WELLBEING", "CLARITY WITHOUT PRESSURE", "SUPPORT THAT FITS YOUR LIFE", "BALANCE INSTEAD OF CONTROL"],
+      topRibbon: ["NIFTY, LONG TERM, LET'S GET STARTED"],
       stillQuestions: "Still have questions?",
       stillQuestionsBody: "If you would rather talk through the questions, that's fine too.",
       letsTalk: "Let's talk",
