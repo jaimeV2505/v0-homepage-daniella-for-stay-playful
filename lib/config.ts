@@ -5,8 +5,8 @@ export const siteConfig = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Stay Playful",
   description: "A Healthier Way to Feel Well",
   urls: {
-    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "daniella@stayplayful.se",
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/danieella.nena/",
+    contact: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mailto:hello@stayplayful.com",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
     phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "tel:+46-123-456-789",
   },
@@ -23,7 +23,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOKA SAMTAL",
     },
-    topBar: "Welcome! What are we making space for today?",
+    topBar: "Där din vision blir något oförglömligt",
     getInTouch: "Få kontakt",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -49,12 +49,12 @@ export const translations = {
         },
         program6: {
           title: "8-VECKORS PROGRAM",
-          circleTitle: "6-v\nprog",
+          circleTitle: "8-v\nprog",
           description: "För att faktiskt kunna göra någon skillnad så behöver vi lägga upp en plan.",
         },
         program8: {
           title: "12-VECKORS PROGRAM",
-          circleTitle: "8-v\nprog",
+          circleTitle: "12-v\nprog",
           description: "För att ge dig själv bästa förutsättningar för både resultat och den nya livsstilen.",
         },
         specialaren: {
@@ -106,7 +106,7 @@ export const translations = {
       heading: "Booring men svar på blandade",
       headingAccent: "frågor",
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
-      topRibbon: ["NIFIKENHET, LÅNGSIKTIGHEN, LÅT OSS KOMA IGÅNG"],
+      topRibbon: ["KLARHET UTAN PRESS", "PERSONLIGT STÖD", "ETT MER LEKFULLT VÄLMÅENDE", "KLARHET UTAN PRESS", "STÖD SOM PASSAR DITT LIV", "BALANS ISTÄLLET FÖR KONTROLL"],
       stillQuestions: "Fortfarande funderingar?",
       stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
@@ -195,7 +195,7 @@ export const translations = {
       clientLogin: "LOGIN",
       bookCall: "BOOK A CALL",
     },
-    topBar: "Welcome! What are we making space for today?",
+    topBar: "Where your vision becomes something unforgettable",
     getInTouch: "Get in touch",
     hero: {
       title: "YOUR LIFE, YOUR PLAYGROUND",
@@ -211,7 +211,7 @@ export const translations = {
     programs: {
       eyebrow: "CHOOSE YOUR PATH",
       heading: "Individual coaching adapted to your starting point.",
-      headingAccent: "See the foundations that support your life",
+      headingAccent: "See the foundation that supports your life",
       bookCta: "Learn More & Book Consultation",
       items: {
         coaching: {
@@ -277,7 +277,7 @@ export const translations = {
       heading: "Boring but answers to mixed",
       headingAccent: "questions",
       subheading: "A softer version of FAQs — so you can feel calm, safe and ready to take the next step.",
-      topRibbon: ["NIFTY, LONG TERM, LET'S GET STARTED"],
+      topRibbon: ["CLARITY WITHOUT PRESSURE", "PERSONAL SUPPORT", "A MORE PLAYFUL WELLBEING", "CLARITY WITHOUT PRESSURE", "SUPPORT THAT FITS YOUR LIFE", "BALANCE INSTEAD OF CONTROL"],
       stillQuestions: "Still have questions?",
       stillQuestionsBody: "If you would rather talk through the questions, that's fine too.",
       letsTalk: "Let's talk",
