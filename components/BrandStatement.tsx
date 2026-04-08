@@ -26,7 +26,7 @@ export function BrandStatement() {
                   {brand("heading")}
                 </h2>
 
-                <div className="mt-8 max-w-[460px] space-y-4 text-base leading-8 text-white/95 sm:text-lg max-h-[300px] overflow-y-auto sm:max-h-none">
+                <div className="mt-8 max-w-[460px] space-y-4 text-base leading-8 text-white/95 sm:text-lg">
                   <p>{brand("body")}</p>
                 </div>
               </div>
@@ -37,8 +37,8 @@ export function BrandStatement() {
 
               <div className="pointer-events-none absolute left-0 top-0 h-[120px] w-full bg-gradient-to-b from-[#E89BE6] to-transparent z-10" />
 
-              {/* Bubble mask container */}
-              <div className="relative flex-1 w-full min-h-[500px] sm:min-h-0 bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
+              {/* Bubble mask container — fills available height */}
+              <div className="relative flex-1 w-full bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
@@ -48,8 +48,7 @@ export function BrandStatement() {
                 />
               </div>
 
-              {/* RECUADRO REINTEGRADO: Ajustado para no tapar en mobile y verse pro en desktop */}
-              <div className="absolute left-4 right-4 bottom-[70px] sm:left-0 sm:right-auto sm:bottom-[60px] z-30 border-[4px] border-black bg-white px-4 py-4 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:w-[360px]">
+              <div className="absolute left-0 bottom-[60px] z-20 w-[92%] border-[4px] border-black bg-white px-4 py-4 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:w-[360px]">
                 <p className="text-[12px] font-black uppercase tracking-[0.16em] text-black">
                   {brand("cardTag")}
                 </p>
@@ -58,7 +57,7 @@ export function BrandStatement() {
                 </p>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-3 z-20">
+              <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-3">
                 <p className="text-center text-sm font-black uppercase tracking-[0.24em] text-black">
                   {brand("bottomBar")}
                 </p>
@@ -72,25 +71,13 @@ export function BrandStatement() {
         .bubble-mask {
           overflow: hidden;
           -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
-          -webkit-mask-repeat: no-repeat;
-          mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
-          mask-repeat: no-repeat;
-          
-          /* Desktop */
-          -webkit-mask-size: cover;
           -webkit-mask-position: center top;
-          mask-size: cover;
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-size: cover;
+          mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
           mask-position: center top;
-        }
-
-        @media (max-width: 640px) {
-          .bubble-mask {
-            /* Ajuste quirúrgico del shape en mobile */
-            -webkit-mask-size: 100% auto;
-            mask-size: 100% auto;
-            -webkit-mask-position: top center;
-            mask-position: top center;
-          }
+          mask-repeat: no-repeat;
+          mask-size: cover;
         }
       `}</style>
     </section>
