@@ -261,7 +261,7 @@ export const translations = {
           subtitle: "The strategy and the goal",
 
           p1: "Traditional nutrition coaching and personal training often promote gym routines and structured meal plans, but they tend to address, to a lesser extent, the deeper aspects of nutrition, the relationship with food, and behavioral patterns like the “on and off” cycle.",
-          p2: "Stay Playful offers tailored support and guidance in nutrition coaching, with a conscious focus on the bigger picture of your life — rather than just calories and alternative exercises (at the gym).Through coaching, experiences, and a playful approach, we help you discover what truly gives you energy in life, so that you want to keep moving and playing for the rest of your life. We believe that health and well-being should feel inspiring and sustainable."
+          p2: "Stay Playful offers tailored support and guidance in nutrition coaching, with a conscious focus on the bigger picture of your life — rather than just calories and alternative exercises (at the gym).   Through coaching, experiences, and a playful approach, we help you discover what truly gives you energy in life, so that you want to keep moving and playing for the rest of your life. We believe that health and well-being should feel inspiring and sustainable."
 
         },
       },
