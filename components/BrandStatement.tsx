@@ -10,38 +10,41 @@ export function BrandStatement() {
   return (
     <section
       aria-labelledby="brand-statement-title"
-      className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16 px-4"
+      className="bg-[#DCDCDC] px-4 py-8 sm:py-12 lg:px-6 lg:py-16"
     >
       <div className="mx-auto max-w-[1780px]">
-        <div className="overflow-hidden rounded-[20px] sm:rounded-[34px] border-[3px] sm:border-[4px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
+        <div className="overflow-hidden rounded-[20px] border-[3px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:rounded-[34px] sm:border-[4px] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="flex flex-col xl:flex-row">
 
-            {/* IZQUIERDA: BLOQUE DE TEXTO - IMPACTO EDITORIAL */}
-            <div className="w-full xl:w-[50%] flex flex-col justify-center bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:px-20 border-b-[3px] xl:border-b-0 xl:border-r-[4px] border-black z-20">
-              <div className="max-w-[700px] w-full mx-auto xl:mx-0">
+            {/* IZQUIERDA */}
+            <div className="z-20 flex w-full flex-col justify-center border-b-[3px] border-black bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:w-1/2 xl:border-b-0 xl:border-r-[4px] xl:px-20">
+
+              {/* 👇 centrado aquí */}
+              <div className="mx-auto w-full max-w-[700px] text-center">
+
                 <h2
                   id="brand-statement-title"
-                  className="text-[clamp(2.4rem,7.5vw,5.5rem)] font-black uppercase leading-[0.82] tracking-[-0.07em] text-white"
+                  className="mx-auto max-w-[11ch] break-words text-[clamp(2rem,6.2vw,4.7rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white"
                 >
                   {brand("heading")}
                 </h2>
 
-                <div className="mt-8 max-w-[540px] space-y-4 text-[clamp(1rem,1.4vw,1.18rem)] leading-relaxed text-white/95">
-                  <p className="font-semibold tracking-tight">
+                <div className="mt-8 max-w-[540px] mx-auto">
+                  <p className="text-[clamp(1rem,1.4vw,1.18rem)] font-semibold leading-relaxed tracking-tight text-white/95">
                     {brand("body")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* DERECHA: IMAGEN CON MÁSCARA ESTABILIZADA */}
-            <div className="relative w-full xl:w-[50%] flex flex-col bg-[#FFABFF] min-h-[500px] sm:min-h-[650px] xl:min-h-[850px] p-6 sm:p-10 lg:p-14 overflow-hidden items-center justify-center">
+            {/* DERECHA */}
+            <div className="relative flex w-full items-center justify-center overflow-hidden bg-[#FFABFF] px-6 pb-28 pt-6 sm:min-h-[650px] sm:px-10 sm:pb-32 sm:pt-10 lg:px-14 xl:min-h-[850px] xl:w-1/2 xl:pb-36">
 
-              {/* Gradiente de profundidad */}
-              <div className="pointer-events-none absolute left-0 top-0 h-[150px] w-full bg-gradient-to-b from-[#E89BE6]/60 to-transparent z-10" />
+              {/* Gradiente */}
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-[150px] w-full bg-gradient-to-b from-[#E89BE6]/60 to-transparent" />
 
-              {/* Contenedor de Máscara: Bloqueado a cuadrado para evitar que se rompa */}
-              <div className="bubble-mask relative w-full h-full max-w-[650px] aspect-square bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] z-20">
+              {/* Máscara */}
+              <div className="bubble-mask relative z-20 aspect-square w-full max-w-[650px] bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
@@ -52,24 +55,24 @@ export function BrandStatement() {
                 />
               </div>
 
-              {/* CARD BLANCA FLOTANTE: Ahora realmente responsive en posición */}
-              <div className="absolute left-6 right-6 bottom-[88px] sm:left-10 sm:bottom-28 xl:left-10 xl:bottom-32 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:w-[350px]">
+              {/* Card flotante */}
+              <div className="absolute bottom-[84px] left-6 right-6 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:bottom-[96px] sm:left-10 sm:right-auto sm:w-[350px] xl:bottom-[110px] xl:left-10">
                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-black">
                   {brand("cardTag")}
                 </p>
-                <p className="mt-2 text-[14px] sm:text-[15px] leading-tight text-black font-bold">
+                <p className="mt-2 text-[14px] font-bold leading-tight text-black sm:text-[15px]">
                   {brand("cardBody")}
                 </p>
               </div>
 
-              {/* BARRA AMARILLA INFERIOR: Anclada */}
-              <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-5 z-30">
+              {/* Barra inferior */}
+              <div className="absolute bottom-0 left-0 right-0 z-30 border-t-[4px] border-black bg-[#FFBD17] px-4 py-5">
                 <p className="text-center text-sm font-black uppercase tracking-[0.3em] text-black">
                   {brand("bottomBar")}
                 </p>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
       </div>
@@ -81,8 +84,6 @@ export function BrandStatement() {
           mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
           -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-          
-          /* 'contain' es el secreto quirúrgico: la flor nunca se corta */
           -webkit-mask-size: contain;
           mask-size: contain;
           -webkit-mask-position: center;
@@ -91,10 +92,10 @@ export function BrandStatement() {
 
         @media (max-width: 1279px) {
           .bubble-mask {
-            /* En móvil/tablet forzamos el escalado para llenar el espacio rosa */
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
-            transform: scale(1.02) translateY(-4%);
+            transform: scale(1.02);
+            transform-origin: center;
           }
         }
       `}</style>

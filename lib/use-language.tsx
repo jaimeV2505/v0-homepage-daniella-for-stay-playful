@@ -2,7 +2,7 @@
 "use client"
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react"
-import type { Language } from "@/lib/config"
+import { getTranslation, type Language } from "@/lib/config"
 
 interface LanguageContextType {
   language: Language
@@ -31,7 +31,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }
 
   const t = (key: string): string => {
-    const { getTranslation } = require("@/lib/config")
     return getTranslation(language, key)
   }
 
