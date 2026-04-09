@@ -10,60 +10,66 @@ export function BrandStatement() {
   return (
     <section
       aria-labelledby="brand-statement-title"
-      className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16"
+      className="bg-[#DCDCDC] py-8 sm:py-12 lg:py-16 px-4"
     >
-      <div className="mx-auto max-w-[1780px] px-4 sm:px-4 lg:px-6">
+      <div className="mx-auto max-w-[1780px]">
         <div className="overflow-hidden rounded-[20px] sm:rounded-[34px] border-[3px] sm:border-[4px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
-          <div className="grid lg:grid-cols-[0.49fr_0.51fr]">
+          <div className="flex flex-col xl:flex-row">
 
-            {/* LEFT: text */}
-            <div className="flex flex-col justify-between bg-[#FF7F00] px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12 xl:px-14 xl:py-14 2xl:px-16 2xl:py-16">
-              <div className="max-w-[620px]">
+            {/* IZQUIERDA: BLOQUE DE TEXTO - IMPACTO EDITORIAL */}
+            <div className="w-full xl:w-[50%] flex flex-col justify-center bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:px-20 border-b-[3px] xl:border-b-0 xl:border-r-[4px] border-black z-20">
+              <div className="max-w-[700px] w-full mx-auto xl:mx-0">
                 <h2
                   id="brand-statement-title"
-                  className="mt-5 max-w-[720px] text-[2.4rem] font-black uppercase leading-[0.88] tracking-[-0.09em] text-white sm:text-[3.5rem] lg:text-[4.2rem] xl:text-[5.2rem] 2xl:text-[6rem]"
+                  className="text-[clamp(2.4rem,7.5vw,5.5rem)] font-black uppercase leading-[0.82] tracking-[-0.07em] text-white"
                 >
                   {brand("heading")}
                 </h2>
 
-                <div className="mt-8 max-w-[460px] space-y-4 text-base leading-8 text-white/95 sm:text-lg max-h-[300px] overflow-y-auto sm:max-h-none">
-                  <p>{brand("body")}</p>
+                <div className="mt-8 max-w-[540px] space-y-4 text-[clamp(1rem,1.4vw,1.18rem)] leading-relaxed text-white/95">
+                  <p className="font-semibold tracking-tight">
+                    {brand("body")}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT: photo with bubble mask */}
-            <div className="relative flex flex-col bg-[#FFABFF] px-5 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8 xl:px-10 xl:py-10">
+            {/* DERECHA: IMAGEN CON MÁSCARA ESTABILIZADA */}
+            <div className="relative w-full xl:w-[50%] flex flex-col bg-[#FFABFF] min-h-[500px] sm:min-h-[650px] xl:min-h-[850px] p-6 sm:p-10 lg:p-14 overflow-hidden items-center justify-center">
 
-              <div className="pointer-events-none absolute left-0 top-0 h-[120px] w-full bg-gradient-to-b from-[#E89BE6] to-transparent z-10" />
+              {/* Gradiente de profundidad */}
+              <div className="pointer-events-none absolute left-0 top-0 h-[150px] w-full bg-gradient-to-b from-[#E89BE6]/60 to-transparent z-10" />
 
-              {/* Bubble mask container */}
-              <div className="relative flex-1 w-full min-h-[500px] sm:min-h-0 bubble-mask bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
+              {/* Contenedor de Máscara: Bloqueado a cuadrado para evitar que se rompa */}
+              <div className="bubble-mask relative w-full h-full max-w-[650px] aspect-square bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] z-20">
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 51vw"
+                  priority
+                  sizes="(max-width: 1279px) 100vw, 50vw"
                   className="object-cover object-[center_20%]"
                 />
               </div>
 
-              {/* RECUADRO REINTEGRADO: Ajustado para no tapar en mobile y verse pro en desktop */}
-              <div className="absolute left-4 right-4 bottom-[70px] sm:left-0 sm:right-auto sm:bottom-[60px] z-30 border-[4px] border-black bg-white px-4 py-4 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:w-[360px]">
-                <p className="text-[12px] font-black uppercase tracking-[0.16em] text-black">
+              {/* CARD BLANCA FLOTANTE: Ahora realmente responsive en posición */}
+              <div className="absolute left-6 right-6 bottom-[88px] sm:left-10 sm:bottom-28 xl:left-10 xl:bottom-32 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:w-[350px]">
+                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-black">
                   {brand("cardTag")}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-black sm:text-[15px]">
+                <p className="mt-2 text-[14px] sm:text-[15px] leading-tight text-black font-bold">
                   {brand("cardBody")}
                 </p>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-3 z-20">
-                <p className="text-center text-sm font-black uppercase tracking-[0.24em] text-black">
+              {/* BARRA AMARILLA INFERIOR: Anclada */}
+              <div className="absolute bottom-0 left-0 right-0 border-t-[4px] border-black bg-[#FFBD17] px-4 py-5 z-30">
+                <p className="text-center text-sm font-black uppercase tracking-[0.3em] text-black">
                   {brand("bottomBar")}
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -72,24 +78,23 @@ export function BrandStatement() {
         .bubble-mask {
           overflow: hidden;
           -webkit-mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
-          -webkit-mask-repeat: no-repeat;
           mask-image: url("https://cdn.shopify.com/s/files/1/0803/2016/8209/files/HOCB_Shapes_Bubbles_01_Black.svg?v=1691787724");
+          -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
           
-          /* Desktop */
-          -webkit-mask-size: cover;
-          -webkit-mask-position: center top;
-          mask-size: cover;
-          mask-position: center top;
+          /* 'contain' es el secreto quirúrgico: la flor nunca se corta */
+          -webkit-mask-size: contain;
+          mask-size: contain;
+          -webkit-mask-position: center;
+          mask-position: center;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 1279px) {
           .bubble-mask {
-            /* Ajuste quirúrgico del shape en mobile */
-            -webkit-mask-size: 100% auto;
-            mask-size: 100% auto;
-            -webkit-mask-position: top center;
-            mask-position: top center;
+            /* En móvil/tablet forzamos el escalado para llenar el espacio rosa */
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            transform: scale(1.02) translateY(-4%);
           }
         }
       `}</style>
