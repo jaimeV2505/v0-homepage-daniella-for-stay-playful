@@ -30,7 +30,7 @@ export const translations = {
     },
     brand: {
       eyebrow: "",
-      heading: " 🚨VARNING: Stay Playful kan orsaka följande biverkningar:",
+      heading: " 🚨VARNING: Stay Playful kan orsaka följande biverkningar",
       body: "  Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till mat och tråkig träning så satsar vi på att uppmuntra fler delar av livet, lyfta nyfikenhet och skapa utrymme för glädje, kreativitet och personligt engagemang.",
       cardTag: "Stay Playful",
       cardBody: "Bra kost och massa rörelse — inte längre är ett projekt vid sidan av livet.",
@@ -111,7 +111,7 @@ export const translations = {
       heading: "Booring men svar på blandade",
       headingAccent: "frågor",
       subheading: "En mjukare version av vanliga frågor — så att du kan känna dig lugn, trygg och redo att ta nästa steg.",
-      topRibbon: ["NIFIKENHET, LÅNGSIKTIGHEN, LÅT OSS KOMMA IGÅNG"],
+      topRibbon: ["NYFIKENHET, LÅNGSIKTIGHET, LÅT OSS KOMMA IGÅNG"],
       stillQuestions: "Fortfarande funderingar?",
       stillQuestionsBody: "Om du hellre vill prata igenom frågorna, så går det lika bra",
       letsTalk: "Låt oss prata",
