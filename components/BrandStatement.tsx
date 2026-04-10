@@ -18,8 +18,6 @@ export function BrandStatement() {
 
             {/* IZQUIERDA */}
             <div className="z-20 flex w-full flex-col justify-center border-b-[3px] border-black bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:w-1/2 xl:border-b-0 xl:border-r-[4px] xl:px-20">
-
-              {/* 👇 centrado aquí */}
               <div className="mx-auto w-full max-w-[700px] text-center">
 
                 <h2
@@ -55,8 +53,8 @@ export function BrandStatement() {
                 />
               </div>
 
-              {/* Card flotante */}
-              <div className="absolute bottom-[84px] left-6 right-6 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:bottom-[96px] sm:left-10 sm:right-auto sm:w-[350px] xl:bottom-[110px] xl:left-10">
+              {/* 🔥 CARD ELIMINADA EN MOBILE */}
+              <div className="hidden sm:block absolute bottom-[84px] left-6 right-6 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:bottom-[96px] sm:left-10 sm:right-auto sm:w-[350px] xl:bottom-[110px] xl:left-10">
                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-black">
                   {brand("cardTag")}
                 </p>
