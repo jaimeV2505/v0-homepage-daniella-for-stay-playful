@@ -10,11 +10,10 @@ export function Hero() {
   return (
     <section
       aria-label="Stay Playful Hero"
-      className="relative w-full bg-[#cfa487] overflow-hidden"
+      className="relative w-full overflow-hidden bg-[#cfa487]"
     >
       {/* CONTENEDOR PRINCIPAL */}
-      <div className="relative w-full h-[85vh] min-h-[650px] lg:h-[95vh] lg:max-h-[1100px] overflow-hidden">
-
+      <div className="relative h-[85vh] min-h-[650px] w-full overflow-hidden lg:h-[95vh] lg:max-h-[1100px]">
         {/* IMAGEN DE FONDO */}
         <motion.div
           initial={{ scale: 1.15 }}
@@ -34,21 +33,21 @@ export function Hero() {
         </motion.div>
 
         {/* BLOQUE EDITORIAL - POSICIONAMIENTO QUIRURGICO */}
-        <div className="absolute bottom-0 left-0 z-30 w-full px-8 pb-6 lg:pb-4">
+        <div className="absolute bottom-0 left-0 z-30 w-full px-5 pb-6 sm:px-8 lg:pb-4">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-            className="flex flex-col items-center lg:items-start max-w-[1700px] mx-auto"
+            className="mx-auto flex max-w-[1700px] flex-col items-center lg:items-start"
           >
-            {/* TITULO: leading normal en mobile para que no choquen las lineas, leading 0.5 en desktop */}
+            {/* TITULO */}
             <motion.h2
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-black font-sans text-2xl sm:text-4xl lg:text-5xl font-black tracking-[-0.06em] uppercase leading-tight lg:leading-[0.5] mb-4 lg:mb-[-22px] relative z-20 text-center lg:text-left"
+              className="relative z-20 mb-4 whitespace-nowrap text-center font-sans text-[clamp(1.3rem,6vw,2rem)] font-black uppercase leading-none tracking-[-0.05em] text-black sm:text-4xl sm:leading-tight lg:mb-[-22px] lg:text-left lg:text-5xl lg:leading-[0.5] lg:tracking-[-0.06em]"
             >
               {t("hero.title")}
             </motion.h2>
@@ -60,19 +59,19 @@ export function Hero() {
                 visible: { opacity: 1, scale: 1 },
               }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[180px] sm:w-[280px] lg:w-[380px] filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] lg:translate-x-[-8px] relative z-10"
+              className="relative z-10 w-[150px] filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] sm:w-[280px] lg:w-[380px] lg:translate-x-[-8px]"
             >
               <img
                 src="/logo1.png"
                 alt="Stay Playful Logo"
-                className="w-full h-auto object-contain block"
+                className="block h-auto w-full object-contain"
               />
             </motion.div>
           </motion.div>
         </div>
 
         {/* GRADIENTE */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#cfa487] via-transparent to-transparent z-10 pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#cfa487] via-transparent to-transparent" />
       </div>
     </section>
   )
