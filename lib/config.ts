@@ -30,7 +30,7 @@ export const translations = {
     },
     brand: {
       eyebrow: "",
-      heading: "VARNING: Stay Playful kan orsaka följande biverkningar:",
+      heading: " \u{1F6A8}VARNING: Stay Playful kan orsaka följande biverkningar:",
       body: "  Att du plötsligt tänker mindre på maten och att andra härliga delar av livet börjar ta mer plats. Med rätt kost för dig ser vi till att ge dig de bästa förutsättningar för att orka leva till fullo. Med mindre ohälsosam fixering till mat och tråkig träning så satsar vi på att uppmuntra fler delar av livet, lyfta nyfikenhet och skapa utrymme för glädje, kreativitet och personligt engagemang.",
       cardTag: "Stay Playful",
       cardBody: "Bra kost och massa rörelse — inte längre är ett projekt vid sidan av livet.",
@@ -207,7 +207,7 @@ export const translations = {
     },
     brand: {
       eyebrow: "",
-      heading: "WARNING: Stay Playful may cause the following side effects:",
+      heading: "\u{1F6A8}WARNING: Stay Playful may cause the following side effects:",
       body: " That you suddenly think less about food and that other wonderful parts of life begin to take up more space. With the right nutrition for you, we ensure that you have the best conditions to live life to the fullest. With less unhealthy fixation on food and boring exercise, we focus on encouraging more aspects of life, boosting curiosity, and creating space for joy, creativity, and personal engagement.",
       cardTag: "Stay Playful",
       cardBody: "Good nutrition and plenty of movement — no longer a side project in life.",
