@@ -36,6 +36,7 @@ export function Method() {
             </h2>
           </div>
 
+          {/* AJUSTE: Texto movido a la izquierda y con ancho máximo para desktop */}
           <div className="max-w-[450px] border-l-2 md:border-l-4 border-[#FF008E] pl-6 py-2">
             <p className="text-sm md:text-lg font-bold leading-relaxed text-black/50 italic">
               {t("method.subheading")}
@@ -56,8 +57,7 @@ export function Method() {
               <article className="relative grid h-full w-full overflow-hidden rounded-[24px] md:rounded-[32px] border-[3px] md:border-[4px] border-black bg-white shadow-[10px_10px_0_0_rgba(0,0,0,1)] md:shadow-[20px_20px_0_0_rgba(0,0,0,1)] lg:grid-cols-[1.1fr_0.9fr]">
 
                 {/* IZQUIERDA: CONTENIDO CON SCROLL INTERNO */}
-                <div className="flex flex-col h-full min-h-0 border-b-[3px] lg:border-b-0 lg:border-r-[4px] border-black bg-white relative">
-
+                <div className="flex flex-col h-full min-h-0 border-b-[3px] lg:border-b-0 lg:border-r-[4px] border-black bg-white">
                   {/* Header de la Card */}
                   <div
                     className="flex shrink-0 items-center justify-between border-b-[3px] md:border-b-[4px] border-black px-6 py-4 md:px-8 md:py-5"
@@ -69,30 +69,13 @@ export function Method() {
                     <span className="font-mono text-[10px] md:text-xs font-bold text-black/30">[{id}]</span>
                   </div>
 
-                  {/* Área de Texto con Scrollbar estilizado */}
-                  <div className="method-card-content flex-1 overflow-y-auto p-6 sm:p-10 md:p-12 xl:p-16 relative">
-
-                    {/* INDICADOR DE SCROLL ARRIBA (Read More) */}
-                    <div className="absolute top-4 right-4 z-30 pointer-events-none">
-                      <div className="flex flex-col items-center gap-1 p-2 rounded-xl border border-black/5 bg-white/10 backdrop-blur-[2px]">
-                        <span className="text-[7px] font-black uppercase tracking-widest text-black opacity-30">Read More</span>
-                        <motion.div
-                          animate={{ y: [0, 3, 0] }}
-                          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                          className="text-[#FF008E] opacity-30"
-                        >
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                          </svg>
-                        </motion.div>
-                      </div>
-                    </div>
-
+                  {/* Área de Texto */}
+                  <div className="flex-1 overflow-y-auto p-6 sm:p-10 md:p-12 xl:p-16 scrollbar-hide">
                     <div className="max-w-prose">
                       <h3 className="font-sans text-[2rem] sm:text-[2.5rem] md:text-[3.2rem] lg:text-[3.8rem] font-[900] leading-[0.95] tracking-tighter text-black italic mb-6 md:mb-8 uppercase">
                         {t(`method.cards.${id}.subtitle`)}
                       </h3>
-                      <div className="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl font-medium text-black/80 leading-relaxed pb-10">
+                      <div className="space-y-4 md:space-y-6 text-base md:text-lg lg:text-xl font-medium text-black/80 leading-relaxed">
                         <p>{t(`method.cards.${id}.p1`)}</p>
                         <p>{t(`method.cards.${id}.p2`)}</p>
                         <div className="h-4 md:hidden" />
@@ -148,19 +131,6 @@ export function Method() {
           </div>
         ))}
       </div>
-
-      <style jsx>{`
-        .method-card-content::-webkit-scrollbar {
-          width: 6px;
-        }
-        .method-card-content::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .method-card-content::-webkit-scrollbar-thumb {
-          background: rgba(0, 0, 0, 0.15);
-          border-radius: 10px;
-        }
-      `}</style>
 
       <div className="h-[20vh] md:h-[10vh]" />
     </section>
