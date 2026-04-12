@@ -13,7 +13,7 @@ export function Hero() {
       className="relative w-full overflow-hidden bg-[#cfa487]"
     >
       {/* CONTENEDOR PRINCIPAL */}
-      <div className="relative h-[85vh] min-h-[650px] w-full overflow-hidden lg:h-[95vh] lg:max-h-[1100px]">
+      <div className="relative h-[85vh] min-h-[650px] w-full overflow-hidden md:h-[95vh] md:max-h-[1100px]">
 
         {/* IMAGEN DE FONDO */}
         <motion.div
@@ -29,26 +29,29 @@ export function Hero() {
             priority
             quality={100}
             sizes="100vw"
-            className="object-cover object-[45%_40%] lg:object-[45%_40%]"
+            className="object-cover object-[45%_40%]"
           />
         </motion.div>
 
         {/* GRADIENTE */}
         <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#cfa487] via-[#cfa487]/30 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-[#cfa487]/40 via-transparent to-transparent" />
 
         {/* BLOQUE EDITORIAL */}
-        <div className="absolute bottom-0 left-0 z-30 w-full">
+        <div className="absolute inset-0 z-30">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
             className="
+              relative h-full w-full
               flex flex-col
-              items-center lg:items-start
-              px-5 pb-8
-              sm:px-8 sm:pb-10
-              lg:px-10 lg:-mb-6
-              xl:px-14 xl:-mb-8
+              items-center md:items-start
+              justify-end
+              px-5 pb-2
+              sm:px-8 sm:pb-3
+              md:px-10 md:pb-4
+              xl:px-14 xl:pb-5
               max-w-[1700px] mx-auto
             "
           >
@@ -66,9 +69,9 @@ export function Hero() {
                 text-black
                 mb-0
                 whitespace-nowrap
-                text-center lg:text-left
+                text-center md:text-left
                 text-[clamp(1.3rem,5.2vw,2.6rem)]
-                lg:text-[clamp(2rem,3.8vw,4.4rem)] lg:tracking-[-0.06em]
+                md:text-[clamp(1.8rem,3.5vw,4.4rem)] md:tracking-[-0.06em]
                 xl:text-[clamp(2.4rem,3.4vw,5.2rem)]
                 2xl:text-[clamp(2.8rem,3vw,6rem)]
               "
@@ -86,14 +89,15 @@ export function Hero() {
               className="
                 relative z-10
                 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]
-                lg:-ml-2
-                -mt-3 lg:-mt-5
+                ml-6
+                md:translate-x-[80px]
+                xl:translate-x-[110px]
+                -mt-7 md:-mt-10
                 w-[clamp(180px,52vw,280px)]
                 sm:w-[clamp(240px,42vw,360px)]
-                md:w-[clamp(280px,36vw,420px)]
-                lg:w-[clamp(320px,28vw,500px)]
-                xl:w-[clamp(380px,26vw,580px)]
-                2xl:w-[clamp(440px,24vw,660px)]
+                md:w-[clamp(220px,28vw,460px)]
+                xl:w-[clamp(320px,26vw,580px)]
+                2xl:w-[clamp(400px,24vw,660px)]
               "
             >
               <img
