@@ -20,15 +20,16 @@ export function BrandStatement() {
             {/* --- SECCIÓN IZQUIERDA: TEXTO --- */}
             <div className="z-20 flex w-full flex-col justify-center border-b-[3px] border-black bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:w-1/2 xl:border-b-0 xl:border-r-[4px] xl:px-20">
               <div className="mx-auto w-full max-w-[700px] text-center">
+                {/* AJUSTE: Título más pequeño (bajado de 2.4rem a 2.1rem y de 5.2rem a 4.5rem) */}
                 <h2
                   id="brand-statement-title"
-                  className="mx-auto max-w-[11ch] break-words text-[clamp(2rem,6.2vw,4.7rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white"
+                  className="mx-auto max-w-[11ch] break-words text-[clamp(2.1rem,6vw,4.5rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white"
                 >
                   {brand("heading")}
                 </h2>
 
                 <div className="mt-8 mx-auto max-w-[540px]">
-                  <p className="text-[clamp(1rem,1.4vw,1.18rem)] font-semibold leading-relaxed tracking-tight text-white/95">
+                  <p className="text-[clamp(1.1rem,1.8vw,1.45rem)] font-semibold leading-relaxed tracking-tight text-white/95">
                     {brand("body")}
                   </p>
                 </div>
@@ -40,10 +41,6 @@ export function BrandStatement() {
 
               <div className="pointer-events-none absolute left-0 top-0 z-10 h-[150px] w-full bg-gradient-to-b from-[#E89BE6]/60 to-transparent" />
 
-              {/* AJUSTE DE PRESENCIA: 
-                  He subido el w-full y aplicado un scale(1.1) en desktop 
-                  para que la foto sea la protagonista absoluta.
-              */}
               <div className="bubble-mask relative z-20 aspect-square w-full max-w-[750px] bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] xl:scale-110">
                 <Image
                   src="/Playful.JPG"
@@ -94,7 +91,6 @@ export function BrandStatement() {
           .bubble-mask {
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
-            /* Aumentamos escala en móvil también para que llene más el espacio rosa */
             transform: scale(1.15); 
             transform-origin: center;
           }
