@@ -13,13 +13,13 @@ export function BrandStatement() {
       className="bg-[#DCDCDC] px-4 py-8 sm:py-12 lg:px-6 lg:py-16"
     >
       <div className="mx-auto max-w-[1780px]">
+        {/* Main Container Card */}
         <div className="overflow-hidden rounded-[20px] border-[3px] border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:rounded-[34px] sm:border-[4px] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)]">
           <div className="flex flex-col xl:flex-row">
 
-            {/* IZQUIERDA */}
+            {/* --- SECCIÓN IZQUIERDA: TEXTO --- */}
             <div className="z-20 flex w-full flex-col justify-center border-b-[3px] border-black bg-[#FF7F00] px-6 py-12 sm:px-10 lg:px-16 xl:w-1/2 xl:border-b-0 xl:border-r-[4px] xl:px-20">
               <div className="mx-auto w-full max-w-[700px] text-center">
-
                 <h2
                   id="brand-statement-title"
                   className="mx-auto max-w-[11ch] break-words text-[clamp(2rem,6.2vw,4.7rem)] font-black uppercase leading-[0.88] tracking-[-0.05em] text-white"
@@ -27,7 +27,7 @@ export function BrandStatement() {
                   {brand("heading")}
                 </h2>
 
-                <div className="mt-8 max-w-[540px] mx-auto">
+                <div className="mt-8 mx-auto max-w-[540px]">
                   <p className="text-[clamp(1rem,1.4vw,1.18rem)] font-semibold leading-relaxed tracking-tight text-white/95">
                     {brand("body")}
                   </p>
@@ -35,14 +35,16 @@ export function BrandStatement() {
               </div>
             </div>
 
-            {/* DERECHA */}
+            {/* --- SECCIÓN DERECHA: IMAGEN --- */}
             <div className="relative flex w-full items-center justify-center overflow-hidden bg-[#FFABFF] px-6 pb-28 pt-6 sm:min-h-[650px] sm:px-10 sm:pb-32 sm:pt-10 lg:px-14 xl:min-h-[850px] xl:w-1/2 xl:pb-36">
 
-              {/* Gradiente */}
               <div className="pointer-events-none absolute left-0 top-0 z-10 h-[150px] w-full bg-gradient-to-b from-[#E89BE6]/60 to-transparent" />
 
-              {/* Máscara */}
-              <div className="bubble-mask relative z-20 aspect-square w-full max-w-[650px] bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)]">
+              {/* AJUSTE DE PRESENCIA: 
+                  He subido el w-full y aplicado un scale(1.1) en desktop 
+                  para que la foto sea la protagonista absoluta.
+              */}
+              <div className="bubble-mask relative z-20 aspect-square w-full max-w-[750px] bg-[#FF65FF] shadow-[8px_8px_0_0_rgba(0,0,0,1)] xl:scale-110">
                 <Image
                   src="/Playful.JPG"
                   alt="Editorial"
@@ -53,8 +55,8 @@ export function BrandStatement() {
                 />
               </div>
 
-              {/* 🔥 CARD ELIMINADA EN MOBILE */}
-              <div className="hidden sm:block absolute bottom-[84px] left-6 right-6 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:bottom-[96px] sm:left-10 sm:right-auto sm:w-[350px] xl:bottom-[110px] xl:left-10">
+              {/* Card Flotante */}
+              <div className="absolute bottom-[84px] left-6 right-6 z-40 border-[4px] border-black bg-white p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:bottom-[96px] sm:left-10 sm:right-auto sm:w-[350px] xl:bottom-[110px] xl:left-10">
                 <p className="text-[11px] font-black uppercase tracking-[0.2em] text-black">
                   {brand("cardTag")}
                 </p>
@@ -63,14 +65,14 @@ export function BrandStatement() {
                 </p>
               </div>
 
-              {/* Barra inferior */}
+              {/* Barra Inferior */}
               <div className="absolute bottom-0 left-0 right-0 z-30 border-t-[4px] border-black bg-[#FFBD17] px-4 py-5">
                 <p className="text-center text-sm font-black uppercase tracking-[0.3em] text-black">
                   {brand("bottomBar")}
                 </p>
               </div>
-
             </div>
+
           </div>
         </div>
       </div>
@@ -92,7 +94,8 @@ export function BrandStatement() {
           .bubble-mask {
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
-            transform: scale(1.02);
+            /* Aumentamos escala en móvil también para que llene más el espacio rosa */
+            transform: scale(1.15); 
             transform-origin: center;
           }
         }
