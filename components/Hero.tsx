@@ -14,6 +14,7 @@ export function Hero() {
     >
       {/* CONTENEDOR PRINCIPAL */}
       <div className="relative h-[85vh] min-h-[650px] w-full overflow-hidden lg:h-[95vh] lg:max-h-[1100px]">
+
         {/* IMAGEN DE FONDO */}
         <motion.div
           initial={{ scale: 1.15 }}
@@ -32,13 +33,24 @@ export function Hero() {
           />
         </motion.div>
 
-        {/* BLOQUE EDITORIAL - POSICIONAMIENTO MÁXIMO ABAJO */}
-        <div className="absolute bottom-0 left-0 z-30 w-full px-5 pb-2 sm:px-8 lg:pb-0">
+        {/* GRADIENTE */}
+        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#cfa487] via-[#cfa487]/30 to-transparent" />
+
+        {/* BLOQUE EDITORIAL */}
+        <div className="absolute bottom-0 left-0 z-30 w-full">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-            className="mx-auto flex max-w-[1700px] flex-col items-center lg:items-start lg:mb-[-10px]"
+            className="
+              flex flex-col
+              items-center lg:items-start
+              px-5 pb-8
+              sm:px-8 sm:pb-10
+              lg:px-10 lg:-mb-6
+              xl:px-14 xl:-mb-8
+              max-w-[1700px] mx-auto
+            "
           >
             {/* TITULO */}
             <motion.h2
@@ -47,19 +59,42 @@ export function Hero() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-20 mb-1 whitespace-nowrap text-center font-sans text-[clamp(1.5rem,7vw,2.2rem)] font-[900] uppercase leading-[0.85] tracking-[-0.07em] text-black sm:text-4xl sm:leading-tight lg:mb-[-32px] lg:text-left lg:text-5xl lg:tracking-[-0.08em]"
+              className="
+                relative z-20
+                font-sans font-[900] uppercase
+                leading-[0.88] tracking-[-0.04em]
+                text-black
+                mb-0
+                whitespace-nowrap
+                text-center lg:text-left
+                text-[clamp(1.3rem,5.2vw,2.6rem)]
+                lg:text-[clamp(2rem,3.8vw,4.4rem)] lg:tracking-[-0.06em]
+                xl:text-[clamp(2.4rem,3.4vw,5.2rem)]
+                2xl:text-[clamp(2.8rem,3vw,6rem)]
+              "
             >
               {t("hero.title")}
             </motion.h2>
 
-            {/* LOGO: Posición ajustada al límite inferior */}
+            {/* LOGO */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, scale: 0.9 },
                 visible: { opacity: 1, scale: 1 },
               }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-[220px] filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.2)] sm:w-[320px] lg:w-[420px] lg:translate-x-[-12px]"
+              className="
+                relative z-10
+                filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]
+                lg:-ml-2
+                -mt-3 lg:-mt-5
+                w-[clamp(180px,52vw,280px)]
+                sm:w-[clamp(240px,42vw,360px)]
+                md:w-[clamp(280px,36vw,420px)]
+                lg:w-[clamp(320px,28vw,500px)]
+                xl:w-[clamp(380px,26vw,580px)]
+                2xl:w-[clamp(440px,24vw,660px)]
+              "
             >
               <img
                 src="/logo1.png"
@@ -67,11 +102,10 @@ export function Hero() {
                 className="block h-auto w-full object-contain"
               />
             </motion.div>
+
           </motion.div>
         </div>
 
-        {/* GRADIENTE */}
-        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#cfa487] via-[#cfa487]/30 to-transparent" />
       </div>
     </section>
   )
